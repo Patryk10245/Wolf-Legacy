@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator anim;
 
 
-    // Update is called once per frame
+
     void Update()
     {
         Movement();
