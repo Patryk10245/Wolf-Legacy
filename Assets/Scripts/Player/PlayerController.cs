@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator anim;
 
 
-
+// A co powiesz na ten komentarz 
     void Update()
     {
         Movement();
