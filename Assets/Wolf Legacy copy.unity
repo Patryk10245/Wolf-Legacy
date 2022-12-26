@@ -1095,7 +1095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &965030684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,7 +1494,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 15
+  m_LinearDrag: 60
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -1573,7 +1573,7 @@ MonoBehaviour:
   moveInput: {x: 0, y: 0}
   horizontal: 0
   vertical: 0
-  moveSpeed: 15
+  moveSpeed: 60
   rb: {fileID: 1171637744}
   theCam: {fileID: 519420031}
   swordArm: {fileID: 581222252}
