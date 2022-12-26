@@ -13,7 +13,7 @@ public class Enemy_Stats : MonoBehaviour
 
     public void TakeDamage(float val)
     {
-        Debug.Log("Take Damage");
+        //Debug.Log("Take Damage");
         health -= val;
         if(health <= 0)
         {
