@@ -6535,7 +6535,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 15
+  m_LinearDrag: 60
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -6615,7 +6615,7 @@ MonoBehaviour:
   moveInput: {x: 0, y: 0}
   horizontal: 0
   vertical: 0
-  moveSpeed: 15
+  moveSpeed: 80
   rb: {fileID: 1171637744}
   theCam: {fileID: 519420031}
   swordArm: {fileID: 581222252}
@@ -6635,7 +6635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7382994adabffee4eb2cbce8eb729bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dash_force: 80
+  dash_force: 350
   dash_time: 0.1
   dash_cost: 15
   recharge_Time: 3

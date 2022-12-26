@@ -6,8 +6,8 @@ public class PlayerDashSkill : MonoBehaviour
 {
     Player player;
     Rigidbody2D rb;
-    [SerializeField] float dash_force;
-    [SerializeField] float dash_time;
+    [SerializeField] float dash_force = 350;
+    [SerializeField] float dash_time = 0.1f;
     [SerializeField] float dash_cost = 15;
     float dash_timer;
     bool is_Dashing = false;
