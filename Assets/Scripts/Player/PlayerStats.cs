@@ -7,8 +7,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] float maxHealth = 5;
     [SerializeField] float currentHealth = 5;
     public float damageToEnemies = 1;
-    public float currentEnergy;
-    float maxEnergy;
+    public float currentEnergy = 40;
+    float maxEnergy = 40;
 
     public void TakeDamage(float val)
     {
