@@ -7,6 +7,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] float maxHealth = 5;
     [SerializeField] float currentHealth = 5;
     public float damageToEnemies = 1;
+    public float currentEnergy;
+    float maxEnergy;
 
     public void TakeDamage(float val)
     {
@@ -17,5 +19,9 @@ public class PlayerStats : MonoBehaviour
         {
             Debug.LogWarning("Teraz powinna odbyc sie smierc gracza");
         }
+    }
+    public void ModifyEnergy(float val)
+    {
+        currentEnergy += val;
     }
 }

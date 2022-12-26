@@ -45,7 +45,7 @@ public class PlayerDashSkill : MonoBehaviour
     {
         if (Input.GetKeyDown("l"))
         {
-            if (is_recharching == false && player.stats.energy >= dash_cost)
+            if (is_recharching == false && player.stats.currentEnergy >= dash_cost)
             {
                 is_Dashing = true;
                 player.controller.can_Input = false;
