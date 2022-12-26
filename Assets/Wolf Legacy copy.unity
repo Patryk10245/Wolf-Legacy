@@ -1126,11 +1126,7 @@ MonoBehaviour:
   arena_bounds: {x: -22, y: -2, z: -8, w: -22}
   player_pos: {x: 0, y: 0, z: 0}
   fall_area_radius: 3
-  player_layer:
-    serializedVersion: 2
-    m_Bits: 0
   knockBackForce: 6000
-  rush_direction: {x: 0, y: 0, z: 0}
   speed_modifier: 15
 --- !u!114 &965030685
 MonoBehaviour:
@@ -1557,6 +1553,9 @@ MonoBehaviour:
   health_max: 5
   health: 5
   damage: 1
+  energy: 0
+  max_energy: 0
+  energy_regeneration: 0
 --- !u!114 &1171637748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1594,6 +1593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dash_force: 80
   dash_time: 0.1
+  dash_cost: 15
   recharge_Time: 3
 --- !u!1001 &1173992266
 PrefabInstance:
