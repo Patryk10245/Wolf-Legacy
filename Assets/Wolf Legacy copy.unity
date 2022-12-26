@@ -1553,9 +1553,9 @@ MonoBehaviour:
   health_max: 5
   health: 5
   damage: 1
-  energy: 40
-  max_energy: 40
-  energy_regeneration: 1
+  energy: 0
+  max_energy: 0
+  energy_regeneration: 0
 --- !u!114 &1171637748
 MonoBehaviour:
   m_ObjectHideFlags: 0
