@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform swordArm;
     public bool inAttack;
     [SerializeField] Animator anim;
+    [SerializeField] Animator animBody;
     public bool can_Input = true;
 
 
@@ -35,6 +36,11 @@ public class PlayerController : MonoBehaviour
             if (horizontal != 0 || vertical != 0)
             {
                 rb.AddForce(moveInput * moveSpeed);
+                animBody.SetBool("isMoving", true);
+            }
+            else
+            {
+                animBody.SetBool("isMoving", false);
             }
         }
         

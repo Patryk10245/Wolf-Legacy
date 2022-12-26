@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 216d7589d6ce2c645b9d7ff1957438c1
+guid: 5a7b045e149326b499945b13099dc2f3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,29 +101,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bat_0
+      name: Paladinwalking_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 168
-        width: 104
-        height: 48
+        x: 4
+        y: 126
+        width: 11
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebe553ea80db0cf45bd26a7fa5483256
-      internalID: 1943761117
+      spriteID: f47aaca2923d2134e9da6d774e032952
+      internalID: -1067686424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bat_1
+      name: Paladinwalking_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 104
-        width: 104
-        height: 40
+        x: 21
+        y: 125
+        width: 11
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9eee04bb76b810945a78decbee3255ec
-      internalID: 108340493
+      spriteID: 14c72986452a24d46b36b713b52cb6c2
+      internalID: 994074252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bat_2
+      name: Paladinwalking_2
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 104
-        height: 56
+        x: 36
+        y: 125
+        width: 11
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +161,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b41018621cb34e046914cc22eee0dac4
-      internalID: 2083698126
+      spriteID: 113a546a5ccc952409ee8b974a4888ad
+      internalID: -741518164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paladinwalking_3
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 125
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa3edc4dcaf3da4d9d446e582c994e6
+      internalID: -1957810034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paladinwalking_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 126
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7d8258debb4014a83ac82eb3d4ec2f
+      internalID: 675203955
       vertices: []
       indices: 
       edges: []
@@ -190,9 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bat_0: 1943761117
-      bat_1: 108340493
-      bat_2: 2083698126
+      Paladinwalking_4: 675203955
+      Paladinwalking_1: 994074252
+      Paladinwalking_0: -1067686424
+      Paladinwalking_3: -1957810034
+      Paladinwalking_2: -741518164
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] float health_max;
-    [SerializeField] float health;
-    public float damage;
+    [SerializeField] float maxHealth = 5;
+    [SerializeField] float currentHealth = 5;
+    public float damageToEnemies = 1;
 
     public void TakeDamage(float val)
     {
-        health -= val;
+        currentHealth -= val;
         //Debug.Log("Taking Damage, Health = " + health);
 
-        if(health <= 0)
+        if(currentHealth <= 0)
         {
             Debug.LogWarning("Teraz powinna odbyc sie smierc gracza");
         }

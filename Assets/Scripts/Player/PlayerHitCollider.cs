@@ -15,7 +15,7 @@ public class PlayerHitCollider : MonoBehaviour
             if (player.controller.inAttack)
             {
                 //Debug.Log("is in attack");
-                collision.GetComponent<Enemy_BaseClass>().TakeDamage(player.stats.damage);
+                collision.GetComponent<Enemy_BaseClass>().TakeDamage(player.stats.damageToEnemies);
             }
         }
         

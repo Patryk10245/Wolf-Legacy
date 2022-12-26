@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 216d7589d6ce2c645b9d7ff1957438c1
+guid: 27221ad97dfbc6149b2b4c6f5b8e4746
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,23 +101,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bat_0
+      name: batangry_0
       rect:
         serializedVersion: 2
         x: 16
@@ -131,14 +119,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebe553ea80db0cf45bd26a7fa5483256
-      internalID: 1943761117
+      spriteID: bb1e8ad195e5f2e4dae79c265653bcc9
+      internalID: -618175486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bat_1
+      name: batangry_1
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 163
+        width: 104
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ed9472f7ceba5418715fccd9adf017
+      internalID: -2044247151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batangry_2
       rect:
         serializedVersion: 2
         x: 16
@@ -152,14 +161,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9eee04bb76b810945a78decbee3255ec
-      internalID: 108340493
+      spriteID: 7740de9a9b8168a49ac7a2de3b125273
+      internalID: -2095431948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bat_2
+      name: batangry_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 106
+        width: 104
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fa08c47dd725f43b88ecc603635a72
+      internalID: 1529631437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batangry_4
       rect:
         serializedVersion: 2
         x: 16
@@ -173,8 +203,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b41018621cb34e046914cc22eee0dac4
-      internalID: 2083698126
+      spriteID: 45bd64719de65534f8dc6f62ede4281c
+      internalID: -896453984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batangry_5
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 24
+        width: 104
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 189ae168dd677d5458f6513c5bdd6e4f
+      internalID: 1255963428
       vertices: []
       indices: 
       edges: []
@@ -190,9 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bat_0: 1943761117
-      bat_1: 108340493
-      bat_2: 2083698126
+      batangry_4: -896453984
+      batangry_2: -2095431948
+      batangry_1: -2044247151
+      batangry_5: 1255963428
+      batangry_3: 1529631437
+      batangry_0: -618175486
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
