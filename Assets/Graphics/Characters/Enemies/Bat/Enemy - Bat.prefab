@@ -293,28 +293,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a8c303e9f94d841a71455819b41745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move_target: {fileID: 0}
-  moveDirection: {x: 0, y: 0, z: 0}
   move_Speed: 5
   attack_Distance: 1
   distance_To_Player: 0
-  range_To_Chase_Player: 7
-  is_Attacking: 0
-  is_Moving: 0
   is_Spawned: 0
   min_Gold_OnDeath: 0
   max_Gold_OnDeath: 0
-  attack_Timer: 0
   delay_Between_Attacks: 3
-  refresh_Attack_Timer: 0
-  anim: {fileID: 2307863862302562879}
-  theBody: {fileID: 7230326440636196059}
-  rb: {fileID: 4228896088790111739}
   agent: {fileID: 3880641131543602012}
   player_Detection: {fileID: 7776453409213438117}
   stats: {fileID: 450879977758046051}
-  action_state: 0
-  hit_collider: {fileID: 0}
   obstacle_avoidance_radius: 0.3
 --- !u!1 &8186687296141630429
 GameObject:
@@ -378,7 +366,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0049934387, y: 0.029960632}
+  m_Offset: {x: 0.0049934387, y: 0.3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -389,5 +377,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2097244, y: 0.84020996}
+  m_Size: {x: 1.2097244, y: 0.8}
   m_EdgeRadius: 0
