@@ -10951,7 +10951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_target: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
-  move_Speed: 5
+  move_Speed: 3
   attack_Distance: 5.5
   distance_To_Player: 0
   range_To_Chase_Player: 7
@@ -10971,7 +10971,7 @@ MonoBehaviour:
   stats: {fileID: 1774390791}
   projectile_Prefab: {fileID: 197921725636579327, guid: 1ae7628ca4c80444795b2adaa9bc5dc5, type: 3}
   projectile_SpawnPoint: {fileID: 306008228}
-  projectile_Speed: 3
+  projectile_Speed: 5
   projectile_fly_distance: 15
 --- !u!114 &1774390789
 MonoBehaviour:
