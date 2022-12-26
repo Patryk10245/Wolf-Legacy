@@ -3,7 +3,7 @@
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Player player;
-    [SerializeField] Vector2 moveInput;
+    public Vector2 moveInput;
     [SerializeField] float horizontal;
     [SerializeField] float vertical;
     [SerializeField] float moveSpeed = 20;
@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform swordArm;
     public bool inAttack;
     [SerializeField] Animator anim;
+    public bool can_Input = true;
 
 
 // A co powiesz na ten komentarz 
@@ -26,12 +27,17 @@ public class PlayerController : MonoBehaviour
     }
     void Movement()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-        if (horizontal != 0 || vertical != 0)
+        if(can_Input)
         {
-            rb.AddForce(new Vector2(horizontal, vertical) * moveSpeed);
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
+            moveInput = new Vector2(horizontal, vertical);
+            if (horizontal != 0 || vertical != 0)
+            {
+                rb.AddForce(moveInput * moveSpeed);
+            }
         }
+        
     }
 
     void Sword_Rotation()

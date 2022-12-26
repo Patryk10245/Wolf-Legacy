@@ -13,9 +13,9 @@ public enum ENUM_ActionState
 
 public class Enemy_Melee : Enemy_BaseClass
 {
-    [Space(15)]
-    [SerializeField] ENUM_ActionState action_state;
-    [SerializeField] Enemy_Hit_Collider hit_collider;
+    ENUM_ActionState action_state;
+    Enemy_Hit_Collider hit_collider;
+    //[Space(15)]
     [SerializeField] float obstacle_avoidance_radius = 0.3f;
 
 

@@ -9,36 +9,37 @@ using UnityEngine.AI;
 public abstract class Enemy_BaseClass : MonoBehaviour
 {
     [Header("Scene Reference")]
-    [SerializeField] protected Transform move_target;
-    [SerializeField] protected Vector3 moveDirection;
+    protected Transform move_target;
+    protected Vector3 moveDirection;
     //[SerializeField] protected Player chase_target;
 
     [Header("Specifics")]
     [SerializeField] protected float move_Speed = 5f;
     [SerializeField] public float attack_Distance = 1f;
-    [SerializeField] public float distance_To_Player;
-    [SerializeField] public float range_To_Chase_Player = 7f;
-    [SerializeField] protected bool is_Attacking;
-    [SerializeField] protected bool is_Moving;
-    [SerializeField] public bool is_Spawned;
+    public float distance_To_Player;
+    //[SerializeField] public float range_To_Chase_Player = 7f;
+    protected bool is_Attacking;
+     protected bool is_Moving;
+    public bool is_Spawned;
     [Space(10)]
     [SerializeField] int min_Gold_OnDeath;
     [SerializeField] int max_Gold_OnDeath;
 
     [Space(10)]
     [Header("Timer")]
-    [SerializeField] protected float attack_Timer;
+    protected float attack_Timer;
     [SerializeField] protected float delay_Between_Attacks = 3f;
-    [SerializeField] protected bool refresh_Attack_Timer;
+    protected bool refresh_Attack_Timer;
 
-    [Header("Inside Reference")]
-    [SerializeField] protected Animator anim;
-    [SerializeField] protected SpriteRenderer theBody;
-    [SerializeField] protected Rigidbody2D rb;
-    [SerializeField] public NavMeshAgent agent;
+    protected Animator anim;
+    protected SpriteRenderer theBody;
+    protected Rigidbody2D rb;
+    [HideInInspector] public NavMeshAgent agent;
 
+    [Space(15)]
+    [Tooltip("Child object with trigger collider")]
     public Player_Detection player_Detection;
-    public Enemy_Stats stats;
+    [HideInInspector] public Enemy_Stats stats;
 
     // Boss bedzie posiadal bardziej skomplikowany skrypt, wiec wymagane jest rozdzielenie
     public abstract void SetMoveTarget(Player target);
