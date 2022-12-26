@@ -8,6 +8,7 @@ public class PlayerDashSkill : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField] float dash_force;
     [SerializeField] float dash_time;
+    [SerializeField] float dash_cost = 15;
     float dash_timer;
     bool is_Dashing = false;
     [Space(15)]
@@ -44,10 +45,11 @@ public class PlayerDashSkill : MonoBehaviour
     {
         if (Input.GetKeyDown("l"))
         {
-            if (is_recharching == false)
+            if (is_recharching == false && player.stats.energy >= dash_cost)
             {
                 is_Dashing = true;
                 player.controller.can_Input = false;
+                player.stats.ModifyEnergy(-dash_cost);
             }
         }
     }
