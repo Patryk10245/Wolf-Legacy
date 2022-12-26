@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float horizontal;
     [SerializeField] float vertical;
     [SerializeField] float moveSpeed = 20;
-    [SerializeField] Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     [SerializeField] Camera theCam;
     [SerializeField] Transform swordArm;

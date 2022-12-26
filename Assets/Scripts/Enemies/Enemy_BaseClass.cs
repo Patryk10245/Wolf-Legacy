@@ -9,7 +9,7 @@ using UnityEngine.AI;
 public abstract class Enemy_BaseClass : MonoBehaviour
 {
     [Header("Scene Reference")]
-    protected Transform move_target;
+    [SerializeField]protected Transform move_target;
     protected Vector3 moveDirection;
     //[SerializeField] protected Player chase_target;
 
