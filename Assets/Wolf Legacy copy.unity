@@ -247,6 +247,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6330906866766332541, guid: c4ede589169d90244ae2456f9501b0c9, type: 3}
   m_PrefabInstance: {fileID: 280154663}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &306008227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 306008228}
+  m_Layer: 0
+  m_Name: Projectile Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &306008228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306008227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.52, y: 0.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1774390795}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &307462245
 GameObject:
   m_ObjectHideFlags: 0
@@ -10921,14 +10952,14 @@ MonoBehaviour:
   move_target: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   move_Speed: 5
-  attack_Distance: 1
+  attack_Distance: 5.5
   distance_To_Player: 0
   range_To_Chase_Player: 7
   is_Attacking: 0
   is_Moving: 0
   is_Spawned: 0
-  min_Gold_OnDeath: 0
-  max_Gold_OnDeath: 0
+  min_Gold_OnDeath: 2
+  max_Gold_OnDeath: 7
   attack_Timer: 0
   delay_Between_Attacks: 3
   refresh_Attack_Timer: 0
@@ -10936,11 +10967,12 @@ MonoBehaviour:
   theBody: {fileID: 1774390794}
   rb: {fileID: 1774390793}
   agent: {fileID: 1774390790}
-  player_Detection: {fileID: 0}
-  stats: {fileID: 0}
-  projectile_Prefab: {fileID: 0}
-  projectile_SpawnPoint: {fileID: 0}
-  projectile_Speed: 0
+  player_Detection: {fileID: 515743611}
+  stats: {fileID: 1774390791}
+  projectile_Prefab: {fileID: 1583528309}
+  projectile_SpawnPoint: {fileID: 306008228}
+  projectile_Speed: 3
+  projectile_fly_distance: 15
 --- !u!114 &1774390789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11099,6 +11131,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 515743610}
+  - {fileID: 306008228}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

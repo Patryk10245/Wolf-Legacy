@@ -10,6 +10,7 @@ public class Enemy_Ranged : Enemy_BaseClass
     [SerializeField] GameObject projectile_Prefab;
     [SerializeField] Transform projectile_SpawnPoint;
     [SerializeField] float projectile_Speed;
+    [SerializeField] float projectile_fly_distance = 15;
     void Update()
     {
         if (refresh_Attack_Timer == true)
@@ -45,7 +46,8 @@ public class Enemy_Ranged : Enemy_BaseClass
         proj_control.dir.z = 0; // NavMesh generowany jest wyzej, co sprawia że różni się wysokosć miedzy graczami a przeciwnikami. Sprawia że pociski nie wpadaja pod mape po wleceniu w gracza
         proj_control.initial_pos = projectile_SpawnPoint.position;
         proj_control.speed = projectile_Speed;
-        proj_control.max_Fly_Distance = 15f;
+        proj_control.max_Fly_Distance = projectile_fly_distance;
+        proj_control.damage = stats.Damage;
 
         refresh_Attack_Timer = true;
     }
