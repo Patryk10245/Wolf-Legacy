@@ -2,27 +2,37 @@
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] Player player;
-    public Vector2 moveInput;
-    [SerializeField] float horizontal;
-    [SerializeField] float vertical;
-    [SerializeField] float moveSpeed = 20;
-    public Rigidbody2D rb;
-
+    // Referencje
+    Player player;
+    [HideInInspector]public Rigidbody2D rb;
     [SerializeField] Camera theCam;
     [SerializeField] Transform swordArm;
-    public bool inAttack;
-    [SerializeField] Animator anim;
+    [SerializeField] Animator swordArmAnimator;
     [SerializeField] Animator animBody;
-    public bool can_Input = true;
+    public TrailRenderer trail_renderer;
+
+    float horizontal;
+    float vertical;
+    [SerializeField] float moveSpeed = 20;
+
+    [HideInInspector]public bool inAttack;
+    [HideInInspector]public Vector2 moveInput;
+    [HideInInspector]public bool can_Input = true;
+    
 
 
-// A co powiesz na ten komentarz 
+    private void Start()
+    {
+        player = GetComponent<Player>();
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    // A co powiesz na ten komentarz 
     void Update()
     {
         Movement();
-
         Sword_Rotation();
+        SwordAttack();
         
 
     }
@@ -73,14 +83,16 @@ public class PlayerController : MonoBehaviour
             swordArm.rotation = Quaternion.Euler(0, 0, angle);
         }
 
-        if(Input.GetMouseButtonDown(0))
+        
+    }
+    void SwordAttack()
+    {
+        if (Input.GetMouseButtonDown(0))
         {
             inAttack = true;
-            anim.SetTrigger("isClicked");
+            swordArmAnimator.SetTrigger("isClicked");
+            trail_renderer.enabled = true;
         }
     }
-    public void EVENT_AttackAnimationEnd()
-    {
-        inAttack = false;
-    }
+
 }

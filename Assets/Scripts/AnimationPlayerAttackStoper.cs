@@ -9,5 +9,6 @@ public class AnimationPlayerAttackStoper : MonoBehaviour
     public void animEndAttack()
     {
         playerController.inAttack = false;
+        playerController.trail_renderer.enabled = false;
     }
 }
