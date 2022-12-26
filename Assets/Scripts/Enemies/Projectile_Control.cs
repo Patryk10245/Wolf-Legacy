@@ -10,7 +10,7 @@ public class Projectile_Control : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(dir * speed);
+        transform.Translate(dir * speed * Time.deltaTime);
 
         if (Vector3.Distance(initial_pos, transform.position) > max_Fly_Distance)
         {
@@ -22,6 +22,7 @@ public class Projectile_Control : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.GetComponent<Player>().TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 

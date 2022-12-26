@@ -10969,7 +10969,7 @@ MonoBehaviour:
   agent: {fileID: 1774390790}
   player_Detection: {fileID: 515743611}
   stats: {fileID: 1774390791}
-  projectile_Prefab: {fileID: 1583528309}
+  projectile_Prefab: {fileID: 197921725636579327, guid: 1ae7628ca4c80444795b2adaa9bc5dc5, type: 3}
   projectile_SpawnPoint: {fileID: 306008228}
   projectile_Speed: 3
   projectile_fly_distance: 15
@@ -11022,9 +11022,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077358595f5afd84180339fce54d3b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health_Max: 0
-  health: 0
-  damage: 0
+  health_Max: 1
+  health: 1
+  damage: 1
 --- !u!95 &1774390792
 Animator:
   serializedVersion: 5
