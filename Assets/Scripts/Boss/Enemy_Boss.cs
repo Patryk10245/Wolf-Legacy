@@ -170,19 +170,19 @@ public class Enemy_Boss : Enemy_BaseClass
 
     public void EVENT_Preparation()
     {
-
+        current_action_state = ENUM_current_state.preparation;
     }
-    public void EVENT_Attack()
+    public void EVENT_Working()
     {
-
+        current_action_state = ENUM_current_state.working;
     }
     public void EVENT_Finishing()
     {
-
+        current_action_state = ENUM_current_state.finishing;
     }
     public void EVENT_Exiting()
     {
-
+        current_action_state = ENUM_current_state.ready_to_exit;
     }
 
     void DashRefreshing()
