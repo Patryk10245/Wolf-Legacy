@@ -44,12 +44,9 @@ public class Enemy_Boss : Enemy_BaseClass
     [Header("Jump Action")]
     [SerializeField] Vector3 player_pos;
     [SerializeField] float fall_area_radius;
-    [SerializeField] LayerMask player_layer;
     [SerializeField] float knockBackForce;
 
     [Header("Rush Aciton")]
-    
-    [SerializeField] Vector3 rush_direction;
     [SerializeField] float speed_modifier;
     bool is_rushing;
     
@@ -212,6 +209,7 @@ public class Enemy_Boss : Enemy_BaseClass
                 idle_timer = 0;
                 can_move = false;
                 current_action_state = ENUM_current_state.working;
+                anim.SetTrigger("Idle");
                 break;
 
             case ENUM_current_state.working:
@@ -244,6 +242,7 @@ public class Enemy_Boss : Enemy_BaseClass
                 Vector3 random_spot = new Vector3(Random.Range(arena_bounds.x, arena_bounds.y), Random.Range(arena_bounds.z, arena_bounds.w),transform.position.z);
                 agent.SetDestination(random_spot);
                 current_action_state = ENUM_current_state.working;
+                anim.SetTrigger("Moving");
                 break;
             case ENUM_current_state.working:
                 //Debug.Log("agent dest = " + agent.destination);
@@ -335,7 +334,6 @@ public class Enemy_Boss : Enemy_BaseClass
             case ENUM_current_state.preparation:
                 player_pos = move_target.transform.position;
                 anim.SetTrigger("RushAttack");
-                rush_direction = player_pos - transform.position;
                 break;
             case ENUM_current_state.working:
                 agent.SetDestination(player_pos);
