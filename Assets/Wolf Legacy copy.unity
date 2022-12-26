@@ -163,7 +163,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118003593}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6611,17 +6611,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b840c0492a624ec49a694d2910da0319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1171637746}
-  moveInput: {x: 0, y: 0}
-  horizontal: 0
-  vertical: 0
-  moveSpeed: 80
   rb: {fileID: 1171637744}
   theCam: {fileID: 519420031}
   swordArm: {fileID: 581222252}
-  inAttack: 0
-  anim: {fileID: 307462247}
+  swordArmAnimator: {fileID: 307462247}
   animBody: {fileID: 1171637750}
+  trail_renderer: {fileID: 118003595}
+  moveSpeed: 80
+  inAttack: 0
+  moveInput: {x: 0, y: 0}
   can_Input: 1
 --- !u!114 &1171637749
 MonoBehaviour:
@@ -73133,9 +73131,10 @@ GameObject:
   - component: {fileID: 1774390790}
   - component: {fileID: 1774390789}
   - component: {fileID: 1774390788}
+  - component: {fileID: 1774390796}
   m_Layer: 0
   m_Name: Skeleton_PLACEHOLDER
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73329,6 +73328,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1774390796
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774390787}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0077130795, y: 0.023139954}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.01, y: 3.08}
+    newSize: {x: 3.01, y: 3.08}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6061864, y: 2.601778}
+  m_EdgeRadius: 0
 --- !u!1001 &1844415176
 PrefabInstance:
   m_ObjectHideFlags: 0
