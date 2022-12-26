@@ -1038,6 +1038,7 @@ GameObject:
   - component: {fileID: 1171637748}
   - component: {fileID: 1171637746}
   - component: {fileID: 1171637747}
+  - component: {fileID: 1171637749}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1162,6 +1163,22 @@ MonoBehaviour:
   swordArm: {fileID: 581222252}
   inAttack: 0
   anim: {fileID: 307462247}
+  can_Input: 1
+--- !u!114 &1171637749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171637741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7382994adabffee4eb2cbce8eb729bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dash_force: 80
+  dash_time: 0.1
+  recharge_Time: 3
 --- !u!1001 &1173992266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10971,7 +10988,7 @@ MonoBehaviour:
   stats: {fileID: 1774390791}
   projectile_Prefab: {fileID: 197921725636579327, guid: 1ae7628ca4c80444795b2adaa9bc5dc5, type: 3}
   projectile_SpawnPoint: {fileID: 306008228}
-  projectile_Speed: 5
+  projectile_Speed: 8
   projectile_fly_distance: 15
 --- !u!114 &1774390789
 MonoBehaviour:
