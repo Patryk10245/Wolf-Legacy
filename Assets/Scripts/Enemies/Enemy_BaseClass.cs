@@ -24,6 +24,7 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     [Space(10)]
     [SerializeField] int min_Gold_OnDeath;
     [SerializeField] int max_Gold_OnDeath;
+    [HideInInspector] public bool is_dying;
 
     [Space(10)]
     [Header("Timer")]
@@ -63,6 +64,15 @@ public abstract class Enemy_BaseClass : MonoBehaviour
             attack_Timer = 0;
             refresh_Attack_Timer = false;
         }
+    }
+    public void PlayDeathAnimation()
+    {
+        is_dying = true;
+        anim.SetTrigger("isDying");
+    }
+    public void AnimEvent_Death()
+    {
+        Death();
     }
     public void Death()
     {

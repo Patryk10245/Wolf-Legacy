@@ -17,7 +17,8 @@ public class Enemy_Stats : MonoBehaviour
         health -= val;
         if(health <= 0)
         {
-            enemy.Death();
+            
+            enemy.PlayDeathAnimation();
             //Debug.LogWarning("Przeciwnik umiera");
         }
     }

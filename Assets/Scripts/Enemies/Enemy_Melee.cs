@@ -42,6 +42,12 @@ public class Enemy_Melee : Enemy_BaseClass
 
     private void Update()
     {
+        if(is_dying)
+        {
+            return;
+        }
+
+
         if (refresh_Attack_Timer == true)
         {
             action_state = ENUM_ActionState.waiting_for_attack;
@@ -74,10 +80,16 @@ public class Enemy_Melee : Enemy_BaseClass
     public void EVENT_Animation_Attack()
     {
         //Debug.Log("Event Animation Attack, ME = " + name);
+        if(distance_To_Player <= attack_Distance)
+        {
+            move_target.gameObject.GetComponent<Player>().TakeDamage(stats.Damage);
+        }
+        /*
         if(hit_collider.is_TouchingPlayer == true)
         {
             hit_collider.touched_player.TakeDamage(stats.Damage);
         }
+        */
     }
 
     private void Start()
