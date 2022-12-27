@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
     }
     void SwordAttack()
     {
-        if (Input.GetMouseButtonDown(0) && inAttack == false)
+        if (Input.GetMouseButton(0) && inAttack == false)
         {
             inAttack = true;
             swordArmAnimator.SetTrigger("isClicked");
