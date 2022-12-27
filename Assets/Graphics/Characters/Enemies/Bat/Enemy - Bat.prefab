@@ -298,10 +298,11 @@ MonoBehaviour:
   move_Speed: 5
   attack_Distance: 1
   distance_To_Player: 0
-  is_Spawned: 0
-  min_Gold_OnDeath: 0
-  max_Gold_OnDeath: 0
   delay_Between_Attacks: 3
+  is_Spawned: 0
+  is_dying: 0
+  minGoldOnDeath: 1
+  maxGoldOnDeath: 7
   agent: {fileID: 3880641131543602012}
   player_Detection: {fileID: 7776453409213438117}
   stats: {fileID: 450879977758046051}

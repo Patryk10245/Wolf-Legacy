@@ -8,29 +8,30 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Stop_Rotation))]
 public abstract class Enemy_BaseClass : MonoBehaviour
 {
-    [Header("Scene Reference")]
     [SerializeField]protected Transform move_target;
     protected Vector3 moveDirection;
-    //[SerializeField] protected Player chase_target;
 
     [Header("Specifics")]
     [SerializeField] protected float move_Speed = 5f;
     [SerializeField] public float attack_Distance = 1f;
     public float distance_To_Player;
-    //[SerializeField] public float range_To_Chase_Player = 7f;
-    protected bool is_Attacking;
-     protected bool is_Moving;
+    [SerializeField] protected float delay_Between_Attacks = 3f;
+    protected float attack_Timer;
+    protected bool refresh_Attack_Timer;
+
+    [Header("State")]
     public bool is_Spawned;
-    [Space(10)]
-    [SerializeField] int min_Gold_OnDeath;
-    [SerializeField] int max_Gold_OnDeath;
-     public bool is_dying;
+    public bool is_dying;
+    protected bool is_Attacking;
+    protected bool is_Moving;
 
     [Space(10)]
-    [Header("Timer")]
-    protected float attack_Timer;
-    [SerializeField] protected float delay_Between_Attacks = 3f;
-    protected bool refresh_Attack_Timer;
+    [SerializeField] int minGoldOnDeath;
+    [SerializeField] int maxGoldOnDeath;
+     
+
+    [Space(10)]
+    
 
     protected Animator anim;
     protected SpriteRenderer theBody;
@@ -39,7 +40,7 @@ public abstract class Enemy_BaseClass : MonoBehaviour
 
     [Space(15)]
     [Tooltip("Child object with trigger collider")]
-    public Player_Detection player_Detection;
+    public Enemy_Player_Detection player_Detection;
     [HideInInspector] public Enemy_Stats stats;
 
     // Boss bedzie posiadal bardziej skomplikowany skrypt, wiec wymagane jest rozdzielenie
@@ -78,7 +79,7 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     {
         if (is_Spawned == false)
         {
-            int rand = Random.Range(min_Gold_OnDeath, max_Gold_OnDeath);
+            int rand = Random.Range(minGoldOnDeath, maxGoldOnDeath);
             ScoreTable.ins.AddGold(rand);
         }
         else

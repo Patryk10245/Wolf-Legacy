@@ -98,7 +98,7 @@ public class Enemy_Melee : Enemy_BaseClass
         if(theBody == null) theBody = GetComponent<SpriteRenderer>();
         if(rb == null) rb = GetComponent<Rigidbody2D>();
         if(agent == null) agent = GetComponent<NavMeshAgent>();
-        if(player_Detection == null) player_Detection = GetComponentInChildren<Player_Detection>();
+        if(player_Detection == null) player_Detection = GetComponentInChildren<Enemy_Player_Detection>();
         if(stats == null) stats = GetComponent<Enemy_Stats>();
         if (hit_collider == null) hit_collider = GetComponentInChildren<Enemy_Hit_Collider>();
 

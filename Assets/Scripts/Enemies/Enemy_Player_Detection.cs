@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Detection : MonoBehaviour
+public class Enemy_Player_Detection : MonoBehaviour
 {
     [SerializeField] Enemy_BaseClass enemy;
     [SerializeField] bool can_Detect_Player = true;
