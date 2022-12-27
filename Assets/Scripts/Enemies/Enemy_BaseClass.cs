@@ -29,19 +29,15 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     [SerializeField] int minGoldOnDeath;
     [SerializeField] int maxGoldOnDeath;
      
-
-    [Space(10)]
-    
-
     protected Animator anim;
     protected SpriteRenderer theBody;
     protected Rigidbody2D rb;
     [HideInInspector] public NavMeshAgent agent;
 
     [Space(15)]
+    [HideInInspector] public Enemy_Stats stats;
     [Tooltip("Child object with trigger collider")]
     public Enemy_Player_Detection player_Detection;
-    [HideInInspector] public Enemy_Stats stats;
 
     // Boss bedzie posiadal bardziej skomplikowany skrypt, wiec wymagane jest rozdzielenie
     public abstract void SetMoveTarget(Player target);
