@@ -282,6 +282,7 @@ MonoBehaviour:
   health_Max: 1
   health: 1
   damage: 1
+  hitEffect: {fileID: 4637466581041088000, guid: 4463002be6d2c4643af99a0cbec9ad40, type: 3}
 --- !u!114 &450879977758046048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,8 +305,8 @@ MonoBehaviour:
   minGoldOnDeath: 1
   maxGoldOnDeath: 7
   agent: {fileID: 3880641131543602012}
-  player_Detection: {fileID: 7776453409213438117}
   stats: {fileID: 450879977758046051}
+  player_Detection: {fileID: 7776453409213438117}
   obstacle_avoidance_radius: 0.3
 --- !u!58 &9078200683761058975
 CircleCollider2D:

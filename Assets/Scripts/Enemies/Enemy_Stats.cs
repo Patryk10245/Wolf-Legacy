@@ -8,6 +8,7 @@ public class Enemy_Stats : MonoBehaviour
     [SerializeField] float health_Max;
     [SerializeField] float health;
     [SerializeField] float damage;
+    [SerializeField] GameObject hitEffect;    
 
     public float Damage { get => damage; set => damage = value; }
 
@@ -15,6 +16,7 @@ public class Enemy_Stats : MonoBehaviour
     {
         //Debug.Log("Take Damage");
         health -= val;
+        Instantiate(hitEffect, transform.position, transform.rotation);
         if(health <= 0)
         {
             
