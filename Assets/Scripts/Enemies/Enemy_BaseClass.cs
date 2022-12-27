@@ -24,7 +24,7 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     [Space(10)]
     [SerializeField] int min_Gold_OnDeath;
     [SerializeField] int max_Gold_OnDeath;
-    [HideInInspector] public bool is_dying;
+     public bool is_dying;
 
     [Space(10)]
     [Header("Timer")]
