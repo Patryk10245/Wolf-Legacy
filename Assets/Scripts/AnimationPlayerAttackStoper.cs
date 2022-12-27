@@ -10,5 +10,6 @@ public class AnimationPlayerAttackStoper : MonoBehaviour
     {
         playerController.inAttack = false;
         playerController.trail_renderer.enabled = false;
+        playerController.hit_collider.player_hit_collider.enabled = false;
     }
 }

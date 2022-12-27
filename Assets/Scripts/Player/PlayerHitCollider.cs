@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHitCollider : MonoBehaviour
 {
     [SerializeField] Player player;
+    public BoxCollider2D player_hit_collider;
 
 
     private void OnTriggerEnter2D(Collider2D collision)

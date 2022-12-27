@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     // Referencje
     Player player;
     [HideInInspector]public Rigidbody2D rb;
+    [HideInInspector]public PlayerHitCollider hit_collider;
     [SerializeField] Camera theCam;
     [SerializeField] Transform swordArm;
     [SerializeField] Animator swordArmAnimator;
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]public bool inAttack;
     [HideInInspector]public Vector2 moveInput;
     [HideInInspector]public bool can_Input = true;
+
     
 
 
@@ -25,9 +27,9 @@ public class PlayerController : MonoBehaviour
     {
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
+        hit_collider = GetComponentInChildren<PlayerHitCollider>();
     }
-
-    // A co powiesz na ten komentarz 
+ 
     void Update()
     {
         Movement();
@@ -61,25 +63,25 @@ public class PlayerController : MonoBehaviour
 
         theCam.transform.position = new Vector3(transform.position.x, transform.position.y, -8f);
 
-        Vector3 mousePos = Input.mousePosition;
-        Vector3 screenPoint = theCam.WorldToScreenPoint(transform.localPosition);
-        if (mousePos.x < screenPoint.x)
-        {
-            player.transform.localScale = new Vector3(-1f, 1f, 1f);
-            swordArm.localScale = new Vector3(-1f, -1f, 1f);
-        }
-        else
-        {
-            transform.localScale = Vector3.one;
-            player.transform.localScale = new Vector3(1f, 1f, 1f);
-            swordArm.localScale = Vector3.one;
-
-        }
-        Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
-        float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
-
         if (inAttack == false)
         {
+            Vector3 mousePos = Input.mousePosition;
+            Vector3 screenPoint = theCam.WorldToScreenPoint(transform.localPosition);
+            if (mousePos.x < screenPoint.x)
+            {
+                player.transform.localScale = new Vector3(-1f, 1f, 1f);
+                swordArm.localScale = new Vector3(-1f, -1f, 1f);
+            }
+            else
+            {
+                transform.localScale = Vector3.one;
+                player.transform.localScale = new Vector3(1f, 1f, 1f);
+                swordArm.localScale = Vector3.one;
+
+            }
+            Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
+            float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+
             swordArm.rotation = Quaternion.Euler(0, 0, angle);
         }
 
@@ -87,11 +89,12 @@ public class PlayerController : MonoBehaviour
     }
     void SwordAttack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && inAttack == false)
         {
             inAttack = true;
             swordArmAnimator.SetTrigger("isClicked");
             trail_renderer.enabled = true;
+            hit_collider.player_hit_collider.enabled = true;
         }
     }
 
