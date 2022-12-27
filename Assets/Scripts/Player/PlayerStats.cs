@@ -9,6 +9,8 @@ public class PlayerStats : MonoBehaviour
     public float damageToEnemies = 1;
     public float currentEnergy = 40;
     float maxEnergy = 40;
+    [SerializeField] float energyRegenerationAmount = 1;
+    float energyRegenTimer;
 
     public void TakeDamage(float val)
     {
@@ -23,5 +25,19 @@ public class PlayerStats : MonoBehaviour
     public void ModifyEnergy(float val)
     {
         currentEnergy += val;
+    }
+    void EnergyRegeneration()
+    {
+        energyRegenTimer += Time.deltaTime;
+        if(energyRegenTimer >= 1)
+        {
+            energyRegenTimer -= 1;
+            ModifyEnergy(energyRegenerationAmount);
+        }
+    }
+
+    private void Update()
+    {
+        
     }
 }
