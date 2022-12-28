@@ -54,7 +54,8 @@ public class Player_Controller_GamePad : PlayerController
             swordArm.localScale = Vector3.one;
         }
 
-        Vector2 offset = new Vector2(horizontal_mouse - screenPoint.x, screenPoint.y - vertical_mouse);
+        //Vector2 offset = new Vector2(horizontal_mouse - screenPoint.x, screenPoint.y - vertical_mouse);
+        Vector2 offset = new Vector2(horizontal_mouse - screenPoint.x, vertical_mouse - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
         // Fixes the issue with broken joysticks where they stick slightly to one side
