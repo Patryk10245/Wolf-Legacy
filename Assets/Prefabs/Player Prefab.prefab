@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8909031238140290560}
   - component: {fileID: 8909031238140290590}
   - component: {fileID: 8909031238140290591}
-  - component: {fileID: 8909031238140290586}
   - component: {fileID: 8909031238140290588}
   - component: {fileID: 8909031238140290589}
   - component: {fileID: 8909031238140290584}
   - component: {fileID: 5133253605473062236}
+  - component: {fileID: 1640311556841395499}
   m_Layer: 0
   m_Name: Player Prefab
   m_TagString: Player
@@ -89,29 +89,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83626986, y: 1.7640753}
   m_EdgeRadius: 0
---- !u!114 &8909031238140290586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8909031238140290563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b840c0492a624ec49a694d2910da0319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 8909031238140290588}
-  rb: {fileID: 8909031238140290590}
-  swordArm: {fileID: 8909031239802199170}
-  anim: {fileID: 8909031238140290584}
-  swordAnim: {fileID: 8909031239541040009}
-  swordCollider: {fileID: 8909031239055229890}
-  trailObject: {fileID: 8909031239192196199}
-  moveInput: {x: 0, y: 0}
-  horizontal: 0
-  vertical: 0
-  moveSpeed: 80
 --- !u!114 &8909031238140290588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31796fc230ac5fd46a06b71b107042ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 8909031238140290586}
+  controller: {fileID: 1640311556841395499}
   stats: {fileID: 8909031238140290589}
   theCam: {fileID: 0}
   id: 0
@@ -192,11 +169,29 @@ MonoBehaviour:
   moveInput: {x: 0, y: 0}
   horizontal: 0
   vertical: 0
-  mousePos: {x: 0, y: 0, z: 0}
-  horizontal_mouse: 0
-  vertical_mouse: 0
-  offset: {x: 0, y: 0}
-  angle: 0
+  moveSpeed: 80
+--- !u!114 &1640311556841395499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909031238140290563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df3320c85e3c1449a4019ec8d16c0e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8909031238140290588}
+  rb: {fileID: 8909031238140290590}
+  swordArm: {fileID: 8909031239802199170}
+  anim: {fileID: 8909031238140290584}
+  swordAnim: {fileID: 8909031239541040009}
+  swordCollider: {fileID: 8909031239055229890}
+  trailObject: {fileID: 8909031239192196199}
+  moveInput: {x: 0, y: 0}
+  horizontal: 0
+  vertical: 0
   moveSpeed: 80
 --- !u!1 &8909031238170990673
 GameObject:
@@ -462,7 +457,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8909031239055229894}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -510,7 +505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8909031239192196196
 Transform:
   m_ObjectHideFlags: 0

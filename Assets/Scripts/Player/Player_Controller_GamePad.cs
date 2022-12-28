@@ -1,30 +1,8 @@
 using UnityEngine;
 
-public class Player_Controller_GamePad : MonoBehaviour
+public class Player_Controller_GamePad : PlayerController
 {
-    public Player player;
-    public Rigidbody2D rb;
-
-    public Transform swordArm;
-    public Animator anim;
-    public Animator swordAnim;
-    public BoxCollider2D swordCollider;
-    public GameObject trailObject;
-
-    public Vector2 moveInput;
-    public float horizontal;
-    public float vertical;
-    [Space(15)]
-    public Vector3 mousePos;
-    public float horizontal_mouse;
-    public float vertical_mouse;
-    [Space(15)]
-
-    public Vector2 offset;
-    public float angle;
-
-    public float moveSpeed = 80;
-    void Movement()
+    protected override void Movement()
     {
         horizontal = Input.GetAxisRaw("Horizontal J1");
         vertical = Input.GetAxisRaw("Vertical J1");
@@ -37,8 +15,11 @@ public class Player_Controller_GamePad : MonoBehaviour
             rb.AddForce(moveInput * moveSpeed);
         }
     }
-    void Sword_Rotation()
+    protected override void Sword_Rotation()
     {
+        Vector3 mousePos;
+        float horizontal_mouse;
+        float vertical_mouse;
 
         horizontal_mouse = Input.GetAxisRaw("Horizontal2 J1");
         vertical_mouse = Input.GetAxisRaw("Vertical2 J1");
@@ -48,7 +29,7 @@ public class Player_Controller_GamePad : MonoBehaviour
         mousePos.y += vertical_mouse;
 
         Vector3 screenPoint = swordArm.localPosition;
-        
+
         if (mousePos.x < 0)
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
@@ -60,12 +41,12 @@ public class Player_Controller_GamePad : MonoBehaviour
             transform.localScale = new Vector3(1f, 1f, 1f);
             swordArm.localScale = Vector3.one;
         }
-        
-        offset = new Vector2(horizontal_mouse - screenPoint.x , screenPoint.y - vertical_mouse);
-        angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+
+        Vector2 offset = new Vector2(horizontal_mouse - screenPoint.x, screenPoint.y - vertical_mouse);
+        float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
         // Fixes the issue with broken joysticks where they stick slightly to one side
-        if((mousePos.x > -0.1f && mousePos.x < 0.1f) && (mousePos.y > -0.1f && mousePos.y < 0.1f))
+        if ((mousePos.x > -0.1f && mousePos.x < 0.1f) && (mousePos.y > -0.1f && mousePos.y < 0.1f))
         {
             angle = 0;
         }
@@ -73,7 +54,7 @@ public class Player_Controller_GamePad : MonoBehaviour
         swordArm.rotation = Quaternion.Euler(0, 0, angle);
 
     }
-    void SwordAttack()
+    protected override void SwordAttack()
     {
         if (Input.GetButtonDown("Fire J1"))
         {
@@ -84,10 +65,11 @@ public class Player_Controller_GamePad : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
+        player = GetComponent<Player>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
