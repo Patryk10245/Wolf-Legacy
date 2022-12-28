@@ -8,7 +8,7 @@ public abstract class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     
     public Transform swordArm;
-    public Animator anim;
+    public Animator animBody;
     public Animator swordAnim;
     public BoxCollider2D swordCollider;
     public GameObject trailObject;

@@ -19,6 +19,11 @@ public class PlayerController_KeyboardMouse : PlayerController
         if (horizontal != 0 || vertical != 0)
         {
             rb.AddForce(moveInput * moveSpeed);
+            animBody.SetBool("isMoving", true);
+        }
+        else
+        {
+            animBody.SetBool("isMoving", false);
         }
     }
     protected override void Sword_Rotation()
@@ -60,7 +65,7 @@ public class PlayerController_KeyboardMouse : PlayerController
     {
         rb = GetComponent<Rigidbody2D>();
         player = GetComponent<Player>();
-        anim = GetComponent<Animator>();
+        animBody = GetComponent<Animator>();
     }
     private void Update()
     {

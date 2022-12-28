@@ -13,6 +13,11 @@ public class Player_Controller_GamePad : PlayerController
         if (horizontal != 0 || vertical != 0)
         {
             rb.AddForce(moveInput * moveSpeed);
+            animBody.SetBool("isMoving", true);
+        }
+        else
+        {
+            animBody.SetBool("isMoving", false);
         }
     }
     protected override void Sword_Rotation()
@@ -69,7 +74,7 @@ public class Player_Controller_GamePad : PlayerController
     {
         rb = GetComponent<Rigidbody2D>();
         player = GetComponent<Player>();
-        anim = GetComponent<Animator>();
+        animBody = GetComponent<Animator>();
     }
 
     // Update is called once per frame
