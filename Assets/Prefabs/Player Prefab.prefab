@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8909031238140290588}
   - component: {fileID: 8909031238140290589}
   - component: {fileID: 8909031238140290584}
+  - component: {fileID: 5133253605473062236}
   m_Layer: 0
   m_Name: Player Prefab
   m_TagString: Player
@@ -169,6 +170,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &5133253605473062236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909031238140290563}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8568fc607b478546b060281d7c0aebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8909031238140290588}
+  rb: {fileID: 8909031238140290590}
+  swordArm: {fileID: 8909031239802199170}
+  anim: {fileID: 8909031238140290584}
+  swordAnim: {fileID: 8909031239541040009}
+  swordCollider: {fileID: 8909031239055229890}
+  trailObject: {fileID: 8909031239192196199}
+  moveInput: {x: 0, y: 0}
+  horizontal: 0
+  vertical: 0
+  mousePos: {x: 0, y: 0, z: 0}
+  horizontal_mouse: 0
+  vertical_mouse: 0
+  offset: {x: 0, y: 0}
+  angle: 0
+  moveSpeed: 80
 --- !u!1 &8909031238170990673
 GameObject:
   m_ObjectHideFlags: 0
