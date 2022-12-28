@@ -158,16 +158,25 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     public abstract void MeleeAttack_Action();
     public void Death()
     {
-        Debug.LogWarning("Smierc przeciwnika nie skonczona");
-        // dac zloto jezeli trzeba
+        //Debug.LogWarning("Smierc przeciwnika nie skonczona");
         ScoreTable.ins.AddKill();
+
+        if(is_Spawned == false)
+        {
+            int random_gold = Random.Range(min_Gold_OnDeath, max_Gold_OnDeath);
+            ScoreTable.ins.AddGold(random_gold);
+        }
+
+        Destroy(gameObject);
+
+
 
     }
     protected void ChangeState(ENUM_EnemyState new_state)
     {
         if (currentEnemyState != new_state)
         {
-            Debug.Log("Changing State to " + new_state.ToString()) ;
+            //Debug.Log("Changing State to " + new_state.ToString()) ;
             currentEnemyState = new_state;
             ApplyAnimation();
         }

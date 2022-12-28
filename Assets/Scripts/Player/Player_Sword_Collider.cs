@@ -10,7 +10,7 @@ public class Player_Sword_Collider : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Take Damage");
+            //Debug.Log("Take Damage");
             collision.gameObject.GetComponent<Enemy_BaseClass>().TakeDamage(player.stats.damage);
         }
     }
