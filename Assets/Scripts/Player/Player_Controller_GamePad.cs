@@ -2,8 +2,15 @@ using UnityEngine;
 
 public class Player_Controller_GamePad : PlayerController
 {
+    public Vector3 mousePos;
     protected override void Movement()
     {
+        // Return if player cant move
+        if (!player.canMove)
+        {
+            return;
+        }
+
         horizontal = Input.GetAxisRaw("Horizontal J1");
         vertical = Input.GetAxisRaw("Vertical J1");
 
@@ -22,14 +29,14 @@ public class Player_Controller_GamePad : PlayerController
     }
     protected override void Sword_Rotation()
     {
-        Vector3 mousePos;
+
         float horizontal_mouse;
         float vertical_mouse;
 
         horizontal_mouse = Input.GetAxisRaw("Horizontal2 J1");
         vertical_mouse = Input.GetAxisRaw("Vertical2 J1");
 
-        mousePos = swordArm.localPosition;
+        mousePos = Vector3.zero;
         mousePos.x += horizontal_mouse;
         mousePos.y += vertical_mouse;
 
