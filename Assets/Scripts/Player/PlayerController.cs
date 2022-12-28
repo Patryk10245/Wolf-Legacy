@@ -1,72 +1,68 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
-    // Referencje
-    Player player;
-    [HideInInspector]public Rigidbody2D rb;
-    [HideInInspector]public PlayerHitCollider hit_collider;
-    [SerializeField] Camera theCam;
-    [SerializeField] Transform swordArm;
-    [SerializeField] Animator swordArmAnimator;
-    [SerializeField] Animator animBody;
-    public TrailRenderer trail_renderer;
-
-    float horizontal;
-    float vertical;
-    [SerializeField] float moveSpeed = 20;
-
-    [HideInInspector]public bool inAttack;
-    [HideInInspector]public Vector2 moveInput;
-    [HideInInspector]public bool can_Input = true;
-
+    public Player player;
+    public Rigidbody2D rb;
     
+    public Transform swordArm;
+    public Animator anim;
+    public BoxCollider2D swordCollider;
+    public GameObject trailObject;
 
+    public Vector2 moveInput;
+    public float horizontal;
+    public float vertical;
+    public float moveSpeed = 20;
 
     private void Start()
     {
-        player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
-        hit_collider = GetComponentInChildren<PlayerHitCollider>();
+        player = GetComponent<Player>();
+        anim = GetComponent<Animator>();
     }
- 
+
+
+    // Update is called once per frame
     void Update()
     {
+        if(player.prohibitAllActions)
+        {
+            return;
+        }
+
+
         Movement();
         Sword_Rotation();
         SwordAttack();
-        
-
     }
     void Movement()
     {
-        if(can_Input)
+        // Return if player cant move
+        if(!player.canMove)
         {
-            horizontal = Input.GetAxisRaw("Horizontal");
-            vertical = Input.GetAxisRaw("Vertical");
-            moveInput = new Vector2(horizontal, vertical);
-            if (horizontal != 0 || vertical != 0)
-            {
-                rb.AddForce(moveInput * moveSpeed);
-                animBody.SetBool("isMoving", true);
-            }
-            else
-            {
-                animBody.SetBool("isMoving", false);
-            }
+            return;
         }
-        
-    }
 
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+
+        moveInput.x = horizontal;
+        moveInput.y = vertical;
+
+        if (horizontal != 0 || vertical != 0)
+        {
+            rb.AddForce(moveInput* moveSpeed);
+        }
+    }
     void Sword_Rotation()
     {
-
-        theCam.transform.position = new Vector3(transform.position.x, transform.position.y, -8f);
-
-        if (inAttack == false)
+        if(player.inAttack == false)
         {
             Vector3 mousePos = Input.mousePosition;
-            Vector3 screenPoint = theCam.WorldToScreenPoint(transform.localPosition);
+            Vector3 screenPoint = player.theCam.WorldToScreenPoint(transform.localPosition);
             if (mousePos.x < screenPoint.x)
             {
                 player.transform.localScale = new Vector3(-1f, 1f, 1f);
@@ -84,18 +80,15 @@ public class PlayerController : MonoBehaviour
 
             swordArm.rotation = Quaternion.Euler(0, 0, angle);
         }
-
-        
     }
     void SwordAttack()
     {
-        if (Input.GetMouseButton(0) && inAttack == false)
+        if (Input.GetMouseButtonDown(0))
         {
-            inAttack = true;
-            swordArmAnimator.SetTrigger("isClicked");
-            trail_renderer.enabled = true;
-            hit_collider.player_hit_collider.enabled = true;
+            player.inAttack = true;
+            anim.SetTrigger("Attack");
+            swordCollider.enabled = true;
+            trailObject.SetActive(true);
         }
     }
-
 }

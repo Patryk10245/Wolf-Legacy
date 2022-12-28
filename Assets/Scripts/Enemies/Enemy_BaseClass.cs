@@ -1,90 +1,175 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
+using System.Collections.Generic;
+
+public enum ENUM_EnemyState
+{
+    idle,
+    chasing,
+    attacking,
+    dying
+}
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(Enemy_Stats))]
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Stop_Rotation))]
+[RequireComponent(typeof(Enemy_Stats))]
 public abstract class Enemy_BaseClass : MonoBehaviour
 {
-    [SerializeField]protected Transform move_target;
-    protected Vector3 moveDirection;
+    [Header("Scene Reference")]
+    [SerializeField] protected Player move_target;
+    [SerializeField] protected Vector3 moveDirection;
+    //[SerializeField] protected Player chase_target;
 
     [Header("Specifics")]
     [SerializeField] protected float move_Speed = 5f;
     [SerializeField] public float attack_Distance = 1f;
-    public float distance_To_Player;
+    [SerializeField] public float distance_To_Player;
+    [Tooltip("Should be higher by at least 1 than detection radius")]
+    [SerializeField] public float chasePlayerDistance = 8;
+
     [SerializeField] protected float delay_Between_Attacks = 3f;
     protected float attack_Timer;
     protected bool refresh_Attack_Timer;
 
-    [Header("State")]
+    [Header("States")]
+    public ENUM_EnemyState currentEnemyState;
+    [SerializeField] protected bool is_Attacking;
+    [SerializeField] protected bool is_Moving;
     public bool is_Spawned;
     public bool is_dying;
-    protected bool is_Attacking;
-    protected bool is_Moving;
 
     [Space(10)]
-    [SerializeField] int minGoldOnDeath;
-    [SerializeField] int maxGoldOnDeath;
-     
-    protected Animator anim;
-    protected SpriteRenderer theBody;
-    protected Rigidbody2D rb;
-    [HideInInspector] public NavMeshAgent agent;
+    [SerializeField] int min_Gold_OnDeath = 1;
+    [SerializeField] int max_Gold_OnDeath = 1;
 
-    [Space(15)]
-    [HideInInspector] public Enemy_Stats stats;
-    [Tooltip("Child object with trigger collider")]
-    public Enemy_Player_Detection player_Detection;
+    [Header("Inside Reference")]
+    [SerializeField] protected Animator anim;
+    [SerializeField] protected SpriteRenderer theBody;
+    [SerializeField] protected Rigidbody2D rb;
+    [SerializeField] public NavMeshAgent agent;
+    public Enemy_Stats stats;
 
-    // Boss bedzie posiadal bardziej skomplikowany skrypt, wiec wymagane jest rozdzielenie
-    public abstract void SetMoveTarget(Player target);
-    public Transform GetMoveTarget()
+    public void SetMoveTarget(Player player)
     {
-        return move_target;
+        move_target = player;
     }
-
-
-    protected void CheckDistanceToPlayer()
+    public void TakeDamage(float val)
     {
-        distance_To_Player = Vector3.Distance(transform.position, move_target.transform.position);
-    }
-    protected abstract void AttackPlayer();
-    public abstract void TakeDamage(float val);
-    protected void RefreshAttackTimer()
-    {
-        attack_Timer += Time.deltaTime;
-        if (attack_Timer > delay_Between_Attacks)
+        stats.currentHealth -= val;
+        if(stats.currentHealth <= 0)
         {
-            attack_Timer = 0;
-            refresh_Attack_Timer = false;
+            is_dying = true;
+            currentEnemyState = ENUM_EnemyState.dying;
+            ApplyAnimation();
         }
     }
-    public void PlayDeathAnimation()
+    protected void RefreshAttack()
     {
-        is_dying = true;
-        anim.SetTrigger("isDying");
+        if(refresh_Attack_Timer == true)
+        {
+            attack_Timer += Time.deltaTime;
+            if(attack_Timer >= delay_Between_Attacks)
+                {
+                attack_Timer = 0;
+                refresh_Attack_Timer = false;
+            }
+
+        }
     }
-    public void AnimEvent_Death()
+
+    protected void CheckDistanceToPlayers()
     {
-        Death();
+        // Variables to store closest player
+        distance_To_Player = Vector2.Distance(move_target.transform.position, transform.position);
+
+        float smallest_distance = distance_To_Player;
+        Player closest_player = move_target;
+        // Deciding on who is closer
+        foreach(Player player in Player_Manager.ins.playerList)
+        {
+            float distance = Vector2.Distance(player.transform.position, transform.position);
+            if(distance < smallest_distance)
+            {
+                smallest_distance = distance;
+                closest_player = player;
+            }
+        }
+
+        // If closest player is closer, choose to chase him
+        if(distance_To_Player >= smallest_distance -1)
+        {
+            //Debug.Log("Closest player");
+            move_target = closest_player;
+            distance_To_Player = smallest_distance;
+            //Debug.Log("closest player  = " + closest_player);
+            //Debug.Log("smallest distance = " + smallest_distance);
+        }
+
+        //Debug.Log("Distance to player = " + distance_To_Player);
+        // Player too far. Abort chase
+        if (distance_To_Player > chasePlayerDistance)
+        {
+            //Debug.Log("Distance too small");
+            move_target = null;
+            agent.SetDestination(transform.position);
+        }
     }
+
+    protected void ApplyAnimation()
+    {
+        switch (currentEnemyState)
+        {
+            case ENUM_EnemyState.idle:
+                anim.SetTrigger("isIdle");
+                //anim.SetBool("isIdle", true);
+                //anim.SetBool("isChasing",false);
+                //anim.SetBool("isAttacking",false);
+                //anim.SetBool("isDying",false);
+                break;
+            case ENUM_EnemyState.chasing:
+                anim.SetTrigger("isChasing");
+                //anim.SetBool("isIdle", false);
+                //anim.SetBool("isChasing", true);
+                //anim.SetBool("isAttacking", false);
+                //anim.SetBool("isDying", false);
+                break;
+            case ENUM_EnemyState.attacking:
+                anim.SetTrigger("isAttacking");
+                is_Attacking = true;
+                //anim.SetBool("isIdle", false);
+                //anim.SetBool("isChasing", false);
+                //anim.SetBool("isAttacking", true);
+                //anim.SetBool("isDying", false);
+                break;
+            case ENUM_EnemyState.dying:
+                anim.SetTrigger("isDying");
+                //anim.SetBool("isIdle", false);
+                //anim.SetBool("isChasing", false);
+                //anim.SetBool("isAttacking", false);
+                //anim.SetBool("isDying", true);
+                break;
+        }
+
+    }
+
+    public abstract void MeleeAttack_Action();
     public void Death()
     {
-        if (is_Spawned == false)
-        {
-            int rand = Random.Range(minGoldOnDeath, maxGoldOnDeath);
-            ScoreTable.ins.AddGold(rand);
-        }
-        else
-        {
-            GetComponentInParent<Enemy_Spawner>().RemoveMe(this);
-        }
+        Debug.LogWarning("Smierc przeciwnika nie skonczona");
+        // dac zloto jezeli trzeba
+        ScoreTable.ins.AddKill();
 
-        AI_Manager.ins.RemoveFromChasing(this);
-        Destroy(gameObject);
-
+    }
+    protected void ChangeState(ENUM_EnemyState new_state)
+    {
+        if (currentEnemyState != new_state)
+        {
+            Debug.Log("Changing State to " + new_state.ToString()) ;
+            currentEnemyState = new_state;
+            ApplyAnimation();
+        }
     }
 }

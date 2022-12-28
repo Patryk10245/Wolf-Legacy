@@ -3,26 +3,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(PlayerStats))]
 public class Player : MonoBehaviour
 {
-    // W razie potrzeby, statyczna referencja do gracza
-    public static Player ins;
-    public void Reference()
-    {
-        ins = this;
-    }
-
     public PlayerController controller;
     public PlayerStats stats;
+    public Camera theCam;
     
+
+    public int id;
+
+    public bool prohibitAllActions;
+    public bool canMove;
+    public bool inAttack;
+    public bool canRotateSword;
+
 
     private void Start()
     {
-        Reference();
+        controller = GetComponent<PlayerController>();
+        stats = GetComponent<PlayerStats>();
     }
 
     public void TakeDamage(float val)
     {
         stats.TakeDamage(val);
+    }
+
+    public void KnockBack(Vector3 force)
+    {
+        controller.rb.AddForce(force);
+    }
+    void CameraFollow()
+    {
+        theCam.transform.position = new Vector3(transform.position.x, transform.position.y, -8f);
+    }
+    private void Update()
+    {
+        CameraFollow();
     }
 }

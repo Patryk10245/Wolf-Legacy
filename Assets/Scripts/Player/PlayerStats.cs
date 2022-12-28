@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] float maxHealth = 5;
-    [SerializeField] float currentHealth = 5;
-    public float damageToEnemies = 1;
-    public float currentEnergy = 40;
-    float maxEnergy = 40;
-    [SerializeField] float energyRegenerationAmount = 1;
-    float energyRegenTimer;
+    public float maxHealth;
+    public float currentHealth;
+    [Space(5)]
+    public float maxEnergy;
+    public float currentEnergy;
+    public float energyRegenerationAmount = 1;
+    [Space(5)]
+    public float damage;
+    float timer;
 
     public void TakeDamage(float val)
     {
         currentHealth -= val;
-        //Debug.Log("Taking Damage, Health = " + health);
 
         if(currentHealth <= 0)
         {
@@ -25,17 +26,20 @@ public class PlayerStats : MonoBehaviour
     public void ModifyEnergy(float val)
     {
         currentEnergy += val;
+        if(currentEnergy > maxEnergy)
+        {
+            currentEnergy = maxEnergy;
+        }
     }
     void EnergyRegeneration()
     {
-        energyRegenTimer += Time.deltaTime;
-        if(energyRegenTimer >= 1)
+        timer += Time.deltaTime;
+        if(timer >= 1)
         {
-            energyRegenTimer -= 1;
+            timer -= 1;
             ModifyEnergy(energyRegenerationAmount);
         }
     }
-
     private void Update()
     {
         EnergyRegeneration();

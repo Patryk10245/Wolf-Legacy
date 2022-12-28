@@ -1,32 +1,23 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy_Stats : MonoBehaviour
 {
-    Enemy_BaseClass enemy;
-    [SerializeField] float health_Max;
-    [SerializeField] float health;
-    [SerializeField] float damage;
-    [SerializeField] GameObject hitEffect;    
+    public float maxHealth;
+    public float currentHealth;
+    public float damage;
 
-    public float Damage { get => damage; set => damage = value; }
-
-    public void TakeDamage(float val)
+    
+    // Start is called before the first frame update
+    void Start()
     {
-        //Debug.Log("Take Damage");
-        health -= val;
-        Instantiate(hitEffect, transform.position, transform.rotation);
-        if(health <= 0)
-        {
-            
-            enemy.PlayDeathAnimation();
-            //Debug.LogWarning("Przeciwnik umiera");
-        }
-    }
-    private void Start()
-    {
-        enemy = GetComponent<Enemy_BaseClass>();
+        
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

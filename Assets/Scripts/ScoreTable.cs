@@ -10,12 +10,13 @@ public class ScoreTable : MonoBehaviour
         ins = this;
     }
 
-    public int currentGold;
-    public int killed0Enemies;
+    public int current_Gold;
+    public int kills;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Reference();
+        DontDestroyOnLoad(this);
     }
 
     // Update is called once per frame
@@ -26,6 +27,10 @@ public class ScoreTable : MonoBehaviour
 
     public void AddGold(int val)
     {
-        currentGold += val;
+        current_Gold += val;
+    }
+    public void AddKill()
+    {
+        kills++;
     }
 }
