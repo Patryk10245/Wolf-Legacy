@@ -8,16 +8,12 @@ public class Enemy_Stats : MonoBehaviour
     public float currentHealth;
     public float damage;
 
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject hitEffect;
 
-    // Update is called once per frame
-    void Update()
+
+    public void TakeDamage(float val)
     {
-        
+        currentHealth -= val;
+        Instantiate(hitEffect, transform.position, transform.rotation);
     }
 }

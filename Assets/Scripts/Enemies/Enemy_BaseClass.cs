@@ -58,7 +58,7 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     }
     public void TakeDamage(float val)
     {
-        stats.currentHealth -= val;
+        stats.TakeDamage(val);
         if(stats.currentHealth <= 0)
         {
             is_dying = true;
