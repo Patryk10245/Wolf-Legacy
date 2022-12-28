@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     
     public Transform swordArm;
     public Animator anim;
+    public Animator swordAnim;
     public BoxCollider2D swordCollider;
     public GameObject trailObject;
 
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             player.inAttack = true;
-            anim.SetTrigger("Attack");
+            swordAnim.SetTrigger("isClicked");
             swordCollider.enabled = true;
             trailObject.SetActive(true);
         }

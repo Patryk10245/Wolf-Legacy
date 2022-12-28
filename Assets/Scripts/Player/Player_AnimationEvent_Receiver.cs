@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_AnimationEvent_Receiver : MonoBehaviour
 {
     public Player player;
-    public void EVENT_AttackAnimationEnd()
+    public void animEndAttack()
     {
         player.inAttack = false;
         player.controller.swordCollider.enabled = false;
