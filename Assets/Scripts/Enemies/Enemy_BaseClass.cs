@@ -166,6 +166,11 @@ public abstract class Enemy_BaseClass : MonoBehaviour
         {
             int random_gold = Random.Range(min_Gold_OnDeath, max_Gold_OnDeath);
             ScoreTable.ins.AddGold(random_gold);
+            
+        }
+        else
+        {
+            GetComponentInParent<Enemy_Spawner>().RemoveMe(this);
         }
 
         Destroy(gameObject);

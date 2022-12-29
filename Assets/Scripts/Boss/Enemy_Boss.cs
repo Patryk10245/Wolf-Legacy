@@ -251,6 +251,7 @@ public class Enemy_Boss : Enemy_BaseClass
         {
             case ENUM_current_state.preparation:
                 Vector3 random_spot = new Vector3(Random.Range(arenaBounds.x, arenaBounds.y), Random.Range(arenaBounds.z, arenaBounds.w),transform.position.z);
+                Debug.Log("random spot = " + random_spot);
                 agent.SetDestination(random_spot);
                 currentActionState = ENUM_current_state.working;
                 anim.SetTrigger("isMoving");
@@ -363,6 +364,7 @@ public class Enemy_Boss : Enemy_BaseClass
                     agent.acceleration /= speedModifier;
                     currentActionState = ENUM_current_state.ready_to_exit;
                     is_rushing = false;
+                    agent.SetDestination(transform.position);
                 }
                 break;
             case ENUM_current_state.ready_to_exit:

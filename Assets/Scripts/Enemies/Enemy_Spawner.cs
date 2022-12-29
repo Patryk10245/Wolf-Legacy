@@ -4,28 +4,29 @@ using UnityEngine;
 public class Enemy_Spawner : MonoBehaviour
 {
     [Header("Referencje Do Zewnetrznych")]
-    [SerializeField] GameObject enemy_prefab;
-    [SerializeField] Transform enemy_spawning_spot;
+    [SerializeField] GameObject enemyPrefab;
+    [SerializeField] Transform enemySpawningPoint;
 
     [Header("Dane Wewnetrzne")]
     [SerializeField] float timer;
-    [SerializeField] float time_between_enemy_spawning = 5f;
-    [SerializeField] float max_number_of_enemies = 5f;
+    [SerializeField] float TimeBetweenEnemySpawning = 5f;
+    [SerializeField] float maxNumberOfEnemies = 5f;
+    [SerializeField] float currentHealth;
 
     [Space(15)]
-    [SerializeField] List<Enemy_BaseClass> list_of_created_enemies;
+    [SerializeField] List<Enemy_BaseClass> listOfCreatedEnemies;
 
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= time_between_enemy_spawning)
+        if (timer >= TimeBetweenEnemySpawning)
         {
-            timer -= time_between_enemy_spawning;
+            timer -= TimeBetweenEnemySpawning;
 
             // Jesli limit przeciwnikow nie jest przekroczony, spawnujemy nowego przeciwnika
-            if (list_of_created_enemies.Count < max_number_of_enemies)
+            if (listOfCreatedEnemies.Count < maxNumberOfEnemies)
             {
                 InstantiateEnemy();
             }
@@ -37,17 +38,27 @@ public class Enemy_Spawner : MonoBehaviour
     {
         // Referencja do stworzonego przeciwnika
         GameObject temp_GO;
-        temp_GO = Instantiate(enemy_prefab);
-        temp_GO.transform.position = enemy_spawning_spot.position;
-        temp_GO.transform.SetParent(enemy_spawning_spot);
+        temp_GO = Instantiate(enemyPrefab, enemySpawningPoint.position , Quaternion.Euler(0,0,0), transform);
+        temp_GO.transform.position = enemySpawningPoint.position;
+        temp_GO.transform.SetParent(transform);
         // Dodanie przeciwnika do listy w spawnerze
         Enemy_BaseClass enemy = temp_GO.GetComponent<Enemy_BaseClass>();
-        list_of_created_enemies.Add(enemy);
+        listOfCreatedEnemies.Add(enemy);
         enemy.is_Spawned = true;
         enemy.agent.SetDestination(enemy.transform.position + Vector3.one);
     }
     public void RemoveMe(Enemy_BaseClass enemy)
     {
-        list_of_created_enemies.Remove(enemy);
+        listOfCreatedEnemies.Remove(enemy);
+        
+    }
+
+    public void TakeDamage(float val)
+    {
+        currentHealth -= val;
+        if(currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
