@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8909031238140290584}
   - component: {fileID: 5133253605473062236}
   - component: {fileID: 1640311556841395499}
+  - component: {fileID: 7868530939332003174}
   m_Layer: 0
   m_Name: Player Prefab
   m_TagString: Player
@@ -194,6 +195,23 @@ MonoBehaviour:
   horizontal: 0
   vertical: 0
   moveSpeed: 80
+--- !u!114 &7868530939332003174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909031238140290563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b23259e6e6079479587a1461dc780c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8909031238140290588}
+  dashForce: 4000
+  dashRechargeTime: 3
+  dashEnergyCost: 1
+  dashTime: 0.1
 --- !u!1 &8909031238170990673
 GameObject:
   m_ObjectHideFlags: 0

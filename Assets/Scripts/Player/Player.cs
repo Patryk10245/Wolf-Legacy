@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        controller = GetComponent<PlayerController>();
+        //controller = GetComponent<PlayerController>();
         stats = GetComponent<PlayerStats>();
     }
 
@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
 
     public void KnockBack(Vector3 force)
     {
+        Debug.Log("Knockback");
+        //controller.rb.AddForce(force);
         controller.rb.AddForce(force);
     }
     void CameraFollow()
