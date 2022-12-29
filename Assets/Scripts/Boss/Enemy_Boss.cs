@@ -410,4 +410,9 @@ public class Enemy_Boss : Enemy_BaseClass
     {
         // UNUSED
     }
+
+    public override void RangedAttack_Action()
+    {
+        // UNUSED
+    }
 }

@@ -156,6 +156,7 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     }
 
     public abstract void MeleeAttack_Action();
+    public abstract void RangedAttack_Action();
     public void Death()
     {
         //Debug.LogWarning("Smierc przeciwnika nie skonczona");

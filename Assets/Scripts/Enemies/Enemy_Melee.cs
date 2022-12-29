@@ -90,4 +90,9 @@ public class Enemy_Melee : Enemy_BaseClass
         rb.gravityScale = 0;
         agent.radius = obstacle_avoidance_radius;
     }
+
+    public override void RangedAttack_Action()
+    {
+        // UNUSED
+    }
 }
