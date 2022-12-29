@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public PlayerController controller;
     public PlayerStats stats;
     public Camera theCam;
+
+    public Ability_1 abilityBasic;
     
 
     public int id;
@@ -38,7 +40,7 @@ public class Player : MonoBehaviour
     }
     void CameraFollow()
     {
-        theCam.transform.position = new Vector3(transform.position.x, transform.position.y, -8f);
+        //theCam.transform.position = new Vector3(transform.position.x, transform.position.y, -8f);
     }
     private void Update()
     {
