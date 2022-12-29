@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player_Controller_GamePad : PlayerController
 {
     public Vector3 mousePos;
+
     protected override void Movement()
     {
         // Return if player cant move
@@ -33,14 +34,17 @@ public class Player_Controller_GamePad : PlayerController
         float horizontal_mouse;
         float vertical_mouse;
 
+
         horizontal_mouse = Input.GetAxisRaw("Horizontal2 J1");
         vertical_mouse = Input.GetAxisRaw("Vertical2 J1");
+
 
         mousePos = Vector3.zero;
         mousePos.x += horizontal_mouse;
         mousePos.y += vertical_mouse;
 
-        Vector3 screenPoint = swordArm.localPosition;
+        //Vector3 screenPoint = swordArm.localPosition;
+        Vector3 screenPoint = Vector3.zero;
 
         if (mousePos.x < 0)
         {
@@ -58,11 +62,13 @@ public class Player_Controller_GamePad : PlayerController
         Vector2 offset = new Vector2(horizontal_mouse - screenPoint.x, vertical_mouse - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
+        /*
         // Fixes the issue with broken joysticks where they stick slightly to one side
         if ((mousePos.x > -0.1f && mousePos.x < 0.1f) && (mousePos.y > -0.1f && mousePos.y < 0.1f))
         {
             angle = 0;
         }
+        */
 
         swordArm.rotation = Quaternion.Euler(0, 0, angle);
 
