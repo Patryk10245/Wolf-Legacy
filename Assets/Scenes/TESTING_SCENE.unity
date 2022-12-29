@@ -279,6 +279,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8909031239192196197, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909031239192196199, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
 --- !u!114 &16264223 stripped
@@ -302,6 +310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 36021229}
   - component: {fileID: 36021228}
+  - component: {fileID: 36021230}
   m_Layer: 0
   m_Name: Boss Area
   m_TagString: Untagged
@@ -322,8 +331,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collidersBlockingExit: {fileID: 1763084188}
-  placeToTeleportPlayersTo: {fileID: 0}
-  boss: {fileID: 0}
+  placeToTeleportPlayersTo: {fileID: 91188528}
+  boss: {fileID: 1629793990}
 --- !u!4 &36021229
 Transform:
   m_ObjectHideFlags: 0
@@ -336,12 +345,38 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1629793989}
   - {fileID: 1763084190}
   - {fileID: 91188529}
-  - {fileID: 1629793989}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &36021230
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36021227}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.29860687, y: -0.004790306}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 37.611206, y: 27.396399}
+  m_EdgeRadius: 0
 --- !u!1 &77490686
 GameObject:
   m_ObjectHideFlags: 0
@@ -13473,7 +13508,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 36021229}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &96206824
 PrefabInstance:
@@ -80414,14 +80449,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629793988}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.98, y: 8.43, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.16, y: 8.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2089521491}
   m_Father: {fileID: 36021229}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1629793990
 MonoBehaviour:
@@ -80457,15 +80492,15 @@ MonoBehaviour:
   bossState: 0
   currentActionState: 3
   changeTargetTime: 15
-  dashForce: 0
-  dashRechargeTime: 0
-  arenaBounds: {x: -16, y: 17, z: 8, w: -10}
+  dashForce: 1500
+  dashRechargeTime: 15
+  arenaBounds: {x: 30, y: 63, z: 34, w: 16}
   playerPos: {x: 0, y: 0, z: 0}
-  fallAreaRadius: 0
-  knockBackForce: 0
-  jumpDamage: 0
-  speedModifier: 0
-  rushDamage: 0
+  fallAreaRadius: 3
+  knockBackForce: 2500
+  jumpDamage: 6
+  speedModifier: 5
+  rushDamage: 10
 --- !u!114 &1629793991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80638,7 +80673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1763084189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -80678,7 +80713,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 36021229}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1787665510
 PrefabInstance:
