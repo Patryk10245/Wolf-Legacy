@@ -72,6 +72,15 @@ public class PlayerController_KeyboardMouse : PlayerController
         Movement();
         Sword_Rotation();
         SwordAttack();
+        Ability1Use();
+    }
+
+    void Ability1Use()
+    {
+        if (Input.GetKeyDown("left shift"))
+        {
+            player.abilityBasic.Use();
+        }
     }
 }
 

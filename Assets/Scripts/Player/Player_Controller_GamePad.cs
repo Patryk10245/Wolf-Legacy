@@ -91,5 +91,14 @@ public class Player_Controller_GamePad : PlayerController
         Movement();
         Sword_Rotation();
         SwordAttack();
+        Ability1Use();
+    }
+
+    void Ability1Use()
+    {
+        if(Input.GetButtonDown("Dash J1"))
+        {
+            player.abilityBasic.Use();
+        }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_DashSkill : MonoBehaviour
+public class Player_DashSkill : Ability_1
 {
     public Player player;
     public float dashForce = 500;
@@ -24,10 +24,6 @@ public class Player_DashSkill : MonoBehaviour
                 player.KnockBack(player.controller.moveInput * dashForce);
             }
         }
-        if(Input.GetKeyDown("l"))
-        {
-            Dash();
-        }
     }
     void Dash()
     {
@@ -41,4 +37,8 @@ public class Player_DashSkill : MonoBehaviour
         }
     }
 
+    public override void Use()
+    {
+        Dash();
+    }
 }

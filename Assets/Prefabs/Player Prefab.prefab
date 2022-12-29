@@ -105,6 +105,7 @@ MonoBehaviour:
   controller: {fileID: 1640311556841395499}
   stats: {fileID: 8909031238140290589}
   theCam: {fileID: 0}
+  abilityBasic: {fileID: 7868530939332003174}
   id: 0
   prohibitAllActions: 0
   canMove: 1
