@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public PlayerController controller;
     public PlayerStats stats;
     public Camera theCam;
+    public Player_Ui_Updater ui_updater;
 
     public Ability_1 abilityBasic;
     
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(float val)
     {
         stats.TakeDamage(val);
+        ui_updater.UpdateHealth();
     }
 
     public void KnockBack(Vector3 force)
