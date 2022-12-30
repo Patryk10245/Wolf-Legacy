@@ -71,7 +71,16 @@ public class Enemy_Melee : Enemy_BaseClass
         }
     }
 
-    
+    public override void TakeDamage(float val)
+    {
+        stats.TakeDamage(val);
+        if (stats.currentHealth <= 0)
+        {
+            is_dying = true;
+            currentEnemyState = ENUM_EnemyState.dying;
+            ApplyAnimation();
+        }
+    }
     
 
 

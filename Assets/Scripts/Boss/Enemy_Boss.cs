@@ -74,6 +74,16 @@ public class Enemy_Boss : Enemy_BaseClass
 
     // ====================================================================== //
 
+    public override void TakeDamage(float val)
+    {
+        stats.TakeDamage(val);
+        if (stats.currentHealth <= 0)
+        {
+            is_dying = true;
+            currentEnemyState = ENUM_EnemyState.dying;
+            ApplyAnimation();
+        }
+    }
 
 
     void Update()
@@ -233,7 +243,7 @@ public class Enemy_Boss : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                Debug.Log("Idle State");
+                //Debug.Log("Idle State");
                 idle_time = Random.Range(2, 5);
                 idle_timer = 0;
                 can_move = false;
@@ -259,7 +269,7 @@ public class Enemy_Boss : Enemy_BaseClass
             case ENUM_current_state.ready_to_exit:
                 break;
             default:
-                Debug.LogError("ERROR. UNKOWN ACTION STATE");
+                //Debug.LogError("ERROR. UNKOWN ACTION STATE");
                     break;
         }
         
@@ -269,7 +279,7 @@ public class Enemy_Boss : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                Debug.Log("BEGIN Moving State");
+                //Debug.Log("BEGIN Moving State");
                 Vector3 random_spot = new Vector3(Random.Range(arenaBounds.x, arenaBounds.y), Random.Range(arenaBounds.z, arenaBounds.w),transform.position.z);
                 //Debug.Log("random spot = " + random_spot);
                 agent.SetDestination(random_spot);
@@ -288,7 +298,7 @@ public class Enemy_Boss : Enemy_BaseClass
                 anim.SetTrigger("exitAnimation");
                 agent.SetDestination(transform.position);
                 currentActionState = ENUM_current_state.ready_to_exit;
-                Debug.Log("END Moving State");
+                //Debug.Log("END Moving State");
                 last_action = 3;
                 break;
             case ENUM_current_state.ready_to_exit:
@@ -333,7 +343,7 @@ public class Enemy_Boss : Enemy_BaseClass
 
                 if(action_firstLoop == true)
                 {
-                    Debug.Log("Jump State");
+                    //Debug.Log("Jump State");
                     playerPos = move_target.gameObject.transform.position + new Vector3(0.5f, 0.5f, 0);
                     anim.SetTrigger("isJumping");
                     action_firstLoop = false;
@@ -375,9 +385,9 @@ public class Enemy_Boss : Enemy_BaseClass
                         }
                     }
                 }
-                Debug.LogWarning("SCREEN SHAKE");
+                //Debug.LogWarning("SCREEN SHAKE");
                 action_firstLoop = true;
-                Debug.Log("END Jump State");
+                //Debug.Log("END Jump State");
                 last_action = 2;
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
@@ -392,7 +402,7 @@ public class Enemy_Boss : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                Debug.Log("Rush State");
+                //Debug.Log("Rush State");
                 playerPos = move_target.transform.position;
                 anim.SetTrigger("isRushing");
                 currentActionState = ENUM_current_state.working;
@@ -413,7 +423,7 @@ public class Enemy_Boss : Enemy_BaseClass
                     is_rushing = false;
                     agent.velocity = Vector3.zero;
                     currentActionState = ENUM_current_state.ready_to_exit;
-                    Debug.Log("END Rush State");
+                    //Debug.Log("END Rush State");
                     last_action = 1;
                 }
                 break;

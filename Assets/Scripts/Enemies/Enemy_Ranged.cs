@@ -95,5 +95,15 @@ public class Enemy_Ranged : Enemy_BaseClass
         projectile.speed = projectile_Speed;
         projectile.damage = stats.damage;
     }
+    public override void TakeDamage(float val)
+    {
+        stats.TakeDamage(val);
+        if (stats.currentHealth <= 0)
+        {
+            is_dying = true;
+            currentEnemyState = ENUM_EnemyState.dying;
+            ApplyAnimation();
+        }
+    }
 
 }
