@@ -237,11 +237,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909031238140290560, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.19
+      value: 22.48
       objectReference: {fileID: 0}
     - target: {fileID: 8909031238140290560, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.61
+      value: 19.42
       objectReference: {fileID: 0}
     - target: {fileID: 8909031238140290560, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -361,7 +361,7 @@ Transform:
   - {fileID: 1763084190}
   - {fileID: 91188529}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &36021230
 BoxCollider2D:
@@ -13889,7 +13889,7 @@ Transform:
   m_Children:
   - {fileID: 463863896}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &270281958 stripped
 MonoBehaviour:
@@ -14661,10 +14661,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1600, y: 900}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -14812,8 +14812,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380, y: -245}
-  m_SizeDelta: {x: 128, y: 52}
+  m_AnchoredPosition: {x: -588, y: -380}
+  m_SizeDelta: {x: 192, y: 78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &701767039
 MonoBehaviour:
@@ -79292,21 +79292,25 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4783158888212072919, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 701767039}
     - target: {fileID: 5133253605473062236, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8909031238140290560, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8909031238140290560, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.36
+      value: 21.309998
       objectReference: {fileID: 0}
     - target: {fileID: 8909031238140290560, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.72
+      value: 21.310001
       objectReference: {fileID: 0}
     - target: {fileID: 8909031238140290560, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -79733,7 +79737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1102637173
 Transform:
   m_ObjectHideFlags: 0
@@ -81278,8 +81282,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -400, y: -245}
-  m_SizeDelta: {x: 184, y: 52}
+  m_AnchoredPosition: {x: -618, y: -380}
+  m_SizeDelta: {x: 276, y: 78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2129748623
 MonoBehaviour:
@@ -81326,6 +81330,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 36021229}
     m_Modifications:
+    - target: {fileID: 3244527964310266400, guid: 62b2384aac7d8654385d48f7adc2696d, type: 3}
+      propertyPath: speedModifier
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3244527964310266402, guid: 62b2384aac7d8654385d48f7adc2696d, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -81373,6 +81381,10 @@ PrefabInstance:
     - target: {fileID: 3244527964310266403, guid: 62b2384aac7d8654385d48f7adc2696d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244527964310266413, guid: 62b2384aac7d8654385d48f7adc2696d, type: 3}
+      propertyPath: m_LinearDrag
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3244527964522012085, guid: 62b2384aac7d8654385d48f7adc2696d, type: 3}
       propertyPath: m_LocalScale.x

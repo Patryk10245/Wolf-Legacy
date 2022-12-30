@@ -29,7 +29,9 @@ public class Enemy_Boss : Enemy_BaseClass
 {
     [Space(20)]
     [SerializeField] ENUM_BossState bossState;
-    [SerializeField] ENUM_current_state currentActionState = ENUM_current_state.ready_to_exit; 
+    int last_action;
+    [SerializeField] ENUM_current_state currentActionState = ENUM_current_state.ready_to_exit;
+    bool action_firstLoop = true;
     bool can_move;
     [SerializeField] float changeTargetTime = 15;
     float change_target_timer;
@@ -105,28 +107,37 @@ public class Enemy_Boss : Enemy_BaseClass
         // Decide randomly, which action should duck choose
         if(currentActionState == ENUM_current_state.ready_to_exit)
         {
-            int rand = Random.Range(0, 4);
-            switch (rand)
+            int rand;
+            do
             {
-                case 0:
-                    bossState = ENUM_BossState.idle;
-                    currentActionState = ENUM_current_state.preparation;
-                    break;
-                case 1:
-                    bossState = ENUM_BossState.attack_rushing;
-                    currentActionState = ENUM_current_state.preparation;
-                    break;
-                case 2:
-                    bossState = ENUM_BossState.attack_jumping;
-                    currentActionState = ENUM_current_state.preparation;
-                    break;
-                case 3:
-                    bossState = ENUM_BossState.moving;
-                    currentActionState = ENUM_current_state.preparation;
-                    break;
-                default:
-                    break;
+                rand = Random.Range(0, 4);
+                Debug.Log("last = " + last_action + "| current = " + rand);
+
+                switch (rand)
+                {
+                    case 0:
+                        bossState = ENUM_BossState.idle;
+                        currentActionState = ENUM_current_state.preparation;
+                        break;
+                    case 1:
+                        bossState = ENUM_BossState.attack_rushing;
+                        currentActionState = ENUM_current_state.preparation;
+                        break;
+                    case 2:
+                        bossState = ENUM_BossState.attack_jumping;
+                        currentActionState = ENUM_current_state.preparation;
+                        break;
+                    case 3:
+                        bossState = ENUM_BossState.moving;
+                        currentActionState = ENUM_current_state.preparation;
+                        break;
+                    default:
+                        break;
+                }
             }
+            while (rand == last_action);
+
+            
         }
 
         // Do current state              *Quack *Quack
@@ -158,6 +169,8 @@ public class Enemy_Boss : Enemy_BaseClass
                 break;
         }
 
+        
+
     }
     void ChangeTarget()
     {
@@ -178,18 +191,22 @@ public class Enemy_Boss : Enemy_BaseClass
 
     public void EVENT_Preparation()
     {
+        Debug.Log("Event Preparation");
         currentActionState = ENUM_current_state.preparation;
     }
     public void EVENT_Working()
     {
+        Debug.Log("Event Working");
         currentActionState = ENUM_current_state.working;
     }
     public void EVENT_Finishing()
     {
+        Debug.Log("Event Finishing");
         currentActionState = ENUM_current_state.finishing;
     }
     public void EVENT_Exiting()
     {
+        Debug.Log("Event Exiting");
         currentActionState = ENUM_current_state.ready_to_exit;
     }
 
@@ -216,11 +233,12 @@ public class Enemy_Boss : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
+                Debug.Log("Idle State");
                 idle_time = Random.Range(2, 5);
                 idle_timer = 0;
                 can_move = false;
-                currentActionState = ENUM_current_state.working;
                 anim.SetTrigger("isIdle");
+                currentActionState = ENUM_current_state.working;
                 break;
 
             case ENUM_current_state.working:
@@ -235,6 +253,7 @@ public class Enemy_Boss : Enemy_BaseClass
             case ENUM_current_state.finishing:
                 can_move = true;
                 currentActionState = ENUM_current_state.ready_to_exit;
+                last_action = 0;
                 break;
 
             case ENUM_current_state.ready_to_exit:
@@ -250,11 +269,12 @@ public class Enemy_Boss : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
+                Debug.Log("BEGIN Moving State");
                 Vector3 random_spot = new Vector3(Random.Range(arenaBounds.x, arenaBounds.y), Random.Range(arenaBounds.z, arenaBounds.w),transform.position.z);
-                Debug.Log("random spot = " + random_spot);
+                //Debug.Log("random spot = " + random_spot);
                 agent.SetDestination(random_spot);
-                currentActionState = ENUM_current_state.working;
                 anim.SetTrigger("isMoving");
+                currentActionState = ENUM_current_state.working;
                 break;
             case ENUM_current_state.working:
                 //Debug.Log("agent dest = " + agent.destination);
@@ -265,7 +285,11 @@ public class Enemy_Boss : Enemy_BaseClass
                 }
                 break;
             case ENUM_current_state.finishing:
+                anim.SetTrigger("exitAnimation");
+                agent.SetDestination(transform.position);
                 currentActionState = ENUM_current_state.ready_to_exit;
+                Debug.Log("END Moving State");
+                last_action = 3;
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;
@@ -278,6 +302,7 @@ public class Enemy_Boss : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
+                Debug.Log("Dash State");
                 Vector2 direction_to_player = (move_target.transform.position - transform.position).normalized;
                 rb.AddForce(-direction_to_player * dashForce);
                 can_move = false;
@@ -288,7 +313,10 @@ public class Enemy_Boss : Enemy_BaseClass
             case ENUM_current_state.finishing:
                 can_move = true;
                 dash_WaitingForRecharge = true;
+                agent.SetDestination(transform.position);
+                agent.velocity = Vector3.zero;
                 currentActionState = ENUM_current_state.ready_to_exit;
+                Debug.Log("END Dash State");
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;
@@ -302,20 +330,33 @@ public class Enemy_Boss : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                playerPos = move_target.gameObject.transform.position;
-                anim.SetTrigger("isJumping");
-                can_move = false;
-                
-                // State changed via Animation
+
+                if(action_firstLoop == true)
+                {
+                    Debug.Log("Jump State");
+                    playerPos = move_target.gameObject.transform.position + new Vector3(0.5f, 0.5f, 0);
+                    anim.SetTrigger("isJumping");
+                    action_firstLoop = false;
+                }
                 break;
 
             case ENUM_current_state.working:
-                gameObject.transform.position = playerPos - new Vector3(0.1f,0.1f);
+
+                agent.SetDestination(playerPos);
+                //gameObject.transform.position = playerPos - new Vector3(0.1f,0.1f);
                 
 
-
+                if(Vector3.Distance(transform.position, playerPos) <= 1)
+                {
+                    if(action_firstLoop == false)
+                    {
+                        anim.SetTrigger("isLanding");
+                        action_firstLoop = true;
+                    }
+                }
                 break;
 
+                // Ustawione z animacji
             case ENUM_current_state.finishing:
                 RaycastHit2D[] hits = Physics2D.CircleCastAll(playerPos, fallAreaRadius, new Vector2(0.5f, 0.5f));
                 //Debug.Log("hits count = " + hits.Length);
@@ -334,6 +375,10 @@ public class Enemy_Boss : Enemy_BaseClass
                         }
                     }
                 }
+                Debug.LogWarning("SCREEN SHAKE");
+                action_firstLoop = true;
+                Debug.Log("END Jump State");
+                last_action = 2;
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
 
@@ -347,8 +392,10 @@ public class Enemy_Boss : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
+                Debug.Log("Rush State");
                 playerPos = move_target.transform.position;
                 anim.SetTrigger("isRushing");
+                currentActionState = ENUM_current_state.working;
                 break;
             case ENUM_current_state.working:
                 agent.SetDestination(playerPos);
@@ -362,9 +409,12 @@ public class Enemy_Boss : Enemy_BaseClass
                 {
                     agent.speed /= speedModifier;
                     agent.acceleration /= speedModifier;
-                    currentActionState = ENUM_current_state.ready_to_exit;
-                    is_rushing = false;
                     agent.SetDestination(transform.position);
+                    is_rushing = false;
+                    agent.velocity = Vector3.zero;
+                    currentActionState = ENUM_current_state.ready_to_exit;
+                    Debug.Log("END Rush State");
+                    last_action = 1;
                 }
                 break;
             case ENUM_current_state.ready_to_exit:
