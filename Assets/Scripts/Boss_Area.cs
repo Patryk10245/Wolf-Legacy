@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss_Area : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class Boss_Area : MonoBehaviour
     [SerializeField] GameObject placeToTeleportPlayersTo;
     [SerializeField] Enemy_Boss boss;
 
+    [SerializeField] GameObject bossHealthBar;
 
 
     void InitializeFightWithBoss()
@@ -16,6 +18,9 @@ public class Boss_Area : MonoBehaviour
         }
         collidersBlockingExit.SetActive(true);
         boss.SetMoveTarget(Player_Manager.ins.playerList[0]);
+        bossHealthBar.SetActive(true);
+
+
         
         // Teleport all players to area
         // Block all exits

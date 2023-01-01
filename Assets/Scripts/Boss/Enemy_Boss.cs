@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 
 public enum ENUM_BossState
@@ -28,6 +29,7 @@ public enum ENUM_current_state
 public class Enemy_Boss : Enemy_BaseClass
 {
     [Space(20)]
+    public Image healthBar;
     public ENUM_BossState bossState;
     int last_action;    
 
@@ -92,6 +94,7 @@ public class Enemy_Boss : Enemy_BaseClass
             currentEnemyState = ENUM_EnemyState.dying;
             ApplyAnimation();
         }
+        healthBar.fillAmount = stats.currentHealth / stats.maxHealth;
     }
 
 

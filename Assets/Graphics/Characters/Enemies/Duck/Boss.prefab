@@ -158,8 +158,8 @@ MonoBehaviour:
   is_Moving: 0
   is_Spawned: 0
   is_dying: 0
-  min_Gold_OnDeath: 1
-  max_Gold_OnDeath: 1
+  min_Gold_OnDeath: 300
+  max_Gold_OnDeath: 300
   anim: {fileID: 3244527964310266412}
   theBody: {fileID: 3244527964522012082}
   rb: {fileID: 3244527964310266413}
