@@ -41,7 +41,7 @@ public class Enemy_Boss : Enemy_BaseClass
     [SerializeField] float dashForce;
     [SerializeField] float dashRechargeTime;
     float dash_timer;
-    bool dash_WaitingForRecharge;
+    [SerializeField] bool dash_WaitingForRecharge;
 
     [Header("Idle Action")]
     [SerializeField] float minIdleTime = 1;
