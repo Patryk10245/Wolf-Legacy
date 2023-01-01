@@ -35,6 +35,7 @@ public class Enemy_Boss : Enemy_BaseClass
     bool can_move;
     [SerializeField] float changeTargetTime = 15;
     float change_target_timer;
+    Vector3 direction;
 
     [Header("Dash Action")]
     [SerializeField] float dashForce;
@@ -96,6 +97,7 @@ public class Enemy_Boss : Enemy_BaseClass
         }
 
         ChangeTarget();
+
         
 
         DashRefreshing();
@@ -181,7 +183,9 @@ public class Enemy_Boss : Enemy_BaseClass
                 break;
         }
 
-        
+
+
+        RotateTowardsWalkDirection();
 
     }
     void ChangeTarget()
@@ -198,6 +202,19 @@ public class Enemy_Boss : Enemy_BaseClass
             int rand = Random.Range(0, Player_Manager.ins.playerList.Count);
 
             move_target = Player_Manager.ins.playerList[rand];
+        }
+    }
+
+    void RotateTowardsWalkDirection()
+    {
+        direction = agent.destination - transform.position;
+        if(direction.x > 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if(direction.x < 0)
+        {
+            transform.localScale = Vector3.one;
         }
     }
 
