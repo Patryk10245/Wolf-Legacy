@@ -92,7 +92,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 16
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_target: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
-  move_Speed: 5
+  move_Speed: 7
   attack_Distance: 1
   distance_To_Player: 0
   chasePlayerDistance: 8
@@ -178,7 +178,7 @@ MonoBehaviour:
   fallAreaRadius: 3
   knockBackForce: 2500
   jumpDamage: 6
-  speedModifier: 5
+  speedModifier: 3
   rushDamage: 10
 --- !u!58 &1958520269597539360
 CircleCollider2D:

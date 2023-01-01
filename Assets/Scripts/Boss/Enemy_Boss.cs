@@ -28,11 +28,13 @@ public enum ENUM_current_state
 public class Enemy_Boss : Enemy_BaseClass
 {
     [Space(20)]
-    [SerializeField] ENUM_BossState bossState;
-    int last_action;
-    [SerializeField] ENUM_current_state currentActionState = ENUM_current_state.ready_to_exit;
+    public ENUM_BossState bossState;
+    int last_action;    
+
+    public ENUM_current_state currentActionState = ENUM_current_state.ready_to_exit;
     bool action_firstLoop = true;
     bool can_move;
+
     [SerializeField] float changeTargetTime = 15;
     float change_target_timer;
     Vector3 direction;
@@ -77,8 +79,12 @@ public class Enemy_Boss : Enemy_BaseClass
 
     // ====================================================================== //
 
-    public override void TakeDamage(float val)
+    public override void TakeDamage(float val, ENUM_AttackType attackType)
     {
+        if(bossState == ENUM_BossState.attack_jumping && attackType == ENUM_AttackType.melee)
+        {
+            return;
+        }
         stats.TakeDamage(val);
         if (stats.currentHealth <= 0)
         {
@@ -125,7 +131,7 @@ public class Enemy_Boss : Enemy_BaseClass
             do
             {
                 rand = Random.Range(0, 4);
-                Debug.Log("last = " + last_action + "| current = " + rand);
+                //Debug.Log("last = " + last_action + "| current = " + rand);
 
                 switch (rand)
                 {
@@ -220,22 +226,22 @@ public class Enemy_Boss : Enemy_BaseClass
 
     public void EVENT_Preparation()
     {
-        Debug.Log("Event Preparation");
+        //Debug.Log("Event Preparation");
         currentActionState = ENUM_current_state.preparation;
     }
     public void EVENT_Working()
     {
-        Debug.Log("Event Working");
+        //Debug.Log("Event Working");
         currentActionState = ENUM_current_state.working;
     }
     public void EVENT_Finishing()
     {
-        Debug.Log("Event Finishing");
+        //Debug.Log("Event Finishing");
         currentActionState = ENUM_current_state.finishing;
     }
     public void EVENT_Exiting()
     {
-        Debug.Log("Event Exiting");
+        //Debug.Log("Event Exiting");
         currentActionState = ENUM_current_state.ready_to_exit;
     }
 
@@ -496,4 +502,6 @@ public class Enemy_Boss : Enemy_BaseClass
     {
         // UNUSED
     }
+
+    
 }

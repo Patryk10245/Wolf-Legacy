@@ -71,7 +71,7 @@ public class Enemy_Melee : Enemy_BaseClass
         }
     }
 
-    public override void TakeDamage(float val)
+    public override void TakeDamage(float val, ENUM_AttackType attackType)
     {
         stats.TakeDamage(val);
         if (stats.currentHealth <= 0)

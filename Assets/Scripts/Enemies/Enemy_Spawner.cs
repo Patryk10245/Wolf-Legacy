@@ -53,7 +53,7 @@ public class Enemy_Spawner : MonoBehaviour
         
     }
 
-    public void TakeDamage(float val)
+    public void TakeDamage(float val, ENUM_AttackType attackType)
     {
         currentHealth -= val;
         if(currentHealth <= 0)

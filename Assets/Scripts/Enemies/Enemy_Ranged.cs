@@ -95,7 +95,7 @@ public class Enemy_Ranged : Enemy_BaseClass
         projectile.speed = projectile_Speed;
         projectile.damage = stats.damage;
     }
-    public override void TakeDamage(float val)
+    public override void TakeDamage(float val, ENUM_AttackType attackType)
     {
         stats.TakeDamage(val);
         if (stats.currentHealth <= 0)
