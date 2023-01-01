@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gracz: {fileID: 0}
-  agent: {fileID: 0}
+  agent: {fileID: 923329539989383322}
   follow: 0
 --- !u!114 &923329539989383320
 MonoBehaviour:
