@@ -45,10 +45,20 @@ public class PlayerController_GamePad : PlayerController
         horizontal_mouse = Input.GetAxisRaw("Horizontal2 J1");
         vertical_mouse = Input.GetAxisRaw("Vertical2 J1");
 
-
         mousePos = Vector3.zero;
         mousePos.x += horizontal_mouse;
         mousePos.y += vertical_mouse;
+
+        if(mousePos == Vector3.zero)
+        {
+            mousePos.x += horizontal;
+            mousePos.y += vertical;
+        }
+
+        if (mousePos == Vector3.zero)
+        {
+            return;
+        }
 
         //Vector3 screenPoint = swordArm.localPosition;
         Vector3 screenPoint = Vector3.zero;
@@ -58,7 +68,7 @@ public class PlayerController_GamePad : PlayerController
             transform.localScale = new Vector3(-1f, 1f, 1f);
             swordArm.localScale = new Vector3(-1f, -1f, 1f);
         }
-        else
+        else if(mousePos.x > 0)
         {
             transform.localScale = Vector3.one;
             transform.localScale = new Vector3(1f, 1f, 1f);
@@ -68,7 +78,7 @@ public class PlayerController_GamePad : PlayerController
         //Vector2 offset = new Vector2(horizontal_mouse - screenPoint.x, vertical_mouse - screenPoint.y);
         //float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
-        offset = new Vector2(horizontal_mouse - screenPoint.x, vertical_mouse - screenPoint.y);
+        offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
         angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
         /*

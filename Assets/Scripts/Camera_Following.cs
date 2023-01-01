@@ -13,6 +13,8 @@ public class Camera_Following : MonoBehaviour
     public bool smooth;
     public bool flat;
 
+    public bool singlePlayer;
+
     [Space(20)]
 
     public Vector3 middleOfPlayers;
@@ -40,6 +42,10 @@ public class Camera_Following : MonoBehaviour
 
     void Update()
     {
+        if(singlePlayer)
+        {
+            Single();
+        }
         if (smooth) Smoothed();
         if (flat) Flated();
     }
@@ -91,5 +97,13 @@ public class Camera_Following : MonoBehaviour
         }
 
         cam.transform.position = middleOfPlayers;
+    }
+
+    void Single()
+    {
+        Vector3 pos = Player_Manager.ins.playerList[0].transform.position;
+        pos.z = -10;
+        cam.transform.position = pos;
+        previous_pos = middleOfPlayers;
     }
 }
