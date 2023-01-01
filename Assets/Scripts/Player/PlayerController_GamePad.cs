@@ -4,6 +4,13 @@ public class PlayerController_GamePad : PlayerController
 {
     public Vector3 mousePos;
 
+    [Space(20)]
+    [Header("DEBUG")]
+    public float horizontal_mouse;
+    public float vertical_mouse;
+    public Vector2 offset;
+    public float angle;
+
     protected override void Movement()
     {
         // Return if player cant move
@@ -31,8 +38,8 @@ public class PlayerController_GamePad : PlayerController
     protected override void Sword_Rotation()
     {
 
-        float horizontal_mouse;
-        float vertical_mouse;
+        //float horizontal_mouse;
+        //float vertical_mouse;
 
 
         horizontal_mouse = Input.GetAxisRaw("Horizontal2 J1");
@@ -58,9 +65,11 @@ public class PlayerController_GamePad : PlayerController
             swordArm.localScale = Vector3.one;
         }
 
-        //Vector2 offset = new Vector2(horizontal_mouse - screenPoint.x, screenPoint.y - vertical_mouse);
-        Vector2 offset = new Vector2(horizontal_mouse - screenPoint.x, vertical_mouse - screenPoint.y);
-        float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+        //Vector2 offset = new Vector2(horizontal_mouse - screenPoint.x, vertical_mouse - screenPoint.y);
+        //float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+
+        offset = new Vector2(horizontal_mouse - screenPoint.x, vertical_mouse - screenPoint.y);
+        angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
         /*
         // Fixes the issue with broken joysticks where they stick slightly to one side

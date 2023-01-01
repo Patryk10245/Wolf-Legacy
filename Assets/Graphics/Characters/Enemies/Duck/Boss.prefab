@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3244527964310266401}
   - component: {fileID: 3244527964310266400}
   - component: {fileID: 1958520269597539360}
+  - component: {fileID: 2075728327385830615}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -165,6 +166,7 @@ MonoBehaviour:
   rb: {fileID: 3244527964310266413}
   agent: {fileID: 3244527964310266415}
   stats: {fileID: 3244527964310266401}
+  specialEffects: {fileID: 2075728327385830615}
   healthBar: {fileID: 0}
   bossState: 0
   currentActionState: 3
@@ -197,6 +199,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!114 &2075728327385830615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3244527964310266402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf45c5b66b74fc14898ed6aa9c9eaaab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpSlam: {fileID: 7257223873139291764, guid: e9da19f102faead4e8944da42ca417c2, type: 3}
+  rushSpeed: {fileID: 0}
 --- !u!1 &3244527964522012084
 GameObject:
   m_ObjectHideFlags: 0

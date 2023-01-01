@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Camera_Following : MonoBehaviour
 {
+    public static Camera_Following ins;
+    public void Reference()
+    {
+        ins = this;
+    }
+
     public bool smooth;
     public bool flat;
 
@@ -19,7 +25,19 @@ public class Camera_Following : MonoBehaviour
 
     public Vector3 velocity = Vector3.zero;
     public float smoothTime = 0.5f;
-    // Update is called once per frame
+
+
+
+    private void Start()
+    {
+        if(Camera_Following.ins == null)
+        {
+            Reference();
+            DontDestroyOnLoad(this);
+        }
+        
+    }
+
     void Update()
     {
         if (smooth) Smoothed();
@@ -40,7 +58,7 @@ public class Camera_Following : MonoBehaviour
 
         if (dist > max_dist)
         {
-            cam.orthographicSize = (dist / div_val);
+            cam.orthographicSize = (dist / div_val) ;
         }
         else
         {
@@ -65,11 +83,11 @@ public class Camera_Following : MonoBehaviour
 
         if (dist > max_dist)
         {
-            cam.orthographicSize = (dist / div_val);
+            cam.orthographicSize = (dist / div_val) + 4;
         }
         else
         {
-            cam.orthographicSize = 10;
+            cam.orthographicSize = 14;
         }
 
         cam.transform.position = middleOfPlayers;

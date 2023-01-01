@@ -29,6 +29,7 @@ public enum ENUM_current_state
 public class Enemy_Boss : Enemy_BaseClass
 {
     [Space(20)]
+    public Boss_Duck_SpecialEffects specialEffects;
     public Image healthBar;
     public ENUM_BossState bossState;
     int last_action;    
@@ -397,6 +398,7 @@ public class Enemy_Boss : Enemy_BaseClass
 
                 // Ustawione z animacji
             case ENUM_current_state.finishing:
+                specialEffects.PlayJumpSlam();
                 RaycastHit2D[] hits = Physics2D.CircleCastAll(playerPos, fallAreaRadius, new Vector2(0.5f, 0.5f));
                 //Debug.Log("hits count = " + hits.Length);
                 if(hits != null)
@@ -434,12 +436,12 @@ public class Enemy_Boss : Enemy_BaseClass
                 if(action_firstLoop == true)
                 {
                     //Debug.Log("Rush State");
-                    playerPos = move_target.transform.position;
                     anim.SetTrigger("isRushing");
                     action_firstLoop = false;
                 }
                 break;
             case ENUM_current_state.working:
+                playerPos = move_target.transform.position;
                 agent.SetDestination(playerPos);
                 agent.speed *= speedModifier;
                 agent.acceleration *= speedModifier;

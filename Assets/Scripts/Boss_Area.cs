@@ -10,6 +10,7 @@ public class Boss_Area : MonoBehaviour
     [SerializeField] GameObject bossHealthBar;
 
 
+
     void InitializeFightWithBoss()
     {
         foreach (Player player in Player_Manager.ins.playerList)
