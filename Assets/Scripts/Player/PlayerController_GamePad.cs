@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player_Controller_GamePad : PlayerController
+public class PlayerController_GamePad : PlayerController
 {
     public Vector3 mousePos;
 
