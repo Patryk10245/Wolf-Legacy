@@ -43,6 +43,8 @@ public class Enemy_Boss : Enemy_BaseClass
     bool dash_WaitingForRecharge;
 
     [Header("Idle Action")]
+    [SerializeField] float minIdleTime = 1;
+    [SerializeField] float maxIdleTime = 3;
     float idle_timer;
     float idle_time;
     [SerializeField] Vector4 arenaBounds;
@@ -244,7 +246,7 @@ public class Enemy_Boss : Enemy_BaseClass
         {
             case ENUM_current_state.preparation:
                 //Debug.Log("Idle State");
-                idle_time = Random.Range(2, 5);
+                idle_time = Random.Range(minIdleTime, maxIdleTime);
                 idle_timer = 0;
                 can_move = false;
                 anim.SetTrigger("isIdle");
