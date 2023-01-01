@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreTable : MonoBehaviour
 {
@@ -10,8 +11,12 @@ public class ScoreTable : MonoBehaviour
         ins = this;
     }
 
+    
+
     public int current_Gold;
     public int kills;
+
+    public Text goldAmount;
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,9 +33,15 @@ public class ScoreTable : MonoBehaviour
     public void AddGold(int val)
     {
         current_Gold += val;
+        UpdateGold();
     }
     public void AddKill()
     {
         kills++;
+    }
+
+    public void UpdateGold()
+    {
+        goldAmount.text = current_Gold.ToString();
     }
 }
