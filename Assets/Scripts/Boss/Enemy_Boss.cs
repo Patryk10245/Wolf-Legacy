@@ -130,6 +130,7 @@ public class Enemy_Boss : Enemy_BaseClass
         // Decide randomly, which action should duck choose
         if(currentActionState == ENUM_current_state.ready_to_exit)
         {
+            action_firstLoop = true;
             int rand;
             do
             {
@@ -430,10 +431,13 @@ public class Enemy_Boss : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                //Debug.Log("Rush State");
-                playerPos = move_target.transform.position;
-                anim.SetTrigger("isRushing");
-                currentActionState = ENUM_current_state.working;
+                if(action_firstLoop == true)
+                {
+                    //Debug.Log("Rush State");
+                    playerPos = move_target.transform.position;
+                    anim.SetTrigger("isRushing");
+                    action_firstLoop = false;
+                }
                 break;
             case ENUM_current_state.working:
                 agent.SetDestination(playerPos);

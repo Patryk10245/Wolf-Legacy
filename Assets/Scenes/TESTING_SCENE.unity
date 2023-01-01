@@ -79771,7 +79771,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.652
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -81547,18 +81547,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 880735681}
-    - target: {fileID: 3244527964310266401, guid: 62b2384aac7d8654385d48f7adc2696d, type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3244527964310266401, guid: 62b2384aac7d8654385d48f7adc2696d, type: 3}
-      propertyPath: maxHealth
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3244527964310266401, guid: 62b2384aac7d8654385d48f7adc2696d, type: 3}
-      propertyPath: currentHealth
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 3244527964310266402, guid: 62b2384aac7d8654385d48f7adc2696d, type: 3}
       propertyPath: m_Name
       value: Boss
