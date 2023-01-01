@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController_GamePad : PlayerController
 {
@@ -10,6 +11,9 @@ public class PlayerController_GamePad : PlayerController
     public float vertical_mouse;
     public Vector2 offset;
     public float angle;
+
+    public float x;
+    public float y;
 
     protected override void Movement()
     {
@@ -125,5 +129,14 @@ public class PlayerController_GamePad : PlayerController
         {
             player.abilityBasic.Use();
         }
+    }
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        Debug.Log("Move!");
+    }
+    public void Attack()
+    {
+
     }
 }
