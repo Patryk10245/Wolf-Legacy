@@ -13701,11 +13701,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a8c303e9f94d841a71455819b41745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &161827200 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 8909031239055229890, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
-  m_PrefabInstance: {fileID: 758625631}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &165522120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13997,10 +13992,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 5b6a3da9-e155-4d4d-a1d4-66b38911c7ed
     m_ActionName: Land/Attack[/XInputControllerWindows/rightShoulder]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d731ee5c-9ea1-4530-b2b0-b2ce71ffd921
-    m_ActionName: Land/Rotate[/XInputControllerWindows/rightStick/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/rightStick/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Land
@@ -14017,6 +14008,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31796fc230ac5fd46a06b71b107042ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &286576981 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8909031238140290590, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
+  m_PrefabInstance: {fileID: 758625631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &286576983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14030,11 +14026,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveInput: {x: 0, y: 0}
-  moveSpeed: 160
-  swordAnimator: {fileID: 564737886}
-  swordCollider: {fileID: 161827200}
-  trailObject: {fileID: 1598343294}
-  paladinSwordHolder: {fileID: 1885042447}
+  player: {fileID: 286576979}
+  rb: {fileID: 286576981}
+  playerInput: {fileID: 0}
+  moveSpeed: 3
 --- !u!1001 &361557249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14487,11 +14482,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!95 &564737886 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8909031239541040009, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
-  m_PrefabInstance: {fileID: 758625631}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &569685072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81248,11 +81238,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!1 &1598343294 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8909031239192196199, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
-  m_PrefabInstance: {fileID: 758625631}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1624311733
 GameObject:
   m_ObjectHideFlags: 0
@@ -81582,11 +81567,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 923329539989383303, guid: e583c07c74f6f3a468808754d1a6098e, type: 3}
   m_PrefabInstance: {fileID: 1787665510}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1885042447 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8909031239802199170, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
-  m_PrefabInstance: {fileID: 758625631}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1904881673
 PrefabInstance:
