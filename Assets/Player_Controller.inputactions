@@ -1,5 +1,5 @@
 {
-    "name": "PlayerController",
+    "name": "Player_Controller",
     "maps": [
         {
             "name": "Player",
@@ -31,64 +31,18 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "3a393360-8e9f-4c5f-8c0a-dc3c7749908f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "2D Vector",
-                    "id": "b1d63f45-63d0-48db-acca-a5059a336e14",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "f93f6c4d-bde8-48e8-9632-ce9daf8938a2",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "GamePad",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "2d2ee31a-36fb-49e4-a789-2fbf84c5becd",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "GamePad",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "0bb64602-46f1-4d5b-8f4a-bf7ad1464518",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "GamePad",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "b342fe9f-7d68-4344-8a03-9533202947e5",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "GamePad",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
                 {
                     "name": "2D Vector",
                     "id": "781b46f0-5f54-436c-b9ab-eb263b9ffe00",
@@ -145,6 +99,116 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "2D Vector",
+                    "id": "530eba82-92d5-458b-bf19-685c17445b84",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "ed7546b0-0662-494a-8d35-90b6d6f8f801",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "0f28e434-860e-4c06-bd07-b23df93f30fb",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "8ce06a43-52a8-4f64-9bdd-8f1680e895b8",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "c5e28205-2f8a-45df-a9ec-26dfc49be7f5",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "14a48cf3-7df3-4eb0-8f02-c0fa0536834f",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "cbb62dad-69ab-4133-a11a-a03271878722",
+                    "path": "<Joystick>/stick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "My_Scheme",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "91ff0d5e-9ea5-4e30-a4ae-e226037e1503",
+                    "path": "<Joystick>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "My_Scheme",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "fa9c5f1b-14d5-4572-a67d-1246f15e5722",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "My_Scheme",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "46ab6201-3b7a-40cf-a3ce-3a94969af37d",
+                    "path": "<Joystick>/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "My_Scheme",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "d31519eb-40c8-421d-a02d-18852217937f",
                     "path": "",
@@ -167,8 +231,19 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "8283e92e-e970-4efa-9e55-c5cab12adb25",
+                    "path": "<HID::SHANWAN PS3/PC Gamepad>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "My_Scheme",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "2D Vector",
-                    "id": "01f1e7ac-c0e4-4013-a688-1cd4993e3f45",
+                    "id": "60d49378-886a-4ed3-a5fe-858f5e5dfb88",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -179,7 +254,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "f657f72a-cba6-443e-952d-12b4764a3bb8",
+                    "id": "588b65c7-ef55-4c78-ba86-af0174d7ccef",
                     "path": "",
                     "interactions": "",
                     "processors": "",
@@ -190,7 +265,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "7ee2848a-3749-4d66-b0d3-215d47db2963",
+                    "id": "a6116e8e-6d08-4ed5-92e3-25433daac76f",
                     "path": "",
                     "interactions": "",
                     "processors": "",
@@ -201,7 +276,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "46e63446-2ce3-42c6-8609-2434f42a653a",
+                    "id": "0d00bb13-d7fc-4f25-a08b-172dc8858eff",
                     "path": "",
                     "interactions": "",
                     "processors": "",
@@ -212,7 +287,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "ef7e8ca8-9525-4e72-9acb-59e24866e7a1",
+                    "id": "5d951730-4346-4a1a-a9b3-de9738c1fc1d",
                     "path": "",
                     "interactions": "",
                     "processors": "",
@@ -223,7 +298,7 @@
                 },
                 {
                     "name": "2D Vector",
-                    "id": "f508595d-4eca-4641-ae85-efe726f3e3f6",
+                    "id": "54b10d49-df01-4672-890e-2a57cab5f4c7",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -234,47 +309,58 @@
                 },
                 {
                     "name": "up",
-                    "id": "7e72999d-920a-4542-bd69-f71e7acdd148",
-                    "path": "<Mouse>/delta/up",
+                    "id": "097415bb-4b2a-401a-b3b8-8d933c69188b",
+                    "path": "<HID::SHANWAN PS3/PC Gamepad>/rz",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "My_Scheme",
                     "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "72633988-a572-4d67-b837-f4e0db12b8ee",
-                    "path": "<Mouse>/delta/down",
+                    "id": "1852d41e-d60e-4746-b7b0-0382bffc2871",
+                    "path": "<HID::SHANWAN PS3/PC Gamepad>/rz",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "My_Scheme",
                     "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "3e361ecf-cf6e-48f3-aeee-5f5b3b754728",
-                    "path": "<Mouse>/delta/left",
+                    "id": "1615d287-764b-4ed7-a235-449d522512f1",
+                    "path": "<HID::SHANWAN PS3/PC Gamepad>/z",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "My_Scheme",
                     "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "5b2b18d2-db68-4bec-b2f5-821b68d11b26",
-                    "path": "<Mouse>/delta/right",
+                    "id": "aa582226-3e1e-48eb-ab84-764502741afb",
+                    "path": "<HID::SHANWAN PS3/PC Gamepad>/z",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "My_Scheme",
                     "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "7222bccc-4206-4436-bf95-0cd5471d3454",
+                    "path": "<HID::SHANWAN PS3/PC Gamepad>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "My_Scheme",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -288,6 +374,11 @@
         {
             "name": "KeyBoard",
             "bindingGroup": "KeyBoard",
+            "devices": []
+        },
+        {
+            "name": "My_Scheme",
+            "bindingGroup": "My_Scheme",
             "devices": []
         }
     ]
