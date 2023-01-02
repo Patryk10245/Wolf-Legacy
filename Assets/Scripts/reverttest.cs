@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class reverttest : MonoBehaviour
 {
-    // testing this
     // Start is called before the first frame update
     void Start()
     {
