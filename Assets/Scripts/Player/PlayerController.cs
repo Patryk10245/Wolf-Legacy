@@ -81,13 +81,13 @@ public class PlayerController : MonoBehaviour
         mousePos = rotate.ReadValue<Vector2>();
         Vector3 screenPoint = player.currentCamera.WorldToScreenPoint(transform.localPosition);
         dMousePos = mousePos;
-        dScreenPoint = screenPoint;
 
 
         if(playerInput.currentControlScheme == "GamePad")
         {
             screenPoint = Vector3.zero;
         }
+        dScreenPoint = screenPoint;
         /* ROTATION TOWARDS WALK DIRECTION
         if (mousePos == Vector2.zero)
         {
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
             paladinSwordHolder.localScale = Vector3.one;
         }
 
-        mousePos.Normalize();
+        //mousePos.Normalize();
 
         Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
