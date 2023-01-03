@@ -219,6 +219,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2180639473190950795, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: GamePad
+      objectReference: {fileID: 0}
     - target: {fileID: 4783158888212072919, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: healthBar
       value: 
