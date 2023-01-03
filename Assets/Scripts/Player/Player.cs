@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 {
     public PlayerController controller;
     public PlayerStats stats;
-    public Camera theCam;
+    public Camera currentCamera;
     public Player_Ui_Updater ui_updater;
 
     public Ability_1 abilityBasic;
@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
         controller = GetComponent<PlayerController>();
         ui_updater = GetComponent<Player_Ui_Updater>();
         abilityBasic = GetComponent<Ability_1>();
+        currentCamera = Camera.main;
     }
 
     public void TakeDamage(float val)

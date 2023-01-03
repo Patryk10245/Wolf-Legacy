@@ -14877,6 +14877,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b23259e6e6079479587a1461dc780c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &685073800 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8909031238140290588, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
+  m_PrefabInstance: {fileID: 758625631}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31796fc230ac5fd46a06b71b107042ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &695717271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80085,8 +80096,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smooth: 0
-  flat: 0
-  singlePlayer: 1
+  flat: 1
+  singlePlayer: 0
   middleOfPlayers: {x: 0, y: 0, z: 0}
   previous_pos: {x: 0, y: 0, z: 0}
   cam: {fileID: 1529540588}
@@ -80820,6 +80831,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 8909031238140290563, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
   playerList:
   - {fileID: 1660470830}
+  - {fileID: 685073800}
 --- !u!4 &1382362614
 Transform:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D swordCollider;
     public GameObject trailObject;
 
-
+    PlayerInput playerInput;
     InputActionAsset inputAsset;
     InputActionMap playerMap;
     InputAction move;
@@ -23,7 +23,11 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveInput;
     public float horizontal;
     public float vertical;
-    public float moveSpeed = 80;
+    public float moveSpeed = 320;
+
+    [Header("Debug")]
+    public Vector2 dMousePos;
+    public Vector2 dScreenPoint;
 
     private void Start()
     {
@@ -31,7 +35,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animBody = GetComponent<Animator>();
 
-
+        playerInput = GetComponent<PlayerInput>();
         inputAsset = GetComponent<PlayerInput>().actions;
         playerMap = inputAsset.FindActionMap("Player");
         playerMap.FindAction("Attack").started += SwordAttack;
@@ -75,8 +79,15 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 mousePos;
         mousePos = rotate.ReadValue<Vector2>();
-        Vector3 screenPoint = player.theCam.WorldToScreenPoint(transform.localPosition);
+        Vector3 screenPoint = player.currentCamera.WorldToScreenPoint(transform.localPosition);
+        dMousePos = mousePos;
+        dScreenPoint = screenPoint;
 
+
+        if(playerInput.currentControlScheme == "GamePad")
+        {
+            screenPoint = Vector3.zero;
+        }
         /* ROTATION TOWARDS WALK DIRECTION
         if (mousePos == Vector2.zero)
         {
@@ -102,6 +113,8 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(1f, 1f, 1f);
             paladinSwordHolder.localScale = Vector3.one;
         }
+
+        mousePos.Normalize();
 
         Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;

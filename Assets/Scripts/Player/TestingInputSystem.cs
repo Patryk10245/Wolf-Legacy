@@ -110,7 +110,7 @@ public class TestingInputSystem : MonoBehaviour
         Vector2 mousePos;
         mousePos = rotate.ReadValue<Vector2>();
 
-        Vector3 screenPoint = player.theCam.WorldToScreenPoint(transform.localPosition);
+        Vector3 screenPoint = player.currentCamera.WorldToScreenPoint(transform.localPosition);
         //Debug.Log("mousepos = " + mousePos);
         dMousePos = mousePos;
         dScreenPoint = screenPoint;
