@@ -29,7 +29,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Move"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""af370793-a5ca-46b5-9adf-25be3d081394"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
@@ -134,7 +134,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""ed7546b0-0662-494a-8d35-90b6d6f8f801"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""GamePad"",
@@ -145,7 +145,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""0f28e434-860e-4c06-bd07-b23df93f30fb"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""GamePad"",
@@ -156,7 +156,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""8ce06a43-52a8-4f64-9bdd-8f1680e895b8"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""GamePad"",
@@ -167,7 +167,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""c5e28205-2f8a-45df-a9ec-26dfc49be7f5"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""GamePad"",
@@ -177,7 +177,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""2D Vector"",
-                    ""id"": ""14a48cf3-7df3-4eb0-8f02-c0fa0536834f"",
+                    ""id"": ""35bd45b9-702c-45f9-a2ba-3a7c72fe0997"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -188,8 +188,8 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""cbb62dad-69ab-4133-a11a-a03271878722"",
-                    ""path"": ""<Joystick>/stick/up"",
+                    ""id"": ""fe4c3b33-5f4c-4d9b-be9d-ff8ed92a216b"",
+                    ""path"": ""<HID::SHANWAN PS3/PC Gamepad>/stick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""My_Scheme"",
@@ -199,8 +199,8 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""91ff0d5e-9ea5-4e30-a4ae-e226037e1503"",
-                    ""path"": ""<Joystick>/stick/down"",
+                    ""id"": ""7323de3a-3586-4c70-b867-f21d9471c4e5"",
+                    ""path"": ""<HID::SHANWAN PS3/PC Gamepad>/stick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""My_Scheme"",
@@ -210,8 +210,8 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""fa9c5f1b-14d5-4572-a67d-1246f15e5722"",
-                    ""path"": ""<Joystick>/stick/left"",
+                    ""id"": ""2e849091-8943-45fa-86cf-3e4b40baf58f"",
+                    ""path"": ""<HID::SHANWAN PS3/PC Gamepad>/stick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""My_Scheme"",
@@ -221,8 +221,8 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""46ab6201-3b7a-40cf-a3ce-3a94969af37d"",
-                    ""path"": ""<Joystick>/stick/right"",
+                    ""id"": ""0dd665ea-21da-408f-905e-c3b6e86b7079"",
+                    ""path"": ""<HID::SHANWAN PS3/PC Gamepad>/stick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""My_Scheme"",
@@ -277,7 +277,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""588b65c7-ef55-4c78-ba86-af0174d7ccef"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/rightStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""GamePad"",
@@ -288,7 +288,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""a6116e8e-6d08-4ed5-92e3-25433daac76f"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/rightStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""GamePad"",
@@ -299,7 +299,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""0d00bb13-d7fc-4f25-a08b-172dc8858eff"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""GamePad"",
@@ -310,7 +310,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""5d951730-4346-4a1a-a9b3-de9738c1fc1d"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""GamePad"",
@@ -319,9 +319,20 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""2072472f-a908-45a3-9c2d-612af3a23a6c"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""2D Vector"",
-                    ""id"": ""54b10d49-df01-4672-890e-2a57cab5f4c7"",
-                    ""path"": ""2DVector"",
+                    ""id"": ""57b35dd9-8f02-4523-93fe-723aa99fc558"",
+                    ""path"": ""2DVector(mode=1)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -331,8 +342,8 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""097415bb-4b2a-401a-b3b8-8d933c69188b"",
-                    ""path"": ""<HID::SHANWAN PS3/PC Gamepad>/rz"",
+                    ""id"": ""38edf1fa-376d-48bf-83c2-ed996b371c7c"",
+                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""My_Scheme"",
@@ -342,7 +353,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""1852d41e-d60e-4746-b7b0-0382bffc2871"",
+                    ""id"": ""07b212ad-9e46-45b3-828e-288192e2e542"",
                     ""path"": ""<HID::SHANWAN PS3/PC Gamepad>/rz"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -352,8 +363,8 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""1615d287-764b-4ed7-a235-449d522512f1"",
+                    ""name"": ""right"",
+                    ""id"": ""c3fb5d79-e2e3-4cbd-8174-7d5a09da3666"",
                     ""path"": ""<HID::SHANWAN PS3/PC Gamepad>/z"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -363,9 +374,9 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""aa582226-3e1e-48eb-ab84-764502741afb"",
-                    ""path"": ""<HID::SHANWAN PS3/PC Gamepad>/z"",
+                    ""name"": ""left"",
+                    ""id"": ""542cccf4-1008-456e-90ac-2cfa30a4db94"",
+                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""My_Scheme"",
@@ -383,6 +394,17 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c79957d2-8d1b-4fd3-aafb-17476e2a9209"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -391,17 +413,40 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
         {
             ""name"": ""GamePad"",
             ""bindingGroup"": ""GamePad"",
-            ""devices"": []
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         },
         {
             ""name"": ""KeyBoard"",
             ""bindingGroup"": ""KeyBoard"",
-            ""devices"": []
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         },
         {
             ""name"": ""My_Scheme"",
             ""bindingGroup"": ""My_Scheme"",
-            ""devices"": []
+            ""devices"": [
+                {
+                    ""devicePath"": ""<HID::SHANWAN PS3/PC Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
