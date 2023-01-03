@@ -1,13 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_MainMenuControl : MonoBehaviour
 {
+    [Header("Windows")]
     [SerializeField] GameObject mainButtons;
     [SerializeField] GameObject playWindow;
     [SerializeField] GameObject settingsWindow;
     [SerializeField] GameObject exitWindow;
+
+    [SerializeField] GameObject onePlayer;
+    [SerializeField] GameObject twoPlayers;
+
+
+    [Header("Reference")]
+    [SerializeField] GameSetup gameSetup;
+    [SerializeField] Image selectedClassImage;
+
+
+    private void Start()
+    {
+        gameSetup = GetComponent<GameSetup>();
+    }
 
 
     public void ShowPlay()
@@ -52,5 +68,25 @@ public class UI_MainMenuControl : MonoBehaviour
     {
         HideWindows();
         ShowButtons();
+    }
+
+
+    public void ShowOnePlayer()
+    {
+        HideWindows();
+        onePlayer.SetActive(true);
+        gameSetup.OnePlayerSetup();
+    }
+    public void ShowTwoPlayers()
+    {
+        HideWindows();
+        twoPlayers.SetActive(true);
+        gameSetup.TwoPlayersSetup();
+    }
+    public void ReturnFromPlayers()
+    {
+        onePlayer.SetActive(false);
+        twoPlayers.SetActive(false);
+        ShowPlay();
     }
 }
