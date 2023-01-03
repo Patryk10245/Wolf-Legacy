@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +10,28 @@ public class Player_Manager : MonoBehaviour
     {
         ins = this;
     }
+
     void Awake()
     {
         Reference();
         DontDestroyOnLoad(this);
     }
+
+    private void Start()
+    {
+        try
+        {
+            gameSetup = GameSetup.ins;
+            gameSetup.SetUpTheGame();
+        }
+        catch(Exception exception)
+        {
+            Debug.LogWarning("Scene loaded without Main menu Scene. GameSetup Script not Initialized \n For proper game initializaton use Main Menu Scene!");
+        }
+        
+    }
+
+    public GameSetup gameSetup;
 
     public GameObject playerPrefab;
     public List<Player> playerList;
@@ -34,8 +52,8 @@ public class Player_Manager : MonoBehaviour
         temp = Instantiate(playerPrefab);
         playerList.Add(temp.GetComponent<Player>());
     }
-    
 
+    
 
 
 }

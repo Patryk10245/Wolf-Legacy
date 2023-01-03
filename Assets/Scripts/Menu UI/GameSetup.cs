@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public enum ENUM_PlayerClass
 {
     Paladin,
@@ -20,64 +21,67 @@ public class PlayerSelectedData
 
 public class GameSetup : MonoBehaviour
 {
+    public static GameSetup ins;
+    void Reference()
+    {
+        ins = this;
+    }
+
     UI_MainMenuControl menuControl;
+    [SerializeField] Player_Manager playerManager;
+    [SerializeField] Camera_Following cameraFollowing;
+    [SerializeField] ScoreTable scoreTable;
+    
     [SerializeField]public List<PlayerSelectedData> playingPlayers;
-    int numberOfPlayers;
+    public int numberOfPlayers;
 
     private void Start()
     {
-        menuControl = GetComponent<UI_MainMenuControl>();
+        DontDestroyOnLoad(this);
     }
-    public void OnePlayerSetup()
+    private void Awake()
     {
-        playingPlayers.Clear();
-
-        numberOfPlayers = 1;
-        PlayerSelectedData player = new PlayerSelectedData();
-        playingPlayers.Add(player);
-        player.id = 0;
-    }
-    public void TwoPlayersSetup()
-    {
-        playingPlayers.Clear();
-
-
-        numberOfPlayers = 2;
-        PlayerSelectedData player1 = new PlayerSelectedData();
-        player1.id = 0;
-        PlayerSelectedData player2 = new PlayerSelectedData();
-        player2.id = 1;
-
-        playingPlayers.Add(player1);
-        playingPlayers.Add(player2);
-    }
-    
-
-    public void ChoosePaladin(int id)
-    {
-        playingPlayers[id].selectedClass = ENUM_PlayerClass.Paladin;
-        Debug.Log("choose paladin");
-    }
-    public void ChooseBarbarian(int id)
-    {
-        playingPlayers[id].selectedClass = ENUM_PlayerClass.Barbarian;
-        Debug.Log("choose barbarian");
-    }
-    public void ChooseRanger(int id)
-    {
-        playingPlayers[id].selectedClass = ENUM_PlayerClass.Ranger;
-        Debug.Log("choose ranger");
-    }
-    public void ChooseMage(int id)
-    {
-        playingPlayers[id].selectedClass = ENUM_PlayerClass.Mage;
-        Debug.Log("choose mage");
+        if(ins == null)
+        {
+            Reference();
+        }
     }
 
-    public void StartGame()
+    public void SetUpTheGame()
     {
-        Debug.Log("start game");
+        Debug.Log("Setting up the game");
+        playerManager = Player_Manager.ins;
+        cameraFollowing = Camera_Following.ins;
+        scoreTable = ScoreTable.ins;
+
+        switch (numberOfPlayers)
+        {
+            case 1:
+                cameraFollowing.singlePlayer = true;
+                cameraFollowing.flat = false;
+                cameraFollowing.smooth = false;
+                Destroy(playerManager.playerList[1].gameObject);
+                playerManager.playerList.RemoveAt(1);
+
+                // Set Up players class
+                // Add abilites
+
+                break;
+            case 2:
+                cameraFollowing.singlePlayer = false;
+                cameraFollowing.flat = true;
+                cameraFollowing.smooth = false;
+
+
+                break;
+            default:
+                break;
+        }
         
     }
+
+
+    
+
 
 }

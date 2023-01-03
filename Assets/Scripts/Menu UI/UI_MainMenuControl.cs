@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI_MainMenuControl : MonoBehaviour
 {
@@ -22,7 +23,6 @@ public class UI_MainMenuControl : MonoBehaviour
 
     private void Start()
     {
-        gameSetup = GetComponent<GameSetup>();
     }
 
 
@@ -75,18 +75,70 @@ public class UI_MainMenuControl : MonoBehaviour
     {
         HideWindows();
         onePlayer.SetActive(true);
-        gameSetup.OnePlayerSetup();
+        OnePlayerSetup();
     }
     public void ShowTwoPlayers()
     {
         HideWindows();
         twoPlayers.SetActive(true);
-        gameSetup.TwoPlayersSetup();
+        TwoPlayersSetup();
     }
     public void ReturnFromPlayers()
     {
         onePlayer.SetActive(false);
         twoPlayers.SetActive(false);
         ShowPlay();
+    }
+
+
+    public void OnePlayerSetup()
+    {
+        gameSetup.playingPlayers.Clear();
+
+        gameSetup.numberOfPlayers = 1;
+        PlayerSelectedData player = new PlayerSelectedData();
+        gameSetup.playingPlayers.Add(player);
+        player.id = 0;
+    }
+    public void TwoPlayersSetup()
+    {
+        gameSetup.playingPlayers.Clear();
+
+
+        gameSetup.numberOfPlayers = 2;
+        PlayerSelectedData player1 = new PlayerSelectedData();
+        player1.id = 0;
+        PlayerSelectedData player2 = new PlayerSelectedData();
+        player2.id = 1;
+
+        gameSetup.playingPlayers.Add(player1);
+        gameSetup.playingPlayers.Add(player2);
+    }
+
+
+    public void ChoosePaladin(int id)
+    {
+        gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Paladin;
+        //Debug.Log("choose paladin");
+    }
+    public void ChooseBarbarian(int id)
+    {
+        gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Barbarian;
+        //Debug.Log("choose barbarian");
+    }
+    public void ChooseRanger(int id)
+    {
+        gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Ranger;
+        //Debug.Log("choose ranger");
+    }
+    public void ChooseMage(int id)
+    {
+        gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Mage;
+        //Debug.Log("choose mage");
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("TESTING_SCENE");
     }
 }

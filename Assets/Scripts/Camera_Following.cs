@@ -37,6 +37,7 @@ public class Camera_Following : MonoBehaviour
             Reference();
             DontDestroyOnLoad(this);
         }
+
         
     }
 
