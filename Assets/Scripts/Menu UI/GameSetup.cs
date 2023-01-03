@@ -20,23 +20,21 @@ public class PlayerSelectedData
 
 public class GameSetup : MonoBehaviour
 {
+    UI_MainMenuControl menuControl;
+    [SerializeField]public List<PlayerSelectedData> playingPlayers;
+    int numberOfPlayers;
 
     private void Start()
     {
         menuControl = GetComponent<UI_MainMenuControl>();
     }
-
-
-    UI_MainMenuControl menuControl;
-    [SerializeField]public List<PlayerSelectedData> playingPlayers;
-    public int numberOfPlayers;
-
     public void OnePlayerSetup()
     {
         playingPlayers.Clear();
 
         numberOfPlayers = 1;
         PlayerSelectedData player = new PlayerSelectedData();
+        playingPlayers.Add(player);
         player.id = 0;
     }
     public void TwoPlayersSetup()
@@ -49,6 +47,9 @@ public class GameSetup : MonoBehaviour
         player1.id = 0;
         PlayerSelectedData player2 = new PlayerSelectedData();
         player2.id = 1;
+
+        playingPlayers.Add(player1);
+        playingPlayers.Add(player2);
     }
     
 
