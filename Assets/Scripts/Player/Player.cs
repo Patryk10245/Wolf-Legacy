@@ -32,6 +32,9 @@ public class Player : MonoBehaviour
     {
         //controller = GetComponent<PlayerController>();
         stats = GetComponent<PlayerStats>();
+        controller = GetComponent<PlayerController>();
+        ui_updater = GetComponent<Player_Ui_Updater>();
+        abilityBasic = GetComponent<Ability_1>();
     }
 
     public void TakeDamage(float val)
@@ -42,7 +45,7 @@ public class Player : MonoBehaviour
 
     public void KnockBack(Vector3 force)
     {
-        Debug.Log("Knockback");
+        //Debug.Log("Knockback");
         //controller.rb.AddForce(force);
         controller.rb.AddForce(force);
     }

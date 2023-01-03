@@ -12,14 +12,12 @@ GameObject:
   - component: {fileID: 8909031238140290590}
   - component: {fileID: 8909031238140290591}
   - component: {fileID: 8909031238140290588}
+  - component: {fileID: 6488356313986202301}
   - component: {fileID: 8909031238140290589}
   - component: {fileID: 8909031238140290584}
-  - component: {fileID: 5133253605473062236}
-  - component: {fileID: 1640311556841395499}
   - component: {fileID: 7868530939332003174}
   - component: {fileID: 4783158888212072919}
   - component: {fileID: 2180639473190950795}
-  - component: {fileID: 7394794339683120002}
   m_Layer: 0
   m_Name: Player Prefab
   m_TagString: Player
@@ -105,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31796fc230ac5fd46a06b71b107042ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1640311556841395499}
+  controller: {fileID: 6488356313986202301}
   stats: {fileID: 8909031238140290589}
   theCam: {fileID: 0}
   ui_updater: {fileID: 4783158888212072919}
@@ -115,6 +113,27 @@ MonoBehaviour:
   canMove: 1
   inAttack: 0
   canRotateSword: 1
+--- !u!114 &6488356313986202301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909031238140290563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b840c0492a624ec49a694d2910da0319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  paladinSwordHolder: {fileID: 8909031239802199170}
+  swordAnimator: {fileID: 8909031239541040009}
+  swordCollider: {fileID: 8909031239055229890}
+  trailObject: {fileID: 8909031239192196199}
+  moveInput: {x: 0, y: 0}
+  horizontal: 0
+  vertical: 0
+  moveSpeed: 320
 --- !u!114 &8909031238140290589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,57 +172,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &5133253605473062236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8909031238140290563}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8568fc607b478546b060281d7c0aebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 8909031238140290588}
-  rb: {fileID: 8909031238140290590}
-  swordArm: {fileID: 8909031239802199170}
-  animBody: {fileID: 8909031238140290584}
-  swordAnim: {fileID: 8909031239541040009}
-  swordCollider: {fileID: 8909031239055229890}
-  trailObject: {fileID: 8909031239192196199}
-  moveInput: {x: 0, y: 0}
-  horizontal: 0
-  vertical: 0
-  moveSpeed: 80
-  mousePos: {x: 0, y: 0, z: 0}
-  horizontal_mouse: 0
-  vertical_mouse: 0
-  offset: {x: 0, y: 0}
-  angle: 0
---- !u!114 &1640311556841395499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8909031238140290563}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1df3320c85e3c1449a4019ec8d16c0e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 8909031238140290588}
-  rb: {fileID: 8909031238140290590}
-  swordArm: {fileID: 8909031239802199170}
-  animBody: {fileID: 8909031238140290584}
-  swordAnim: {fileID: 8909031239541040009}
-  swordCollider: {fileID: 8909031239055229890}
-  trailObject: {fileID: 8909031239192196199}
-  moveInput: {x: 0, y: 0}
-  horizontal: 0
-  vertical: 0
-  moveSpeed: 80
 --- !u!114 &7868530939332003174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,9 +235,9 @@ MonoBehaviour:
       PS3 PC Gamepad/stick/left,/SHANWAN PS3 PC Gamepad/stick/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TestingInputSystem, Assembly-CSharp
-        m_MethodName: Attack
+      - m_Target: {fileID: 6488356313986202301}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: SwordAttack
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -286,7 +254,19 @@ MonoBehaviour:
     m_ActionId: 05f81e3f-d146-4a6d-80e0-eedcc2d86a04
     m_ActionName: Player/Rotate[/SHANWAN PS3 PC Gamepad/rz,/SHANWAN PS3 PC Gamepad/z,/Mouse/delta/up,/Mouse/delta/down,/Mouse/delta/left,/Mouse/delta/right]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7868530939332003174}
+        m_TargetAssemblyTypeName: Player_DashSkill, Assembly-CSharp
+        m_MethodName: Use
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3a393360-8e9f-4c5f-8c0a-dc3c7749908f
     m_ActionName: Player/Dash[/SHANWAN PS3 PC Gamepad/button8]
   m_NeverAutoSwitchControlSchemes: 1
@@ -294,50 +274,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &7394794339683120002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8909031238140290563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8dcc9735f500ef47bf3148bf6fd74b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveInput: {x: 0, y: 0}
-  moveSpeed: 160
-  swordAnimator: {fileID: 8909031239541040009}
-  swordCollider: {fileID: 8909031239055229890}
-  trailObject: {fileID: 8909031239192196199}
-  paladinSwordHolder: {fileID: 8909031239802199170}
-  dMousePos: {x: 0, y: 0}
-  inputAsset: {fileID: 0}
-  playerMap:
-    m_Name: 
-    m_Id: 
-    m_Asset: {fileID: 0}
-    m_Actions: []
-    m_Bindings: []
-  move:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  rotate:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!1 &8909031238170990673
 GameObject:
   m_ObjectHideFlags: 0
