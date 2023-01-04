@@ -149,6 +149,7 @@ public class GameSetup : MonoBehaviour
 
     void PaladinSetup(Player player)
     {
+        Debug.Log("player name = " + player.gameObject.name);
         ClassData paladinData = classesData[0];
         //Debug.Log("Paladin Setup");
         player.stats.currentHealth = paladinData.healtPoints;
@@ -163,10 +164,12 @@ public class GameSetup : MonoBehaviour
 
         // Add Abilities
         Player_PaladinAttack attack = player.gameObject.AddComponent<Player_PaladinAttack>();
+        player.attackScript = attack;
         attack.player = player;
         player.attackScript = attack;
 
         Player_DashSkill dash = player.gameObject.AddComponent<Player_DashSkill>();
+        player.abilityBasic = dash;
         dash.player = player;
         dash.dashForce = paladinData.dashForce;
         dash.dashRechargeTime = paladinData.dashRechargeTime;

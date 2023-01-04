@@ -135,6 +135,8 @@ public class PlayerController : MonoBehaviour
     }
     void BasicAbility(InputAction.CallbackContext context)
     {
+        //Debug.Log("player = " + player);
+        //Debug.Log("ability = " + player.abilityBasic);
         player.abilityBasic.Use();
     }
 
