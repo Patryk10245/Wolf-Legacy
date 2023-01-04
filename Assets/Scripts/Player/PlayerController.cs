@@ -9,9 +9,9 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     Animator animBody;
     
-    public Transform paladinSwordHolder;
-    public Animator swordAnimator;
-    public BoxCollider2D swordCollider;
+    public Transform weaponHolder;
+    public Animator weaponAnimator;
+    public BoxCollider2D weaponCollider;
     public GameObject trailObject;
 
     PlayerInput playerInput;
@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     InputActionMap playerMap;
     InputAction move;
     InputAction rotate;
+    InputAction ability0;
 
     public Vector2 moveInput;
     public float horizontal;
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
         playerMap.FindAction("Attack").started += Attack;
         move = playerMap.FindAction("Move");
         rotate = playerMap.FindAction("Rotate");
+        playerMap.FindAction("Ability0").started += BasicAbility;
         playerMap.Enable();
 
         
@@ -107,13 +109,13 @@ public class PlayerController : MonoBehaviour
         if (mousePos.x < screenPoint.x) // Turns Left
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
-            paladinSwordHolder.localScale = new Vector3(-1f, -1f, 1f);
+            weaponHolder.localScale = new Vector3(-1f, -1f, 1f);
         }
         else if (mousePos.x > screenPoint.x) // Turns Right
         {
             transform.localScale = Vector3.one;
             transform.localScale = new Vector3(1f, 1f, 1f);
-            paladinSwordHolder.localScale = Vector3.one;
+            weaponHolder.localScale = Vector3.one;
         }
 
         //mousePos.Normalize();
@@ -121,7 +123,7 @@ public class PlayerController : MonoBehaviour
         Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
-        paladinSwordHolder.rotation = Quaternion.Euler(0, 0, angle);
+        weaponHolder.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     public void Attack(InputAction.CallbackContext context)
@@ -130,6 +132,10 @@ public class PlayerController : MonoBehaviour
         {
             player.attackScript.Attack();
         }
+    }
+    void BasicAbility(InputAction.CallbackContext context)
+    {
+        player.abilityBasic.Use();
     }
 
 }

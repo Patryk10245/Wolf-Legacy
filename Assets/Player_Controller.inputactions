@@ -33,7 +33,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Dash",
+                    "name": "Ability0",
                     "type": "Button",
                     "id": "3a393360-8e9f-4c5f-8c0a-dc3c7749908f",
                     "expectedControlType": "Button",
@@ -369,7 +369,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "My_Scheme",
-                    "action": "Dash",
+                    "action": "Ability0",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -380,7 +380,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "GamePad",
-                    "action": "Dash",
+                    "action": "Ability0",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -391,7 +391,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyBoard",
-                    "action": "Dash",
+                    "action": "Ability0",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

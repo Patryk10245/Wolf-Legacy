@@ -159,7 +159,7 @@ public class GameSetup : MonoBehaviour
         player.stats.energyRegenerationAmount = paladinData.energyRegenAmount;
 
         player.controller.moveSpeed = classesData[0].speed;
-        player.controller.swordCollider.GetComponent<SpriteRenderer>().sprite = paladinData.weaponSprite;
+        player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = paladinData.weaponSprite;
 
         // Add Abilities
         Player_PaladinAttack attack = player.gameObject.AddComponent<Player_PaladinAttack>();

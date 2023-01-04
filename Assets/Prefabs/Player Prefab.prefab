@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 6488356313986202301}
   - component: {fileID: 8909031238140290589}
   - component: {fileID: 8909031238140290584}
-  - component: {fileID: 7868530939332003174}
   - component: {fileID: 4783158888212072919}
   - component: {fileID: 2180639473190950795}
   m_Layer: 0
@@ -107,12 +106,13 @@ MonoBehaviour:
   stats: {fileID: 8909031238140290589}
   currentCamera: {fileID: 0}
   ui_updater: {fileID: 4783158888212072919}
-  abilityBasic: {fileID: 7868530939332003174}
+  attackScript: {fileID: 0}
+  abilityBasic: {fileID: 0}
   id: 0
   prohibitAllActions: 0
   canMove: 1
   inAttack: 0
-  canRotateSword: 1
+  canRotateWeapon: 0
 --- !u!114 &6488356313986202301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,9 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  paladinSwordHolder: {fileID: 8909031239802199170}
-  swordAnimator: {fileID: 8909031239541040009}
-  swordCollider: {fileID: 8909031239055229890}
+  weaponHolder: {fileID: 8909031239802199170}
+  weaponAnimator: {fileID: 8909031239541040009}
+  weaponCollider: {fileID: 8909031239055229890}
   trailObject: {fileID: 8909031239192196199}
   moveInput: {x: 0, y: 0}
   horizontal: 0
@@ -174,23 +174,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &7868530939332003174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8909031238140290563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b23259e6e6079479587a1461dc780c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 8909031238140290588}
-  dashForce: 4000
-  dashRechargeTime: 3
-  dashEnergyCost: 1
-  dashTime: 0.1
 --- !u!114 &4783158888212072919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +240,7 @@ MonoBehaviour:
     m_ActionName: Player/Rotate[/SHANWAN PS3 PC Gamepad/rz,/SHANWAN PS3 PC Gamepad/z,/Mouse/delta/up,/Mouse/delta/down,/Mouse/delta/left,/Mouse/delta/right]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7868530939332003174}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player_DashSkill, Assembly-CSharp
         m_MethodName: Use
         m_Mode: 1
@@ -288,7 +271,7 @@ GameObject:
   - component: {fileID: 8909031238170990639}
   - component: {fileID: 8909031238170990636}
   m_Layer: 0
-  m_Name: Paladin Body
+  m_Name: Player Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,7 +441,7 @@ GameObject:
   - component: {fileID: 8909031239055229890}
   - component: {fileID: 8141393136557796787}
   m_Layer: 0
-  m_Name: Paladin Sword
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -724,7 +707,7 @@ GameObject:
   - component: {fileID: 8909031239541040009}
   - component: {fileID: 322207214910444214}
   m_Layer: 0
-  m_Name: Sword Arm
+  m_Name: Weapon Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5712,7 +5695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8909031239802199170}
   m_Layer: 0
-  m_Name: Paladin Sword Holder
+  m_Name: Weapon Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

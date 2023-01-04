@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     public bool prohibitAllActions;
     public bool canMove;
     public bool inAttack;
-    public bool canRotateSword;
+    public bool canRotateWeapon;
 
 
     private void Start()
