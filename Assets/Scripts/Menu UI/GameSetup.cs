@@ -27,23 +27,30 @@ public class GameSetup : MonoBehaviour
         ins = this;
     }
 
-    UI_MainMenuControl menuControl;
     [SerializeField] Player_Manager playerManager;
     [SerializeField] Camera_Following cameraFollowing;
     [SerializeField] ScoreTable scoreTable;
     
-    [SerializeField]public List<PlayerSelectedData> playingPlayers;
+    [SerializeField] public List<PlayerSelectedData> playingPlayers;
     public int numberOfPlayers;
     public bool gameAlreadySetup = false;
 
     [Header("Class Data")]
     [SerializeField] ClassData[] classesData;
 
-    [SerializeField] Transform spawningPoint;
 
+    public void foo()
+    {
+        classesData[0].damage++;
+    }
+    private void Update()
+    {
+        if(Input.GetKeyDown("q"))
+        {
+            foo();
+        }
+    }
 
-
-    public GameObject test;
 
     private void Start()
     {

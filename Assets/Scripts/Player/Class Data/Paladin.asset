@@ -19,3 +19,7 @@ MonoBehaviour:
   speed: 320
   playerSprite: {fileID: -1420845206, guid: 34d59b25812fb3a4b983e0c6f53f85d2, type: 3}
   weaponSprite: {fileID: -541394772, guid: 34d59b25812fb3a4b983e0c6f53f85d2, type: 3}
+  dashForce: 4000
+  dashRechargeTime: 3
+  dashEnergyCost: 1
+  dashTime: 0.1

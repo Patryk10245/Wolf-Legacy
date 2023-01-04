@@ -97,8 +97,8 @@ public class UI_MainMenuControl : MonoBehaviour
 
         gameSetup.numberOfPlayers = 1;
         PlayerSelectedData player = new PlayerSelectedData();
-        gameSetup.playingPlayers.Add(player);
         player.id = 0;
+        gameSetup.playingPlayers.Add(player);
     }
     public void TwoPlayersSetup()
     {
