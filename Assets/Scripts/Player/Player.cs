@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public Camera currentCamera;
     public Player_Ui_Updater ui_updater;
 
+    public Player_AttackScript attackScript;
     public Ability_1 abilityBasic;
     
 
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
         stats = GetComponent<PlayerStats>();
         controller = GetComponent<PlayerController>();
         ui_updater = GetComponent<Player_Ui_Updater>();
+        attackScript = GetComponent<Player_AttackScript>();
         abilityBasic = GetComponent<Ability_1>();
         currentCamera = Camera.main;
     }

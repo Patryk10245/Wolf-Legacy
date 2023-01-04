@@ -149,7 +149,7 @@ public class GameSetup : MonoBehaviour
 
     void PaladinSetup(Player player)
     {
-        Debug.Log("Paladin Setup");
+        //Debug.Log("Paladin Setup");
         player.stats.currentHealth = classesData[0].healtPoints;
         player.stats.maxHealth = classesData[0].healtPoints;
         player.stats.currentEnergy = classesData[0].energyPoints;
@@ -161,11 +161,19 @@ public class GameSetup : MonoBehaviour
         player.controller.swordCollider.GetComponent<SpriteRenderer>().sprite = classesData[0].weaponSprite;
 
         // Add Abilities
+        Player_PaladinAttack attack = player.gameObject.AddComponent<Player_PaladinAttack>();
+        attack.player = player;
+        player.attackScript = attack;
+
         Player_DashSkill dash = player.gameObject.AddComponent<Player_DashSkill>();
+        dash.player = player;
         dash.dashForce = classesData[0].dashForce;
         dash.dashRechargeTime = classesData[0].dashRechargeTime;
         dash.dashEnergyCost = classesData[0].dashEnergyCost;
         dash.dashTime = classesData[0].dashTime;
+
+        
+
 
 
     }

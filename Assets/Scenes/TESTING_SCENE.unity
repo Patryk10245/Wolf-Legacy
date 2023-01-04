@@ -331,6 +331,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1420845206, guid: 34d59b25812fb3a4b983e0c6f53f85d2, type: 3}
+    - target: {fileID: 8909031239055229890, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909031239055229890, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.16
+      objectReference: {fileID: 0}
     - target: {fileID: 8909031239055229892, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -79603,7 +79611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909031238140290563, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8909031238140290588, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: theCam

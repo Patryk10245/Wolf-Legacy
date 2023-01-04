@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         inputAsset = GetComponent<PlayerInput>().actions;
         playerMap = inputAsset.FindActionMap("Player");
-        playerMap.FindAction("Attack").started += SwordAttack;
+        playerMap.FindAction("Attack").started += Attack;
         move = playerMap.FindAction("Move");
         rotate = playerMap.FindAction("Rotate");
         playerMap.Enable();
@@ -123,14 +123,12 @@ public class PlayerController : MonoBehaviour
 
         paladinSwordHolder.rotation = Quaternion.Euler(0, 0, angle);
     }
-    public void SwordAttack(InputAction.CallbackContext context)
+
+    public void Attack(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Started)
         {
-            player.inAttack = true;
-            swordAnimator.SetTrigger("isClicked");
-            swordCollider.enabled = true;
-            trailObject.SetActive(true);
+            player.attackScript.Attack();
         }
     }
 
