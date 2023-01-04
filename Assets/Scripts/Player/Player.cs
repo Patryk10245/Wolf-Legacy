@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("start for " + gameObject.name);
         //controller = GetComponent<PlayerController>();
         stats = GetComponent<PlayerStats>();
         controller = GetComponent<PlayerController>();
