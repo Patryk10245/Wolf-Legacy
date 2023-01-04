@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 6488356313986202301}
   stats: {fileID: 8909031238140290589}
-  theCam: {fileID: 0}
+  currentCamera: {fileID: 0}
   ui_updater: {fileID: 4783158888212072919}
   abilityBasic: {fileID: 7868530939332003174}
   id: 0
@@ -134,6 +134,8 @@ MonoBehaviour:
   horizontal: 0
   vertical: 0
   moveSpeed: 320
+  dMousePos: {x: 0, y: 0}
+  dScreenPoint: {x: 0, y: 0}
 --- !u!114 &8909031238140290589
 MonoBehaviour:
   m_ObjectHideFlags: 0

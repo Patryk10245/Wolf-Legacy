@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player_Manager : MonoBehaviour
 {
@@ -10,24 +11,29 @@ public class Player_Manager : MonoBehaviour
     {
         ins = this;
     }
-
     void Awake()
     {
         Reference();
         DontDestroyOnLoad(this);
     }
-
     private void Start()
     {
+        
         try
         {
             gameSetup = GameSetup.ins;
+            if(gameSetup.gameAlreadySetup == true)
+            {
+                return;
+            }
             gameSetup.SetUpTheGame();
         }
         catch(Exception exception)
         {
             Debug.LogWarning("Scene loaded without Main menu Scene. GameSetup Script not Initialized \n For proper game initializaton use Main Menu Scene!");
         }
+
+        //Debug.Log("sprite = " + playerList[0].GetComponentInChildren<SpriteRenderer>().sprite.name);
         
     }
 
@@ -53,7 +59,22 @@ public class Player_Manager : MonoBehaviour
         playerList.Add(temp.GetComponent<Player>());
     }
 
-    
+
+    private void Update()
+    {
+        /*
+        if(Input.GetKeyDown("q"))
+        {
+            playerList[0].GetComponent<PlayerInput>().SwitchCurrentControlScheme("My_Scheme", Joystick.current);
+        }
+        if (Input.GetKeyDown("r"))
+        {
+            playerList[0].GetComponent<PlayerInput>().SwitchCurrentControlScheme("KeyBoard", Keyboard.current, Mouse.current);
+        }
+        */
+    }
+
+
 
 
 }

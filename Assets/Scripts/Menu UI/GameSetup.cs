@@ -34,6 +34,16 @@ public class GameSetup : MonoBehaviour
     
     [SerializeField]public List<PlayerSelectedData> playingPlayers;
     public int numberOfPlayers;
+    public bool gameAlreadySetup = false;
+
+    [Header("Class Data")]
+    [SerializeField] ClassData[] classesData;
+
+    [SerializeField] Transform spawningPoint;
+
+
+
+    public GameObject test;
 
     private void Start()
     {
@@ -63,6 +73,23 @@ public class GameSetup : MonoBehaviour
                 Destroy(playerManager.playerList[1].gameObject);
                 playerManager.playerList.RemoveAt(1);
 
+                if(playingPlayers[0].selectedClass == ENUM_PlayerClass.Paladin)
+                {
+                    PaladinSetup(playerManager.playerList[0]);
+                }
+                else if(playingPlayers[0].selectedClass == ENUM_PlayerClass.Barbarian)
+                {
+
+                }
+                else if (playingPlayers[0].selectedClass == ENUM_PlayerClass.Ranger)
+                {
+
+                }
+                else if (playingPlayers[0].selectedClass == ENUM_PlayerClass.Mage)
+                {
+
+                }
+
                 // Set Up players class
                 // Add abilites
 
@@ -73,15 +100,87 @@ public class GameSetup : MonoBehaviour
                 cameraFollowing.smooth = false;
 
 
+                if (playingPlayers[0].selectedClass == ENUM_PlayerClass.Paladin)
+                {
+                    PaladinSetup(playerManager.playerList[0]);
+                }
+                else if (playingPlayers[0].selectedClass == ENUM_PlayerClass.Barbarian)
+                {
+                    BarbarianSetup(playerManager.playerList[0]);
+                }
+                else if (playingPlayers[0].selectedClass == ENUM_PlayerClass.Ranger)
+                {
+                    RangerSetup(playerManager.playerList[0]);
+                }
+                else if (playingPlayers[0].selectedClass == ENUM_PlayerClass.Mage)
+                {
+                    MageSetup(playerManager.playerList[0]);
+                }
+
+                if (playingPlayers[1].selectedClass == ENUM_PlayerClass.Paladin)
+                {
+                    PaladinSetup(playerManager.playerList[1]);
+                }
+                else if (playingPlayers[1].selectedClass == ENUM_PlayerClass.Barbarian)
+                {
+                    BarbarianSetup(playerManager.playerList[1]);
+                }
+                else if (playingPlayers[1].selectedClass == ENUM_PlayerClass.Ranger)
+                {
+                    RangerSetup(playerManager.playerList[1]);
+                }
+                else if (playingPlayers[1].selectedClass == ENUM_PlayerClass.Mage)
+                {
+                    MageSetup(playerManager.playerList[1]);
+                }
+
+
                 break;
             default:
                 break;
         }
+
         
+
+
+        gameAlreadySetup = true;
+
     }
 
+    void PaladinSetup(Player player)
+    {
+        Debug.Log("Paladin Setup");
+        player.stats.currentHealth = classesData[0].healtPoints;
+        player.stats.maxHealth = classesData[0].healtPoints;
+        player.stats.currentEnergy = classesData[0].energyPoints;
+        player.stats.maxEnergy = classesData[0].energyPoints;
+        player.stats.damage = classesData[0].damage;
+        player.stats.energyRegenerationAmount = classesData[0].energyRegenAmount;
 
-    
+        player.controller.moveSpeed = classesData[0].speed;
+        player.controller.swordCollider.GetComponent<SpriteRenderer>().sprite = classesData[0].weaponSprite;
+
+        // Add Abilities
+        Player_DashSkill dash = player.gameObject.AddComponent<Player_DashSkill>();
+        dash.dashForce = classesData[0].dashForce;
+        dash.dashRechargeTime = classesData[0].dashRechargeTime;
+        dash.dashEnergyCost = classesData[0].dashEnergyCost;
+        dash.dashTime = classesData[0].dashTime;
+
+
+    }
+    void BarbarianSetup(Player player)
+    {
+
+    }
+    void RangerSetup(Player player)
+    {
+
+    }
+    void MageSetup(Player player)
+    {
+
+    }
 
 
 }

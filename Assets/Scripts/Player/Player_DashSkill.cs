@@ -30,7 +30,6 @@ public class Player_DashSkill : Ability_1
         if(player.stats.currentEnergy >= dashEnergyCost)
         {
             player.stats.ModifyEnergy(-dashEnergyCost);
-            Vector3 force = new Vector3(player.controller.moveInput.x, player.controller.moveInput.y, 0);
             //Debug.Log("Force = " + force);
             player.KnockBack(player.controller.moveInput * dashForce);
             isDashing = true;

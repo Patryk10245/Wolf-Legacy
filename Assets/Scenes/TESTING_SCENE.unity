@@ -303,6 +303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1 Keyboard
       objectReference: {fileID: 0}
+    - target: {fileID: 8909031238140290563, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8909031238140290588, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: theCam
       value: 
@@ -323,6 +327,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8909031238170990639, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1420845206, guid: 34d59b25812fb3a4b983e0c6f53f85d2, type: 3}
+    - target: {fileID: 8909031239055229892, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3238dca1e9ea9fb4aa64b28298ba6dbd, type: 3}
     - target: {fileID: 8909031239192196197, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -79589,6 +79601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 2 GamePad
       objectReference: {fileID: 0}
+    - target: {fileID: 8909031238140290563, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8909031238140290588, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
       propertyPath: theCam
       value: 
@@ -80828,6 +80844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae34eba71e7d94408ed5620f3c0a510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSetup: {fileID: 0}
   playerPrefab: {fileID: 8909031238140290563, guid: 3f9b2e2d096fbb54bac525b99e664a0f, type: 3}
   playerList:
   - {fileID: 1660470830}

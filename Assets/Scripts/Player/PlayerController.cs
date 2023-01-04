@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
         rotate = playerMap.FindAction("Rotate");
         playerMap.Enable();
 
+        
+
         Debug.Log("name = " + gameObject.name + " | device = " + playerMap.devices.Value[0].name);
     }
 
