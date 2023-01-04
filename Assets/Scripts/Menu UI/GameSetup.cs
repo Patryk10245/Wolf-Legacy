@@ -149,16 +149,17 @@ public class GameSetup : MonoBehaviour
 
     void PaladinSetup(Player player)
     {
+        ClassData paladinData = classesData[0];
         //Debug.Log("Paladin Setup");
-        player.stats.currentHealth = classesData[0].healtPoints;
-        player.stats.maxHealth = classesData[0].healtPoints;
-        player.stats.currentEnergy = classesData[0].energyPoints;
-        player.stats.maxEnergy = classesData[0].energyPoints;
-        player.stats.damage = classesData[0].damage;
-        player.stats.energyRegenerationAmount = classesData[0].energyRegenAmount;
+        player.stats.currentHealth = paladinData.healtPoints;
+        player.stats.maxHealth = paladinData.healtPoints;
+        player.stats.currentEnergy = paladinData.energyPoints;
+        player.stats.maxEnergy = paladinData.energyPoints;
+        player.stats.damage = paladinData.damage;
+        player.stats.energyRegenerationAmount = paladinData.energyRegenAmount;
 
         player.controller.moveSpeed = classesData[0].speed;
-        player.controller.swordCollider.GetComponent<SpriteRenderer>().sprite = classesData[0].weaponSprite;
+        player.controller.swordCollider.GetComponent<SpriteRenderer>().sprite = paladinData.weaponSprite;
 
         // Add Abilities
         Player_PaladinAttack attack = player.gameObject.AddComponent<Player_PaladinAttack>();
@@ -167,10 +168,10 @@ public class GameSetup : MonoBehaviour
 
         Player_DashSkill dash = player.gameObject.AddComponent<Player_DashSkill>();
         dash.player = player;
-        dash.dashForce = classesData[0].dashForce;
-        dash.dashRechargeTime = classesData[0].dashRechargeTime;
-        dash.dashEnergyCost = classesData[0].dashEnergyCost;
-        dash.dashTime = classesData[0].dashTime;
+        dash.dashForce = paladinData.dashForce;
+        dash.dashRechargeTime = paladinData.dashRechargeTime;
+        dash.dashEnergyCost = paladinData.dashEnergyCost;
+        dash.dashTime = paladinData.dashTime;
 
         
 
