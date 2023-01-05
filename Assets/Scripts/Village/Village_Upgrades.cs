@@ -87,6 +87,15 @@ public class Village_Upgrades : MonoBehaviour
     }
 
 
+    public void LoadUpgrades()
+    {
+
+    }
+    public void SaveUpgrades()
+    {
+        
+    }
+
 
 
 }

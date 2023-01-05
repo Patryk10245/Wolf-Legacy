@@ -10,11 +10,13 @@ public class Player_Manager : MonoBehaviour
     void Reference()
     {
         ins = this;
+        GameInitialization.ins.playerManager = this;
     }
     void Awake()
     {
         Reference();
         DontDestroyOnLoad(this);
+        GameInitialization.ins.playerManager = this;
     }
     private void Start()
     {
@@ -27,9 +29,12 @@ public class Player_Manager : MonoBehaviour
                 return;
             }
             gameSetup.SetUpTheGame();
+            ScoreTable.ins.SetReferenceToGoldText();
         }
         catch(Exception exception)
         {
+            Debug.LogError(exception.Message +"\n" + exception.StackTrace);
+            Debug.LogError(exception.Data);
             Debug.LogWarning("Scene loaded without Main menu Scene. GameSetup Script not Initialized \n For proper game initializaton use Main Menu Scene!");
         }
 

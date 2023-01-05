@@ -2,13 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreTable : MonoBehaviour
 {
     public static ScoreTable ins;
     public void Reference()
     {
-        ins = this;
+        if(ins == null)
+        {
+            ins = this;
+            GameInitialization.ins.scoreTable = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     
@@ -16,12 +26,17 @@ public class ScoreTable : MonoBehaviour
     public int current_Gold;
     public int kills;
 
-    public Text goldAmount;
+    public GameObject GO_goldAmount;
+    public Text TEXT_goldAmount;
     // Start is called before the first frame update
     void Awake()
     {
-        Reference();
-        DontDestroyOnLoad(this);
+        Reference(); 
+    }
+    private void Start()
+    {
+        GameInitialization.ins.scoreTable = this;
+        //SetReferenceToGoldText();
     }
 
     // Update is called once per frame
@@ -42,6 +57,19 @@ public class ScoreTable : MonoBehaviour
 
     public void UpdateGold()
     {
-        goldAmount.text = current_Gold.ToString();
+        TEXT_goldAmount.text = current_Gold.ToString();
+    }
+
+    public void SetReferenceToGoldText()
+    {
+        GameObject temp = GameObject.Find("Canvas");
+        foreach(Transform child in temp.transform)
+        {
+            if(child.gameObject.name == "Gold Icon")
+            {
+                TEXT_goldAmount = child.gameObject.GetComponentInChildren<Text>();
+                GO_goldAmount = child.gameObject;
+            }
+        }
     }
 }

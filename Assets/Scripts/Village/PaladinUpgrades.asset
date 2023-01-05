@@ -14,71 +14,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage:
     valueOnLevel:
+    - 0
     - 5
     - 8
     - 11
     - 14
     - 20
-    cost:
-    - 100
-    - 200
-    - 300
-    - 400
-    - 500
+    cost: 64000000c80000002c01000090010000f4010000f4010000
     currentLevel: 0
   health:
     valueOnLevel:
+    - 0
     - 40
     - 60
     - 80
     - 100
     - 150
-    cost:
-    - 100
-    - 200
-    - 300
-    - 400
-    - 500
+    cost: 64000000c80000002c01000090010000f4010000f4010000
     currentLevel: 0
   energy:
     valueOnLevel:
+    - 0
     - 20
     - 30
     - 40
     - 50
     - 80
-    cost:
-    - 100
-    - 200
-    - 300
-    - 400
-    - 500
+    cost: 64000000c80000002c01000090010000f4010000f4010000
     currentLevel: 0
   energyRegeneration:
     valueOnLevel:
+    - 0
     - 0.5
     - 1
     - 1.5
     - 2
     - 4
-    cost:
-    - 100
-    - 200
-    - 300
-    - 400
-    - 500
+    cost: 64000000c80000002c01000090010000f4010000f4010000
     currentLevel: 0
   speed:
     valueOnLevel:
-    - 180
-    - 200
-    - 220
-    - 240
-    - 300
-    cost:
-    - 100
-    - 200
-    - 300
-    - 400
-    - 500
+    - 0
+    - 20
+    - 40
+    - 60
+    - 80
+    - 120
+    cost: 64000000c80000002c01000090010000f4010000f4010000
     currentLevel: 0

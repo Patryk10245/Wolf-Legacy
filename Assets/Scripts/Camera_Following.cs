@@ -36,6 +36,7 @@ public class Camera_Following : MonoBehaviour
         {
             Reference();
             DontDestroyOnLoad(this);
+            GameInitialization.ins.cameraFollowing = this;
         }
 
         
