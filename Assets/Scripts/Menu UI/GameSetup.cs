@@ -71,103 +71,94 @@ public class GameSetup : MonoBehaviour
         cameraFollowing = Camera_Following.ins;
         scoreTable = ScoreTable.ins;
 
-        switch (numberOfPlayers)
+        GameInitialization.ins.playerManager = playerManager;
+        GameInitialization.ins.cameraFollowing = cameraFollowing;
+
+        Debug.Log("number of players == " + numberOfPlayers);
+        if (numberOfPlayers == 1)
         {
-            case 1:
-                cameraFollowing.singlePlayer = true;
-                cameraFollowing.flat = false;
-                cameraFollowing.smooth = false;
-                Destroy(playerManager.playerList[1].gameObject);
-                playerManager.playerList.RemoveAt(1);
+            
+            cameraFollowing.singlePlayer = true;
+            cameraFollowing.flat = false;
+            cameraFollowing.smooth = false;
+            Destroy(playerManager.playerList[1].gameObject);
+            playerManager.playerList.RemoveAt(1);
 
-                if(playingPlayers[0].selectedClass == ENUM_PlayerClass.Paladin)
-                {
+            switch(playingPlayers[0].selectedClass)
+            {
+                case ENUM_PlayerClass.Paladin:
                     PaladinSetup(playerManager.playerList[0]);
-                }
-                else if(playingPlayers[0].selectedClass == ENUM_PlayerClass.Barbarian)
-                {
-
-                }
-                else if (playingPlayers[0].selectedClass == ENUM_PlayerClass.Ranger)
-                {
-
-                }
-                else if (playingPlayers[0].selectedClass == ENUM_PlayerClass.Mage)
-                {
-
-                }
-
-                // Set Up players class
-                // Add abilites
-
-                break;
-            case 2:
-                cameraFollowing.singlePlayer = false;
-                cameraFollowing.flat = true;
-                cameraFollowing.smooth = false;
-
-
-                if (playingPlayers[0].selectedClass == ENUM_PlayerClass.Paladin)
-                {
-                    PaladinSetup(playerManager.playerList[0]);
-                }
-                else if (playingPlayers[0].selectedClass == ENUM_PlayerClass.Barbarian)
-                {
+                    break;
+                case ENUM_PlayerClass.Barbarian:
                     BarbarianSetup(playerManager.playerList[0]);
-                }
-                else if (playingPlayers[0].selectedClass == ENUM_PlayerClass.Ranger)
-                {
+                    break;
+                case ENUM_PlayerClass.Ranger:
                     RangerSetup(playerManager.playerList[0]);
-                }
-                else if (playingPlayers[0].selectedClass == ENUM_PlayerClass.Mage)
-                {
+                    break;
+                case ENUM_PlayerClass.Mage:
                     MageSetup(playerManager.playerList[0]);
-                }
-
-                if (playingPlayers[1].selectedClass == ENUM_PlayerClass.Paladin)
-                {
-                    PaladinSetup(playerManager.playerList[1]);
-                }
-                else if (playingPlayers[1].selectedClass == ENUM_PlayerClass.Barbarian)
-                {
-                    BarbarianSetup(playerManager.playerList[1]);
-                }
-                else if (playingPlayers[1].selectedClass == ENUM_PlayerClass.Ranger)
-                {
-                    RangerSetup(playerManager.playerList[1]);
-                }
-                else if (playingPlayers[1].selectedClass == ENUM_PlayerClass.Mage)
-                {
-                    MageSetup(playerManager.playerList[1]);
-                }
-
-
-                break;
-            default:
-                break;
+                    break;
+            }
         }
+        else if(numberOfPlayers == 2)
+        {
+            cameraFollowing.singlePlayer = false;
+            cameraFollowing.flat = true;
+            cameraFollowing.smooth = false;
 
-        
+            switch (playingPlayers[0].selectedClass)
+            {
+                case ENUM_PlayerClass.Paladin:
+                    PaladinSetup(playerManager.playerList[0]);
+                    break;
+                case ENUM_PlayerClass.Barbarian:
+                    BarbarianSetup(playerManager.playerList[0]);
+                    break;
+                case ENUM_PlayerClass.Ranger:
+                    RangerSetup(playerManager.playerList[0]);
+                    break;
+                case ENUM_PlayerClass.Mage:
+                    MageSetup(playerManager.playerList[0]);
+                    break;
+            }
 
-
+            switch (playingPlayers[0].selectedClass)
+            {
+                case ENUM_PlayerClass.Paladin:
+                    PaladinSetup(playerManager.playerList[1]);
+                    break;
+                case ENUM_PlayerClass.Barbarian:
+                    BarbarianSetup(playerManager.playerList[1]);
+                    break;
+                case ENUM_PlayerClass.Ranger:
+                    RangerSetup(playerManager.playerList[1]);
+                    break;
+                case ENUM_PlayerClass.Mage:
+                    MageSetup(playerManager.playerList[1]);
+                    break;
+            }
+        }
         gameAlreadySetup = true;
 
     }
 
     void PaladinSetup(Player player)
     {
+        
+        ClassUpgrades upgrades = Village_Upgrades.ins.paladinUpgrades;
         Debug.Log("player name = " + player.gameObject.name);
         ClassData paladinData = classesData[0];
         //Debug.Log("Paladin Setup");
-        player.stats.currentHealth = paladinData.healtPoints;
-        player.stats.maxHealth = paladinData.healtPoints;
-        player.stats.currentEnergy = paladinData.energyPoints;
-        player.stats.maxEnergy = paladinData.energyPoints;
-        player.stats.damage = paladinData.damage;
-        player.stats.energyRegenerationAmount = paladinData.energyRegenAmount;
+        player.stats.currentHealth = paladinData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
+        player.stats.maxHealth = paladinData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
+        player.stats.currentEnergy = paladinData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];
+        player.stats.maxEnergy = paladinData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];
+        player.stats.damage = paladinData.damage + upgrades.damage.valueOnLevel[upgrades.damage.currentLevel];
+        player.stats.energyRegenerationAmount = paladinData.energyRegenAmount + upgrades.energyRegeneration.valueOnLevel[upgrades.energyRegeneration.currentLevel];
 
-        player.controller.moveSpeed = classesData[0].speed;
+        player.controller.moveSpeed = classesData[0].speed + upgrades.speed.valueOnLevel[upgrades.speed.currentLevel];
         player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = paladinData.weaponSprite;
+        //Debug.Log(player.controller.weaponAnimator.name);
 
         // Add Abilities
         Player_PaladinAttack attack = player.gameObject.AddComponent<Player_PaladinAttack>();
