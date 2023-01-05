@@ -59,6 +59,7 @@ public class Village_Upgrades : MonoBehaviour
             default:
                 stat = characterclass.damage;
                 break;
+
         }
 
 

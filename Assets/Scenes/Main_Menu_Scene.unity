@@ -3021,11 +3021,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23af79a20781934ca0bef19ef80fb85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreTable: {fileID: 0}
-  paladinUpgrades: {fileID: 0}
-  barbarianUpgrades: {fileID: 0}
-  rangerUpgrades: {fileID: 0}
-  mageUpgrades: {fileID: 0}
+  scoreTable: {fileID: 1751829985}
+  paladinUpgrades: {fileID: 11400000, guid: 35bd96cea5d10424ebc49b3f347cad0a, type: 2}
+  barbarianUpgrades: {fileID: 11400000, guid: 99f1ccea05e058e4983301bf44198c70, type: 2}
+  rangerUpgrades: {fileID: 11400000, guid: dab2406f9f51913419f45eb3c02c747e, type: 2}
+  mageUpgrades: {fileID: 11400000, guid: 7b51852c570410e4c87c6ce910984e54, type: 2}
 --- !u!4 &602948556
 Transform:
   m_ObjectHideFlags: 0
@@ -8321,6 +8321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_Gold: 0
   kills: 0
+  GO_goldAmount: {fileID: 0}
   TEXT_goldAmount: {fileID: 0}
 --- !u!4 &1751829986
 Transform:
