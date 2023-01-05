@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Village_UI_Info : MonoBehaviour
+public class Village_UI_Control : MonoBehaviour
 {
     public GameObject infoField;
 

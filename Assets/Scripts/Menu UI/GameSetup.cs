@@ -144,11 +144,10 @@ public class GameSetup : MonoBehaviour
 
     void PaladinSetup(Player player)
     {
-        
-        ClassUpgrades upgrades = Village_Upgrades.ins.paladinUpgrades;
         Debug.Log("player name = " + player.gameObject.name);
-        ClassData paladinData = classesData[0];
         //Debug.Log("Paladin Setup");
+        ClassUpgrades upgrades = Village_Upgrades.ins.paladinUpgrades;
+        ClassData paladinData = classesData[0];
         player.stats.currentHealth = paladinData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
         player.stats.maxHealth = paladinData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
         player.stats.currentEnergy = paladinData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];
@@ -158,7 +157,7 @@ public class GameSetup : MonoBehaviour
 
         player.controller.moveSpeed = classesData[0].speed + upgrades.speed.valueOnLevel[upgrades.speed.currentLevel];
         player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = paladinData.weaponSprite;
-        //Debug.Log(player.controller.weaponAnimator.name);
+
 
         // Add Abilities
         Player_PaladinAttack attack = player.gameObject.AddComponent<Player_PaladinAttack>();
