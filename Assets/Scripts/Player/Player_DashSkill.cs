@@ -5,9 +5,9 @@ using UnityEngine;
 public class Player_DashSkill : Ability_1
 {
     public Player player;
-    public float dashForce = 500;
-    public float dashRechargeTime = 5;
-    public float dashEnergyCost = 1;
+    public float dashForce = 4000;
+    public float dashRechargeTime = 3;
+    public float dashEnergyCost = 10;
     float dash_timer;
     public float dashTime = 0.1f;
     bool isDashing;

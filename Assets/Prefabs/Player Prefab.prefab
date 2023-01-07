@@ -134,6 +134,8 @@ MonoBehaviour:
   horizontal: 0
   vertical: 0
   moveSpeed: 320
+  screenPoint: {x: 0, y: 0, z: 0}
+  mousePos: {x: 0, y: 0}
   dMousePos: {x: 0, y: 0}
   dScreenPoint: {x: 0, y: 0}
 --- !u!114 &8909031238140290589

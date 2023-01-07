@@ -17,7 +17,7 @@ public class Village_Upgrades : MonoBehaviour
     public static Village_Upgrades ins;
     public void Reference()
     {
-        Debug.Log("Setting reference for Village Upgraes");
+        //Debug.Log("Setting reference for Village Upgraes");
         ins = this;
     }
     private void Awake()
@@ -30,7 +30,7 @@ public class Village_Upgrades : MonoBehaviour
     }
     private void Start()
     {
-        Debug.Log("Setting village control refernec from start");
+        //Debug.Log("Setting village control refernec from start");
         village_UI_Control = Village_UI_Control.ins;
     }
 

@@ -14,8 +14,4 @@ public class ClassData : ScriptableObject
     public Sprite playerSprite;
     public Sprite weaponSprite;
 
-    public float dashForce;
-    public float dashRechargeTime;
-    public float dashEnergyCost;
-    public float dashTime;
 }

@@ -41,6 +41,7 @@ public class GameSetup : MonoBehaviour
     [Header("Class Data")]
     [SerializeField] ClassData[] classesData;
     [SerializeField] RuntimeAnimatorController[] controllers;
+    [SerializeField] GameObject mageProjectilePrefab;
 
 
     private void Start()
@@ -71,11 +72,11 @@ public class GameSetup : MonoBehaviour
     {
         //Debug.Log("Setting up the game");
         Level_FightReferenecs levelReferences = Level_FightReferenecs.ins;
-        Debug.Log("level references = " + levelReferences.gameObject.name);
+        //Debug.Log("level references = " + levelReferences.gameObject.name);
 
         playerManager = levelReferences.playerManager;
         cameraFollowing = levelReferences.cameraFollowing;
-        Debug.Log("player manager = " + playerManager);
+        //Debug.Log("player manager = " + playerManager);
 
         PlayerInputManager playerInputManager = levelReferences.playerInputManager;
         playerInputManager.playerPrefab = playerManager.playerPrefab;
@@ -211,10 +212,6 @@ public class GameSetup : MonoBehaviour
         Player_DashSkill dash = player.gameObject.AddComponent<Player_DashSkill>();
         player.abilityBasic = dash;
         dash.player = player;
-        dash.dashForce = paladinData.dashForce;
-        dash.dashRechargeTime = paladinData.dashRechargeTime;
-        dash.dashEnergyCost = paladinData.dashEnergyCost;
-        dash.dashTime = paladinData.dashTime;
     }
     void BarbarianSetup(Player player)
     {
@@ -227,7 +224,7 @@ public class GameSetup : MonoBehaviour
     void MageSetup(Player player)
     {
         ClassUpgrades upgrades = Village_Upgrades.ins.mageUpgrades;
-        ClassData mageData = classesData[4];
+        ClassData mageData = classesData[3];
         player.stats.currentHealth = mageData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
         player.stats.maxHealth = mageData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
         player.stats.currentEnergy = mageData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];
@@ -237,11 +234,14 @@ public class GameSetup : MonoBehaviour
 
         player.controller.moveSpeed = mageData.speed + upgrades.speed.valueOnLevel[upgrades.speed.currentLevel];
         player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = mageData.weaponSprite;
-        player.GetComponent<Animator>().runtimeAnimatorController = controllers[4];
+        player.GetComponent<Animator>().runtimeAnimatorController = controllers[3];
 
         Player_MageAttack attack = player.gameObject.AddComponent<Player_MageAttack>();
         player.attackScript = attack;
         attack.player = player;
+        attack.projectilePrefab = mageProjectilePrefab;
+        attack.spawnProjectilePosition = player.controller.weaponCollider.transform;
+
 
 
     }

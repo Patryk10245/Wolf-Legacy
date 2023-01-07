@@ -13,17 +13,27 @@ MonoBehaviour:
   m_Name: MageUpgrade
   m_EditorClassIdentifier: 
   damage:
-    valueOnLevel: []
+    valueOnLevel:
+    - 0
+    cost: 00000000
     currentLevel: 0
   health:
-    valueOnLevel: []
+    valueOnLevel:
+    - 0
+    cost: 00000000
     currentLevel: 0
   energy:
-    valueOnLevel: []
+    valueOnLevel:
+    - 0
+    cost: 00000000
     currentLevel: 0
   energyRegeneration:
-    valueOnLevel: []
+    valueOnLevel:
+    - 0
+    cost: 00000000
     currentLevel: 0
   speed:
-    valueOnLevel: []
+    valueOnLevel:
+    - 0
+    cost: 00000000
     currentLevel: 0

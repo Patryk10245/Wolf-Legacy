@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43bc6f4a8d4f484397f3a418cfa9d43, type: 3}
+  m_Name: Mage
+  m_EditorClassIdentifier: 
+  healtPoints: 20
+  energyPoints: 60
+  energyRegenAmount: 1.5
+  damage: 6
+  speed: 220
+  playerSprite: {fileID: 579795930, guid: 02e4e6377df96cb4d8897c66626656de, type: 3}
+  weaponSprite: {fileID: -391588724, guid: 02e4e6377df96cb4d8897c66626656de, type: 3}

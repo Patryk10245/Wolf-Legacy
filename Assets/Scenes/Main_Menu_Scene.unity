@@ -2878,8 +2878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d28f471707d554a92e4d2275f628bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
-  cameraFollowing: {fileID: 0}
   scoreTable: {fileID: 1751829985}
   villageUpgrades: {fileID: 602948555}
   playingPlayers: []
@@ -2887,6 +2885,15 @@ MonoBehaviour:
   gameAlreadySetup: 0
   classesData:
   - {fileID: 11400000, guid: 01d4448912be4694b8ccb690aeed704b, type: 2}
+  - {fileID: 11400000, guid: 01d4448912be4694b8ccb690aeed704b, type: 2}
+  - {fileID: 11400000, guid: 01d4448912be4694b8ccb690aeed704b, type: 2}
+  - {fileID: 11400000, guid: d4f524d4cf628e9428a46649cb10d754, type: 2}
+  controllers:
+  - {fileID: 9100000, guid: 6a8449df3491e914ba12357744c1574d, type: 2}
+  - {fileID: 9100000, guid: 6a8449df3491e914ba12357744c1574d, type: 2}
+  - {fileID: 9100000, guid: 6a8449df3491e914ba12357744c1574d, type: 2}
+  - {fileID: 9100000, guid: 6a8f846c70e163f4c9ec706a68a50c57, type: 2}
+  mageProjectilePrefab: {fileID: 5721576511170400244, guid: 9d5fe5478f17a4c43a2e9cb24754dfb4, type: 3}
 --- !u!4 &575574612
 Transform:
   m_ObjectHideFlags: 0
@@ -3028,10 +3035,7 @@ MonoBehaviour:
   barbarianUpgrades: {fileID: 11400000, guid: 99f1ccea05e058e4983301bf44198c70, type: 2}
   rangerUpgrades: {fileID: 11400000, guid: dab2406f9f51913419f45eb3c02c747e, type: 2}
   mageUpgrades: {fileID: 11400000, guid: 7b51852c570410e4c87c6ce910984e54, type: 2}
-  paladinInfo: {fileID: 0}
-  barbarianInfo: {fileID: 0}
-  rangerInfo: {fileID: 0}
-  mageInfo: {fileID: 0}
+  village_UI_Control: {fileID: 0}
 --- !u!4 &602948556
 Transform:
   m_ObjectHideFlags: 0

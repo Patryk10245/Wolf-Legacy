@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour
     public float vertical;
     public float moveSpeed = 320;
 
+
+    public Vector3 screenPoint;
+    public Vector2 mousePos;
+
     [Header("Debug")]
     public Vector2 dMousePos;
     public Vector2 dScreenPoint;
@@ -83,9 +87,9 @@ public class PlayerController : MonoBehaviour
     }
     void Sword_Rotation()
     {
-        Vector2 mousePos;
+        
         mousePos = rotate.ReadValue<Vector2>();
-        Vector3 screenPoint = player.currentCamera.WorldToScreenPoint(transform.localPosition);
+        screenPoint = player.currentCamera.WorldToScreenPoint(transform.localPosition);
         dMousePos = mousePos;
 
 
@@ -132,7 +136,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
-            Debug.Log("player = " + player.id);
+            //Debug.Log("player = " + player.id);
             player.attackScript.Attack();
         }
     }
