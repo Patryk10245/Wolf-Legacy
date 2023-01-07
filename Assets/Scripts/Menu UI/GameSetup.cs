@@ -29,8 +29,8 @@ public class GameSetup : MonoBehaviour
         ins = this;
     }
 
-    [SerializeField] Player_Manager playerManager;
-    [SerializeField] Camera_Following cameraFollowing;
+    Player_Manager playerManager;
+    Camera_Following cameraFollowing;
     [SerializeField] ScoreTable scoreTable;
     public Village_Upgrades villageUpgrades;
     
@@ -40,21 +40,7 @@ public class GameSetup : MonoBehaviour
 
     [Header("Class Data")]
     [SerializeField] ClassData[] classesData;
-
-    int x = 0;
-
-
-    public void foo()
-    {
-        classesData[0].damage++;
-    }
-    private void Update()
-    {
-        if(Input.GetKeyDown("q"))
-        {
-            foo();
-        }
-    }
+    [SerializeField] RuntimeAnimatorController[] controllers;
 
 
     private void Start()
@@ -73,8 +59,8 @@ public class GameSetup : MonoBehaviour
     void SetReferencesForPlayer1(Player newPlayer, Level_FightReferenecs references)
     {
         newPlayer.ui_updater.healthBar = references.player1HealthBar;
-        newPlayer.id = x;
-        x++;
+
+
     }
     void SetReferencesForPlayer2(Player newPlayer, Level_FightReferenecs references)
     {
@@ -213,13 +199,14 @@ public class GameSetup : MonoBehaviour
 
         player.controller.moveSpeed = classesData[0].speed + upgrades.speed.valueOnLevel[upgrades.speed.currentLevel];
         player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = paladinData.weaponSprite;
+        player.GetComponent<Animator>().runtimeAnimatorController = controllers[0];
 
 
         // Add Abilities
         Player_PaladinAttack attack = player.gameObject.AddComponent<Player_PaladinAttack>();
         player.attackScript = attack;
         attack.player = player;
-        player.attackScript = attack;
+
 
         Player_DashSkill dash = player.gameObject.AddComponent<Player_DashSkill>();
         player.abilityBasic = dash;
@@ -239,6 +226,23 @@ public class GameSetup : MonoBehaviour
     }
     void MageSetup(Player player)
     {
+        ClassUpgrades upgrades = Village_Upgrades.ins.mageUpgrades;
+        ClassData mageData = classesData[4];
+        player.stats.currentHealth = mageData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
+        player.stats.maxHealth = mageData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
+        player.stats.currentEnergy = mageData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];
+        player.stats.maxEnergy = mageData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];
+        player.stats.damage = mageData.damage + upgrades.damage.valueOnLevel[upgrades.damage.currentLevel];
+        player.stats.energyRegenerationAmount = mageData.energyRegenAmount + upgrades.energyRegeneration.valueOnLevel[upgrades.energyRegeneration.currentLevel];
+
+        player.controller.moveSpeed = mageData.speed + upgrades.speed.valueOnLevel[upgrades.speed.currentLevel];
+        player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = mageData.weaponSprite;
+        player.GetComponent<Animator>().runtimeAnimatorController = controllers[4];
+
+        Player_MageAttack attack = player.gameObject.AddComponent<Player_MageAttack>();
+        player.attackScript = attack;
+        attack.player = player;
+
 
     }
 
