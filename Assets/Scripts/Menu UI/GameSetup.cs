@@ -85,6 +85,7 @@ public class GameSetup : MonoBehaviour
 
         playerManager = levelReferences.playerManager;
         cameraFollowing = levelReferences.cameraFollowing;
+        Debug.Log("player manager = " + playerManager);
         
         PlayerInputManager playerInputManager = levelReferences.gameObject.GetComponent<PlayerInputManager>();
         playerInputManager.playerPrefab = playerManager.playerPrefab;
@@ -136,14 +137,13 @@ public class GameSetup : MonoBehaviour
         }
         else if(numberOfPlayers == 2)
         {
-            PlayerInput newPlayer = playerInputManager.JoinPlayer();
-            playerManager.playerList.Add(newPlayer.GetComponent<Player>());
-            newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+            PlayerInput newPlayer1 = playerInputManager.JoinPlayer();
+            playerManager.playerList.Add(newPlayer1.GetComponent<Player>());
+            newPlayer1.gameObject.transform.position = playerManager.playerSpawnPosition.position;
             SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
 
-            cameraFollowing.singlePlayer = false;
-            cameraFollowing.flat = true;
-            cameraFollowing.smooth = false;
+            
+            
 
             switch (playingPlayers[0].selectedClass)
             {
@@ -161,10 +161,11 @@ public class GameSetup : MonoBehaviour
                     break;
             }
 
-            newPlayer = playerInputManager.JoinPlayer();
-            playerManager.playerList.Add(newPlayer.GetComponent<Player>());
-            newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
-            SetReferencesForPlayer2(playerManager.playerList[0], levelReferences);
+            PlayerInput newPlayer2 = playerInputManager.JoinPlayer();
+            Debug.Log(newPlayer2.name);
+            playerManager.playerList.Add(newPlayer2.gameObject.GetComponent<Player>());
+            newPlayer2.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+            SetReferencesForPlayer2(playerManager.playerList[1], levelReferences);
 
 
             switch (playingPlayers[1].selectedClass)
@@ -183,7 +184,11 @@ public class GameSetup : MonoBehaviour
                     break;
             }
         }
-        gameAlreadySetup = true;
+
+
+        cameraFollowing.singlePlayer = false;
+        cameraFollowing.flat = true;
+        cameraFollowing.smooth = false;
 
     }
 
@@ -217,11 +222,6 @@ public class GameSetup : MonoBehaviour
         dash.dashRechargeTime = paladinData.dashRechargeTime;
         dash.dashEnergyCost = paladinData.dashEnergyCost;
         dash.dashTime = paladinData.dashTime;
-
-        
-
-
-
     }
     void BarbarianSetup(Player player)
     {
