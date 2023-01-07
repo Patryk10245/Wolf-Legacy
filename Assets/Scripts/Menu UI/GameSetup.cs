@@ -247,4 +247,58 @@ public class GameSetup : MonoBehaviour
     }
 
 
+
+    void LoadClassData()
+    {
+        
+        villageUpgrades.paladinUpgrades.damage.currentLevel = PlayerPrefs.GetInt("PaladinDamage", 0);
+        villageUpgrades.paladinUpgrades.health.currentLevel = PlayerPrefs.GetInt("PaladinHealth", 0);
+        villageUpgrades.paladinUpgrades.energy.currentLevel = PlayerPrefs.GetInt("PaladinEnergy", 0);
+        villageUpgrades.paladinUpgrades.energyRegeneration.currentLevel = PlayerPrefs.GetInt("PaladinRegen", 0);
+        villageUpgrades.paladinUpgrades.speed.currentLevel = PlayerPrefs.GetInt("PaladinSpeed", 0);
+
+        villageUpgrades.barbarianUpgrades.damage.currentLevel = PlayerPrefs.GetInt("BarbarianDamage", 0);
+        villageUpgrades.barbarianUpgrades.health.currentLevel = PlayerPrefs.GetInt("BarbarianPaladinHealth", 0);
+        villageUpgrades.barbarianUpgrades.energy.currentLevel = PlayerPrefs.GetInt("BarbarianEnergy", 0);
+        villageUpgrades.barbarianUpgrades.energyRegeneration.currentLevel = PlayerPrefs.GetInt("BarbarianRegen", 0);
+        villageUpgrades.barbarianUpgrades.speed.currentLevel = PlayerPrefs.GetInt("BarbarianSpeed", 0);
+
+        villageUpgrades.rangerUpgrades.damage.currentLevel = PlayerPrefs.GetInt("RangerDamage", 0);
+        villageUpgrades.rangerUpgrades.health.currentLevel = PlayerPrefs.GetInt("RangerPaladinHealth", 0);
+        villageUpgrades.rangerUpgrades.energy.currentLevel = PlayerPrefs.GetInt("RangerEnergy", 0);
+        villageUpgrades.rangerUpgrades.energyRegeneration.currentLevel = PlayerPrefs.GetInt("RangerRegen", 0);
+        villageUpgrades.rangerUpgrades.speed.currentLevel = PlayerPrefs.GetInt("RangerSpeed", 0);
+
+        villageUpgrades.mageUpgrades.damage.currentLevel = PlayerPrefs.GetInt("MageDamage", 0);
+        villageUpgrades.mageUpgrades.health.currentLevel = PlayerPrefs.GetInt("MageHealth", 0);
+        villageUpgrades.mageUpgrades.energy.currentLevel = PlayerPrefs.GetInt("MageEnergy", 0);
+        villageUpgrades.mageUpgrades.energyRegeneration.currentLevel = PlayerPrefs.GetInt("MageRegen", 0);
+        villageUpgrades.mageUpgrades.speed.currentLevel = PlayerPrefs.GetInt("MageSpeed", 0);
+    }
+    void SaveClassData()
+    {
+        PlayerPrefs.SetInt("PaladinDamage", villageUpgrades.paladinUpgrades.damage.currentLevel);
+        PlayerPrefs.SetInt("PaladinHealth", villageUpgrades.paladinUpgrades.health.currentLevel);
+        PlayerPrefs.SetInt("PaladinEnergy", villageUpgrades.paladinUpgrades.energy.currentLevel);
+        PlayerPrefs.SetInt("PaladinRegen", villageUpgrades.paladinUpgrades.energyRegeneration.currentLevel);
+        PlayerPrefs.SetInt("PaladinSpeed", villageUpgrades.paladinUpgrades.speed.currentLevel);
+
+        PlayerPrefs.SetInt("BarbarianDamage", villageUpgrades.barbarianUpgrades.damage.currentLevel);
+        PlayerPrefs.SetInt("BarbarianPaladinHealth", villageUpgrades.barbarianUpgrades.health.currentLevel);
+        PlayerPrefs.SetInt("BarbarianEnergy", villageUpgrades.barbarianUpgrades.energy.currentLevel);
+        PlayerPrefs.SetInt("BarbarianRegen", villageUpgrades.barbarianUpgrades.energyRegeneration.currentLevel);
+        PlayerPrefs.SetInt("BarbarianSpeed", villageUpgrades.barbarianUpgrades.speed.currentLevel);
+
+        PlayerPrefs.SetInt("RangerDamage", villageUpgrades.rangerUpgrades.damage.currentLevel);
+        PlayerPrefs.SetInt("RangerPaladinHealth", villageUpgrades.rangerUpgrades.health.currentLevel);
+        PlayerPrefs.SetInt("RangerEnergy", villageUpgrades.rangerUpgrades.energy.currentLevel);
+        PlayerPrefs.SetInt("RangerRegen", villageUpgrades.rangerUpgrades.energyRegeneration.currentLevel);
+        PlayerPrefs.SetInt("RangerSpeed", villageUpgrades.rangerUpgrades.speed.currentLevel);
+
+        PlayerPrefs.SetInt("MageDamage", villageUpgrades.mageUpgrades.damage.currentLevel);
+        PlayerPrefs.SetInt("MageHealth", villageUpgrades.mageUpgrades.health.currentLevel);
+        PlayerPrefs.SetInt("MageEnergy", villageUpgrades.mageUpgrades.energy.currentLevel);
+        PlayerPrefs.SetInt("MageRegen", villageUpgrades.mageUpgrades.energyRegeneration.currentLevel);
+        PlayerPrefs.SetInt("MageSpeed", villageUpgrades.mageUpgrades.speed.currentLevel);
+    }
 }
