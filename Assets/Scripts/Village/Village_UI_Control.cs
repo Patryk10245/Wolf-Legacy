@@ -6,6 +6,20 @@ using UnityEngine.UI;
 
 public class Village_UI_Control : MonoBehaviour
 {
+    public static Village_UI_Control ins;
+    public void Reference()
+    {
+        Debug.Log("Village ui Control INS reference");
+        ins = this;
+    }
+    private void Awake()
+    {
+        
+        Reference();
+    }
+
+
+    public Village_Upgrades villageUpgrades;
     public GameObject infoField;
 
     public GameObject paladinWindow;
@@ -13,6 +27,22 @@ public class Village_UI_Control : MonoBehaviour
     public GameObject rangerWindow;
     public GameObject mageWindow;
 
+    public Village_UI_ClassInfo paladinInfo;
+    public Village_UI_ClassInfo barbarianInfo;
+    public Village_UI_ClassInfo rangerInfo;
+    public Village_UI_ClassInfo mageInfo;
+
+
+    public void SetReference()
+    {
+        Debug.Log("Setting Reference for Village UI Control");
+        Debug.Log("upgrades = " + Village_Upgrades.ins.gameObject.name);
+        villageUpgrades = GameSetup.ins.villageUpgrades;
+        villageUpgrades.village_UI_Control = this;
+        
+    }
+
+    
 
 
     public void ShowPaladinWindow()
@@ -46,4 +76,33 @@ public class Village_UI_Control : MonoBehaviour
 
     }
 
+    void FixReference()
+    {
+        if (villageUpgrades == null)
+        {
+            villageUpgrades = Village_Upgrades.ins;
+            villageUpgrades.village_UI_Control = this; ;
+        }
+    }
+
+    public void UpgradePaladin(int type)
+    {
+        FixReference();
+        villageUpgrades.UpgradePaladin(type);
+    }
+    public void UpgradeBarbarian(int type)
+    {
+        FixReference();
+        villageUpgrades.UpgradeBarbarian(type);
+    }
+    public void UpgradeRanger(int type)
+    {
+        FixReference();
+        villageUpgrades.UpgradeRanger(type);
+    }
+    public void UpgradeMage(int type)
+    {
+        FixReference();
+        villageUpgrades.UpgradeMage(type);
+    }
 }

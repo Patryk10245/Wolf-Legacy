@@ -32,6 +32,8 @@ public class Level_SelectedScenes : MonoBehaviour
 
         if(scene == SceneManager.GetSceneByName("Village_Scene"))
         {
+            
+            Village_UI_Control.ins.SetReference();
             //Debug.Log("Village scene");
         }
         else if(scene == SceneManager.GetSceneByName("Main_Menu"))
@@ -58,7 +60,7 @@ public class Level_SelectedScenes : MonoBehaviour
 
     public void ChangeToVillageScene()
     {
-
+        SceneManager.LoadScene("Village_Scene");
     }
     public void ChangeToMap1()
     {
@@ -72,7 +74,7 @@ public class Level_SelectedScenes : MonoBehaviour
     {
 
     }
-    public void ChangeToMaiNmenu()
+    public void ChangeToMainmenu()
     {
 
     }

@@ -2880,7 +2880,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerManager: {fileID: 0}
   cameraFollowing: {fileID: 0}
-  scoreTable: {fileID: 0}
+  scoreTable: {fileID: 1751829985}
+  villageUpgrades: {fileID: 602948555}
   playingPlayers: []
   numberOfPlayers: 0
   gameAlreadySetup: 0
@@ -3075,14 +3076,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec99f4462d79ce4e825c30446c2099b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedMaps:
-  - m_Handle: 0
-  - m_Handle: 0
-  - m_Handle: 0
-  villageScene:
-    m_Handle: 0
-  menuScene:
-    m_Handle: 0
 --- !u!4 &612307986
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 
@@ -31,6 +32,7 @@ public class GameSetup : MonoBehaviour
     [SerializeField] Player_Manager playerManager;
     [SerializeField] Camera_Following cameraFollowing;
     [SerializeField] ScoreTable scoreTable;
+    public Village_Upgrades villageUpgrades;
     
     [SerializeField] public List<PlayerSelectedData> playingPlayers;
     public int numberOfPlayers;
@@ -55,7 +57,7 @@ public class GameSetup : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
     private void Awake()
     {
@@ -66,31 +68,53 @@ public class GameSetup : MonoBehaviour
         }
     }
 
+    void SetReferencesForPlayer1(Player newPlayer, Level_FightReferenecs references)
+    {
+        newPlayer.ui_updater.healthBar = references.player1HealthBar;
+    }
+    void SetReferencesForPlayer2(Player newPlayer, Level_FightReferenecs references)
+    {
+        newPlayer.ui_updater.healthBar = references.player2HealthBar;
+    }
+
     public void SetUpTheGame()
     {
         //Debug.Log("Setting up the game");
-        playerManager = Player_Manager.ins;
-        cameraFollowing = Camera_Following.ins;
-        scoreTable = ScoreTable.ins;
+        Level_FightReferenecs levelReferences = Level_FightReferenecs.ins;
+        Debug.Log("level references = " + levelReferences.gameObject.name);
 
-        GameInitialization.ins.playerManager = playerManager;
-        GameInitialization.ins.cameraFollowing = cameraFollowing;
-        scoreTable.SetReferenceToGoldText();
-
-        PlayerInputManager playerInputManager = playerManager.gameObject.GetComponent<PlayerInputManager>();
+        playerManager = levelReferences.playerManager;
+        cameraFollowing = levelReferences.cameraFollowing;
+        
+        PlayerInputManager playerInputManager = levelReferences.gameObject.GetComponent<PlayerInputManager>();
         playerInputManager.playerPrefab = playerManager.playerPrefab;
-        PlayerInput newPlayer = playerInputManager.JoinPlayer();
 
-        playerManager.playerList.Add(newPlayer.GetComponent<Player>());
-        newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+        //playerManager = Player_Manager.ins;
+        //cameraFollowing = Camera_Following.ins;
+        //scoreTable = ScoreTable.ins;
+
+        //GameInitialization.ins.playerManager = playerManager;
+        //GameInitialization.ins.cameraFollowing = cameraFollowing;
+
+
+        scoreTable.SetReferenceToGoldText();
+        
+        
 
         //Debug.Log("number of players == " + numberOfPlayers);
         if (numberOfPlayers == 1)
         {
-            
+
+            PlayerInput newPlayer = playerInputManager.JoinPlayer();
+            playerManager.playerList.Add(newPlayer.GetComponent<Player>());
+            newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+            SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
+
             cameraFollowing.singlePlayer = true;
             cameraFollowing.flat = false;
             cameraFollowing.smooth = false;
+
+            levelReferences.player2HealthBar.transform.parent.gameObject.SetActive(false);
             //Destroy(playerManager.playerList[1].gameObject);
             //playerManager.playerList.RemoveAt(1);
 
@@ -112,6 +136,11 @@ public class GameSetup : MonoBehaviour
         }
         else if(numberOfPlayers == 2)
         {
+            PlayerInput newPlayer = playerInputManager.JoinPlayer();
+            playerManager.playerList.Add(newPlayer.GetComponent<Player>());
+            newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+            SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
+
             cameraFollowing.singlePlayer = false;
             cameraFollowing.flat = true;
             cameraFollowing.smooth = false;
@@ -132,7 +161,13 @@ public class GameSetup : MonoBehaviour
                     break;
             }
 
-            switch (playingPlayers[0].selectedClass)
+            newPlayer = playerInputManager.JoinPlayer();
+            playerManager.playerList.Add(newPlayer.GetComponent<Player>());
+            newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+            SetReferencesForPlayer2(playerManager.playerList[0], levelReferences);
+
+
+            switch (playingPlayers[1].selectedClass)
             {
                 case ENUM_PlayerClass.Paladin:
                     PaladinSetup(playerManager.playerList[1]);

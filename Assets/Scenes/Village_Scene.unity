@@ -597,8 +597,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradePaladin
         m_Mode: 3
         m_Arguments:
@@ -1973,8 +1973,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeRanger
         m_Mode: 3
         m_Arguments:
@@ -2525,8 +2525,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeMage
         m_Mode: 3
         m_Arguments:
@@ -3640,8 +3640,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradePaladin
         m_Mode: 3
         m_Arguments:
@@ -4447,7 +4447,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 601695553}
-  - component: {fileID: 601695552}
   - component: {fileID: 601695554}
   m_Layer: 0
   m_Name: Class Upgrades
@@ -4456,23 +4455,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &601695552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601695551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a23af79a20781934ca0bef19ef80fb85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreTable: {fileID: 0}
-  paladinUpgrades: {fileID: 11400000, guid: 35bd96cea5d10424ebc49b3f347cad0a, type: 2}
-  barbarianUpgrades: {fileID: 11400000, guid: 99f1ccea05e058e4983301bf44198c70, type: 2}
-  rangerUpgrades: {fileID: 11400000, guid: dab2406f9f51913419f45eb3c02c747e, type: 2}
-  mageUpgrades: {fileID: 11400000, guid: 7b51852c570410e4c87c6ce910984e54, type: 2}
 --- !u!4 &601695553
 Transform:
   m_ObjectHideFlags: 0
@@ -4500,11 +4482,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9c3b3f7c62f6b4d923dcead8544b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  villageUpgrades: {fileID: 0}
   infoField: {fileID: 1487259570}
   paladinWindow: {fileID: 849734319}
   barbarianWindow: {fileID: 2066516046}
   rangerWindow: {fileID: 358913266}
   mageWindow: {fileID: 1683891738}
+  paladinInfo: {fileID: 849734321}
+  barbarianInfo: {fileID: 2066516048}
+  rangerInfo: {fileID: 358913268}
+  mageInfo: {fileID: 1683891740}
 --- !u!1 &604021004
 GameObject:
   m_ObjectHideFlags: 0
@@ -5810,8 +5797,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeBarbarian
         m_Mode: 3
         m_Arguments:
@@ -7041,8 +7028,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradePaladin
         m_Mode: 3
         m_Arguments:
@@ -7333,8 +7320,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeMage
         m_Mode: 3
         m_Arguments:
@@ -7620,8 +7607,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeMage
         m_Mode: 3
         m_Arguments:
@@ -7753,8 +7740,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeRanger
         m_Mode: 3
         m_Arguments:
@@ -8038,8 +8025,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeMage
         m_Mode: 3
         m_Arguments:
@@ -8479,8 +8466,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeBarbarian
         m_Mode: 3
         m_Arguments:
@@ -9209,8 +9196,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeBarbarian
         m_Mode: 3
         m_Arguments:
@@ -9342,8 +9329,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeRanger
         m_Mode: 3
         m_Arguments:
@@ -9703,8 +9690,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradePaladin
         m_Mode: 3
         m_Arguments:
@@ -10266,8 +10253,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeRanger
         m_Mode: 3
         m_Arguments:
@@ -10408,7 +10395,6 @@ GameObject:
   - component: {fileID: 1474408883}
   - component: {fileID: 1474408882}
   - component: {fileID: 1474408881}
-  - component: {fileID: 1474408884}
   - component: {fileID: 1474408885}
   m_Layer: 5
   m_Name: Paladin Building
@@ -10531,23 +10517,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474408879}
   m_CullTransparentMesh: 1
---- !u!114 &1474408884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474408879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9c3b3f7c62f6b4d923dcead8544b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infoField: {fileID: 1487259570}
-  paladinWindow: {fileID: 0}
-  barbarianWindow: {fileID: 0}
-  rangerWindow: {fileID: 0}
-  mageWindow: {fileID: 0}
 --- !u!114 &1474408885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10873,8 +10842,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeRanger
         m_Mode: 3
         m_Arguments:
@@ -12313,8 +12282,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeMage
         m_Mode: 3
         m_Arguments:
@@ -13111,8 +13080,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradePaladin
         m_Mode: 3
         m_Arguments:
@@ -13173,7 +13142,6 @@ GameObject:
   - component: {fileID: 1755897354}
   - component: {fileID: 1755897353}
   - component: {fileID: 1755897352}
-  - component: {fileID: 1755897355}
   - component: {fileID: 1755897356}
   m_Layer: 5
   m_Name: Barbarian Building
@@ -13296,23 +13264,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755897350}
   m_CullTransparentMesh: 1
---- !u!114 &1755897355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755897350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9c3b3f7c62f6b4d923dcead8544b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infoField: {fileID: 1487259570}
-  paladinWindow: {fileID: 0}
-  barbarianWindow: {fileID: 0}
-  rangerWindow: {fileID: 0}
-  mageWindow: {fileID: 0}
 --- !u!114 &1755897356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14245,8 +14196,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeBarbarian
         m_Mode: 3
         m_Arguments:
@@ -15675,8 +15626,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695552}
-        m_TargetAssemblyTypeName: Village_Upgrades, Assembly-CSharp
+      - m_Target: {fileID: 601695554}
+        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
         m_MethodName: UpgradeBarbarian
         m_Mode: 3
         m_Arguments:
@@ -15901,7 +15852,6 @@ GameObject:
   - component: {fileID: 2133920940}
   - component: {fileID: 2133920939}
   - component: {fileID: 2133920938}
-  - component: {fileID: 2133920941}
   - component: {fileID: 2133920942}
   m_Layer: 5
   m_Name: Ranger Building
@@ -16024,23 +15974,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133920936}
   m_CullTransparentMesh: 1
---- !u!114 &2133920941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133920936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9c3b3f7c62f6b4d923dcead8544b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infoField: {fileID: 1487259570}
-  paladinWindow: {fileID: 0}
-  barbarianWindow: {fileID: 0}
-  rangerWindow: {fileID: 0}
-  mageWindow: {fileID: 0}
 --- !u!114 &2133920942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16142,7 +16075,6 @@ GameObject:
   - component: {fileID: 2138566658}
   - component: {fileID: 2138566657}
   - component: {fileID: 2138566656}
-  - component: {fileID: 2138566659}
   - component: {fileID: 2138566660}
   m_Layer: 5
   m_Name: Mage Building
@@ -16265,23 +16197,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138566654}
   m_CullTransparentMesh: 1
---- !u!114 &2138566659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138566654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9c3b3f7c62f6b4d923dcead8544b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infoField: {fileID: 1487259570}
-  paladinWindow: {fileID: 0}
-  barbarianWindow: {fileID: 0}
-  rangerWindow: {fileID: 0}
-  mageWindow: {fileID: 0}
 --- !u!114 &2138566660
 MonoBehaviour:
   m_ObjectHideFlags: 0
