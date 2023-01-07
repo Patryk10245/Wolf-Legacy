@@ -139,6 +139,8 @@ public class UI_MainMenuControl : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("TESTING_SCENE");
+
+        Level_SelectedScenes.ins.ChangeToMap1();
+        //SceneManager.LoadScene("TESTING_SCENE");
     }
 }

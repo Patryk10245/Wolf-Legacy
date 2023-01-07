@@ -62,7 +62,9 @@ public class ScoreTable : MonoBehaviour
 
     public void SetReferenceToGoldText()
     {
+
         GameObject temp = GameObject.Find("Canvas");
+        
         foreach(Transform child in temp.transform)
         {
             if(child.gameObject.name == "Gold Icon")

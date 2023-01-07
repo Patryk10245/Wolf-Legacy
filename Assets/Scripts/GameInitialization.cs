@@ -21,6 +21,7 @@ public class GameInitialization : MonoBehaviour
     public GameSetup gameSetup;
     public ScoreTable scoreTable;
     public Camera_Following cameraFollowing;
+    public Level_SelectedScenes selectedScenes;
 
 
     void Start()

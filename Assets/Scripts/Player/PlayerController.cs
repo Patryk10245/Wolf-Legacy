@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        //Debug.Log("Player controller Start = " + gameObject.name);
+
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         animBody = GetComponent<Animator>();
@@ -47,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
         
 
-        Debug.Log("name = " + gameObject.name + " | device = " + playerMap.devices.Value[0].name);
+        //Debug.Log("name = " + gameObject.name + " | device = " + playerMap.devices.Value[0].name);
     }
 
     private void Update()

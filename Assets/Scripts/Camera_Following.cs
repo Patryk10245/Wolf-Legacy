@@ -29,17 +29,17 @@ public class Camera_Following : MonoBehaviour
     public float smoothTime = 0.5f;
 
 
-
-    private void Start()
+    private void Awake()
     {
-        if(Camera_Following.ins == null)
+        //Debug.Log("Camera followign Set up reference");
+
+        if (Camera_Following.ins == null)
         {
             Reference();
             DontDestroyOnLoad(this);
             GameInitialization.ins.cameraFollowing = this;
         }
 
-        
     }
 
     void Update()

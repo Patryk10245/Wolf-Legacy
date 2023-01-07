@@ -2679,6 +2679,7 @@ MonoBehaviour:
   gameSetup: {fileID: 575574611}
   scoreTable: {fileID: 1751829985}
   cameraFollowing: {fileID: 0}
+  selectedScenes: {fileID: 612307985}
 --- !u!4 &551719098
 Transform:
   m_ObjectHideFlags: 0
@@ -3026,6 +3027,10 @@ MonoBehaviour:
   barbarianUpgrades: {fileID: 11400000, guid: 99f1ccea05e058e4983301bf44198c70, type: 2}
   rangerUpgrades: {fileID: 11400000, guid: dab2406f9f51913419f45eb3c02c747e, type: 2}
   mageUpgrades: {fileID: 11400000, guid: 7b51852c570410e4c87c6ce910984e54, type: 2}
+  paladinInfo: {fileID: 0}
+  barbarianInfo: {fileID: 0}
+  rangerInfo: {fileID: 0}
+  mageInfo: {fileID: 0}
 --- !u!4 &602948556
 Transform:
   m_ObjectHideFlags: 0
@@ -3040,6 +3045,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &612307984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 612307986}
+  - component: {fileID: 612307985}
+  m_Layer: 0
+  m_Name: Scene Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &612307985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612307984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec99f4462d79ce4e825c30446c2099b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedMaps:
+  - m_Handle: 0
+  - m_Handle: 0
+  - m_Handle: 0
+  villageScene:
+    m_Handle: 0
+  menuScene:
+    m_Handle: 0
+--- !u!4 &612307986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612307984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 69.81397, y: 33.18857, z: -5.05714}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &622822741
 GameObject:

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 public enum ENUM_PlayerClass
@@ -54,35 +55,44 @@ public class GameSetup : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(this);
+        
     }
     private void Awake()
     {
         if(ins == null)
         {
             Reference();
+            DontDestroyOnLoad(this);
         }
     }
 
     public void SetUpTheGame()
     {
-        Debug.Log("Setting up the game");
+        //Debug.Log("Setting up the game");
         playerManager = Player_Manager.ins;
         cameraFollowing = Camera_Following.ins;
         scoreTable = ScoreTable.ins;
 
         GameInitialization.ins.playerManager = playerManager;
         GameInitialization.ins.cameraFollowing = cameraFollowing;
+        scoreTable.SetReferenceToGoldText();
 
-        Debug.Log("number of players == " + numberOfPlayers);
+        PlayerInputManager playerInputManager = playerManager.gameObject.GetComponent<PlayerInputManager>();
+        playerInputManager.playerPrefab = playerManager.playerPrefab;
+        PlayerInput newPlayer = playerInputManager.JoinPlayer();
+
+        playerManager.playerList.Add(newPlayer.GetComponent<Player>());
+        newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+
+        //Debug.Log("number of players == " + numberOfPlayers);
         if (numberOfPlayers == 1)
         {
             
             cameraFollowing.singlePlayer = true;
             cameraFollowing.flat = false;
             cameraFollowing.smooth = false;
-            Destroy(playerManager.playerList[1].gameObject);
-            playerManager.playerList.RemoveAt(1);
+            //Destroy(playerManager.playerList[1].gameObject);
+            //playerManager.playerList.RemoveAt(1);
 
             switch(playingPlayers[0].selectedClass)
             {
@@ -144,7 +154,7 @@ public class GameSetup : MonoBehaviour
 
     void PaladinSetup(Player player)
     {
-        Debug.Log("player name = " + player.gameObject.name);
+        //Debug.Log("player name = " + player.gameObject.name);
         //Debug.Log("Paladin Setup");
         ClassUpgrades upgrades = Village_Upgrades.ins.paladinUpgrades;
         ClassData paladinData = classesData[0];
