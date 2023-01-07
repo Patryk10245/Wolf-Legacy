@@ -27,7 +27,7 @@ public class Level_SelectedScenes : MonoBehaviour
 
     void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //Debug.Log("OnSceneLoaded: " + scene.name);
+        Debug.Log("OnSceneLoaded: " + scene.name);
         //Debug.Log(mode);
 
         if(scene == SceneManager.GetSceneByName("Village_Scene"))
@@ -50,13 +50,14 @@ public class Level_SelectedScenes : MonoBehaviour
     void SceneChanged(Scene current, Scene next)
     {
         string currentName = current.name;
-        //Debug.Log("Scene current = " + currentName + " \n next = " + next.name);
+        Debug.Log("Scene current = " + currentName + " \n next = " + next.name);
 
         if (currentName == null)
         {
             // Scene1 has been removed
             currentName = "Replaced";
         }
+        
         Debug.Log("scene = " + currentName);
     }
 
@@ -83,6 +84,7 @@ public class Level_SelectedScenes : MonoBehaviour
     }
     public void ChangeToMainmenu()
     {
+
         SceneManager.LoadScene("Main_Menu");
     }
 }

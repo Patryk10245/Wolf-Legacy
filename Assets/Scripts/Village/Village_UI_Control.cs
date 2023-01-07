@@ -108,6 +108,7 @@ public class Village_UI_Control : MonoBehaviour
 
     public void NextMap()
     {
+        GameSetup.ins.SaveClassData();
         Level_SelectedScenes.ins.ChangeToMap2();
     }
 }

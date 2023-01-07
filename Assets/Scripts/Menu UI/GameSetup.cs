@@ -90,6 +90,8 @@ public class GameSetup : MonoBehaviour
 
 
         scoreTable.SetReferenceToGoldText();
+
+        LoadClassData();
         
         
 
@@ -248,8 +250,9 @@ public class GameSetup : MonoBehaviour
 
 
 
-    void LoadClassData()
+    public void LoadClassData()
     {
+        Debug.LogWarning("LOADING CLASS DATA");
         
         villageUpgrades.paladinUpgrades.damage.currentLevel = PlayerPrefs.GetInt("PaladinDamage", 0);
         villageUpgrades.paladinUpgrades.health.currentLevel = PlayerPrefs.GetInt("PaladinHealth", 0);
@@ -275,8 +278,10 @@ public class GameSetup : MonoBehaviour
         villageUpgrades.mageUpgrades.energyRegeneration.currentLevel = PlayerPrefs.GetInt("MageRegen", 0);
         villageUpgrades.mageUpgrades.speed.currentLevel = PlayerPrefs.GetInt("MageSpeed", 0);
     }
-    void SaveClassData()
+    public void SaveClassData()
     {
+        Debug.LogWarning("SAVING CLASS DATA");
+
         PlayerPrefs.SetInt("PaladinDamage", villageUpgrades.paladinUpgrades.damage.currentLevel);
         PlayerPrefs.SetInt("PaladinHealth", villageUpgrades.paladinUpgrades.health.currentLevel);
         PlayerPrefs.SetInt("PaladinEnergy", villageUpgrades.paladinUpgrades.energy.currentLevel);
