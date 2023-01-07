@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -22,7 +20,7 @@ public class Village_Upgrades : MonoBehaviour
     }
     private void Awake()
     {
-        if(ins == null)
+        if (ins == null)
         {
             Reference();
             DontDestroyOnLoad(this);
@@ -70,8 +68,8 @@ public class Village_Upgrades : MonoBehaviour
 
         }
 
-        Debug.Log(scoreTable.gameObject);
-        Debug.Log(stat.currentLevel);
+        //Debug.Log(scoreTable.gameObject);
+        //Debug.Log(stat.currentLevel);
 
         if (scoreTable.current_Gold > stat.cost[stat.currentLevel])
         {
@@ -89,100 +87,71 @@ public class Village_Upgrades : MonoBehaviour
     {
         if (Upgrade(paladinUpgrades, type) == true)
         {
-            switch (type)
-            {
-                case 0:
-                    village_UI_Control.paladinInfo.IncreaseDamageLevel(paladinUpgrades.damage.currentLevel);
-                    break;
-                case 1:
-                    village_UI_Control.paladinInfo.IncreaseHealthLevel(paladinUpgrades.health.currentLevel);
-                    break;
-                case 2:
-                    village_UI_Control.paladinInfo.IncreaseEnergyLevel(paladinUpgrades.energy.currentLevel);
-                    break;
-                case 3:
-                    village_UI_Control.paladinInfo.IncreaseEnergyRegenLevel(paladinUpgrades.energyRegeneration.currentLevel);
-                    break;
-                case 4:
-                    village_UI_Control.paladinInfo.IncreaseSpeedLevel(paladinUpgrades.speed.currentLevel);
-                    break;
-            }
+            UpdatePaladinUI();
         }
     }
     public void UpgradeBarbarian(int type)
     {
-
         if (Upgrade(barbarianUpgrades, type) == true)
         {
-            switch (type)
-            {
-                case 0:
-                    village_UI_Control.barbarianInfo.IncreaseDamageLevel(barbarianUpgrades.damage.currentLevel);
-                    break;
-                case 1:
-                    village_UI_Control.barbarianInfo.IncreaseHealthLevel(barbarianUpgrades.health.currentLevel);
-                    break;
-                case 2:
-                    village_UI_Control.barbarianInfo.IncreaseEnergyLevel(barbarianUpgrades.energy.currentLevel);
-                    break;
-                case 3:
-                    village_UI_Control.barbarianInfo.IncreaseEnergyRegenLevel(barbarianUpgrades.energyRegeneration.currentLevel);
-                    break;
-                case 4:
-                    village_UI_Control.barbarianInfo.IncreaseSpeedLevel(barbarianUpgrades.speed.currentLevel);
-                    break;
-            }
+            UpdateBarbarianUI();
         }
     }
     public void UpgradeRanger(int type)
     {
         if (Upgrade(rangerUpgrades, type) == true)
         {
-            switch (type)
-            {
-                case 0:
-                    village_UI_Control.rangerInfo.IncreaseDamageLevel(rangerUpgrades.damage.currentLevel);
-                    break;
-                case 1:
-                    village_UI_Control.rangerInfo.IncreaseHealthLevel(rangerUpgrades.health.currentLevel);
-                    break;
-                case 2:
-                    village_UI_Control.rangerInfo.IncreaseEnergyLevel(rangerUpgrades.energy.currentLevel);
-                    break;
-                case 3:
-                    village_UI_Control.rangerInfo.IncreaseEnergyRegenLevel(rangerUpgrades.energyRegeneration.currentLevel);
-                    break;
-                case 4:
-                    village_UI_Control.rangerInfo.IncreaseSpeedLevel(rangerUpgrades.speed.currentLevel);
-                    break;
-            }
+            UpdateRangernUI();
         }
     }
     public void UpgradeMage(int type)
     {
         if (Upgrade(mageUpgrades, type) == true)
         {
-            switch (type)
-            {
-                case 0:
-                    village_UI_Control.mageInfo.IncreaseDamageLevel(mageUpgrades.damage.currentLevel);
-                    break;
-                case 1:
-                    village_UI_Control.mageInfo.IncreaseHealthLevel(mageUpgrades.health.currentLevel);
-                    break;
-                case 2:
-                    village_UI_Control.mageInfo.IncreaseEnergyLevel(mageUpgrades.energy.currentLevel);
-                    break;
-                case 3:
-                    village_UI_Control.mageInfo.IncreaseEnergyRegenLevel(mageUpgrades.energyRegeneration.currentLevel);
-                    break;
-                case 4:
-                    village_UI_Control.mageInfo.IncreaseSpeedLevel(mageUpgrades.speed.currentLevel);
-                    break;
-            }
+            UpdateMageUI();
         }
     }
 
+    void UpdatePaladinUI()
+    {
+        village_UI_Control.paladinInfo.UI_IncreaseDamageLevel(paladinUpgrades.damage.currentLevel);
+        village_UI_Control.paladinInfo.UI_IncreaseHealthLevel(paladinUpgrades.health.currentLevel);
+        village_UI_Control.paladinInfo.UI_IncreaseEnergyLevel(paladinUpgrades.energy.currentLevel);
+        village_UI_Control.paladinInfo.UI_IncreaseEnergyRegenLevel(paladinUpgrades.energyRegeneration.currentLevel);
+        village_UI_Control.paladinInfo.UI_IncreaseSpeedLevel(paladinUpgrades.speed.currentLevel);
+    }
+    void UpdateBarbarianUI()
+    {
+        village_UI_Control.barbarianInfo.UI_IncreaseDamageLevel(barbarianUpgrades.damage.currentLevel);
+        village_UI_Control.barbarianInfo.UI_IncreaseHealthLevel(barbarianUpgrades.health.currentLevel);
+        village_UI_Control.barbarianInfo.UI_IncreaseEnergyLevel(barbarianUpgrades.energy.currentLevel);
+        village_UI_Control.barbarianInfo.UI_IncreaseEnergyRegenLevel(barbarianUpgrades.energyRegeneration.currentLevel);
+        village_UI_Control.barbarianInfo.UI_IncreaseSpeedLevel(barbarianUpgrades.speed.currentLevel);
+    }
+    void UpdateRangernUI()
+    {
+        village_UI_Control.rangerInfo.UI_IncreaseDamageLevel(rangerUpgrades.damage.currentLevel);
+        village_UI_Control.rangerInfo.UI_IncreaseHealthLevel(rangerUpgrades.health.currentLevel);
+        village_UI_Control.rangerInfo.UI_IncreaseEnergyLevel(rangerUpgrades.energy.currentLevel);
+        village_UI_Control.rangerInfo.UI_IncreaseEnergyRegenLevel(rangerUpgrades.energyRegeneration.currentLevel);
+        village_UI_Control.rangerInfo.UI_IncreaseSpeedLevel(rangerUpgrades.speed.currentLevel);
+    }
+    void UpdateMageUI()
+    {
+        village_UI_Control.mageInfo.UI_IncreaseDamageLevel(mageUpgrades.damage.currentLevel);
+        village_UI_Control.mageInfo.UI_IncreaseHealthLevel(mageUpgrades.health.currentLevel);
+        village_UI_Control.mageInfo.UI_IncreaseEnergyLevel(mageUpgrades.energy.currentLevel);
+        village_UI_Control.mageInfo.UI_IncreaseEnergyRegenLevel(mageUpgrades.energyRegeneration.currentLevel);
+        village_UI_Control.mageInfo.UI_IncreaseSpeedLevel(mageUpgrades.speed.currentLevel);
+    }
+
+    public void UpdateClassesUIUpgrades()
+    {
+        UpdatePaladinUI();
+        UpdateBarbarianUI();
+        UpdateRangernUI();
+        UpdateMageUI();
+    }
 
     public void LoadUpgrades()
     {
@@ -190,7 +159,7 @@ public class Village_Upgrades : MonoBehaviour
     }
     public void SaveUpgrades()
     {
-        
+
     }
 
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,24 +9,41 @@ public class Village_UI_ClassInfo : MonoBehaviour
     public Image[] energyRegenLevels;
     public Image[] speedLevels;
 
-    public void IncreaseDamageLevel(int i)
+
+    public void UI_IncreaseDamageLevel(int x)
     {
-        damageLevels[i].color = Color.green;
+        for (int i = 0; i < x; i++)
+        {
+            damageLevels[i].color = Color.green;
+        }
     }
-    public void IncreaseHealthLevel(int i)
+    public void UI_IncreaseHealthLevel(int x)
     {
-        healthLevels[i].color = Color.green;
+        for (int i = 0; i < x; i++)
+        {
+            healthLevels[i].color = Color.green;
+        }
     }
-    public void IncreaseEnergyLevel(int i)
+    public void UI_IncreaseEnergyLevel(int x)
     {
-        energyLevels[i].color = Color.green;
+        for (int i = 0; i < x; i++)
+        {
+            energyLevels[i].color = Color.green;
+        }
     }
-    public void IncreaseEnergyRegenLevel(int i)
+    public void UI_IncreaseEnergyRegenLevel(int x)
     {
-        energyRegenLevels[i].color = Color.green;
+        for (int i = 0; i < x; i++)
+        {
+            energyRegenLevels[i].color = Color.green;
+
+        }
     }
-    public void IncreaseSpeedLevel(int i)
+    public void UI_IncreaseSpeedLevel(int x)
     {
-        speedLevels[i].color = Color.green;
+        for (int i = 0; i < x; i++)
+        {
+            speedLevels[i].color = Color.green;
+        }
     }
 }
