@@ -41,6 +41,8 @@ public class GameSetup : MonoBehaviour
     [Header("Class Data")]
     [SerializeField] ClassData[] classesData;
 
+    int x = 0;
+
 
     public void foo()
     {
@@ -71,6 +73,8 @@ public class GameSetup : MonoBehaviour
     void SetReferencesForPlayer1(Player newPlayer, Level_FightReferenecs references)
     {
         newPlayer.ui_updater.healthBar = references.player1HealthBar;
+        newPlayer.id = x;
+        x++;
     }
     void SetReferencesForPlayer2(Player newPlayer, Level_FightReferenecs references)
     {
@@ -86,8 +90,8 @@ public class GameSetup : MonoBehaviour
         playerManager = levelReferences.playerManager;
         cameraFollowing = levelReferences.cameraFollowing;
         Debug.Log("player manager = " + playerManager);
-        
-        PlayerInputManager playerInputManager = levelReferences.gameObject.GetComponent<PlayerInputManager>();
+
+        PlayerInputManager playerInputManager = levelReferences.playerInputManager;
         playerInputManager.playerPrefab = playerManager.playerPrefab;
 
         //playerManager = Player_Manager.ins;
@@ -102,7 +106,7 @@ public class GameSetup : MonoBehaviour
         
         
 
-        //Debug.Log("number of players == " + numberOfPlayers);
+        Debug.Log("number of players == " + numberOfPlayers);
         if (numberOfPlayers == 1)
         {
 
@@ -183,12 +187,14 @@ public class GameSetup : MonoBehaviour
                     MageSetup(playerManager.playerList[1]);
                     break;
             }
+
+            cameraFollowing.singlePlayer = false;
+            cameraFollowing.flat = true;
+            cameraFollowing.smooth = false;
         }
 
 
-        cameraFollowing.singlePlayer = false;
-        cameraFollowing.flat = true;
-        cameraFollowing.smooth = false;
+        
 
     }
 

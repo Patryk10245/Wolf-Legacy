@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class Level_FightReferenecs : MonoBehaviour
 {
@@ -22,4 +23,5 @@ public class Level_FightReferenecs : MonoBehaviour
     public Image player1HealthBar;
     public Image player2HealthBar;
     public Camera_Following cameraFollowing;
+    public PlayerInputManager playerInputManager;
 }

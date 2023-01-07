@@ -132,6 +132,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
+            Debug.Log("player = " + player.id);
             player.attackScript.Attack();
         }
     }
@@ -142,4 +143,10 @@ public class PlayerController : MonoBehaviour
         player.abilityBasic.Use();
     }
 
+
+    public void RemoveListeningOnEvents()
+    {
+        playerMap.FindAction("Attack").started -= Attack;
+        playerMap.FindAction("Ability0").started -= BasicAbility;
+    }
 }

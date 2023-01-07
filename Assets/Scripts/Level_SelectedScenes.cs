@@ -56,10 +56,15 @@ public class Level_SelectedScenes : MonoBehaviour
             // Scene1 has been removed
             currentName = "Replaced";
         }
+        Debug.Log("scene = " + currentName);
     }
 
     public void ChangeToVillageScene()
     {
+        foreach(Player player in Player_Manager.ins.playerList)
+        {
+            player.controller.RemoveListeningOnEvents();
+        }
         SceneManager.LoadScene("Village_Scene");
     }
     public void ChangeToMap1()
@@ -68,14 +73,14 @@ public class Level_SelectedScenes : MonoBehaviour
     }
     public void ChangeToMap2()
     {
-
+        SceneManager.LoadScene("TESTING_SCENE");
     }
     public void ChangeToMap3()
     {
-
+        SceneManager.LoadScene("TESTING_SCENE");
     }
     public void ChangeToMainmenu()
     {
-
+        SceneManager.LoadScene("Main_Menu");
     }
 }

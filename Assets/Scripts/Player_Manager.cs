@@ -15,7 +15,6 @@ public class Player_Manager : MonoBehaviour
     void Awake()
     {
         Reference();
-        DontDestroyOnLoad(this);
         GameInitialization.ins.playerManager = this;
     }
 

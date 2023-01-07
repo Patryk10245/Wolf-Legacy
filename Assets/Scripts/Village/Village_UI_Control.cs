@@ -36,7 +36,7 @@ public class Village_UI_Control : MonoBehaviour
     public void SetReference()
     {
         Debug.Log("Setting Reference for Village UI Control");
-        Debug.Log("upgrades = " + Village_Upgrades.ins.gameObject.name);
+        //Debug.Log("upgrades = " + Village_Upgrades.ins.gameObject.name);
         villageUpgrades = GameSetup.ins.villageUpgrades;
         villageUpgrades.village_UI_Control = this;
         
@@ -104,5 +104,10 @@ public class Village_UI_Control : MonoBehaviour
     {
         FixReference();
         villageUpgrades.UpgradeMage(type);
+    }
+
+    public void NextMap()
+    {
+        Level_SelectedScenes.ins.ChangeToMap2();
     }
 }
