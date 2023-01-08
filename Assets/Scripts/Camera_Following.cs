@@ -36,7 +36,6 @@ public class Camera_Following : MonoBehaviour
         if (Camera_Following.ins == null)
         {
             Reference();
-            GameInitialization.ins.cameraFollowing = this;
         }
 
     }

@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     public Player_AttackScript attackScript;
     public Ability_1 abilityBasic;
+    public Ability_2 abilitySecondary;
     
 
     public int id;

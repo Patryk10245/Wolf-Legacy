@@ -12,7 +12,6 @@ public class ScoreTable : MonoBehaviour
         if(ins == null)
         {
             ins = this;
-            GameInitialization.ins.scoreTable = this;
             DontDestroyOnLoad(this);
         }
         else
@@ -35,7 +34,6 @@ public class ScoreTable : MonoBehaviour
     }
     private void Start()
     {
-        GameInitialization.ins.scoreTable = this;
         //SetReferenceToGoldText();
     }
 

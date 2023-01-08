@@ -15,7 +15,6 @@ public class Player_Manager : MonoBehaviour
     void Awake()
     {
         Reference();
-        GameInitialization.ins.playerManager = this;
     }
 
     public GameSetup gameSetup;

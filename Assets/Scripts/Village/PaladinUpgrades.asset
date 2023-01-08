@@ -21,7 +21,7 @@ MonoBehaviour:
     - 14
     - 20
     cost: 64000000c80000002c01000090010000f4010000f4010000
-    currentLevel: 1
+    currentLevel: 0
   health:
     valueOnLevel:
     - 0

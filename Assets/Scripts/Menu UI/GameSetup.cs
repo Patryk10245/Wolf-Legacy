@@ -85,8 +85,6 @@ public class GameSetup : MonoBehaviour
         //cameraFollowing = Camera_Following.ins;
         //scoreTable = ScoreTable.ins;
 
-        //GameInitialization.ins.playerManager = playerManager;
-        //GameInitialization.ins.cameraFollowing = cameraFollowing;
 
 
         scoreTable.SetReferenceToGoldText();
@@ -214,6 +212,14 @@ public class GameSetup : MonoBehaviour
         Player_DashSkill dash = player.gameObject.AddComponent<Player_DashSkill>();
         player.abilityBasic = dash;
         dash.player = player;
+
+
+        Player_Paladin_AroundAttack around = player.gameObject.AddComponent<Player_Paladin_AroundAttack>();
+        player.abilitySecondary = around;
+        around.player = player;
+        around.weaponHolder = player.controller.weaponHolder.gameObject;
+
+
     }
     void BarbarianSetup(Player player)
     {

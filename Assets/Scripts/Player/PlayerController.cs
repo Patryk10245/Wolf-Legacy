@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     InputActionMap playerMap;
     InputAction move;
     InputAction rotate;
-    InputAction ability0;
 
     public Vector2 moveInput;
     public float horizontal;
@@ -45,10 +44,11 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         inputAsset = GetComponent<PlayerInput>().actions;
         playerMap = inputAsset.FindActionMap("Player");
-        playerMap.FindAction("Attack").started += Attack;
         move = playerMap.FindAction("Move");
         rotate = playerMap.FindAction("Rotate");
+        playerMap.FindAction("Attack").started += Attack;
         playerMap.FindAction("Ability0").started += BasicAbility;
+        playerMap.FindAction("Ability1").started += SecondaryAbility;
         playerMap.Enable();
 
         
@@ -88,6 +88,11 @@ public class PlayerController : MonoBehaviour
     void Sword_Rotation()
     {
         
+        if(player.canRotateWeapon == false)
+        {
+            return;
+        }
+
         mousePos = rotate.ReadValue<Vector2>();
         screenPoint = player.currentCamera.WorldToScreenPoint(transform.localPosition);
         dMousePos = mousePos;
@@ -145,6 +150,10 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("player = " + player);
         //Debug.Log("ability = " + player.abilityBasic);
         player.abilityBasic.Use();
+    }
+    void SecondaryAbility(InputAction.CallbackContext context)
+    {
+        player.abilitySecondary.Use();
     }
 
 

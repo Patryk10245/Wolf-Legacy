@@ -62,6 +62,15 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability1"",
+                    ""type"": ""Button"",
+                    ""id"": ""17618adc-dc06-42b1-9fa5-8c853e335fde"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -232,22 +241,22 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d31519eb-40c8-421d-a02d-18852217937f"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""id"": ""d9840bb6-1f32-43ce-a103-4b7c81f712ca"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""GamePad"",
+                    ""groups"": ""KeyBoard"",
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d9840bb6-1f32-43ce-a103-4b7c81f712ca"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""d31519eb-40c8-421d-a02d-18852217937f"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyBoard"",
+                    ""groups"": ""GamePad"",
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -386,11 +395,11 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7222bccc-4206-4436-bf95-0cd5471d3454"",
-                    ""path"": ""<HID::SHANWAN PS3/PC Gamepad>/button8"",
+                    ""id"": ""873341a9-8c9a-494c-a3eb-94909d60532c"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""My_Scheme"",
+                    ""groups"": ""KeyBoard"",
                     ""action"": ""Ability0"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -408,11 +417,44 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""873341a9-8c9a-494c-a3eb-94909d60532c"",
-                    ""path"": ""<Keyboard>/leftShift"",
+                    ""id"": ""abd25f2e-7513-4904-8529-e0c5be0885da"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyBoard"",
+                    ""action"": ""Ability1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f9febfd-c7be-40d5-8dad-aeec3767c5ac"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Ability1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f5349733-c9cb-4a42-ae6c-b976ba4da782"",
+                    ""path"": ""<HID::SHANWAN PS3/PC Gamepad>/button7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""My_Scheme"",
+                    ""action"": ""Ability1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7222bccc-4206-4436-bf95-0cd5471d3454"",
+                    ""path"": ""<HID::SHANWAN PS3/PC Gamepad>/button8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""My_Scheme"",
                     ""action"": ""Ability0"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -467,6 +509,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_Ability0 = m_Player.FindAction("Ability0", throwIfNotFound: true);
+        m_Player_Ability1 = m_Player.FindAction("Ability1", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -530,6 +573,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_Ability0;
+    private readonly InputAction m_Player_Ability1;
     public struct PlayerActions
     {
         private @Player_Controller m_Wrapper;
@@ -538,6 +582,7 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputAction @Ability0 => m_Wrapper.m_Player_Ability0;
+        public InputAction @Ability1 => m_Wrapper.m_Player_Ability1;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -559,6 +604,9 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 @Ability0.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility0;
                 @Ability0.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility0;
                 @Ability0.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility0;
+                @Ability1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility1;
+                @Ability1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility1;
+                @Ability1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility1;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -575,6 +623,9 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
                 @Ability0.started += instance.OnAbility0;
                 @Ability0.performed += instance.OnAbility0;
                 @Ability0.canceled += instance.OnAbility0;
+                @Ability1.started += instance.OnAbility1;
+                @Ability1.performed += instance.OnAbility1;
+                @Ability1.canceled += instance.OnAbility1;
             }
         }
     }
@@ -612,5 +663,6 @@ public partial class @Player_Controller : IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnAbility0(InputAction.CallbackContext context);
+        void OnAbility1(InputAction.CallbackContext context);
     }
 }
