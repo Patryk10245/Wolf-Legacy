@@ -201,12 +201,12 @@ MonoBehaviour:
   bossState: 0
   currentActionState: 3
   changeTargetTime: 15
-  dashForce: 1500
+  dashForce: 15000
   dashRechargeTime: 15
   dash_WaitingForRecharge: 0
   minIdleTime: 1
   maxIdleTime: 3
-  arenaBounds: {x: 30, y: 63, z: 34, w: 16}
+  arenaBounds: {x: 43, y: 73, z: 43, w: 27}
   playerPos: {x: 0, y: 0, z: 0}
   fallAreaRadius: 3
   knockBackForce: 2500

@@ -131,12 +131,20 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
         // Decide randomly, which action should duck choose
         if(currentActionState == ENUM_current_state.ready_to_exit)
         {
+            
+
+
             action_firstLoop = true;
             int rand;
             do
             {
                 rand = Random.Range(0, 4);
                 //Debug.Log("last = " + last_action + "| current = " + rand);
+
+                if (last_action == 4) // If dashed, then move
+                {
+                    rand = 3;
+                }
 
                 switch (rand)
                 {
@@ -312,19 +320,21 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 //Debug.Log("BEGIN Moving State");
                 Vector3 random_spot = new Vector3(Random.Range(arenaBounds.x, arenaBounds.y), Random.Range(arenaBounds.z, arenaBounds.w),transform.position.z);
                 //Debug.Log("random spot = " + random_spot);
+                //Debug.Log("position = " + gameObject.transform.position);
                 agent.SetDestination(random_spot);
                 anim.SetTrigger("isMoving");
                 currentActionState = ENUM_current_state.working;
                 break;
             case ENUM_current_state.working:
                 //Debug.Log("agent dest = " + agent.destination);
-
-                if(Vector3.Distance(gameObject.transform.position, agent.destination) < 1.5f)
+                //Debug.Log("position = " + gameObject.transform.position);
+                if (Vector3.Distance(gameObject.transform.position, agent.destination) < 1.5f)
                 {
                     currentActionState = ENUM_current_state.finishing;
                 }
                 break;
             case ENUM_current_state.finishing:
+                //Debug.Log("walking finishing");
                 anim.SetTrigger("exitAnimation");
                 agent.SetDestination(transform.position);
                 currentActionState = ENUM_current_state.ready_to_exit;
@@ -342,7 +352,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                Debug.Log("Dash State");
+                //Debug.Log("Dash State");
                 Vector2 direction_to_player = (move_target.transform.position - transform.position).normalized;
                 rb.AddForce(-direction_to_player * dashForce);
                 can_move = false;
@@ -354,11 +364,10 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 can_move = true;
                 dash_WaitingForRecharge = true;
                 agent.SetDestination(transform.position);
-                agent.velocity = Vector3.zero;
+                //agent.velocity = Vector3.zero;
+                //Debug.Log("END Dash State");
+                last_action = 4;
                 currentActionState = ENUM_current_state.ready_to_exit;
-                Debug.Log("END Dash State");
-                bossState = ENUM_DuckBossState.moving;
-                currentActionState = ENUM_current_state.preparation;
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;
