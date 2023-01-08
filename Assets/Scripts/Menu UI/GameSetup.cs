@@ -259,7 +259,9 @@ public class GameSetup : MonoBehaviour
     public void LoadClassData()
     {
         Debug.LogWarning("LOADING CLASS DATA");
-        
+
+        scoreTable.current_Gold = PlayerPrefs.GetInt("Gold", 0);
+
         villageUpgrades.paladinUpgrades.damage.currentLevel = PlayerPrefs.GetInt("PaladinDamage", 0);
         villageUpgrades.paladinUpgrades.health.currentLevel = PlayerPrefs.GetInt("PaladinHealth", 0);
         villageUpgrades.paladinUpgrades.energy.currentLevel = PlayerPrefs.GetInt("PaladinEnergy", 0);
@@ -287,6 +289,8 @@ public class GameSetup : MonoBehaviour
     public void SaveClassData()
     {
         Debug.LogWarning("SAVING CLASS DATA");
+
+        PlayerPrefs.SetInt("Gold", scoreTable.current_Gold);
 
         PlayerPrefs.SetInt("PaladinDamage", villageUpgrades.paladinUpgrades.damage.currentLevel);
         PlayerPrefs.SetInt("PaladinHealth", villageUpgrades.paladinUpgrades.health.currentLevel);

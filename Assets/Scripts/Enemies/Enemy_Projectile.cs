@@ -10,7 +10,7 @@ public class Enemy_Projectile : MonoBehaviour
     Rigidbody2D rb;
 
     float deathTimer;
-    float stopTimerAt = 10;
+    public float stopTimerAt = 5;
 
     private void Start()
     {
@@ -20,25 +20,33 @@ public class Enemy_Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.AddForce(flyDirection * speed);
-
         deathTimer += Time.deltaTime;
         if(deathTimer >= stopTimerAt)
         {
             Destroy(gameObject);
         }
     }
+    private void FixedUpdate()
+    {
+        rb.AddForce(flyDirection * speed);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        Debug.Log("collsion = " + collision.gameObject.name);
+
+        if (collision.gameObject.CompareTag("Shield"))
         {
+            Debug.Log("Destroyed at shield");
+            Destroy(gameObject);
+        }
+
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Destroyed at player");
             collision.GetComponent<Player>().TakeDamage(damage);
             Destroy(gameObject);
         }
-        if(collision.gameObject.CompareTag("Shield"))
-        {
-            Destroy(gameObject);
-        }
+        
     }
 }

@@ -36,10 +36,10 @@ public abstract class Enemy_BaseClass : MonoBehaviour
 
     [Header("States")]
     public ENUM_EnemyState currentEnemyState;
-    [SerializeField] protected bool is_Attacking;
-    [SerializeField] protected bool is_Moving;
-    public bool is_Spawned;
-    public bool is_dying;
+    protected bool is_Attacking;
+    protected bool is_Moving;
+    [HideInInspector] public bool is_Spawned;
+    [HideInInspector] public bool is_dying;
 
     [Space(10)]
     [SerializeField] int min_Gold_OnDeath = 1;
@@ -49,8 +49,8 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     [SerializeField] protected Animator anim;
     [SerializeField] protected SpriteRenderer theBody;
     [SerializeField] protected Rigidbody2D rb;
-    [SerializeField] public NavMeshAgent agent;
-    public Enemy_Stats stats;
+    [HideInInspector] public NavMeshAgent agent;
+    [HideInInspector] public Enemy_Stats stats;
 
     public void SetMoveTarget(Player player)
     {
