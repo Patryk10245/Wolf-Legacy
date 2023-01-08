@@ -91,7 +91,7 @@ public class GameSetup : MonoBehaviour
 
         scoreTable.SetReferenceToGoldText();
 
-        LoadClassData();
+        
         
         
 
@@ -305,5 +305,7 @@ public class GameSetup : MonoBehaviour
         PlayerPrefs.SetInt("MageEnergy", villageUpgrades.mageUpgrades.energy.currentLevel);
         PlayerPrefs.SetInt("MageRegen", villageUpgrades.mageUpgrades.energyRegeneration.currentLevel);
         PlayerPrefs.SetInt("MageSpeed", villageUpgrades.mageUpgrades.speed.currentLevel);
+
+        PlayerPrefs.Save();
     }
 }

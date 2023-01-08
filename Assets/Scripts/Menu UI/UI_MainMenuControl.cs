@@ -139,6 +139,7 @@ public class UI_MainMenuControl : MonoBehaviour
 
     public void StartGame()
     {
+        GameSetup.ins.LoadClassData();
         Level_SelectedScenes.ins.ChangeToMap1();
     }
 }
