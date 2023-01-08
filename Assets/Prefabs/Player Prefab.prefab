@@ -108,11 +108,12 @@ MonoBehaviour:
   ui_updater: {fileID: 4783158888212072919}
   attackScript: {fileID: 0}
   abilityBasic: {fileID: 0}
+  abilitySecondary: {fileID: 0}
   id: 0
   prohibitAllActions: 0
   canMove: 1
   inAttack: 0
-  canRotateWeapon: 0
+  canRotateWeapon: 1
 --- !u!114 &6488356313986202301
 MonoBehaviour:
   m_ObjectHideFlags: 0

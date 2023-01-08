@@ -5,7 +5,7 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 
 
-public enum ENUM_BossState
+public enum ENUM_DuckBossState
 {
     unseen,
     idle,
@@ -26,12 +26,12 @@ public enum ENUM_current_state
 
 
 // To initate Fight, Set Move Target
-public class Enemy_Boss : Enemy_BaseClass
+public class Enemy_Boss_Duck : Enemy_BaseClass
 {
     [Space(20)]
     public Boss_Duck_SpecialEffects specialEffects;
     public Image healthBar;
-    public ENUM_BossState bossState;
+    public ENUM_DuckBossState bossState;
     int last_action;    
 
     public ENUM_current_state currentActionState = ENUM_current_state.ready_to_exit;
@@ -84,7 +84,7 @@ public class Enemy_Boss : Enemy_BaseClass
 
     public override void TakeDamage(float val, ENUM_AttackType attackType)
     {
-        if(bossState == ENUM_BossState.attack_jumping && attackType == ENUM_AttackType.melee)
+        if(bossState == ENUM_DuckBossState.attack_jumping && attackType == ENUM_AttackType.melee)
         {
             return;
         }
@@ -121,7 +121,7 @@ public class Enemy_Boss : Enemy_BaseClass
             {
                 if(currentActionState == ENUM_current_state.ready_to_exit)
                 {
-                    bossState = ENUM_BossState.dash;
+                    bossState = ENUM_DuckBossState.dash;
                     currentActionState = ENUM_current_state.preparation;
                     return;
                 }
@@ -141,19 +141,19 @@ public class Enemy_Boss : Enemy_BaseClass
                 switch (rand)
                 {
                     case 0:
-                        bossState = ENUM_BossState.idle;
+                        bossState = ENUM_DuckBossState.idle;
                         currentActionState = ENUM_current_state.preparation;
                         break;
                     case 1:
-                        bossState = ENUM_BossState.attack_rushing;
+                        bossState = ENUM_DuckBossState.attack_rushing;
                         currentActionState = ENUM_current_state.preparation;
                         break;
                     case 2:
-                        bossState = ENUM_BossState.attack_jumping;
+                        bossState = ENUM_DuckBossState.attack_jumping;
                         currentActionState = ENUM_current_state.preparation;
                         break;
                     case 3:
-                        bossState = ENUM_BossState.moving;
+                        bossState = ENUM_DuckBossState.moving;
                         currentActionState = ENUM_current_state.preparation;
                         break;
                     default:
@@ -168,25 +168,25 @@ public class Enemy_Boss : Enemy_BaseClass
         // Do current state              *Quack *Quack
         switch (bossState)
         {
-            case ENUM_BossState.unseen:
+            case ENUM_DuckBossState.unseen:
                 Action_Unseen();
                 break;
-            case ENUM_BossState.idle:
+            case ENUM_DuckBossState.idle:
                 Action_Idle();
                 break;
-            case ENUM_BossState.moving:
+            case ENUM_DuckBossState.moving:
                 Action_Moving();
                 break;
-            case ENUM_BossState.dash:
+            case ENUM_DuckBossState.dash:
                 Action_Dash();
                 break;
-            case ENUM_BossState.attack_jumping:
+            case ENUM_DuckBossState.attack_jumping:
                 Action_Jumping();
                 break;
-            case ENUM_BossState.attack_rushing:
+            case ENUM_DuckBossState.attack_rushing:
                 Action_Rushing();
                 break;
-            case ENUM_BossState.dying:
+            case ENUM_DuckBossState.dying:
                 Action_Dying();
                 break;
             default:
@@ -357,6 +357,8 @@ public class Enemy_Boss : Enemy_BaseClass
                 agent.velocity = Vector3.zero;
                 currentActionState = ENUM_current_state.ready_to_exit;
                 Debug.Log("END Dash State");
+                bossState = ENUM_DuckBossState.moving;
+                currentActionState = ENUM_current_state.preparation;
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;

@@ -5,7 +5,7 @@ public class Boss_Area : MonoBehaviour
 {
     [SerializeField] GameObject collidersBlockingExit;
     [SerializeField] GameObject placeToTeleportPlayersTo;
-    [SerializeField] Enemy_Boss boss;
+    [SerializeField] Enemy_Boss_Duck boss;
 
     [SerializeField] GameObject bossHealthBar;
 
