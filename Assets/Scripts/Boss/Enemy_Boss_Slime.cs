@@ -64,6 +64,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
 
     [Header("Jumping Action")]
     [SerializeField] Transform[] jumpPositions;
+    int currentJumpPos;
 
 
 
@@ -305,16 +306,39 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                currentActionState = ENUM_current_state.ready_to_exit;
+                if(currentJumpPos == 0)
+                {
+                    anim.SetTrigger("JumpUp");
+                }
+
+                agent.SetDestination(jumpPositions[currentJumpPos].position);
+
+                if(agent.remainingDistance <= 0.5)
+                {
+                    currentActionState = ENUM_current_state.working;
+                }
+
                 break;
+            
             case ENUM_current_state.working:
-                currentActionState = ENUM_current_state.ready_to_exit;
+                anim.SetTrigger("JumpBounce");
                 break;
-            case ENUM_current_state.finishing:
-                currentActionState = ENUM_current_state.ready_to_exit;
-                last_action = 4;
+            
+            case ENUM_current_state.finishing: // Set from animation
+
+                currentJumpPos++;
+
+                if(currentJumpPos >= 8)
+                {
+                    anim.SetTrigger("JumpDown");
+                }
+                else
+                {
+                    currentActionState = ENUM_current_state.preparation;
+                }
                 break;
-            case ENUM_current_state.ready_to_exit:
+            
+            case ENUM_current_state.ready_to_exit: // Set From Animation
                 break;
         }
     }
