@@ -19,7 +19,7 @@ public class Player_Sword_Collider : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("Boss"))
         {
-            collision.gameObject.GetComponentInParent<Enemy_Boss_Duck>().TakeDamage(player.stats.damage, ENUM_AttackType.melee);
+            collision.gameObject.GetComponentInParent<Enemy_BaseClass>().TakeDamage(player.stats.damage, ENUM_AttackType.melee);
         }
     }
 }
