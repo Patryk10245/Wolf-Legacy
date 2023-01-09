@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059904261801143027}
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0.25086525}
+  m_LocalPosition: {x: 0, y: 0, z: 0.25086525}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -258,8 +258,8 @@ MonoBehaviour:
   arenaBounds: {x: 0, y: 0, z: 0, w: 0}
   projectilePrefab: {fileID: 197921725636579327, guid: 1ae7628ca4c80444795b2adaa9bc5dc5, type: 3}
   middleOfArena: {fileID: 0}
-  timeBetweenShots: 0.15
-  projectileSpeed: 5
+  timeBetweenShots: 0.2
+  projectileSpeed: 4
   projectileDamage: 1
   stopAfterThisManyShots: 50
   aimingCorrection: 1.5
@@ -269,7 +269,7 @@ MonoBehaviour:
   spawnDelay: 0.4
   jumpPositions: []
   currentJumpPos: 0
-  bounceDamage: 0
+  bounceDamage: 8
   alreadyInAir: 0
 --- !u!1 &3406780975391548614
 GameObject:
@@ -296,7 +296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3406780975391548614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -375,7 +375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7918184252665264938}
   m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 0, y: 0, z: -0.17}
+  m_LocalPosition: {x: 0, y: -0.4, z: 0.36}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
