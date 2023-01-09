@@ -64,7 +64,9 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
 
     [Header("Jumping Action")]
     [SerializeField] Transform[] jumpPositions;
-    int currentJumpPos;
+    [SerializeField] int currentJumpPos;
+    public int bounceDamage;
+    public bool alreadyInAir;
 
 
 
@@ -106,7 +108,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                 switch (rand)
                 {
                     case 0:
-                        bossState = ENUM_SlimeBossState.idle;   
+                        bossState = ENUM_SlimeBossState.idle;
                         break;
                     case 1:
                         bossState = ENUM_SlimeBossState.moving;
@@ -128,7 +130,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
             while (rand == last_action);
         }
 
-        switch(bossState)
+        switch (bossState)
         {
             case ENUM_SlimeBossState.idle:
                 Action_Idle();
@@ -232,7 +234,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
             case ENUM_current_state.preparation:
                 agent.SetDestination(middleOfArena.position);
 
-                if(agent.remainingDistance < 1)
+                if (agent.remainingDistance < 1)
                 {
                     shotCount = 0;
                     shootTarget = move_target.GetComponent<Player>();
@@ -241,13 +243,13 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                 break;
             case ENUM_current_state.working:
                 shootingTimer += Time.deltaTime;
-                if(shootingTimer >= timeBetweenShots)
+                if (shootingTimer >= timeBetweenShots)
                 {
                     shootingTimer -= timeBetweenShots;
                     GameObject temp = Instantiate(projectilePrefab);
                     temp.transform.position = gameObject.transform.position;
                     Enemy_Projectile proj = temp.GetComponent<Enemy_Projectile>();
-                    Vector3 direction = move_target.transform.position + (new Vector3(shootTarget.controller.moveInput.x, shootTarget.controller.moveInput.y, 0) *aimingCorrection );
+                    Vector3 direction = move_target.transform.position + (new Vector3(shootTarget.controller.moveInput.x, shootTarget.controller.moveInput.y, 0) * aimingCorrection);
                     proj.flyDirection = direction - gameObject.transform.position;
                     proj.speed = projectileSpeed;
                     proj.damage = projectileDamage;
@@ -255,7 +257,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                     shotCount++;
                 }
 
-                if(shotCount >= stopAfterThisManyShots)
+                if (shotCount >= stopAfterThisManyShots)
                 {
                     currentActionState = ENUM_current_state.finishing;
                 }
@@ -279,16 +281,16 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                 break;
             case ENUM_current_state.working:
                 spawnTimer += Time.deltaTime;
-                if(spawnTimer >= spawnDelay)
+                if (spawnTimer >= spawnDelay)
                 {
                     spawnTimer -= spawnDelay;
-                    GameObject temp = Instantiate(enemyPrefab,placeToSpawn.transform.position,transform.rotation);
+                    GameObject temp = Instantiate(enemyPrefab, placeToSpawn.transform.position, transform.rotation);
                     //temp.transform.position = placeToSpawn.transform.position;
                     temp.GetComponent<NavMeshAgent>().SetDestination(move_target.transform.position);
                     amountSpawned++;
                 }
 
-                if(amountSpawned >= amountToSpawn)
+                if (amountSpawned >= amountToSpawn)
                 {
                     currentActionState = ENUM_current_state.finishing;
                 }
@@ -306,38 +308,43 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                if(currentJumpPos == 0)
+                if (currentJumpPos == 0 && alreadyInAir == false)
                 {
                     anim.SetTrigger("JumpUp");
+                    alreadyInAir = true;
                 }
 
                 agent.SetDestination(jumpPositions[currentJumpPos].position);
 
-                if(agent.remainingDistance <= 0.5)
+                if (agent.remainingDistance <= 0.5)
                 {
+                    anim.SetTrigger("JumpBounce");
                     currentActionState = ENUM_current_state.working;
                 }
 
                 break;
-            
+
             case ENUM_current_state.working:
-                anim.SetTrigger("JumpBounce");
+                
                 break;
-            
+
             case ENUM_current_state.finishing: // Set from animation
 
                 currentJumpPos++;
 
-                if(currentJumpPos >= 8)
+                if (currentJumpPos >= 8)
                 {
                     anim.SetTrigger("JumpDown");
+                    alreadyInAir = false;
+                    currentJumpPos = 0;
+                    currentActionState = ENUM_current_state.ready_to_exit;
                 }
                 else
                 {
                     currentActionState = ENUM_current_state.preparation;
                 }
                 break;
-            
+
             case ENUM_current_state.ready_to_exit: // Set From Animation
                 break;
         }
@@ -423,12 +430,20 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
         Vector3 direction = agent.destination - transform.position;
         if (direction.x > 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-4, 4, 1);
         }
         else if (direction.x < 0)
         {
-            transform.localScale = Vector3.one;
+            transform.localScale = Vector3.one * 4;
         }
     }
+
+    void Animation_JumpAttack()
+    {
+        
+    }
+
+
+
 }
 
