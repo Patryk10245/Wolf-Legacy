@@ -1,0 +1,673 @@
+fileFormatVersion: 2
+guid: 01489e3676d5f714a904f897e0105453
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 12
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: evilduck 1_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 215
+        width: 56
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf80a364c70414439bcbf8b7f5304d8
+      internalID: 2128524685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 213
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c36d85e233972d45ab3c06fbcaeb559
+      internalID: 135031488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 213
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4619d9804e878a459f7152070504835
+      internalID: 1005967144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_3
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 212
+        width: 56
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c340ca3de2cdb914fa2ab413c2e7c1cf
+      internalID: -1464816195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_4
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 213
+        width: 56
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 174e43795ca0dee469db4b9bbf54872e
+      internalID: -1750779827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_5
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 213
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c9786287ace80499b89d6222c2142b
+      internalID: 1193041250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_6
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 211
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5992d45fb6af2f4d9d918160c63f168
+      internalID: 993741175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_7
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 153
+        width: 56
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb8fde81eba35c4fafd571276d77aab
+      internalID: 1211826744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_8
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 153
+        width: 56
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e3e86ae2ffc4254b8c620283486546e
+      internalID: 1219528817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 152
+        width: 56
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 321f3db81bcdc6c4c88906bf17de1bb6
+      internalID: 72737339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_10
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 151
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c4a858c4af88e44b9be312ec64e408
+      internalID: -1206804722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_11
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 147
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e685a9f180b76a48a10754d1a3e6abd
+      internalID: 957901272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_12
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 152
+        width: 56
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa27f7df5e6b73439f6931990a1ad5a
+      internalID: -1243500148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_13
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 91
+        width: 54
+        height: 49
+      alignment: 9
+      pivot: {x: 0.46296296, y: 0.48979592}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265bbcfc6f99f874d91d809911ff729d
+      internalID: 1974671516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_14
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 90
+        width: 53
+        height: 51
+      alignment: 9
+      pivot: {x: 0.4716981, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c1cdaf5751f564f94c8dca6c6dec50
+      internalID: 1856354030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_15
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 89
+        width: 65
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43636364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eef6f4380d7b864ca6213b8f5e85b41
+      internalID: 185035295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_16
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 89
+        width: 65
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4351852}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f904066b4f0f044595ef5092d9fb830
+      internalID: 1762037126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_17
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 88
+        width: 65
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4351852}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09e64145968deb4e9377483a4d2771f
+      internalID: -557636714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_18
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 86
+        width: 65
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43636364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da872fe9ae9a1649a662848abf1640f
+      internalID: -1247264039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_19
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 31
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f599a13371fcfa48a9e10529b07209a
+      internalID: -415644614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_20
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 17
+        width: 69
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6133ef2177c52fd47b715e883b2937d4
+      internalID: 206063945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_21
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 8
+        width: 67
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 442029da358a2a645949f5dd594cdf34
+      internalID: 400924803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_22
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 27
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b81c5395f2081f469f43ecadcff66aa
+      internalID: 1490922278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_23
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 5
+        width: 67
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d99e6c8438cc4b449083df897b3112d
+      internalID: -1718737164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evilduck 1_24
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 14
+        width: 23
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83c1100f83390f4d9eca10183a72fe5
+      internalID: -571240849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      evilduck 1_3: -1464816195
+      evilduck 1_16: 1762037126
+      evilduck 1_19: -415644614
+      evilduck 1_1: 135031488
+      evilduck 1_10: -1206804722
+      evilduck 1_13: 1974671516
+      evilduck 1_0: 2128524685
+      evilduck 1_21: 400924803
+      evilduck 1_6: 993741175
+      evilduck 1_12: -1243500148
+      evilduck 1_11: 957901272
+      evilduck 1_23: -1718737164
+      evilduck 1_8: 1219528817
+      evilduck 1_15: 185035295
+      evilduck 1_22: 1490922278
+      evilduck 1_24: -571240849
+      evilduck 1_7: 1211826744
+      evilduck 1_2: 1005967144
+      evilduck 1_9: 72737339
+      evilduck 1_5: 1193041250
+      evilduck 1_18: -1247264039
+      evilduck 1_20: 206063945
+      evilduck 1_14: 1856354030
+      evilduck 1_4: -1750779827
+      evilduck 1_17: -557636714
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
