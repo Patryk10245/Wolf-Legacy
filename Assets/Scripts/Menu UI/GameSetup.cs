@@ -19,6 +19,9 @@ public class PlayerSelectedData
 {
     public int id;
     public ENUM_PlayerClass selectedClass;
+    public InputDevice device;
+    public string controlScheme = "KeyBoard";
+
 }
 
 public class GameSetup : MonoBehaviour
@@ -96,11 +99,15 @@ public class GameSetup : MonoBehaviour
         Debug.Log("number of players == " + numberOfPlayers);
         if (numberOfPlayers == 1)
         {
+            playingPlayers.RemoveAt(1);
+            //PlayerInput newPlayer = playerInputManager.JoinPlayer();
 
-            PlayerInput newPlayer = playerInputManager.JoinPlayer();
+            PlayerInput newPlayer = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
             playerManager.playerList.Add(newPlayer.GetComponent<Player>());
             newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
             SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
+
+            
 
             cameraFollowing.singlePlayer = true;
             cameraFollowing.flat = false;
@@ -128,7 +135,7 @@ public class GameSetup : MonoBehaviour
         }
         else if(numberOfPlayers == 2)
         {
-            PlayerInput newPlayer1 = playerInputManager.JoinPlayer();
+            PlayerInput newPlayer1 = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
             playerManager.playerList.Add(newPlayer1.GetComponent<Player>());
             newPlayer1.gameObject.transform.position = playerManager.playerSpawnPosition.position;
             SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
@@ -152,7 +159,7 @@ public class GameSetup : MonoBehaviour
                     break;
             }
 
-            PlayerInput newPlayer2 = playerInputManager.JoinPlayer();
+            PlayerInput newPlayer2 = playerInputManager.JoinPlayer(1, 1, playingPlayers[1].controlScheme);
             Debug.Log(newPlayer2.name);
             playerManager.playerList.Add(newPlayer2.gameObject.GetComponent<Player>());
             newPlayer2.gameObject.transform.position = playerManager.playerSpawnPosition.position;

@@ -91,9 +91,8 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
         stats.TakeDamage(val);
         if (stats.currentHealth <= 0)
         {
-            is_dying = true;
-            currentEnemyState = ENUM_EnemyState.dying;
-            ApplyAnimation();
+            bossState = ENUM_DuckBossState.dying;
+            currentActionState = ENUM_current_state.preparation;
         }
         healthBar.fillAmount = stats.currentHealth / stats.maxHealth;
     }
@@ -479,11 +478,6 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
     }
     void Action_Dying()
     {
-        ChangeState(ENUM_EnemyState.dying);
-        is_dying = true;
-         
-
-
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:

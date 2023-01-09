@@ -99,6 +99,10 @@ public class UI_MainMenuControl : MonoBehaviour
         PlayerSelectedData player = new PlayerSelectedData();
         player.id = 0;
         gameSetup.playingPlayers.Add(player);
+
+        PlayerSelectedData player2 = new PlayerSelectedData();
+        player2.id = 1;
+        gameSetup.playingPlayers.Add(player2);
     }
     public void TwoPlayersSetup()
     {
@@ -135,6 +139,15 @@ public class UI_MainMenuControl : MonoBehaviour
     {
         gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Mage;
         //Debug.Log("choose mage");
+    }
+
+    public void ControlSchemeKeyBoard(int id)
+    {
+        gameSetup.playingPlayers[id].controlScheme = "KeyBoard";
+    }
+    public void ControlSchemeGamePad(int id)
+    {
+        gameSetup.playingPlayers[id].controlScheme = "GamePad";
     }
 
     public void StartGame()

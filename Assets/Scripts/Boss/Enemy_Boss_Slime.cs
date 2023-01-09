@@ -360,6 +360,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
+                currentActionState = ENUM_current_state.finishing;
                 break;
             case ENUM_current_state.working:
                 break;
@@ -407,8 +408,8 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
         stats.TakeDamage(val);
         if (stats.currentHealth <= 0)
         {
-            is_dying = true;
-            Debug.LogWarning("NOT DYING CURRENTLY");
+            bossState = ENUM_SlimeBossState.dying;
+            currentActionState = ENUM_current_state.preparation;
         }
         healthBar.fillAmount = stats.currentHealth / stats.maxHealth;
     }
