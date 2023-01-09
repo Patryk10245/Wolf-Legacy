@@ -67,6 +67,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
     [SerializeField] int currentJumpPos;
     public int bounceDamage;
     public bool alreadyInAir;
+    [SerializeField] float speedDuringJumping = 10;
 
 
 
@@ -310,6 +311,8 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
             case ENUM_current_state.preparation:
                 if (currentJumpPos == 0 && alreadyInAir == false)
                 {
+                    agent.speed = speedDuringJumping;
+                    agent.acceleration = speedDuringJumping;
                     anim.SetTrigger("JumpUp");
                     alreadyInAir = true;
                 }
@@ -337,6 +340,8 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                     anim.SetTrigger("JumpDown");
                     alreadyInAir = false;
                     currentJumpPos = 0;
+                    agent.speed = move_Speed;
+                    agent.acceleration = move_Speed;
                     currentActionState = ENUM_current_state.ready_to_exit;
                 }
                 else
@@ -436,11 +441,6 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
         {
             transform.localScale = Vector3.one * 4;
         }
-    }
-
-    void Animation_JumpAttack()
-    {
-        
     }
 
 
