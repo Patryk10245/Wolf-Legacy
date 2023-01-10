@@ -6,4 +6,5 @@ public abstract class Player_AttackScript : MonoBehaviour
 {
     public Player player;
     public abstract void Attack();
+    public abstract void CreateProjectile();
 }

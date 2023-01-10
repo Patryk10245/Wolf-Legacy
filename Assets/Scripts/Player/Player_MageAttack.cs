@@ -11,7 +11,12 @@ public class Player_MageAttack : Player_AttackScript
         
     public override void Attack()
     {
-        //Debug.Log("Mage Attack");
+        Debug.Log("Mage Attack");
+        player.controller.weaponAnimator.SetTrigger("Attack");
+    }
+
+    public override void CreateProjectile()
+    {
         GameObject temp = Instantiate(projectilePrefab);
         temp.transform.position = spawnProjectilePosition.position;
         Vector3 mousepos = player.controller.mousePos;
@@ -23,8 +28,7 @@ public class Player_MageAttack : Player_AttackScript
         projectile.flyDirection = dir;
         projectile.speed = projectileSpeed;
         projectile.damage = player.stats.damage;
-        projectile.stopTimerAt = 8;
+        projectile.stopTimerAt = 4;
     }
-
 
 }

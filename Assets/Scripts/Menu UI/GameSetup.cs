@@ -45,6 +45,7 @@ public class GameSetup : MonoBehaviour
     [Header("Class Data")]
     [SerializeField] ClassData[] classesData;
     [SerializeField] RuntimeAnimatorController[] controllers;
+    [SerializeField] RuntimeAnimatorController[] weaponControllers;
     [SerializeField] GameObject mageProjectilePrefab;
 
 
@@ -217,6 +218,7 @@ public class GameSetup : MonoBehaviour
 
         player.controller.moveSpeed = classesData[0].speed + upgrades.speed.valueOnLevel[upgrades.speed.currentLevel];
         player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = paladinData.weaponSprite;
+        player.controller.weaponAnimator.runtimeAnimatorController = weaponControllers[0];
         player.GetComponent<Animator>().runtimeAnimatorController = controllers[0];
 
 
@@ -259,6 +261,7 @@ public class GameSetup : MonoBehaviour
 
         player.controller.moveSpeed = mageData.speed + upgrades.speed.valueOnLevel[upgrades.speed.currentLevel];
         player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = mageData.weaponSprite;
+        player.controller.weaponAnimator.runtimeAnimatorController = weaponControllers[3];
         player.GetComponent<Animator>().runtimeAnimatorController = controllers[3];
 
         Player_MageAttack attack = player.gameObject.AddComponent<Player_MageAttack>();

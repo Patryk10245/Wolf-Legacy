@@ -3767,6 +3767,11 @@ MonoBehaviour:
   - {fileID: 9100000, guid: 6a8449df3491e914ba12357744c1574d, type: 2}
   - {fileID: 9100000, guid: 6a8449df3491e914ba12357744c1574d, type: 2}
   - {fileID: 9100000, guid: 6a8f846c70e163f4c9ec706a68a50c57, type: 2}
+  weaponControllers:
+  - {fileID: 9100000, guid: e67d47ea1c90b484491bb2513d09e9d7, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 9100000, guid: 028094b24a4fe2447958083130acca40, type: 2}
   mageProjectilePrefab: {fileID: 5721576511170400244, guid: 9d5fe5478f17a4c43a2e9cb24754dfb4, type: 3}
 --- !u!4 &575574612
 Transform:

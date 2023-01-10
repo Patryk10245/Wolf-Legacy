@@ -13,4 +13,9 @@ public class Player_PaladinAttack : Player_AttackScript
         player.controller.weaponCollider.enabled = true;
         player.controller.trailObject.SetActive(true);
     }
+
+    public override void CreateProjectile()
+    {
+        throw new System.NotImplementedException();
+    }
 }
