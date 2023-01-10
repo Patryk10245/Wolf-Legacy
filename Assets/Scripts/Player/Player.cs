@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     public bool canMove;
     public bool inAttack;
     public bool canRotateWeapon;
+    public bool isInvulnerable;
 
 
     private void Start()
@@ -44,6 +45,11 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float val)
     {
+        if(isInvulnerable == true)
+        {
+            return;
+        }
+
         stats.TakeDamage(val);
         ui_updater.UpdateHealth();
     }

@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_MageAttack : Player_AttackScript
+public class Player_RangerAttack : Player_AttackScript
 {
     public GameObject projectilePrefab;
     public Transform spawnProjectilePosition;
-
     [SerializeField] float projectileSpeed = 10;
-        
+
     public override void Attack()
     {
         //Debug.Log("Mage Attack");
@@ -30,5 +29,4 @@ public class Player_MageAttack : Player_AttackScript
         projectile.damage = player.stats.damage;
         projectile.stopTimerAt = 4;
     }
-
 }

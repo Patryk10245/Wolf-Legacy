@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player_Paladin_AroundAttack : Ability_2
 {
-    public Player player;
     public GameObject weaponHolder;
 
     public float rechargeTime = 5;

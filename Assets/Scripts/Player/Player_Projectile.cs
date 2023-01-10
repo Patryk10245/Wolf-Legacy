@@ -34,11 +34,15 @@ public class Player_Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Spawner") || collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Enemy")|| collision.gameObject.CompareTag("Boss"))
         {
             //Debug.Log("collision = " + collision.gameObject.transform.parent.name);
             collision.GetComponent<Enemy_BaseClass>().TakeDamage(damage, ENUM_AttackType.ranged);
             Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Spawner"))
+        {
+            collision.gameObject.GetComponent<Enemy_Spawner>().TakeDamage(damage, ENUM_AttackType.melee);
         }
 
     }

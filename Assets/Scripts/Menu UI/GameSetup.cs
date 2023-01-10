@@ -46,7 +46,13 @@ public class GameSetup : MonoBehaviour
     [SerializeField] ClassData[] classesData;
     [SerializeField] RuntimeAnimatorController[] controllers;
     [SerializeField] RuntimeAnimatorController[] weaponControllers;
+    [Header("Mage")]
     [SerializeField] GameObject mageProjectilePrefab;
+    [SerializeField] GameObject fireTrailPrefab;
+    [SerializeField] GameObject fireCirclePrefab;
+    [Header("Archer")]
+    [SerializeField] GameObject archerProjectilePrefab;
+    [SerializeField] Sprite archersHandImage;
 
 
     private void Start()
@@ -231,7 +237,7 @@ public class GameSetup : MonoBehaviour
         attack.player = player;
 
 
-        Player_DashSkill dash = player.gameObject.AddComponent<Player_DashSkill>();
+        Player_Paladin_DashSkill dash = player.gameObject.AddComponent<Player_Paladin_DashSkill>();
         player.abilityBasic = dash;
         dash.player = player;
 
@@ -249,6 +255,27 @@ public class GameSetup : MonoBehaviour
     }
     void RangerSetup(Player player)
     {
+        ClassUpgrades upgrades = Village_Upgrades.ins.rangerUpgrades;
+        ClassData rangerData = classesData[2];
+        player.stats.currentHealth = rangerData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
+        player.stats.maxHealth = rangerData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
+        player.stats.currentEnergy = rangerData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];
+        player.stats.maxEnergy = rangerData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];
+        player.stats.damage = rangerData.damage + upgrades.damage.valueOnLevel[upgrades.damage.currentLevel];
+        player.stats.energyRegenerationAmount = rangerData.energyRegenAmount + upgrades.energyRegeneration.valueOnLevel[upgrades.energyRegeneration.currentLevel];
+
+        player.controller.moveSpeed = rangerData.speed + upgrades.speed.valueOnLevel[upgrades.speed.currentLevel];
+        player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = rangerData.weaponSprite;
+        player.controller.weaponAnimator.runtimeAnimatorController = weaponControllers[2];
+        player.GetComponent<Animator>().runtimeAnimatorController = controllers[2];
+
+        Player_RangerAttack attack = player.gameObject.AddComponent<Player_RangerAttack>();
+        player.attackScript = attack;
+        attack.player = player;
+        attack.projectilePrefab = mageProjectilePrefab;
+        attack.spawnProjectilePosition = player.controller.weaponCollider.transform;
+        SpriteRenderer archersHand = player.controller.weaponAnimator.gameObject.AddComponent<SpriteRenderer>();
+        archersHand.sprite = archersHandImage;
 
     }
     void MageSetup(Player player)
@@ -272,6 +299,17 @@ public class GameSetup : MonoBehaviour
         attack.player = player;
         attack.projectilePrefab = mageProjectilePrefab;
         attack.spawnProjectilePosition = player.controller.weaponCollider.transform;
+
+        Player_Mage_FireTrail fireTrail = player.gameObject.AddComponent<Player_Mage_FireTrail>();
+        fireTrail.trailObject = fireTrailPrefab;
+        fireTrail.player = player;
+        player.abilityBasic = fireTrail;
+
+        Player_Mage_FireCircle fireCircle = player.gameObject.AddComponent<Player_Mage_FireCircle>();
+        fireCircle.circlePrefab = fireCirclePrefab;
+        fireCircle.player = player;
+        player.abilitySecondary = fireCircle;
+
 
 
 

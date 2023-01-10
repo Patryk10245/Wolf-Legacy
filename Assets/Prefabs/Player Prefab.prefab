@@ -257,6 +257,16 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3a393360-8e9f-4c5f-8c0a-dc3c7749908f
     m_ActionName: Player/Dash[/SHANWAN PS3 PC Gamepad/button8]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 17618adc-dc06-42b1-9fa5-8c853e335fde
+    m_ActionName: Player/Ability1[/Keyboard/space,/SHANWAN PS3 PC Gamepad/button7,/SHANWAN
+      PS3 PC Gamepad1/button7]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6f4f2932-dc79-49d9-81d6-d5ab2f689ad3
+    m_ActionName: Player/Pause[/Keyboard/escape,/SHANWAN PS3 PC Gamepad/button13,/SHANWAN
+      PS3 PC Gamepad1/button13]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: KeyBoard
   m_DefaultActionMap: Player
@@ -508,7 +518,7 @@ SpriteRenderer:
   m_SortingLayerID: -1009486025
   m_SortingLayer: 5
   m_SortingOrder: 4
-  m_Sprite: {fileID: -541394772, guid: 34d59b25812fb3a4b983e0c6f53f85d2, type: 3}
+  m_Sprite: {fileID: -1779788898, guid: d71735a5762706e4ca180b548d5e4f3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -536,7 +546,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8, y: 0.6}
+    oldSize: {x: 0.7, y: 2.1}
     newSize: {x: 1.8, y: 0.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

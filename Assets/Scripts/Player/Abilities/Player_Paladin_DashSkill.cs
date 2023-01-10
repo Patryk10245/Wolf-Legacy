@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_DashSkill : Ability_1
+public class Player_Paladin_DashSkill : Ability_1
 {
-    public Player player;
     public float dashForce = 4000;
     public float dashRechargeTime = 3;
     public float dashEnergyCost = 10;
