@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "6f4f2932-dc79-49d9-81d6-d5ab2f689ad3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -434,6 +443,39 @@
                     "processors": "",
                     "groups": "My_Scheme",
                     "action": "Ability0",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "37f78e48-718d-447f-8ad9-155ce4b9b5a2",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyBoard",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "52213403-f768-47f5-9eb9-ddd7d54be1f3",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f9cb3017-2108-4896-8276-2cf7d984553d",
+                    "path": "<HID::SHANWAN PS3/PC Gamepad>/button13",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "My_Scheme",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

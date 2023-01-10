@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
         playerMap.FindAction("Attack").started += Attack;
         playerMap.FindAction("Ability0").started += BasicAbility;
         playerMap.FindAction("Ability1").started += SecondaryAbility;
+        playerMap.FindAction("Pause").started += PauseGame;
         playerMap.Enable();
 
         
@@ -58,6 +59,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (Game_State.gamePaused)
+            return;
+
         Sword_Rotation();
     }
     private void FixedUpdate()
@@ -161,5 +165,12 @@ public class PlayerController : MonoBehaviour
     {
         playerMap.FindAction("Attack").started -= Attack;
         playerMap.FindAction("Ability0").started -= BasicAbility;
+        playerMap.FindAction("Ability1").started -= SecondaryAbility;
+        playerMap.FindAction("Pause").started -= PauseGame;
+    }
+    public void PauseGame(InputAction.CallbackContext context)
+    {
+        Game_State.PauseGame();
+        Debug.Log("current state = " + Game_State.gamePaused);
     }
 }

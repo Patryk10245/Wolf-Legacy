@@ -10,7 +10,7 @@ public class Slime_JumpAttack_Collider : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hit Player");
+            //Debug.Log("Hit Player");
             collision.GetComponent<Player>().TakeDamage(boss.bounceDamage);
         }
     }

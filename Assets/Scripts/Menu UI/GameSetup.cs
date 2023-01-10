@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -91,7 +92,7 @@ public class GameSetup : MonoBehaviour
 
 
         scoreTable.SetReferenceToGoldText();
-
+        Game_State.pausingWindow = levelReferences.pauseWindow;
         
         
         
@@ -159,11 +160,20 @@ public class GameSetup : MonoBehaviour
                     break;
             }
 
-            PlayerInput newPlayer2 = playerInputManager.JoinPlayer(1, 1, playingPlayers[1].controlScheme);
-            Debug.Log(newPlayer2.name);
-            playerManager.playerList.Add(newPlayer2.gameObject.GetComponent<Player>());
-            newPlayer2.gameObject.transform.position = playerManager.playerSpawnPosition.position;
-            SetReferencesForPlayer2(playerManager.playerList[1], levelReferences);
+            try
+            {
+                PlayerInput newPlayer2 = playerInputManager.JoinPlayer(1,0,playingPlayers[1].controlScheme);
+                playerManager.playerList.Add(newPlayer2.gameObject.GetComponent<Player>());
+                newPlayer2.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+                SetReferencesForPlayer2(playerManager.playerList[1], levelReferences);
+
+            }
+            catch(Exception execption)
+            {
+                Debug.Log(execption);
+            }
+            //Debug.Log(newPlayer2.name);
+            
 
 
             switch (playingPlayers[1].selectedClass)

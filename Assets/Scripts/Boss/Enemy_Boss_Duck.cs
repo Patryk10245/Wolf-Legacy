@@ -100,7 +100,10 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
 
     void Update()
     {
-        if(move_target == null)
+        if (Game_State.gamePaused)
+            return;
+
+        if (move_target == null)
         {
             return;
         }

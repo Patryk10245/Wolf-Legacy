@@ -3,22 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class UI_MainMenuControl : MonoBehaviour
 {
     [Header("Windows")]
-    [SerializeField] GameObject mainButtons;
-    [SerializeField] GameObject playWindow;
+    [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject startWindow;
     [SerializeField] GameObject settingsWindow;
     [SerializeField] GameObject exitWindow;
 
-    [SerializeField] GameObject onePlayer;
-    [SerializeField] GameObject twoPlayers;
+    [Header("T2")]
+    [SerializeField] GameObject settingsAudio;
+    [SerializeField] GameObject settingsControls;
+    [SerializeField] GameObject settingsRebindingP1;
+    [SerializeField] GameObject settingsRebindingP2;
+
+    [SerializeField] GameObject onePlayerWindow;
+    [SerializeField] GameObject twoPlayersWindow;
 
 
     [Header("Reference")]
     [SerializeField] GameSetup gameSetup;
     [SerializeField] Image selectedClassImage;
+
+    [SerializeField] GameObject player1KeyboardScheme;
+    [SerializeField] GameObject player2KeyboardScheme;
+    [SerializeField] GameObject player1GamepadScheme;
+    [SerializeField] GameObject player2GamepadScheme;
 
 
     private void Start()
@@ -26,38 +38,90 @@ public class UI_MainMenuControl : MonoBehaviour
     }
 
 
-    public void ShowPlay()
+    public void Show_StartGame()
     {
-        HideWindows();
-        HideButtons();
-        playWindow.SetActive(true);
+        startWindow.SetActive(true);
+        mainMenu.SetActive(false);
     }
-    public void ShowSettings()
+    public void Show_Settings()
     {
-        HideWindows();
-        HideButtons();
+        settingsWindow.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+    public void Show_QuitGame()
+    {
+        exitWindow.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+    public void Show_Settings_Controls()
+    {
+        settingsControls.SetActive(true);
+        settingsWindow.SetActive(false);
+    }
+    public void Show_Settings_Audio()
+    {
+        settingsAudio.SetActive(true);
+        settingsWindow.SetActive(false);
+    }
+    public void Show_Start_1Player()
+    {
+        onePlayerWindow.SetActive(true);
+        startWindow.SetActive(false);
+        OnePlayer();
+
+    }
+    public void Show_Start_2Players()
+    {
+        twoPlayersWindow.SetActive(true);
+        startWindow.SetActive(false);
+        TwoPlayers();
+    }
+
+
+    public void Show_Settings_Rebinding_Player1()
+    {
+        settingsRebindingP1.SetActive(true);
+    }
+    public void Show_Settings_Rebinding_Player2()
+    {
+        settingsRebindingP2.SetActive(true);
+    }
+
+    public void Exit_StartGame()
+    {
+        startWindow.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+    public void Exit_Settings()
+    {
+        settingsWindow.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+    public void Exit_QuitGame()
+    {
+        exitWindow.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+    public void Exit_Settings_Controls()
+    {
+        settingsControls.SetActive(false);
         settingsWindow.SetActive(true);
     }
-    public void ShowExit()
+    public void Exit_Settings_Sounds()
     {
-        HideWindows();
-        HideButtons();
-        exitWindow.SetActive(true);
+        settingsAudio.SetActive(false);
+        settingsWindow.SetActive(true);
     }
-    public void ShowButtons()
+    public void Exit_Start_ClassSelect()
     {
-        mainButtons.SetActive(true);
-        HideWindows();
+        onePlayerWindow.SetActive(false);
+        twoPlayersWindow.SetActive(false);
+        startWindow.SetActive(true);
     }
-    public void HideButtons()
+    public void Exit_SettignsRebinding()
     {
-        mainButtons.SetActive(false);
-    }
-    public void HideWindows()
-    {
-        playWindow.SetActive(false);
-        settingsWindow.SetActive(false);
-        exitWindow.SetActive(false);
+        settingsRebindingP1.SetActive(false);
+        settingsRebindingP2.SetActive(false);
     }
 
     public void ExitGame_Yes()
@@ -66,30 +130,20 @@ public class UI_MainMenuControl : MonoBehaviour
     }
     public void ExitGame_No()
     {
-        HideWindows();
-        ShowButtons();
+        exitWindow.SetActive(false);
     }
 
 
-    public void ShowOnePlayer()
-    {
-        HideWindows();
-        onePlayer.SetActive(true);
-        OnePlayerSetup();
-    }
-    public void ShowTwoPlayers()
-    {
-        HideWindows();
-        twoPlayers.SetActive(true);
-        TwoPlayersSetup();
-    }
-    public void ReturnFromPlayers()
-    {
-        onePlayer.SetActive(false);
-        twoPlayers.SetActive(false);
-        ShowPlay();
-    }
 
+    public void OnePlayer()
+    {
+        gameSetup.numberOfPlayers = 1;
+        //
+    }
+    public void TwoPlayers()
+    {
+        gameSetup.numberOfPlayers = 2;
+    }
 
     public void OnePlayerSetup()
     {
@@ -144,15 +198,65 @@ public class UI_MainMenuControl : MonoBehaviour
     public void ControlSchemeKeyBoard(int id)
     {
         gameSetup.playingPlayers[id].controlScheme = "KeyBoard";
+        switch(id)
+        {
+            case 0:
+                player1GamepadScheme.SetActive(false);
+                player1KeyboardScheme.SetActive(true);
+                break;
+            case 1:
+                player2GamepadScheme.SetActive(false);
+                player2KeyboardScheme.SetActive(true);
+                break;
+                
+        }    
     }
     public void ControlSchemeGamePad(int id)
     {
         gameSetup.playingPlayers[id].controlScheme = "GamePad";
+
+        switch (id)
+        {
+            case 0:
+                player1GamepadScheme.SetActive(true);
+                player1KeyboardScheme.SetActive(false);
+                break;
+            case 1:
+                player2GamepadScheme.SetActive(true);
+                player2KeyboardScheme.SetActive(false);
+                break;
+        }
+    }
+
+    public void KeyRebind(int x)
+    {
+        switch(x)
+        {
+            case 0:
+                
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+        }
     }
 
     public void StartGame()
     {
-        GameSetup.ins.LoadClassData();
+        gameSetup.LoadClassData();
         Level_SelectedScenes.ins.ChangeToMap1();
     }
 }

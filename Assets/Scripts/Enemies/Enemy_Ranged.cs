@@ -31,6 +31,9 @@ public class Enemy_Ranged : Enemy_BaseClass
 
     private void Update()
     {
+        if (Game_State.gamePaused)
+            return;
+
         if (currentEnemyState == ENUM_EnemyState.dying)
         {
             return;

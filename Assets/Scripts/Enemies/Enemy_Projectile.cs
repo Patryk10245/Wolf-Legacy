@@ -33,17 +33,17 @@ public class Enemy_Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collsion = " + collision.gameObject.name);
+        //Debug.Log("collsion = " + collision.gameObject.name);
 
         if (collision.gameObject.CompareTag("Shield"))
         {
-            Debug.Log("Destroyed at shield");
+            //Debug.Log("Destroyed at shield");
             Destroy(gameObject);
         }
 
         else if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Destroyed at player");
+            //Debug.Log("Destroyed at player");
             collision.GetComponent<Player>().TakeDamage(damage);
             Destroy(gameObject);
         }

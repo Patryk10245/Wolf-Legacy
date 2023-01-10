@@ -24,4 +24,5 @@ public class Level_FightReferenecs : MonoBehaviour
     public Image player2HealthBar;
     public Camera_Following cameraFollowing;
     public PlayerInputManager playerInputManager;
+    public GameObject pauseWindow;
 }

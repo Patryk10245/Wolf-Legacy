@@ -89,6 +89,9 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
     // Update is called once per frame
     void Update()
     {
+        if (Game_State.gamePaused)
+            return;
+
         if (move_target == null)
         {
             return;
@@ -342,6 +345,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                     currentJumpPos = 0;
                     agent.speed = move_Speed;
                     agent.acceleration = move_Speed;
+                    last_action = 4;
                     currentActionState = ENUM_current_state.ready_to_exit;
                 }
                 else

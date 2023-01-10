@@ -9,7 +9,10 @@ public class Enemy_Melee : Enemy_BaseClass
 
     private void Update()
     {
-        if(currentEnemyState == ENUM_EnemyState.dying)
+        if (Game_State.gamePaused)
+            return;
+
+        if (currentEnemyState == ENUM_EnemyState.dying)
         {
             return;
         }
