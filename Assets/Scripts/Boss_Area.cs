@@ -37,4 +37,8 @@ public class Boss_Area : MonoBehaviour
             InitializeFightWithBoss();
         }
     }
+    public void DeactivateBlockades()
+    {
+        collidersBlockingExit.SetActive(false);
+    }
 }

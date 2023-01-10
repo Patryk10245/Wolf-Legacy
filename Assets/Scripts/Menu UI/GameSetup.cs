@@ -101,7 +101,10 @@ public class GameSetup : MonoBehaviour
         Debug.Log("number of players == " + numberOfPlayers);
         if (numberOfPlayers == 1)
         {
-            playingPlayers.RemoveAt(1);
+            if(playingPlayers.Count > 1)
+            {
+                playingPlayers.RemoveAt(1);
+            }
             //PlayerInput newPlayer = playerInputManager.JoinPlayer();
 
             PlayerInput newPlayer = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);

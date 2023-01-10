@@ -18,10 +18,10 @@ public enum ENUM_SlimeBossState
 
 public class Enemy_Boss_Slime : Enemy_BaseClass
 {
-
+    [Space(20)]
+    [SerializeField] Boss_Area bossArea;
 
     public Image healthBar;
-    [Space(10)]
     public ENUM_SlimeBossState bossState;
     public ENUM_current_state currentActionState = ENUM_current_state.ready_to_exit;
     int last_action;
@@ -369,6 +369,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
             case ENUM_current_state.working:
                 break;
             case ENUM_current_state.finishing:
+                bossArea.DeactivateBlockades();
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;

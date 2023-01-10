@@ -29,6 +29,8 @@ public enum ENUM_current_state
 public class Enemy_Boss_Duck : Enemy_BaseClass
 {
     [Space(20)]
+    [SerializeField] Boss_Area bossArea;
+
     public Boss_Duck_SpecialEffects specialEffects;
     public Image healthBar;
     public ENUM_DuckBossState bossState;
@@ -489,6 +491,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
             case ENUM_current_state.working:
                 break;
             case ENUM_current_state.finishing:
+                bossArea.DeactivateBlockades();
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;
