@@ -29,8 +29,12 @@ public class UI_MainMenuControl : MonoBehaviour
 
     [SerializeField] GameObject player1KeyboardScheme;
     [SerializeField] GameObject player2KeyboardScheme;
+    
     [SerializeField] GameObject player1GamepadScheme;
     [SerializeField] GameObject player2GamepadScheme;
+
+    [SerializeField] GameObject player1NoneScheme;
+    [SerializeField] GameObject player2NoneScheme;
 
 
     private void Start()
@@ -138,39 +142,10 @@ public class UI_MainMenuControl : MonoBehaviour
     public void OnePlayer()
     {
         gameSetup.numberOfPlayers = 1;
-        //
     }
     public void TwoPlayers()
     {
         gameSetup.numberOfPlayers = 2;
-    }
-
-    public void OnePlayerSetup()
-    {
-        gameSetup.playingPlayers.Clear();
-
-        gameSetup.numberOfPlayers = 1;
-        PlayerSelectedData player = new PlayerSelectedData();
-        player.id = 0;
-        gameSetup.playingPlayers.Add(player);
-
-        PlayerSelectedData player2 = new PlayerSelectedData();
-        player2.id = 1;
-        gameSetup.playingPlayers.Add(player2);
-    }
-    public void TwoPlayersSetup()
-    {
-        gameSetup.playingPlayers.Clear();
-
-
-        gameSetup.numberOfPlayers = 2;
-        PlayerSelectedData player1 = new PlayerSelectedData();
-        player1.id = 0;
-        PlayerSelectedData player2 = new PlayerSelectedData();
-        player2.id = 1;
-
-        gameSetup.playingPlayers.Add(player1);
-        gameSetup.playingPlayers.Add(player2);
     }
 
 
@@ -203,10 +178,13 @@ public class UI_MainMenuControl : MonoBehaviour
             case 0:
                 player1GamepadScheme.SetActive(false);
                 player1KeyboardScheme.SetActive(true);
+                player1NoneScheme.SetActive(false);
                 break;
             case 1:
                 player2GamepadScheme.SetActive(false);
                 player2KeyboardScheme.SetActive(true);
+                player2NoneScheme.SetActive(false);
+                TwoPlayers();
                 break;
                 
         }    
@@ -220,10 +198,27 @@ public class UI_MainMenuControl : MonoBehaviour
             case 0:
                 player1GamepadScheme.SetActive(true);
                 player1KeyboardScheme.SetActive(false);
+                player1NoneScheme.SetActive(false);
                 break;
             case 1:
                 player2GamepadScheme.SetActive(true);
                 player2KeyboardScheme.SetActive(false);
+                player2NoneScheme.SetActive(false);
+                TwoPlayers();
+                break;
+        }
+    }
+    public void ControlSchemeNone(int id)
+    {
+        gameSetup.playingPlayers[id].controlScheme = "";
+
+        switch (id)
+        {
+            case 1:
+                player2GamepadScheme.SetActive(false);
+                player2KeyboardScheme.SetActive(false);
+                player2NoneScheme.SetActive(true);
+                OnePlayer();
                 break;
         }
     }
