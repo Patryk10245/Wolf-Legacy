@@ -2411,7 +2411,7 @@ MonoBehaviour:
   classesData:
   - {fileID: 11400000, guid: 01d4448912be4694b8ccb690aeed704b, type: 2}
   - {fileID: 11400000, guid: 01d4448912be4694b8ccb690aeed704b, type: 2}
-  - {fileID: 11400000, guid: 01d4448912be4694b8ccb690aeed704b, type: 2}
+  - {fileID: 11400000, guid: 3312a8fe65dd377498864905f2c16363, type: 2}
   - {fileID: 11400000, guid: d4f524d4cf628e9428a46649cb10d754, type: 2}
   controllers:
   - {fileID: 9100000, guid: 6a8449df3491e914ba12357744c1574d, type: 2}
@@ -2427,7 +2427,7 @@ MonoBehaviour:
   mageProjectilePrefab: {fileID: 5721576511170400244, guid: 9d5fe5478f17a4c43a2e9cb24754dfb4, type: 3}
   fireTrailPrefab: {fileID: 8958461196540796076, guid: 07be42c786d16704cbb50dba8f127d3b, type: 3}
   fireCirclePrefab: {fileID: 4465106608925508517, guid: 9ba41e9fb01496a48abe5b8afc67c46c, type: 3}
-  archerProjectilePrefab: {fileID: 0}
+  archerProjectilePrefab: {fileID: 850454011181813458, guid: eb63ecd586254f94e90215bdbd8d1988, type: 3}
   archersHandImage: {fileID: 1844696289, guid: d71735a5762706e4ca180b548d5e4f3c, type: 3}
 --- !u!4 &575574612
 Transform:

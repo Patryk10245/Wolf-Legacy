@@ -264,6 +264,9 @@ public class GameSetup : MonoBehaviour
     {
         ClassUpgrades upgrades = Village_Upgrades.ins.rangerUpgrades;
         ClassData rangerData = classesData[2];
+        Debug.Log("upgrades = " + upgrades);
+        Debug.Log("data = " + rangerData);
+        Debug.Log("player = " + player);
         player.stats.currentHealth = rangerData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
         player.stats.maxHealth = rangerData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
         player.stats.currentEnergy = rangerData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];
@@ -283,6 +286,17 @@ public class GameSetup : MonoBehaviour
         attack.spawnProjectilePosition = player.controller.weaponCollider.transform;
         SpriteRenderer archersHand = player.controller.weaponAnimator.gameObject.AddComponent<SpriteRenderer>();
         archersHand.sprite = archersHandImage;
+
+        Player_ArcherDash dash = player.gameObject.AddComponent<Player_ArcherDash>();
+        player.abilityBasic = dash;
+        dash.player = player;
+
+        Player_ArcherMultiShot multiShot = player.gameObject.AddComponent<Player_ArcherMultiShot>();
+        player.abilitySecondary = multiShot;
+        multiShot.player = player;
+        multiShot.arrowPrefab = archerProjectilePrefab;
+        multiShot.arrowSpawnPosiiton = player.controller.weaponCollider.gameObject;
+
 
     }
     void MageSetup(Player player)

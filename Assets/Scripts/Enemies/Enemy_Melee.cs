@@ -81,6 +81,7 @@ public class Enemy_Melee : Enemy_BaseClass
         {
             is_dying = true;
             currentEnemyState = ENUM_EnemyState.dying;
+            tag = "Untagged";
             ApplyAnimation();
         }
     }

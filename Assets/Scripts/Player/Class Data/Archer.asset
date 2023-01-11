@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e43bc6f4a8d4f484397f3a418cfa9d43, type: 3}
-  m_Name: Paladin
+  m_Name: Archer
   m_EditorClassIdentifier: 
-  healtPoints: 80
-  energyPoints: 40
+  healtPoints: 40
+  energyPoints: 60
   energyRegenAmount: 1
-  damage: 5
+  damage: 3
   speed: 240
-  playerSprite: {fileID: -1420845206, guid: 34d59b25812fb3a4b983e0c6f53f85d2, type: 3}
-  weaponSprite: {fileID: -541394772, guid: 34d59b25812fb3a4b983e0c6f53f85d2, type: 3}
+  playerSprite: {fileID: 1287018694, guid: d71735a5762706e4ca180b548d5e4f3c, type: 3}
+  weaponSprite: {fileID: -1779788898, guid: d71735a5762706e4ca180b548d5e4f3c, type: 3}
