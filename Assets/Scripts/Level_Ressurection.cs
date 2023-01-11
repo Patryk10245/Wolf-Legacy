@@ -40,9 +40,8 @@ public class Level_Ressurection : MonoBehaviour
     {
         Debug.Log("Player death " + player);
         if(playerManager.playerList.Count == 1)
-        {
-            Debug.LogWarning("GAME OVER SCREEN");
-            // Game Over Screen
+        {         
+            GameOver();
         }
         else
         {
@@ -53,6 +52,10 @@ public class Level_Ressurection : MonoBehaviour
                 deadPlayer.gameObject.SetActive(false);
                 AssignIds();
                 following = true;
+            }
+            else
+            {
+                GameOver();
             }
         }
     }
@@ -80,5 +83,11 @@ public class Level_Ressurection : MonoBehaviour
             idDeadPlayer = 0;
             idAlivePlayer = 1;
         }
+    }
+
+    void GameOver()
+    {
+        
+        Debug.LogWarning("GAME OVER SCREEN");
     }
 }

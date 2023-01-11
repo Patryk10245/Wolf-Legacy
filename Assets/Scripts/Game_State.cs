@@ -9,8 +9,6 @@ public class Game_State : MonoBehaviour
     public static bool gamePaused;
     public static GameObject pausingWindow;
 
-    public Player deadPlayer;
-    bool following;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +19,6 @@ public class Game_State : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(following == true)
-        {
-            deadPlayer.transform.position = Player_Manager.ins.playerList[deadPlayer.id].transform.position;
-        }
     }
     public static void PauseGame()
     {
@@ -40,30 +34,6 @@ public class Game_State : MonoBehaviour
             Time.timeScale = 1;
             pausingWindow.SetActive(false);
         }
-    }
-
-    public void PlayerDeath(Player player)
-    {
-        if(GameSetup.ins.numberOfPlayers == 1)
-        {
-
-        }
-        else
-        {
-            if(deadPlayer == null)
-            {
-                deadPlayer = player;
-                following = true;
-            }
-            else
-            {
-
-            }
-        }
-    }
-    public void PlayerRevive()
-    {
-
     }
 
     
