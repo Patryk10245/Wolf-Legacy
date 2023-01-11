@@ -86,7 +86,7 @@ public class GameSetup : MonoBehaviour
     {
         Game_State.gamePaused = false;
         Time.timeScale = 1;
-
+        playingPlayers[0].isDead = false;
 
         //Debug.Log("Setting up the game");
         Level_FightReferenecs levelReferences = Level_FightReferenecs.ins;
