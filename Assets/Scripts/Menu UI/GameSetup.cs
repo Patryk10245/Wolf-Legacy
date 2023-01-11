@@ -46,6 +46,8 @@ public class GameSetup : MonoBehaviour
     [SerializeField] ClassData[] classesData;
     [SerializeField] RuntimeAnimatorController[] controllers;
     [SerializeField] RuntimeAnimatorController[] weaponControllers;
+    [Header("Paladin")]
+    [SerializeField] GameObject paladinAbilityTrail;
     [Header("Mage")]
     [SerializeField] GameObject mageProjectilePrefab;
     [SerializeField] GameObject fireTrailPrefab;
@@ -229,6 +231,7 @@ public class GameSetup : MonoBehaviour
         player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = paladinData.weaponSprite;
         player.controller.weaponAnimator.runtimeAnimatorController = weaponControllers[0];
         player.GetComponent<Animator>().runtimeAnimatorController = controllers[0];
+        
 
 
         // Add Abilities
@@ -246,6 +249,10 @@ public class GameSetup : MonoBehaviour
         player.abilitySecondary = around;
         around.player = player;
         around.weaponHolder = player.controller.weaponHolder.gameObject;
+        GameObject specialAttackTrail = Instantiate(paladinAbilityTrail);
+        around.trail = specialAttackTrail;
+        specialAttackTrail.transform.SetParent(player.controller.weaponCollider.transform);
+        specialAttackTrail.transform.localPosition = new Vector3(0.49f, 0.07f, 0);
 
 
     }

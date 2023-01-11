@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_Paladin_AroundAttack : Ability_2
 {
     public GameObject weaponHolder;
+    public GameObject trail;
 
     public float rechargeTime = 5;
     public float rotationTime = 0.26f;
@@ -20,6 +21,7 @@ public class Player_Paladin_AroundAttack : Ability_2
     {
         if (player.stats.currentEnergy >= energyCost && isRecharching == false && isUsed == false)
         {
+            trail.SetActive(true);
             player.stats.ModifyEnergy(-energyCost);
             isUsed = true;
             timer = 0;
@@ -41,6 +43,7 @@ public class Player_Paladin_AroundAttack : Ability_2
                 isRecharching = true;
                 isUsed = false;
                 player.canRotateWeapon = true;
+                trail.SetActive(false);
                 player.controller.weaponCollider.enabled = false;
                 weaponHolder.transform.rotation.eulerAngles.Set(0, 0, 0);
                 weaponHolder.transform.localScale = Vector3.one;
