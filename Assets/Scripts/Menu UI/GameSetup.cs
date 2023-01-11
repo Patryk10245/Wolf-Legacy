@@ -285,6 +285,8 @@ public class GameSetup : MonoBehaviour
         attack.projectilePrefab = mageProjectilePrefab;
         attack.spawnProjectilePosition = player.controller.weaponCollider.transform;
         SpriteRenderer archersHand = player.controller.weaponAnimator.gameObject.AddComponent<SpriteRenderer>();
+        archersHand.sortingLayerName = "Player";
+        archersHand.sortingOrder = 3;
         archersHand.sprite = archersHandImage;
 
         Player_ArcherDash dash = player.gameObject.AddComponent<Player_ArcherDash>();
