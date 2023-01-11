@@ -85,7 +85,6 @@ public class Level_SelectedScenes : MonoBehaviour
     }
     public void ChangeToMainmenu()
     {
-
-        SceneManager.LoadScene("Main_Menu");
+        SceneManager.LoadScene("Main_Menu_Scene");
     }
 }

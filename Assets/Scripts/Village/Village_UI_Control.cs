@@ -108,6 +108,12 @@ public class Village_UI_Control : MonoBehaviour
 
     public void NextMap()
     {
+        if(GameSetup.ins.playingPlayers[0].isDead)
+        {
+            GameSetup.ins.SaveClassData();
+            Level_SelectedScenes.ins.ChangeToMainmenu();
+            return;
+        }
         GameSetup.ins.SaveClassData();
         Level_SelectedScenes.ins.ChangeToMap2();
     }

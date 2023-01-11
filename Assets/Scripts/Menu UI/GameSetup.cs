@@ -22,7 +22,7 @@ public class PlayerSelectedData
     public ENUM_PlayerClass selectedClass;
     public InputDevice device;
     public string controlScheme = "KeyBoard";
-
+    public bool isDead;
 }
 
 public class GameSetup : MonoBehaviour
@@ -84,6 +84,10 @@ public class GameSetup : MonoBehaviour
 
     public void SetUpTheGame()
     {
+        Game_State.gamePaused = false;
+        Time.timeScale = 1;
+
+
         //Debug.Log("Setting up the game");
         Level_FightReferenecs levelReferences = Level_FightReferenecs.ins;
         //Debug.Log("level references = " + levelReferences.gameObject.name);
