@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Player_Mage_FireCircle : Ability_2
 {
-    public float rechargeTime = 10;
-    public float energyCost = 10;
+    [Space(10)]
     public float durationTime = 3;
     [SerializeField] float circleDamage = 2;
-    bool isRecharching;
     bool isBurning;
-    float timer;
 
     public GameObject circlePrefab;
+
+    private void Start()
+    {
+        rechargeTime = 10;
+        energyCost = 10;
+    }
 
     public override void Use()
     {
@@ -48,6 +51,7 @@ public class Player_Mage_FireCircle : Ability_2
             {
                 isRecharching = false;
                 timer = 0;
+                player.ui_updater.Ability2Recharged();
             }
         }
 
@@ -60,6 +64,7 @@ public class Player_Mage_FireCircle : Ability_2
                 isBurning = false;
                 isRecharching = true;
                 player.isInvulnerable = false;
+                player.ui_updater.Ability2Used();
             }
         }
         

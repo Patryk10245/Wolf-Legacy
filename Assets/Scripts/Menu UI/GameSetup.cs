@@ -74,12 +74,16 @@ public class GameSetup : MonoBehaviour
     {
         newPlayer.ui_updater.healthBar = references.player1HealthBar;
         newPlayer.id = 0;
+        newPlayer.ui_updater.ability1Image = references.player1Ability1;
+        newPlayer.ui_updater.ability2Image = references.player1Ability2;
 
     }
     void SetReferencesForPlayer2(Player newPlayer, Level_FightReferenecs references)
     {
         newPlayer.ui_updater.healthBar = references.player2HealthBar;
         newPlayer.id = 1;
+        newPlayer.ui_updater.ability1Image = references.player2Ability1;
+        newPlayer.ui_updater.ability2Image = references.player2Ability2;
     }
 
     public void SetUpTheGame()

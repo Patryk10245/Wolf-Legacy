@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Player_Mage_FireTrail : Ability_1
 {
+    [Space(10)]
     public float moveSpeedIncrease = 150;
-    public float rechargeTime = 10;
-    public float energyCost = 10;
     public float durationTime = 3;
     [SerializeField] float trailDamage = 2;
     bool isWalking;
-    bool isRecharching;
-    float timer;
-
-
-
     float trailTimer;
     public GameObject trailObject;
+
+    void Start()
+    {
+        rechargeTime = 10;
+        energyCost = 10;
+    }
 
     public override void Use()
     {
@@ -35,10 +35,7 @@ public class Player_Mage_FireTrail : Ability_1
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -54,6 +51,7 @@ public class Player_Mage_FireTrail : Ability_1
                 isRecharching = false;
                 timer = 0;
                 trailTimer = 0;
+                player.ui_updater.Ability1Recharged();
             }
         }
         if(isWalking)
@@ -62,10 +60,12 @@ public class Player_Mage_FireTrail : Ability_1
             trailTimer += Time.deltaTime;
             if (timer >= durationTime)
             {
+                isRecharching = true;
                 isWalking = false;
                 timer = 0;
                 trailTimer = 0;
                 player.controller.moveSpeed -= moveSpeedIncrease;
+                player.ui_updater.Ability1Used();
             }
 
             if(trailTimer >= 0.5)

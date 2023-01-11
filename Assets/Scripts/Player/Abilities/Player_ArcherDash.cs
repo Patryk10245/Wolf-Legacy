@@ -1,21 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player_ArcherDash : Ability_1
 {
+    [Space(10)]
     public float dashForce = 6000;
-    public float energyCost = 8;
-    public float rechargeTime = 4;
-    float timer;
 
-
-    bool isRecharching;
+    private void Start()
+    {
+        energyCost = 8;
+        rechargeTime = 4;
+    }
 
 
     public override void Use()
     {
-        if(isRecharching == false & player.stats.currentEnergy >= energyCost)
+        if (isRecharching == false & player.stats.currentEnergy >= energyCost)
         {
             Dash();
         }
@@ -28,6 +27,7 @@ public class Player_ArcherDash : Ability_1
             if (timer >= rechargeTime)
             {
                 isRecharching = false;
+                player.ui_updater.Ability1Recharged();
                 timer = 0;
             }
         }
@@ -40,6 +40,7 @@ public class Player_ArcherDash : Ability_1
 
         player.controller.rb.AddForce(dir * dashForce);
         isRecharching = true;
+        player.ui_updater.Ability1Used();
     }
 
 

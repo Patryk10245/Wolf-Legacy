@@ -4,47 +4,52 @@ using UnityEngine;
 
 public class Player_Paladin_DashSkill : Ability_1
 {
+    [Space(10)]
     public float dashForce = 4000;
-    public float dashRechargeTime = 3;
-    public float dashEnergyCost = 10;
-    float dash_timer;
     public float dashTime = 0.1f;
     bool isDashing;
-    bool isRecharching;
+
+    private void Start()
+    {
+        rechargeTime = 3;
+        energyCost = 10;
+    }
 
     private void Update()
     {
         if(isRecharching == true)
         {
-            dash_timer += Time.deltaTime;
-            if(dash_timer >= dashRechargeTime)
+            timer += Time.deltaTime;
+            if(timer >= rechargeTime)
             {
-                dash_timer = 0;
+                timer = 0;
                 isRecharching = false;
+                player.ui_updater.Ability1Recharged();
             }
         }
 
         if(isDashing)
         {
-            dash_timer += Time.deltaTime;
-            if(dash_timer >= dashTime)
+            timer += Time.deltaTime;
+            if(timer >= dashTime)
             {
-                dash_timer = 0;
+                timer = 0;
                 isDashing = false;
                 player.KnockBack(player.controller.moveInput * dashForce);
                 isRecharching = true;
+                player.ui_updater.Ability1Used();
             }
         }
     }
     void Dash()
     {
-        if(player.stats.currentEnergy >= dashEnergyCost && isRecharching == false && isDashing == false)
+        if(player.stats.currentEnergy >= energyCost && isRecharching == false && isDashing == false)
         {
-            player.stats.ModifyEnergy(-dashEnergyCost);
+            player.stats.ModifyEnergy(-energyCost);
             //Debug.Log("Force = " + force);
             player.KnockBack(player.controller.moveInput * dashForce);
             isDashing = true;
-            dash_timer = 0;
+            timer = 0;
         }
     }
 

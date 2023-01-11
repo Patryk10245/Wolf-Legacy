@@ -20,12 +20,18 @@ public class Level_FightReferenecs : MonoBehaviour
     public Player_Manager playerManager;
     
 
-    public Image player1HealthBar;
-    public Image player2HealthBar;
     public Camera_Following cameraFollowing;
     public PlayerInputManager playerInputManager;
+    public Level_GameOver gameOver;
+    [Space(10)]
+    public Image player1HealthBar;
+    public Image player2HealthBar;
     public GameObject pauseWindow;
     public GameObject deathScreen;
     public Level_Ressurection resurrection;
-    public Level_GameOver gameOver;
+    [Header("Abilities")]
+    public Image player1Ability1;
+    public Image player1Ability2;
+    public Image player2Ability1;
+    public Image player2Ability2;
 }

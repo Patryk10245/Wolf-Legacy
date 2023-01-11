@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Player_Paladin_AroundAttack : Ability_2
 {
+    [Space(10)]
     public GameObject weaponHolder;
     public GameObject trail;
 
-    public float rechargeTime = 5;
     public float rotationTime = 0.26f;
     public Vector3 rotationSpeed = new Vector3(0,0,-1500);
     public Vector3 weaponScale = new Vector3(1.5f,1,1);
 
-    public float energyCost = 15;
-
-    float timer;
-    bool isRecharching;
     bool isUsed;
+
+    private void Start()
+    {
+        rechargeTime = 5;
+        energyCost = 15;
+    }
     public override void Use()
     {
         if (player.stats.currentEnergy >= energyCost && isRecharching == false && isUsed == false)
@@ -47,6 +49,7 @@ public class Player_Paladin_AroundAttack : Ability_2
                 player.controller.weaponCollider.enabled = false;
                 weaponHolder.transform.rotation.eulerAngles.Set(0, 0, 0);
                 weaponHolder.transform.localScale = Vector3.one;
+                player.ui_updater.Ability2Used();
             }
         }
 
@@ -57,6 +60,7 @@ public class Player_Paladin_AroundAttack : Ability_2
             {
                 isRecharching = false;
                 timer = 0;
+                player.ui_updater.Ability2Recharged();
             }
         }
     }

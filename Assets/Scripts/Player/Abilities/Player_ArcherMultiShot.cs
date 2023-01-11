@@ -1,23 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player_ArcherMultiShot : Ability_2
 {
+    [Space(10)]
     public float damage = 4;
     public float arrowSpeed = 8;
-    public float rechargeTime = 6;
-    float timer;
     public float timeBetweenArrows = 0.1f;
-    public float energyCost = 10;
 
     public int arrowsToShot = 6;
     int arrowsAlreadyShot;
     public GameObject arrowPrefab;
     public GameObject arrowSpawnPosiiton;
 
-    bool isRecharching;
     bool isShooting;
+
+    private void Start()
+    {
+        energyCost = 10;
+        rechargeTime = 6;
+    }
 
     public override void Use()
     {
@@ -37,14 +38,15 @@ public class Player_ArcherMultiShot : Ability_2
             {
                 isRecharching = false;
                 timer = 0;
+                player.ui_updater.Ability2Recharged();
             }
         }
 
-        if(isShooting)
+        if (isShooting)
         {
             timer += Time.deltaTime;
 
-            if(timer >= timeBetweenArrows)
+            if (timer >= timeBetweenArrows)
             {
                 timer -= timeBetweenArrows;
                 arrowsAlreadyShot++;
@@ -62,12 +64,13 @@ public class Player_ArcherMultiShot : Ability_2
                 proj.stopTimerAt = 4;
             }
 
-            if(arrowsAlreadyShot >= arrowsToShot)
+            if (arrowsAlreadyShot >= arrowsToShot)
             {
                 arrowsAlreadyShot = 0;
                 timer = 0;
                 isShooting = false;
                 isRecharching = true;
+                player.ui_updater.Ability2Used();
             }
         }
     }
