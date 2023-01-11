@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public bool inAttack;
     public bool canRotateWeapon;
     public bool isInvulnerable;
+    public bool isDead;
 
 
     private void Start()
@@ -60,12 +61,7 @@ public class Player : MonoBehaviour
         //controller.rb.AddForce(force);
         controller.rb.AddForce(force);
     }
-    void CameraFollow()
-    {
-        //theCam.transform.position = new Vector3(transform.position.x, transform.position.y, -8f);
-    }
     private void Update()
     {
-        CameraFollow();
     }
 }

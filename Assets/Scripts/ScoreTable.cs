@@ -22,8 +22,9 @@ public class ScoreTable : MonoBehaviour
 
     
 
-    public int current_Gold;
+    public int gold;
     public int kills;
+    public int currentlyCollectedGold;
 
     public GameObject GO_goldAmount;
     public Text TEXT_goldAmount;
@@ -32,20 +33,10 @@ public class ScoreTable : MonoBehaviour
     {
         Reference(); 
     }
-    private void Start()
-    {
-        //SetReferenceToGoldText();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void AddGold(int val)
     {
-        current_Gold += val;
+        currentlyCollectedGold += val;
         UpdateGold();
     }
     public void AddKill()
@@ -55,7 +46,18 @@ public class ScoreTable : MonoBehaviour
 
     public void UpdateGold()
     {
-        TEXT_goldAmount.text = current_Gold.ToString();
+        int val = gold + currentlyCollectedGold;
+        TEXT_goldAmount.text = val.ToString();
+    }
+
+    public void ApplyCollectedGold()
+    {
+        gold += currentlyCollectedGold;
+        currentlyCollectedGold = 0;
+    }
+    public void ReduceCollectedGoldByDeath()
+    {
+        currentlyCollectedGold /= 3;
     }
 
     public void SetReferenceToGoldText()

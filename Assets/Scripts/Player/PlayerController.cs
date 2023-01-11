@@ -61,6 +61,10 @@ public class PlayerController : MonoBehaviour
     {
         if (Game_State.gamePaused)
             return;
+        if(player.isDead)
+        {
+            return;
+        }
 
         Sword_Rotation();
     }
@@ -70,6 +74,11 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+        if (player.isDead)
+        {
+            return;
+        }
+
 
         Movement();
     }

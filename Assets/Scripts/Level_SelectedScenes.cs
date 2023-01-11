@@ -35,6 +35,7 @@ public class Level_SelectedScenes : MonoBehaviour
             
             Village_UI_Control.ins.SetReference();
             Village_Upgrades.ins.UpdateClassesUIUpgrades();
+            ScoreTable.ins.ApplyCollectedGold();
             //Debug.Log("Village scene");
         }
         else if(scene == SceneManager.GetSceneByName("Main_Menu"))

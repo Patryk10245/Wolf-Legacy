@@ -71,9 +71,9 @@ public class Village_Upgrades : MonoBehaviour
         //Debug.Log(scoreTable.gameObject);
         //Debug.Log(stat.currentLevel);
 
-        if (scoreTable.current_Gold > stat.cost[stat.currentLevel])
+        if (scoreTable.gold > stat.cost[stat.currentLevel])
         {
-            scoreTable.current_Gold -= stat.cost[stat.currentLevel];
+            scoreTable.gold -= stat.cost[stat.currentLevel];
             stat.currentLevel++;
             return true;
         }

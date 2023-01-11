@@ -27,16 +27,6 @@ public class Player_Manager : MonoBehaviour
 
     private void Update()
     {
-        /*
-        if(Input.GetKeyDown("q"))
-        {
-            playerList[0].GetComponent<PlayerInput>().SwitchCurrentControlScheme("My_Scheme", Joystick.current);
-        }
-        if (Input.GetKeyDown("r"))
-        {
-            playerList[0].GetComponent<PlayerInput>().SwitchCurrentControlScheme("KeyBoard", Keyboard.current, Mouse.current);
-        }
-        */
     }
 
 

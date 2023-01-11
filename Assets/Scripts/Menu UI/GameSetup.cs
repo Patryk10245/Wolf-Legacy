@@ -73,12 +73,13 @@ public class GameSetup : MonoBehaviour
     void SetReferencesForPlayer1(Player newPlayer, Level_FightReferenecs references)
     {
         newPlayer.ui_updater.healthBar = references.player1HealthBar;
-
+        newPlayer.id = 0;
 
     }
     void SetReferencesForPlayer2(Player newPlayer, Level_FightReferenecs references)
     {
         newPlayer.ui_updater.healthBar = references.player2HealthBar;
+        newPlayer.id = 1;
     }
 
     public void SetUpTheGame()
@@ -89,6 +90,7 @@ public class GameSetup : MonoBehaviour
 
         playerManager = levelReferences.playerManager;
         cameraFollowing = levelReferences.cameraFollowing;
+        levelReferences.resurrection.playerManager = playerManager;
         //Debug.Log("player manager = " + playerManager);
 
         PlayerInputManager playerInputManager = levelReferences.playerInputManager;
@@ -344,7 +346,7 @@ public class GameSetup : MonoBehaviour
     {
         Debug.LogWarning("LOADING CLASS DATA");
 
-        scoreTable.current_Gold = PlayerPrefs.GetInt("Gold", 0);
+        scoreTable.gold = PlayerPrefs.GetInt("Gold", 0);
 
         villageUpgrades.paladinUpgrades.damage.currentLevel = PlayerPrefs.GetInt("PaladinDamage", 0);
         villageUpgrades.paladinUpgrades.health.currentLevel = PlayerPrefs.GetInt("PaladinHealth", 0);
@@ -374,7 +376,7 @@ public class GameSetup : MonoBehaviour
     {
         Debug.LogWarning("SAVING CLASS DATA");
 
-        PlayerPrefs.SetInt("Gold", scoreTable.current_Gold);
+        PlayerPrefs.SetInt("Gold", scoreTable.gold);
 
         PlayerPrefs.SetInt("PaladinDamage", villageUpgrades.paladinUpgrades.damage.currentLevel);
         PlayerPrefs.SetInt("PaladinHealth", villageUpgrades.paladinUpgrades.health.currentLevel);

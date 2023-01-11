@@ -25,4 +25,6 @@ public class Level_FightReferenecs : MonoBehaviour
     public Camera_Following cameraFollowing;
     public PlayerInputManager playerInputManager;
     public GameObject pauseWindow;
+    public GameObject deathScreen;
+    public Level_Ressurection resurrection;
 }
