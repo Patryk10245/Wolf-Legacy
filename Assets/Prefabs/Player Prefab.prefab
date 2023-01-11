@@ -115,6 +115,7 @@ MonoBehaviour:
   inAttack: 0
   canRotateWeapon: 1
   isInvulnerable: 0
+  isDead: 0
 --- !u!114 &6488356313986202301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4354faf80c676f459e3195b73c4797f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 8909031238140290588}
   maxHealth: 5
   currentHealth: 5
   maxEnergy: 40
@@ -192,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8909031238140290588}
   healthBar: {fileID: 0}
+  deathScreen: {fileID: 0}
 --- !u!114 &2180639473190950795
 MonoBehaviour:
   m_ObjectHideFlags: 0

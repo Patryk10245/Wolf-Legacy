@@ -55,6 +55,7 @@ public class Level_Ressurection : MonoBehaviour
             }
             else
             {
+                player.isDead = true;
                 GameOver();
             }
         }
@@ -87,7 +88,7 @@ public class Level_Ressurection : MonoBehaviour
 
     void GameOver()
     {
-        
         Debug.LogWarning("GAME OVER SCREEN");
+        Level_FightReferenecs.ins.gameOver.InitiateGameOver();
     }
 }

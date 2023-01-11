@@ -27,4 +27,5 @@ public class Level_FightReferenecs : MonoBehaviour
     public GameObject pauseWindow;
     public GameObject deathScreen;
     public Level_Ressurection resurrection;
+    public Level_GameOver gameOver;
 }
