@@ -21,6 +21,16 @@ public class UI_MainMenuControl : MonoBehaviour
 
     [SerializeField] GameObject onePlayerWindow;
     [SerializeField] GameObject twoPlayersWindow;
+    [Header("T3")]
+    [SerializeField] GameObject p2Window;
+    [SerializeField] GameObject p1Paladin;
+    [SerializeField] GameObject p1Barbarian;
+    [SerializeField] GameObject p1Archer;
+    [SerializeField] GameObject p1Mage;
+    [SerializeField] GameObject p2Paladin;
+    [SerializeField] GameObject p2Barbarian;
+    [SerializeField] GameObject p2Archer;
+    [SerializeField] GameObject p2Mage;
 
 
     [Header("Reference")]
@@ -44,6 +54,14 @@ public class UI_MainMenuControl : MonoBehaviour
 
     public void Show_StartGame()
     {
+        if(gameSetup.numberOfPlayers == 1)
+        {
+            p2Window.SetActive(false);
+        }
+        else
+        {
+            p2Window.SetActive(true);
+        }
         startWindow.SetActive(true);
         mainMenu.SetActive(false);
     }
@@ -118,9 +136,8 @@ public class UI_MainMenuControl : MonoBehaviour
     }
     public void Exit_Start_ClassSelect()
     {
-        onePlayerWindow.SetActive(false);
-        twoPlayersWindow.SetActive(false);
-        startWindow.SetActive(true);
+        startWindow.SetActive(false);
+        mainMenu.SetActive(true);
     }
     public void Exit_SettignsRebinding()
     {
@@ -168,6 +185,69 @@ public class UI_MainMenuControl : MonoBehaviour
     {
         gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Mage;
         //Debug.Log("choose mage");
+    }
+
+
+    public void ShowPaladin(int id)
+    {
+        gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Paladin;
+        switch(id)
+        {
+            case 0:
+                p1Mage.SetActive(false);
+                p1Paladin.SetActive(true);
+                break;
+            case 1:
+                p2Mage.SetActive(false);
+                p2Paladin.SetActive(true);
+                break;
+        }
+    }
+    public void ShowBarbarian(int id)
+    {
+        Debug.Log("Showing Barbarian for " + id);
+        gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Barbarian;
+        switch(id)
+        {
+            case 0:
+                p1Paladin.SetActive(false);
+                p1Barbarian.SetActive(true);
+                break;
+            case 1:
+                p2Paladin.SetActive(false);
+                p2Barbarian.SetActive(true);
+                break;
+        }
+    }
+    public void ShowArcher(int id)
+    {
+        gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Ranger;
+        switch (id)
+        {
+            case 0:
+                p1Barbarian.SetActive(false);
+                p1Archer.SetActive(true);
+                break;
+            case 1:
+                p2Barbarian.SetActive(false);
+                p2Archer.SetActive(true);
+                break;
+        }
+    }
+    public void ShowMage(int id)
+    {
+        gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Mage;
+        switch (id)
+        {
+            case 0:
+                p1Archer.SetActive(false);
+                p1Mage.SetActive(true);
+                break;
+            case 1:
+                p2Archer.SetActive(false);
+                p2Mage.SetActive(true);
+                break;
+        }
     }
 
     public void ControlSchemeKeyBoard(int id)
