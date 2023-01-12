@@ -8,6 +8,12 @@ public class Level_LevaeArea : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+
+            if(Level_FightReferenecs.ins.isLastMap)
+            {
+                Level_GameCompleted.ins.ShowFinishScreen();
+                return;
+            }
             Level_SelectedScenes.ins.ChangeToVillageScene();
         }
     }

@@ -115,6 +115,19 @@ public class Village_UI_Control : MonoBehaviour
             return;
         }
         GameSetup.ins.SaveClassData();
-        Level_SelectedScenes.ins.ChangeToMap2();
+
+
+        switch(GameSetup.ins.lastFightMap)
+        {
+            case 1:
+                Level_SelectedScenes.ins.ChangeToMap2();
+                break;
+            case 2:
+                Level_SelectedScenes.ins.ChangeToMap3();
+                break;
+            case 3:
+                break;
+        }
+        
     }
 }

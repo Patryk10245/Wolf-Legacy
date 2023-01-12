@@ -27,7 +27,7 @@ public class Level_SelectedScenes : MonoBehaviour
 
     void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("OnSceneLoaded: " + scene.name);
+        //Debug.Log("OnSceneLoaded: " + scene.name);
         //Debug.Log(mode);
 
         if(scene == SceneManager.GetSceneByName("Village_Scene"))
@@ -38,7 +38,7 @@ public class Level_SelectedScenes : MonoBehaviour
             ScoreTable.ins.ApplyCollectedGold();
             //Debug.Log("Village scene");
         }
-        else if(scene == SceneManager.GetSceneByName("Main_Menu"))
+        else if(scene == SceneManager.GetSceneByName("Main_Menu_Scene"))
         {
             //Debug.Log("Menu Scene");
         }
@@ -51,7 +51,7 @@ public class Level_SelectedScenes : MonoBehaviour
     void SceneChanged(Scene current, Scene next)
     {
         string currentName = current.name;
-        Debug.Log("Scene current = " + currentName + " \n next = " + next.name);
+        //Debug.Log("Scene current = " + currentName + " \n next = " + next.name);
 
         if (currentName == null)
         {
@@ -59,7 +59,7 @@ public class Level_SelectedScenes : MonoBehaviour
             currentName = "Replaced";
         }
         
-        Debug.Log("scene = " + currentName);
+        //Debug.Log("scene = " + currentName);
     }
 
     public void ChangeToVillageScene()

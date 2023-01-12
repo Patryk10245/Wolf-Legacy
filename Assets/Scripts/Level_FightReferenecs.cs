@@ -17,6 +17,8 @@ public class Level_FightReferenecs : MonoBehaviour
         Reference();
     }
 
+    public bool isLastMap;
+
     public Player_Manager playerManager;
     
 

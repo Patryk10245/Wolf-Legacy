@@ -41,6 +41,7 @@ public class GameSetup : MonoBehaviour
     [SerializeField] public List<PlayerSelectedData> playingPlayers;
     public int numberOfPlayers;
     public bool gameAlreadySetup = false;
+    public int lastFightMap = 0;
 
     [Header("Class Data")]
     [SerializeField] ClassData[] classesData;

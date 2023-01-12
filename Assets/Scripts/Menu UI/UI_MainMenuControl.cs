@@ -332,6 +332,7 @@ public class UI_MainMenuControl : MonoBehaviour
     public void StartGame()
     {
         gameSetup.LoadClassData();
+        gameSetup.lastFightMap = 1;
         Level_SelectedScenes.ins.ChangeToMap1();
     }
 }
