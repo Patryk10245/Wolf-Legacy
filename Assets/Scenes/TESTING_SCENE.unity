@@ -130912,6 +130912,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2059904262836334087, guid: d9a1cad097c86824a9ef83c888f07514, type: 3}
+      propertyPath: currentHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2059904262836334203, guid: d9a1cad097c86824a9ef83c888f07514, type: 3}
       propertyPath: m_LinearDrag
       value: 60

@@ -22,12 +22,13 @@ public class Village_UI_Control : MonoBehaviour
     [Header("Windows")]
     public GameObject infoField;
     public GameObject villageMenu;
+    public Color opaqueColor;
     [Space(10)]
     [Header("Buildngs")]
-    public SpriteRenderer paladinBuilding;
-    public SpriteRenderer barbarianBuilding;
-    public SpriteRenderer archerBuilding;
-    public SpriteRenderer mageBuilding;
+    public Image paladinBuilding;
+    public Image barbarianBuilding;
+    public Image archerBuilding;
+    public Image mageBuilding;
 
     public GameObject paladinWindow;
     public GameObject barbarianWindow;
@@ -39,10 +40,10 @@ public class Village_UI_Control : MonoBehaviour
     public GameObject archerBuyingBuilding;
     public GameObject mageBuyingBuilding;
 
-    public Sprite palFixedBuilding;
-    public Sprite barFixedBuilding;
-    public Sprite arcFixedBuilding;
-    public Sprite magFixedBuilding;
+    public Sprite palBrokenBuilding;
+    public Sprite barBrokenBuilding;
+    public Sprite arcBrokenBuilding;
+    public Sprite magBrokenBuilding;
 
     [Header("Ui Info")]
     public Village_UI_ClassInfo paladinInfo;
@@ -58,27 +59,39 @@ public class Village_UI_Control : MonoBehaviour
         villageUpgrades = GameSetup.ins.villageUpgrades;
         villageUpgrades.village_UI_Control = this;
 
-        if(villageUpgrades.paladinBuildingBought)
+        if(villageUpgrades.paladinBuildingBought == false)
         {
-            paladinBuilding.sprite = palFixedBuilding;
+            paladinBuilding.color = opaqueColor;
         }
-        if (villageUpgrades.barbarianBuildingBought)
+        if (villageUpgrades.barbarianBuildingBought == false)
         {
-            barbarianBuilding.sprite = barFixedBuilding;
+            barbarianBuilding.color = opaqueColor;
         }
-        if (villageUpgrades.archerBuildingBought)
+        if (villageUpgrades.archerBuildingBought == false)
         {
-            archerBuilding.sprite = arcFixedBuilding;
+            archerBuilding.color = opaqueColor;
         }
-        if (villageUpgrades.mageBuildingBought)
+        if (villageUpgrades.mageBuildingBought == false)
         {
-            mageBuilding.sprite = magFixedBuilding;
+            mageBuilding.color = opaqueColor;
         }
 
     }
 
-    
 
+    private void Update()
+    {
+        foo();
+    }
+
+    void foo()
+    {
+        if(Input.GetKeyDown("l"))
+        {
+            Debug.Log("CHANGE BUILDING");
+            paladinBuilding.color = opaqueColor;
+        }
+    }
 
     public void ShowPaladinWindow()
     {
@@ -125,22 +138,22 @@ public class Village_UI_Control : MonoBehaviour
                 case 0:
                     villageUpgrades.paladinBuildingBought = true;
                     paladinBuyingBuilding.SetActive(false);
-                    paladinBuilding.sprite = palFixedBuilding;
+                    paladinBuilding.color = opaqueColor;
                     break;
                 case 1:
                     villageUpgrades.barbarianBuildingBought = true;
                     barbarianBuyingBuilding.SetActive(false);
-                    barbarianBuilding.sprite = barFixedBuilding;
+                    barbarianBuilding.color = opaqueColor;
                     break;
                 case 2:
                     villageUpgrades.archerBuildingBought = true;
                     archerBuyingBuilding.SetActive(false);
-                    archerBuilding.sprite = arcFixedBuilding;
+                    archerBuilding.color = opaqueColor;
                     break;
                 case 3:
                     villageUpgrades.mageBuildingBought = true;
                     mageBuyingBuilding.SetActive(false);
-                    mageBuilding.sprite = magFixedBuilding;
+                    mageBuilding.color = opaqueColor;
                     break;
             }
             
