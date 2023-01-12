@@ -7,6 +7,7 @@ public class Player_Ui_Updater : MonoBehaviour
 {
     public Player player;
     public Image healthBar;
+    public Image energyBar;
 
     public Image ability1Image;
     public Image ability2Image;
@@ -17,6 +18,10 @@ public class Player_Ui_Updater : MonoBehaviour
     public void UpdateHealth()
     {
         healthBar.fillAmount = player.stats.currentHealth / player.stats.maxHealth;
+    }
+    public void UpdateEnergy()
+    {
+        energyBar.fillAmount = player.stats.currentEnergy / player.stats.maxEnergy;
     }
 
     public void Ability1Used()

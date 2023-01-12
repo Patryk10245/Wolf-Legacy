@@ -28,6 +28,7 @@ public class PlayerStats : MonoBehaviour
     public void ModifyEnergy(float val)
     {
         currentEnergy += val;
+        player.ui_updater.UpdateEnergy();
         if(currentEnergy > maxEnergy)
         {
             currentEnergy = maxEnergy;
