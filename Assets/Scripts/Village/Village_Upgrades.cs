@@ -40,6 +40,11 @@ public class Village_Upgrades : MonoBehaviour
     public ClassUpgrades rangerUpgrades;
     public ClassUpgrades mageUpgrades;
 
+    public bool paladinBuildingBought;
+    public bool barbarianBuildingBought;
+    public bool archerBuildingBought;
+    public bool mageBuildingBought;
+
     public Village_UI_Control village_UI_Control;
 
     bool Upgrade(ClassUpgrades characterclass, int type)

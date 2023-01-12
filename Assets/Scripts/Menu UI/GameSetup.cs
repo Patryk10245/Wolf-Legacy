@@ -74,6 +74,7 @@ public class GameSetup : MonoBehaviour
     void SetReferencesForPlayer1(Player newPlayer, Level_FightReferenecs references)
     {
         newPlayer.ui_updater.healthBar = references.player1HealthBar;
+        newPlayer.ui_updater.energyBar = references.player1EnergyBar;
         newPlayer.id = 0;
         newPlayer.ui_updater.ability1Image = references.player1Ability1;
         newPlayer.ui_updater.ability2Image = references.player1Ability2;
@@ -82,6 +83,7 @@ public class GameSetup : MonoBehaviour
     void SetReferencesForPlayer2(Player newPlayer, Level_FightReferenecs references)
     {
         newPlayer.ui_updater.healthBar = references.player2HealthBar;
+        newPlayer.ui_updater.energyBar = references.player2EnergyBar;
         newPlayer.id = 1;
         newPlayer.ui_updater.ability1Image = references.player2Ability1;
         newPlayer.ui_updater.ability2Image = references.player2Ability2;
@@ -137,7 +139,7 @@ public class GameSetup : MonoBehaviour
             cameraFollowing.flat = false;
             cameraFollowing.smooth = false;
 
-            levelReferences.player2HealthBar.transform.parent.gameObject.SetActive(false);
+            levelReferences.player2UI.SetActive(false);
             //Destroy(playerManager.playerList[1].gameObject);
             //playerManager.playerList.RemoveAt(1);
 

@@ -6,6 +6,7 @@ public class Boss_Area : MonoBehaviour
     [SerializeField] GameObject collidersBlockingExit;
     [SerializeField] GameObject placeToTeleportPlayersTo;
     [SerializeField] Enemy_BaseClass boss;
+    
 
     [SerializeField] GameObject bossHealthBar;
 

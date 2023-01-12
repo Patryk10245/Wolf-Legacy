@@ -25,9 +25,15 @@ public class Level_FightReferenecs : MonoBehaviour
     public Camera_Following cameraFollowing;
     public PlayerInputManager playerInputManager;
     public Level_GameOver gameOver;
+    public GameObject player1UI;
+    public GameObject player2UI;
+
     [Space(10)]
     public Image player1HealthBar;
     public Image player2HealthBar;
+    public Image player1EnergyBar;
+    public Image player2EnergyBar;
+
     public GameObject pauseWindow;
     public GameObject deathScreen;
     public Level_Ressurection resurrection;
