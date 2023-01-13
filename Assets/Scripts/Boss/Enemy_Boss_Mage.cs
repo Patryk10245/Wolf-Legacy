@@ -39,11 +39,14 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
     [SerializeField] int waveCount;
     [SerializeField] float waveTimeDelay;
     [SerializeField]float waveTimer;
-    [SerializeField] int wavesShot;
+    int wavesShot;
     [Header("Thunder AOE")]
     [SerializeField] GameObject thunderPrefab;
-    [SerializeField] Transform[] thunderSpots;
     [SerializeField] int thunderDamage;
+    [SerializeField] int thunderCount;
+    [SerializeField] float thunderDelay;
+    [SerializeField] float thunderTimer;
+    int thunderShot;
 
     void Start()
     {
@@ -130,7 +133,19 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
 
     private void Action_Dying()
     {
-        throw new System.NotImplementedException();
+        switch (currentActionState)
+        {
+            case ENUM_current_state.preparation:
+                currentActionState = ENUM_current_state.finishing;
+                break;
+            case ENUM_current_state.working:
+                break;
+            case ENUM_current_state.finishing:
+                bossArea.DeactivateBlockades();
+                break;
+            case ENUM_current_state.ready_to_exit:
+                break;
+        }
     }
 
     private void Action_ProjectileWaves()
@@ -189,10 +204,32 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
+                if(thunderShot < thunderCount)
+                {
+                    GameObject temp = Instantiate(thunderPrefab);
+                    temp.transform.position = move_target.transform.position;
+                    Boss_Mage_ThunderObject thunder = temp.GetComponent<Boss_Mage_ThunderObject>();
+                    thunder.damage = thunderDamage;
+
+                    thunderShot++;
+                    currentActionState = ENUM_current_state.working;
+                }
+                else
+                {
+                    currentActionState = ENUM_current_state.finishing;
+                }    
                 break;
             case ENUM_current_state.working:
+                thunderTimer += Time.deltaTime;
+                if (thunderTimer >= thunderDelay)
+                {
+                    thunderTimer = 0;
+                    currentActionState = ENUM_current_state.preparation;
+                }
                 break;
             case ENUM_current_state.finishing:
+                thunderTimer = 0;
+                thunderShot = 0;
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;
