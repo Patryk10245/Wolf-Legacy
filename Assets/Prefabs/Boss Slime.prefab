@@ -273,8 +273,9 @@ MonoBehaviour:
   currentJumpPos: 0
   bounceDamage: 8
   alreadyInAir: 0
-  speedDuringJumping: 15
+  speedDuringJumping: 20
   distanceToJumpPos: 0
+  isInvincible: 0
 --- !u!58 &8567795873111683152
 CircleCollider2D:
   m_ObjectHideFlags: 0

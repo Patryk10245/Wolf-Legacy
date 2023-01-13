@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1065561392888766999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7674592986628676975}
+  m_Layer: 0
+  m_Name: forward
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7674592986628676975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065561392888766999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8909031238140290560}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8909031238140290563
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,6 +71,7 @@ Transform:
   - {fileID: 8909031238781393944}
   - {fileID: 8909031239802199170}
   - {fileID: 8909031239773334722}
+  - {fileID: 7674592986628676975}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -109,6 +141,7 @@ MonoBehaviour:
   attackScript: {fileID: 0}
   abilityBasic: {fileID: 0}
   abilitySecondary: {fileID: 0}
+  playerClass: 0
   id: 0
   prohibitAllActions: 0
   canMove: 1
@@ -116,6 +149,10 @@ MonoBehaviour:
   canRotateWeapon: 1
   isInvulnerable: 0
   isDead: 0
+  dotobject: {fileID: 0}
+  shield: {fileID: 1065561392888766999}
+  dot: 0
+  dir: {x: 0, y: 0}
 --- !u!114 &6488356313986202301
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -36,8 +36,9 @@ public class Enemy_Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision enter = " + collision.gameObject.name);
-        Debug.Log("last pos = " + positionAtLastFrame);
+        //Debug.Log("Collision enter = " + collision.gameObject.name);
+        //Debug.Log("last pos = " + positionAtLastFrame);
+        //Debug.Log("pos = " + transform.position);
         if(alreadyHitWall == true)
         {
             Destroy(gameObject);
@@ -47,6 +48,8 @@ public class Enemy_Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("collsion = " + collision.gameObject.name);
+        Debug.Log("Last frame = " + positionAtLastFrame);
+        Debug.Log("pos = " + transform.position);
 
         if (collision.gameObject.CompareTag("Shield"))
         {
@@ -56,7 +59,6 @@ public class Enemy_Projectile : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("Player"))
         {
-            //Debug.Log("Destroyed at player");
             collision.GetComponent<Player>().TakeDamage(damage);
             Destroy(gameObject);
         }

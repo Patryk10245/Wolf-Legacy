@@ -9,6 +9,7 @@ public enum ENUM_AttackType
     ranged
 }
 
+
 [RequireComponent(typeof(PlayerStats))]
 public class Player : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
     public Player_AttackScript attackScript;
     public Ability_1 abilityBasic;
     public Ability_2 abilitySecondary;
+    public ENUM_PlayerClass playerClass;
     
 
     public int id;
@@ -31,6 +33,12 @@ public class Player : MonoBehaviour
     public bool isInvulnerable;
     public bool isDead;
 
+    [Header("Debug")]
+    public GameObject dotobject;
+    public GameObject shield;
+    public float dot;
+    public Vector2 dotdir;
+    public Vector2 playerdir;
 
     private void Start()
     {
@@ -54,6 +62,21 @@ public class Player : MonoBehaviour
         stats.TakeDamage(val);
         ui_updater.UpdateHealth();
     }
+    public void TakeDamage(float val, Vector3 dir)
+    {
+        if(playerClass == ENUM_PlayerClass.Paladin)
+        {
+            Vector3 playersDirectionV3 = shield.transform.position - gameObject.transform.position;
+            Vector2 playersDirection = playersDirectionV3;
+            Vector2 projectilesDirection = dir;
+
+            dot = Vector2.Dot(projectilesDirection, playersDirection);
+            if(dot < -0.7f)
+            {
+                TakeDamage(val);
+            }
+        }
+    }
 
     public void KnockBack(Vector3 force)
     {
@@ -63,5 +86,30 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        if(dotobject != null)
+        {
+            //dot = Vector3.Dot(gameObject.transform.forward, dir);
+            Vector2 projectilesPosition = new Vector2(dotobject.transform.position.x, dotobject.transform.position.y);
+            Vector2 playersPosition = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            dotdir = (playersPosition - projectilesPosition).normalized;
+            Vector2 shieldsPosition = new Vector2(shield.transform.position.x, shield.transform.position.y);
+            playerdir = shieldsPosition - playersPosition;
+            playerdir.Normalize();
+            dot = Vector2.Dot(dotdir, playerdir);
+
+            
+        }
+
+        if (Input.GetKeyDown("k"))
+        {
+            dotobject.GetComponent<Rigidbody2D>().AddForce(dotdir * 50);
+        }
+
+        
+    }
+    private void OnDrawGizmos()
+    {
+        //Gizmos.DrawRay(dotobject.transform.position, dotdir);
+        //Gizmos.DrawRay(gameObject.transform.position, playerdir);
     }
 }

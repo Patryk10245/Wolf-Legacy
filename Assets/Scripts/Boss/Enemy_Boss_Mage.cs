@@ -31,13 +31,18 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
     float idle_time;
 
     [Header("Projectile Waves")]
-    [SerializeField] Transform[] waveProjectileSpots;
     [SerializeField] GameObject projectilePrefab;
+    [SerializeField] Transform[] waveProjectileSpots;
     [SerializeField] float waveProjectileSpeed;
+    [SerializeField] int waveDamage;
     [SerializeField] int waveCount;
     [SerializeField] float waveTimeDelay;
     float waveTimer;
     int wavesShot;
+    [Header("Thunder AOE")]
+    [SerializeField] GameObject thunderPrefab;
+    [SerializeField] Transform[] thunderSpots;
+    [SerializeField] int thunderDamage;
 
     void Start()
     {
@@ -177,6 +182,21 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
             temp.transform.position = spot.position;
             Vector3 dir = (temp.transform.position - gameObject.transform.position).normalized;
             temp.GetComponent<Enemy_Projectile>().rb.AddForce(dir * waveProjectileSpeed);
+        }
+    }
+
+    private void Action_ThunderAOE()
+    {
+        switch (currentActionState)
+        {
+            case ENUM_current_state.preparation:
+                break;
+            case ENUM_current_state.working:
+                break;
+            case ENUM_current_state.finishing:
+                break;
+            case ENUM_current_state.ready_to_exit:
+                break;
         }
     }
 

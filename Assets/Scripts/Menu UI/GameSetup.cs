@@ -78,7 +78,7 @@ public class GameSetup : MonoBehaviour
         newPlayer.id = 0;
         newPlayer.ui_updater.ability1Image = references.player1Ability1;
         newPlayer.ui_updater.ability2Image = references.player1Ability2;
-
+        newPlayer.playerClass = playingPlayers[0].selectedClass;
     }
     void SetReferencesForPlayer2(Player newPlayer, Level_FightReferenecs references)
     {
@@ -87,6 +87,7 @@ public class GameSetup : MonoBehaviour
         newPlayer.id = 1;
         newPlayer.ui_updater.ability1Image = references.player2Ability1;
         newPlayer.ui_updater.ability2Image = references.player2Ability2;
+        newPlayer.playerClass = playingPlayers[1].selectedClass;
     }
 
     public void SetUpTheGame()
@@ -173,6 +174,7 @@ public class GameSetup : MonoBehaviour
             {
                 case ENUM_PlayerClass.Paladin:
                     PaladinSetup(playerManager.playerList[0]);
+
                     break;
                 case ENUM_PlayerClass.Barbarian:
                     BarbarianSetup(playerManager.playerList[0]);

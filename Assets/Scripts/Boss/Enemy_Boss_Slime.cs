@@ -69,6 +69,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
     public bool alreadyInAir;
     [SerializeField] float speedDuringJumping = 15;
     [SerializeField] float distanceToJumpPos;
+    [SerializeField] bool isInvincible;
 
 
 
@@ -254,14 +255,15 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                     GameObject temp = Instantiate(projectilePrefab);
                     temp.transform.position = gameObject.transform.position;
                     Enemy_Projectile proj = temp.GetComponent<Enemy_Projectile>();
-                    Vector3 playerdirection = move_target.transform.position + (new Vector3(shootTarget.controller.moveInput.x, shootTarget.controller.moveInput.y, 0) * aimingCorrection);
-                    Vector3 direction = (playerdirection - gameObject.transform.position).normalized;
+                    Vector3 playerpos = move_target.transform.position + (new Vector3(shootTarget.controller.moveInput.x, shootTarget.controller.moveInput.y, 0) * aimingCorrection);
+                    Vector3 direction = (playerpos - gameObject.transform.position).normalized;
                     proj.flyDirection = direction;
                     proj.speed = projectileSpeed;
                     proj.damage = projectileDamage;
                     proj.stopTimerAt = projectileDeathTime;
                     shotCount++;
                     proj.rb.AddForce(direction * projectileSpeed) ;
+                    
                 }
 
                 if (shotCount >= stopAfterThisManyShots)
@@ -320,17 +322,17 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                     agent.speed = speedDuringJumping;
                     agent.acceleration = speedDuringJumping;
                     anim.SetTrigger("JumpUp");
-                    alreadyInAir = true;
-                    
+                    alreadyInAir = true;   
                 }
                 if (currentJumpPos == 1 || currentJumpPos == 3 || currentJumpPos == 5 || currentJumpPos == 7)
                 {
                     jumpPositions[currentJumpPos].position = move_target.transform.position;
                 }
+                isInvincible = true;
 
                 agent.SetDestination(jumpPositions[currentJumpPos].position);
                 distanceToJumpPos = agent.remainingDistance;
-                if (agent.remainingDistance <= 0.5)
+                if (agent.remainingDistance <= 1)
                 {
                     anim.SetTrigger("JumpBounce");
                     currentActionState = ENUM_current_state.working;
@@ -349,6 +351,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                 if (currentJumpPos >= 8)
                 {
                     anim.SetTrigger("JumpDown");
+                    isInvincible = false;
                     alreadyInAir = false;
                     currentJumpPos = 0;
                     agent.speed = move_Speed;
@@ -418,6 +421,10 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
 
     public override void TakeDamage(float val, ENUM_AttackType attackType)
     {
+        if(isInvincible == true)
+        {
+            return;
+        }
         stats.TakeDamage(val);
         if (stats.currentHealth <= 0)
         {
