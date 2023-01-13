@@ -179,7 +179,7 @@ NavMeshAgent:
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 10
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -247,6 +247,7 @@ MonoBehaviour:
   rb: {fileID: 2059904262836334203}
   agent: {fileID: 0}
   stats: {fileID: 0}
+  bossArea: {fileID: 0}
   healthBar: {fileID: 0}
   bossState: 0
   currentActionState: 3
@@ -257,7 +258,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   arenaBounds: {x: 0, y: 0, z: 0, w: 0}
-  projectilePrefab: {fileID: 197921725636579327, guid: 1ae7628ca4c80444795b2adaa9bc5dc5, type: 3}
+  projectilePrefab: {fileID: 5186912823403538100, guid: a8942eefcfb1a184e884659fde8c93db, type: 3}
   middleOfArena: {fileID: 0}
   timeBetweenShots: 0.2
   projectileSpeed: 4
@@ -273,6 +274,7 @@ MonoBehaviour:
   bounceDamage: 8
   alreadyInAir: 0
   speedDuringJumping: 10
+  distanceToJumpPos: 0
 --- !u!58 &8567795873111683152
 CircleCollider2D:
   m_ObjectHideFlags: 0

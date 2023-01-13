@@ -2618,6 +2618,7 @@ MonoBehaviour:
     isDead: 0
   numberOfPlayers: 2
   gameAlreadySetup: 0
+  lastFightMap: 0
   classesData:
   - {fileID: 11400000, guid: 01d4448912be4694b8ccb690aeed704b, type: 2}
   - {fileID: 11400000, guid: 01d4448912be4694b8ccb690aeed704b, type: 2}
@@ -2897,6 +2898,10 @@ MonoBehaviour:
   barbarianUpgrades: {fileID: 11400000, guid: 99f1ccea05e058e4983301bf44198c70, type: 2}
   rangerUpgrades: {fileID: 11400000, guid: dab2406f9f51913419f45eb3c02c747e, type: 2}
   mageUpgrades: {fileID: 11400000, guid: 7b51852c570410e4c87c6ce910984e54, type: 2}
+  paladinBuildingBought: 0
+  barbarianBuildingBought: 0
+  archerBuildingBought: 0
+  mageBuildingBought: 0
   village_UI_Control: {fileID: 0}
 --- !u!4 &602948556
 Transform:

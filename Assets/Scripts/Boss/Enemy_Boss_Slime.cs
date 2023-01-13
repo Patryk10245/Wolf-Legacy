@@ -68,6 +68,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
     public int bounceDamage;
     public bool alreadyInAir;
     [SerializeField] float speedDuringJumping = 10;
+    [SerializeField] float distanceToJumpPos;
 
 
 
@@ -321,7 +322,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                 }
 
                 agent.SetDestination(jumpPositions[currentJumpPos].position);
-
+                distanceToJumpPos = agent.remainingDistance;
                 if (agent.remainingDistance <= 0.5)
                 {
                     anim.SetTrigger("JumpBounce");

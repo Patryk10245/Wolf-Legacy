@@ -34,6 +34,7 @@ public class Player_Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Debug.Log("Collsion with " + collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Enemy")|| collision.gameObject.CompareTag("Boss"))
         {
             //Debug.Log("collision = " + collision.gameObject.transform.parent.name);
@@ -43,6 +44,10 @@ public class Player_Projectile : MonoBehaviour
         else if (collision.gameObject.CompareTag("Spawner"))
         {
             collision.gameObject.GetComponent<Enemy_Spawner>().TakeDamage(damage, ENUM_AttackType.melee);
+        }
+        else if(collision.gameObject.CompareTag("ProjectileStopper"))
+        {
+            Destroy(gameObject);
         }
 
     }
