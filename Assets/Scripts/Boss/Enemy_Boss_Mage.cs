@@ -32,13 +32,14 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
 
     [Header("Projectile Waves")]
     [SerializeField] GameObject projectilePrefab;
+    [SerializeField] GameObject waveSpotParent;
     [SerializeField] Transform[] waveProjectileSpots;
     [SerializeField] float waveProjectileSpeed;
     [SerializeField] int waveDamage;
     [SerializeField] int waveCount;
     [SerializeField] float waveTimeDelay;
-    float waveTimer;
-    int wavesShot;
+    [SerializeField]float waveTimer;
+    [SerializeField] int wavesShot;
     [Header("Thunder AOE")]
     [SerializeField] GameObject thunderPrefab;
     [SerializeField] Transform[] thunderSpots;
@@ -78,7 +79,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
             int rand;
             do
             {
-                rand = Random.Range(0, 5);
+                rand = Random.Range(0, 2);
 
                 switch (rand)
                 {
@@ -86,7 +87,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                         bossState = ENUM_MageBossState.idle;
                         break;
                     case 1:
-                        //bossState = ENUM_MageBossState.moving;
+                        bossState = ENUM_MageBossState.projectileWaves;
                         break;
                     case 2:
                         //bossState = ENUM_MageBossState.shooting;
@@ -134,10 +135,11 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
 
     private void Action_ProjectileWaves()
     {
+        Debug.Log("action projectile waves");
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-
+                Debug.Log("Preparation");
                 if(wavesShot < waveCount)
                 {
                     foreach (Transform spot in waveProjectileSpots)
@@ -152,7 +154,8 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                     lone.transform.position = transform.position;
                     Vector3 lonedir = (move_target.transform.position - gameObject.transform.position).normalized;
                     lone.GetComponent<Enemy_Projectile>().rb.AddForce(lonedir * waveProjectileSpeed);
-
+                    wavesShot++;
+                    waveSpotParent.transform.Rotate(new Vector3(0,0,5));
                 }
                 else
                 {
@@ -160,28 +163,24 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 }
                 break;
             case ENUM_current_state.working:
+                Debug.Log("Working");
                 waveTimer += Time.deltaTime;
+                Debug.Log("wave timer = " + waveTimer);
+                Debug.Log("delay = " + waveTimeDelay);
                 if(waveTimer >= waveTimeDelay)
                 {
                     currentActionState = ENUM_current_state.preparation;
-                    wavesShot++;
+                    waveTimer = 0;
                 }
                 break;
             case ENUM_current_state.finishing:
+                Debug.Log("Finishing");
                 waveTimer = 0;
                 wavesShot = 0;
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;
-        }
-
-        foreach (Transform spot in waveProjectileSpots)
-        {
-            GameObject temp = Instantiate(projectilePrefab);
-            temp.transform.position = spot.position;
-            Vector3 dir = (temp.transform.position - gameObject.transform.position).normalized;
-            temp.GetComponent<Enemy_Projectile>().rb.AddForce(dir * waveProjectileSpeed);
         }
     }
 

@@ -6,7 +6,7 @@ public class Enemy_Projectile : MonoBehaviour
 {
     public Vector3 flyDirection;
     public float speed;
-    public float damage;
+    public float damage = 1;
     public Rigidbody2D rb;
     bool alreadyHitWall;
     public Vector3 positionAtLastFrame;
@@ -47,9 +47,9 @@ public class Enemy_Projectile : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collsion = " + collision.gameObject.name);
-        Debug.Log("Last frame = " + positionAtLastFrame);
-        Debug.Log("pos = " + transform.position);
+        //Debug.Log("collsion = " + collision.gameObject.name);
+        //Debug.Log("Last frame = " + positionAtLastFrame);
+        //Debug.Log("pos = " + transform.position);
 
         if (collision.gameObject.CompareTag("Shield"))
         {

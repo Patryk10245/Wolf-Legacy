@@ -21,7 +21,7 @@ public class Player_Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.AddForce(flyDirection * speed);
+        //rb.AddForce(flyDirection * speed);
 
         deathTimer += Time.deltaTime;
         if (deathTimer >= stopTimerAt)

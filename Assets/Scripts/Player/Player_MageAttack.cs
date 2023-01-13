@@ -7,7 +7,7 @@ public class Player_MageAttack : Player_AttackScript
     public GameObject projectilePrefab;
     public Transform spawnProjectilePosition;
 
-    [SerializeField] float projectileSpeed = 10;
+    [SerializeField] float projectileSpeed = 800;
         
     public override void Attack()
     {
@@ -25,6 +25,7 @@ public class Player_MageAttack : Player_AttackScript
         //Debug.Log("Dir = " + dir);
 
         Player_Projectile projectile = temp.GetComponent<Player_Projectile>();
+        projectile.rb.AddForce(dir * projectileSpeed);
         projectile.flyDirection = dir;
         projectile.speed = projectileSpeed;
         projectile.damage = player.stats.damage;
