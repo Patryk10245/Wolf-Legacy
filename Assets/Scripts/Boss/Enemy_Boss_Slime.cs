@@ -239,7 +239,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
             case ENUM_current_state.preparation:
                 agent.SetDestination(middleOfArena.position);
 
-                if (agent.remainingDistance < 1)
+                if (agent.remainingDistance < 0.2)
                 {
                     shotCount = 0;
                     shootTarget = move_target.GetComponent<Player>();
@@ -260,6 +260,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                     proj.damage = projectileDamage;
                     proj.stopTimerAt = projectileDeathTime;
                     shotCount++;
+                    proj.rb.AddForce((direction - gameObject.transform.position) * projectileSpeed) ;
                 }
 
                 if (shotCount >= stopAfterThisManyShots)
@@ -319,6 +320,11 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                     agent.acceleration = speedDuringJumping;
                     anim.SetTrigger("JumpUp");
                     alreadyInAir = true;
+                    
+                }
+                if (currentJumpPos == 1 || currentJumpPos == 3 || currentJumpPos == 5 || currentJumpPos == 7)
+                {
+                    jumpPositions[currentJumpPos].position = move_target.transform.position;
                 }
 
                 agent.SetDestination(jumpPositions[currentJumpPos].position);
@@ -442,11 +448,12 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
         Vector3 direction = agent.destination - transform.position;
         if (direction.x > 0)
         {
-            transform.localScale = new Vector3(-4, 4, 1);
+            transform.localScale = Vector3.one * 4;
         }
         else if (direction.x < 0)
         {
-            transform.localScale = Vector3.one * 4;
+            
+            transform.localScale = new Vector3(-4, 4, 1);
         }
     }
 

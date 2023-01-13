@@ -8,7 +8,6 @@ using UnityEngine.AI;
 public enum ENUM_MageBossState
 {
     idle,
-    moving,
     dying
 }
 public class Enemy_Boss_Mage : Enemy_BaseClass

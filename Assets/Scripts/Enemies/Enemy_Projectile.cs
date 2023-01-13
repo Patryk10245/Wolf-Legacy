@@ -7,8 +7,9 @@ public class Enemy_Projectile : MonoBehaviour
     public Vector3 flyDirection;
     public float speed;
     public float damage;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     bool alreadyHitWall;
+    public Vector3 positionAtLastFrame;
 
     float deathTimer;
     public float stopTimerAt = 5;
@@ -26,15 +27,17 @@ public class Enemy_Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        positionAtLastFrame = transform.position;
     }
     private void FixedUpdate()
     {
-        rb.AddForce(flyDirection * speed);
+        //rb.AddForce(flyDirection * speed);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision enter = " + collision.gameObject.name);
+        Debug.Log("last pos = " + positionAtLastFrame);
         if(alreadyHitWall == true)
         {
             Destroy(gameObject);

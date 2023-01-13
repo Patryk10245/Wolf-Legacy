@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1841128997
   m_SortingLayer: 4
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -49938110, guid: 73acb19bd1725644eb0d9d8c3a02c9b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5186912823403538100, guid: a8942eefcfb1a184e884659fde8c93db, type: 3}
   middleOfArena: {fileID: 0}
   timeBetweenShots: 0.2
-  projectileSpeed: 4
+  projectileSpeed: 50
   projectileDamage: 1
   stopAfterThisManyShots: 50
   aimingCorrection: 1.5
