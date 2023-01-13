@@ -46,7 +46,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
     [SerializeField] Transform middleOfArena;
     [SerializeField] float timeBetweenShots = 0.1f;
     float shootingTimer;
-    [SerializeField] float projectileSpeed = 150;
+    [SerializeField] float projectileSpeed = 50;
     [SerializeField] float projectileDamage = 1;
     [SerializeField] int stopAfterThisManyShots = 150;
     [SerializeField] float aimingCorrection = 1.5f;
@@ -67,7 +67,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
     [SerializeField] int currentJumpPos;
     public int bounceDamage;
     public bool alreadyInAir;
-    [SerializeField] float speedDuringJumping = 10;
+    [SerializeField] float speedDuringJumping = 15;
     [SerializeField] float distanceToJumpPos;
 
 
@@ -254,13 +254,14 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                     GameObject temp = Instantiate(projectilePrefab);
                     temp.transform.position = gameObject.transform.position;
                     Enemy_Projectile proj = temp.GetComponent<Enemy_Projectile>();
-                    Vector3 direction = move_target.transform.position + (new Vector3(shootTarget.controller.moveInput.x, shootTarget.controller.moveInput.y, 0) * aimingCorrection);
-                    proj.flyDirection = direction - gameObject.transform.position;
+                    Vector3 playerdirection = move_target.transform.position + (new Vector3(shootTarget.controller.moveInput.x, shootTarget.controller.moveInput.y, 0) * aimingCorrection);
+                    Vector3 direction = (playerdirection - gameObject.transform.position).normalized;
+                    proj.flyDirection = direction;
                     proj.speed = projectileSpeed;
                     proj.damage = projectileDamage;
                     proj.stopTimerAt = projectileDeathTime;
                     shotCount++;
-                    proj.rb.AddForce((direction - gameObject.transform.position) * projectileSpeed) ;
+                    proj.rb.AddForce(direction * projectileSpeed) ;
                 }
 
                 if (shotCount >= stopAfterThisManyShots)

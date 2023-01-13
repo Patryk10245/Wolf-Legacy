@@ -261,7 +261,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5186912823403538100, guid: a8942eefcfb1a184e884659fde8c93db, type: 3}
   middleOfArena: {fileID: 0}
   timeBetweenShots: 0.2
-  projectileSpeed: 50
+  projectileSpeed: 500
   projectileDamage: 1
   stopAfterThisManyShots: 50
   aimingCorrection: 1.5
@@ -273,7 +273,7 @@ MonoBehaviour:
   currentJumpPos: 0
   bounceDamage: 8
   alreadyInAir: 0
-  speedDuringJumping: 10
+  speedDuringJumping: 15
   distanceToJumpPos: 0
 --- !u!58 &8567795873111683152
 CircleCollider2D:
