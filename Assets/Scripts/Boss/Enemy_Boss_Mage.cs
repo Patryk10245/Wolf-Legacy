@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public enum ENUM_MageBossState
 {
     idle,
+    projectileWaves,
     dying
 }
 public class Enemy_Boss_Mage : Enemy_BaseClass
@@ -29,8 +30,14 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
     float idle_timer;
     float idle_time;
 
-    [Header("Move Action")]
-    [SerializeField] Transform[] arenaCorners;
+    [Header("Projectile Waves")]
+    [SerializeField] Transform[] waveProjectileSpots;
+    [SerializeField] GameObject projectilePrefab;
+    [SerializeField] float waveProjectileSpeed;
+    [SerializeField] int waveCount;
+    [SerializeField] float waveTimeDelay;
+    float waveTimer;
+    int wavesShot;
 
     void Start()
     {
@@ -44,7 +51,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
         agent.stoppingDistance = attack_Distance;
         rb.gravityScale = 0;
     }
-    /*
+
     // Update is called once per frame
     void Update()
     {
@@ -71,19 +78,19 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 switch (rand)
                 {
                     case 0:
-                        bossState = ENUM_SlimeBossState.idle;
+                        bossState = ENUM_MageBossState.idle;
                         break;
                     case 1:
-                        bossState = ENUM_SlimeBossState.moving;
+                        //bossState = ENUM_MageBossState.moving;
                         break;
                     case 2:
-                        bossState = ENUM_SlimeBossState.shooting;
+                        //bossState = ENUM_MageBossState.shooting;
                         break;
                     case 3:
-                        bossState = ENUM_SlimeBossState.spawning;
+                        //bossState = ENUM_MageBossState.spawning;
                         break;
                     case 4:
-                        bossState = ENUM_SlimeBossState.jumping;
+                        //bossState = ENUM_MageBossState.jumping;
                         break;
                     default:
                         break;
@@ -98,18 +105,10 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
             case ENUM_MageBossState.idle:
                 Action_Idle();
                 break;
-            case ENUM_MageBossState.moving:
-                Action_Moving();
+            case ENUM_MageBossState.projectileWaves:
+                Action_ProjectileWaves();
                 break;
-            case ENUM_MageBossState.shooting:
-                Action_Shooting();
-                break;
-            case ENUM_MageBossState.spawning:
-                Action_Spawning();
-                break;
-            case ENUM_MageBossState.jumping:
-                Action_Jumping();
-                break;
+
             case ENUM_MageBossState.dying:
                 Action_Dying();
                 break;
@@ -122,16 +121,63 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
         RotateTowardsWalkDirection();
 
     }
-    */
 
     private void Action_Dying()
     {
         throw new System.NotImplementedException();
     }
 
-    private void Action_Moving()
+    private void Action_ProjectileWaves()
     {
-        throw new System.NotImplementedException();
+        switch (currentActionState)
+        {
+            case ENUM_current_state.preparation:
+
+                if(wavesShot < waveCount)
+                {
+                    foreach (Transform spot in waveProjectileSpots)
+                    {
+                        GameObject temp = Instantiate(projectilePrefab);
+                        temp.transform.position = spot.position;
+                        Vector3 dir = (temp.transform.position - gameObject.transform.position).normalized;
+                        temp.GetComponent<Enemy_Projectile>().rb.AddForce(dir * waveProjectileSpeed);
+                        currentActionState = ENUM_current_state.working;
+                    }
+                    GameObject lone = Instantiate(projectilePrefab);
+                    lone.transform.position = transform.position;
+                    Vector3 lonedir = (move_target.transform.position - gameObject.transform.position).normalized;
+                    lone.GetComponent<Enemy_Projectile>().rb.AddForce(lonedir * waveProjectileSpeed);
+
+                }
+                else
+                {
+                    currentActionState = ENUM_current_state.finishing;
+                }
+                break;
+            case ENUM_current_state.working:
+                waveTimer += Time.deltaTime;
+                if(waveTimer >= waveTimeDelay)
+                {
+                    currentActionState = ENUM_current_state.preparation;
+                    wavesShot++;
+                }
+                break;
+            case ENUM_current_state.finishing:
+                waveTimer = 0;
+                wavesShot = 0;
+                currentActionState = ENUM_current_state.ready_to_exit;
+                break;
+            case ENUM_current_state.ready_to_exit:
+                break;
+        }
+
+        foreach (Transform spot in waveProjectileSpots)
+        {
+            GameObject temp = Instantiate(projectilePrefab);
+            temp.transform.position = spot.position;
+            Vector3 dir = (temp.transform.position - gameObject.transform.position).normalized;
+            temp.GetComponent<Enemy_Projectile>().rb.AddForce(dir * waveProjectileSpeed);
+        }
     }
 
     private void Action_Idle()
