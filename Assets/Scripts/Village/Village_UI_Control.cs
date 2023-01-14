@@ -19,31 +19,28 @@ public class Village_UI_Control : MonoBehaviour
     }
 
     public Village_Upgrades villageUpgrades;
+    public Village_UIMapChoosing mapChoosing;
+    [SerializeField] Animator canvasAnimator;
     [Header("Windows")]
-    public GameObject infoField;
-    public GameObject villageMenu;
-    public Color opaqueColor;
+    [SerializeField] GameObject infoField;
+    [SerializeField] GameObject villageMenu;
+    [SerializeField] Color opaqueColor;
     [Space(10)]
     [Header("Buildngs")]
-    public Image paladinBuilding;
-    public Image barbarianBuilding;
-    public Image archerBuilding;
-    public Image mageBuilding;
+    [SerializeField] Image paladinBuilding;
+    [SerializeField] Image barbarianBuilding;
+    [SerializeField] Image archerBuilding;
+    [SerializeField] Image mageBuilding;
 
-    public GameObject paladinWindow;
-    public GameObject barbarianWindow;
-    public GameObject rangerWindow;
-    public GameObject mageWindow;
+    [SerializeField] GameObject paladinWindow;
+    [SerializeField] GameObject barbarianWindow;
+    [SerializeField] GameObject rangerWindow;
+    [SerializeField] GameObject mageWindow;
     [Header("Buying Windows")]
-    public GameObject paladinBuyingBuilding;
-    public GameObject barbarianBuyingBuilding;
-    public GameObject archerBuyingBuilding;
-    public GameObject mageBuyingBuilding;
-
-    public Sprite palBrokenBuilding;
-    public Sprite barBrokenBuilding;
-    public Sprite arcBrokenBuilding;
-    public Sprite magBrokenBuilding;
+    [SerializeField] GameObject paladinBuyingBuilding;
+    [SerializeField] GameObject barbarianBuyingBuilding;
+    [SerializeField] GameObject archerBuyingBuilding;
+    [SerializeField] GameObject mageBuyingBuilding;
 
     [Header("Ui Info")]
     public Village_UI_ClassInfo paladinInfo;
@@ -54,7 +51,7 @@ public class Village_UI_Control : MonoBehaviour
 
     public void SetReference()
     {
-        Debug.Log("Setting Reference for Village UI Control");
+        //Debug.Log("Setting Reference for Village UI Control");
         //Debug.Log("upgrades = " + Village_Upgrades.ins.gameObject.name);
         villageUpgrades = GameSetup.ins.villageUpgrades;
         villageUpgrades.village_UI_Control = this;
@@ -76,27 +73,28 @@ public class Village_UI_Control : MonoBehaviour
             mageBuilding.color = opaqueColor;
         }
 
+        if(Game_State.ins.gameLost == true || Game_State.ins.gameWon == true)
+        {
+            mapChoosing.DisableNextButton();
+            mapChoosing.DisableRepeatButton();
+        }
+
     }
 
 
     private void Update()
     {
-        foo();
     }
 
     void foo()
     {
-        if(Input.GetKeyDown("l"))
-        {
-            Debug.Log("CHANGE BUILDING");
-            paladinBuilding.color = opaqueColor;
-        }
+
     }
 
     public void ShowPaladinWindow()
     {
         paladinWindow.SetActive(true);
-        villageMenu.SetActive(false);
+        //villageMenu.SetActive(false);
         if(villageUpgrades.paladinBuildingBought == true)
         {
             paladinBuyingBuilding.SetActive(false);
@@ -104,8 +102,8 @@ public class Village_UI_Control : MonoBehaviour
     }
     public void ShowBarbarianWindow()
     {
-        villageMenu.SetActive(false);
         barbarianWindow.SetActive(true);
+        //villageMenu.SetActive(false);
         if (villageUpgrades.barbarianBuildingBought == true)
         {
             barbarianBuyingBuilding.SetActive(false);
@@ -113,8 +111,8 @@ public class Village_UI_Control : MonoBehaviour
     }
     public void ShowRangerWindow()
     {
-        villageMenu.SetActive(false);
         rangerWindow.SetActive(true);
+        //villageMenu.SetActive(false);
         if (villageUpgrades.archerBuildingBought == true)
         {
             archerBuyingBuilding.SetActive(false);
@@ -122,8 +120,8 @@ public class Village_UI_Control : MonoBehaviour
     }
     public void ShowMageWindow()
     {
-        villageMenu.SetActive(false);
         mageWindow.SetActive(true);
+        //villageMenu.SetActive(false);
         if (villageUpgrades.mageBuildingBought == true)
         {
             mageBuyingBuilding.SetActive(false);
@@ -137,27 +135,45 @@ public class Village_UI_Control : MonoBehaviour
             {
                 case 0:
                     villageUpgrades.paladinBuildingBought = true;
-                    paladinBuyingBuilding.SetActive(false);
-                    paladinBuilding.color = opaqueColor;
+                    canvasAnimator.SetTrigger("BuyPaladin");
                     break;
                 case 1:
                     villageUpgrades.barbarianBuildingBought = true;
-                    barbarianBuyingBuilding.SetActive(false);
-                    barbarianBuilding.color = opaqueColor;
+                    canvasAnimator.SetTrigger("BuyBarbarian");
                     break;
                 case 2:
                     villageUpgrades.archerBuildingBought = true;
-                    archerBuyingBuilding.SetActive(false);
-                    archerBuilding.color = opaqueColor;
+                    canvasAnimator.SetTrigger("BuyArcher");
                     break;
                 case 3:
                     villageUpgrades.mageBuildingBought = true;
-                    mageBuyingBuilding.SetActive(false);
-                    mageBuilding.color = opaqueColor;
+                    canvasAnimator.SetTrigger("BuyMage");
                     break;
             }
             
         }
+    }
+
+    public void FixPaladinBuilding()
+    {
+        ChangeBuildingToFixed(paladinBuyingBuilding, paladinBuilding);
+    }
+    public void FixBarbarianBuilding()
+    {
+        ChangeBuildingToFixed(barbarianBuyingBuilding, barbarianBuilding);
+    }
+    public void FixArcherBuilding()
+    {
+        ChangeBuildingToFixed(archerBuyingBuilding, archerBuilding);
+    }
+    public void FixMageBuilding()
+    {
+        ChangeBuildingToFixed(mageBuyingBuilding, mageBuilding);
+    }
+    public void ChangeBuildingToFixed(GameObject building, Image image)
+    {
+        building.SetActive(false);
+        image.color = opaqueColor;
     }
 
     public void CloseWindows()
@@ -205,28 +221,4 @@ public class Village_UI_Control : MonoBehaviour
         villageUpgrades.UpgradeMage(type);
     }
 
-    public void NextMap()
-    {
-        if(GameSetup.ins.playingPlayers[0].isDead)
-        {
-            GameSetup.ins.SaveClassData();
-            Level_SelectedScenes.ins.ChangeToMainmenu();
-            return;
-        }
-        GameSetup.ins.SaveClassData();
-
-
-        switch(GameSetup.ins.lastFightMap)
-        {
-            case 1:
-                Level_SelectedScenes.ins.ChangeToMap2();
-                break;
-            case 2:
-                Level_SelectedScenes.ins.ChangeToMap3();
-                break;
-            case 3:
-                break;
-        }
-        
-    }
 }

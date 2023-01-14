@@ -42,7 +42,6 @@ public class GameSetup : MonoBehaviour
     [SerializeField] public List<PlayerSelectedData> playingPlayers;
     public int numberOfPlayers;
     public bool gameAlreadySetup = false;
-    public int lastFightMap = 0;
 
     [Header("Class Data")]
     [SerializeField] ClassData[] classesData;
@@ -93,9 +92,8 @@ public class GameSetup : MonoBehaviour
 
     public void SetUpTheGame()
     {
+        Game_State.ins.ResetValuesToDefault();
         //Debug.Log("Setting up The Game");
-        Game_State.gamePaused = false;
-        Time.timeScale = 1;
         playingPlayers[0].isDead = false;
 
         //Debug.Log("Setting up the game");

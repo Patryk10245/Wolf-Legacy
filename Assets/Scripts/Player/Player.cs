@@ -62,21 +62,6 @@ public class Player : MonoBehaviour
         stats.TakeDamage(val);
         ui_updater.UpdateHealth();
     }
-    public void TakeDamage(float val, Vector3 dir)
-    {
-        if(playerClass == ENUM_PlayerClass.Paladin)
-        {
-            Vector3 playersDirectionV3 = shield.transform.position - gameObject.transform.position;
-            Vector2 playersDirection = playersDirectionV3;
-            Vector2 projectilesDirection = dir;
-
-            dot = Vector2.Dot(projectilesDirection, playersDirection);
-            if(dot < -0.7f)
-            {
-                TakeDamage(val);
-            }
-        }
-    }
 
     public void KnockBack(Vector3 force)
     {

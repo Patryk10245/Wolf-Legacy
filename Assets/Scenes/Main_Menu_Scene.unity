@@ -2699,7 +2699,6 @@ MonoBehaviour:
     isDead: 0
   numberOfPlayers: 2
   gameAlreadySetup: 0
-  lastFightMap: 0
   classesData:
   - {fileID: 11400000, guid: 01d4448912be4694b8ccb690aeed704b, type: 2}
   - {fileID: 11400000, guid: 01d4448912be4694b8ccb690aeed704b, type: 2}
@@ -3028,6 +3027,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec99f4462d79ce4e825c30446c2099b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentFightScene: 0
+  fightScenes:
+  - Wolf Legacy copy
+  - TESTING_SCENE
+  test: 
 --- !u!4 &612307986
 Transform:
   m_ObjectHideFlags: 0

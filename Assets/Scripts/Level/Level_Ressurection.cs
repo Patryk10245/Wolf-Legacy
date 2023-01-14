@@ -56,6 +56,7 @@ public class Level_Ressurection : MonoBehaviour
             else
             {
                 player.isDead = true;
+                Game_State.ins.gameLost = true;
                 GameOver();
             }
         }

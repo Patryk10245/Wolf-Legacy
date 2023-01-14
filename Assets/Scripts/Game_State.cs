@@ -8,6 +8,8 @@ public class Game_State : MonoBehaviour
 
     public static bool gamePaused;
     public static GameObject pausingWindow;
+    public bool gameLost;
+    public bool gameWon;
 
     // Start is called before the first frame update
     void Start()
@@ -26,14 +28,21 @@ public class Game_State : MonoBehaviour
 
         if (gamePaused)
         {
-            Time.timeScale = 0;
             pausingWindow.SetActive(true);
+            Time.timeScale = 0;
         }
         else
         {
-            Time.timeScale = 1;
             pausingWindow.SetActive(false);
+            Time.timeScale = 1;
         }
+    }
+    public void ResetValuesToDefault()
+    {
+        gameLost = false;
+        gameLost = false;
+        gamePaused = false;
+        Time.timeScale = 1;
     }
 
     

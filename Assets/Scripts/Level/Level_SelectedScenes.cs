@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class Level_SelectedScenes : MonoBehaviour
 {
     public static Level_SelectedScenes ins;
+    public int currentFightScene = -1;
+    [SerializeField]
+    public string[] fightScenes;
     public void Reference()
     {
         ins = this;
@@ -16,6 +19,7 @@ public class Level_SelectedScenes : MonoBehaviour
         Reference();
         DontDestroyOnLoad(this);
     }
+
 
 
 
@@ -70,6 +74,21 @@ public class Level_SelectedScenes : MonoBehaviour
         }
         SceneManager.LoadScene("Village_Scene");
         
+    }
+
+
+    public void RepeatFightMap()
+    {
+
+    }
+    public void LoadNextFightMap()
+    {
+        currentFightScene++;
+        if(currentFightScene == 1)
+        {
+            ChangeToMainmenu();
+        }
+        SceneManager.LoadScene(fightScenes[currentFightScene]);
     }
     public void ChangeToMap1()
     {
