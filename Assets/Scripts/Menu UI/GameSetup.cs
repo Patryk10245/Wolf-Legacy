@@ -58,6 +58,7 @@ public class GameSetup : MonoBehaviour
     [SerializeField] Sprite archersHandImage;
 
 
+
     private void Start()
     {
 
@@ -93,7 +94,8 @@ public class GameSetup : MonoBehaviour
     public void SetUpTheGame()
     {
         Game_State.ins.ResetValuesToDefault();
-        //Debug.Log("Setting up The Game");
+
+        Debug.Log("Setting up The Game");
         playingPlayers[0].isDead = false;
 
         //Debug.Log("Setting up the game");
@@ -101,6 +103,7 @@ public class GameSetup : MonoBehaviour
         //Debug.Log("level references = " + levelReferences.gameObject.name);
 
         playerManager = levelReferences.playerManager;
+        playerManager.ResetValuesToDefault();
         cameraFollowing = levelReferences.cameraFollowing;
         levelReferences.resurrection.playerManager = playerManager;
         playerInputManager = levelReferences.playerInputManager;
@@ -120,6 +123,7 @@ public class GameSetup : MonoBehaviour
 
         //Debug.Log("DEBUG  ||DO I SEE THIS ? = " + playerInputManager);
         //Debug.Log("number of players == " + numberOfPlayers);
+        
         if (numberOfPlayers == 1)
         {
             if(playingPlayers.Count > 1)
@@ -129,6 +133,7 @@ public class GameSetup : MonoBehaviour
             //PlayerInput newPlayer = playerInputManager.JoinPlayer();
 
             PlayerInput newPlayer = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
+            newPlayer.gameObject.name = "player " + Time.realtimeSinceStartup;
             //Debug.Log("new player = " + newPlayer);
             playerManager.playerList.Add(newPlayer.GetComponent<Player>());
             newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;

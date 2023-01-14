@@ -597,7 +597,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 59479205}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 263261326}
+        m_TargetAssemblyTypeName: Village_UIMapChoosing, Assembly-CSharp
+        m_MethodName: Choose_RepeatMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &59479205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1356,7 +1368,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164156160
 GameObject:
@@ -2362,7 +2374,7 @@ RectTransform:
   - {fileID: 926745282}
   - {fileID: 653499814}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2403,6 +2415,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   villageUI: {fileID: 601695554}
   audioListener: {fileID: 0}
+--- !u!1 &263261325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 263261327}
+  - component: {fileID: 263261326}
+  m_Layer: 0
+  m_Name: Village Map Choosing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &263261326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263261325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4bcb3589f8632419d004018fe41a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiControl: {fileID: 601695554}
+  mapWindow: {fileID: 659605678}
+  repeatMapButton: {fileID: 59479202}
+  nextMapButton: {fileID: 628633567}
+--- !u!4 &263261327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263261325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &265432284
 GameObject:
   m_ObjectHideFlags: 0
@@ -5403,6 +5463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   villageUpgrades: {fileID: 0}
+  mapChoosing: {fileID: 0}
   canvasAnimator: {fileID: 0}
   infoField: {fileID: 1487259570}
   villageMenu: {fileID: 362051930}
@@ -5950,7 +6011,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 628633570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 263261326}
+        m_TargetAssemblyTypeName: Village_UIMapChoosing, Assembly-CSharp
+        m_MethodName: Choose_NextMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &628633570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6444,7 +6517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &659605679
 Transform:
   m_ObjectHideFlags: 0
@@ -7567,7 +7640,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &787833855
 GameObject:
@@ -7720,7 +7793,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Map
+  m_Text: Show Options
 --- !u!222 &788609456
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12737,7 +12810,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14645,7 +14718,7 @@ GameObject:
   - component: {fileID: 1589416135}
   - component: {fileID: 1589416134}
   m_Layer: 5
-  m_Name: 'Next Map '
+  m_Name: Show Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14716,9 +14789,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601695554}
-        m_TargetAssemblyTypeName: Village_UI_Control, Assembly-CSharp
-        m_MethodName: NextMap
+      - m_Target: {fileID: 263261326}
+        m_TargetAssemblyTypeName: Village_UIMapChoosing, Assembly-CSharp
+        m_MethodName: ShowMapChoosingWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14848,7 +14921,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1614974090
 GameObject:
@@ -18911,7 +18984,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2095861813}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 263261326}
+        m_TargetAssemblyTypeName: Village_UIMapChoosing, Assembly-CSharp
+        m_MethodName: Choose_MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2095861813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19551,7 +19636,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2133920936
 GameObject:

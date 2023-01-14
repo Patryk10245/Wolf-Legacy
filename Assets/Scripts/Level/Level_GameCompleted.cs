@@ -11,7 +11,6 @@ public class Level_GameCompleted : MonoBehaviour
     public Text collectedGoldText; 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
         ins = this;
     }
 
@@ -26,10 +25,12 @@ public class Level_GameCompleted : MonoBehaviour
 
     public void UI_ReturnToVillage()
     {
+        Level_FightReferenecs.ins.playerManager.DestroyAllPlayers();
         Level_SelectedScenes.ins.ChangeToVillageScene();
     }
     public void UI_ReturnToMenu()
     {
+        Level_FightReferenecs.ins.playerManager.DestroyAllPlayers();
         Level_SelectedScenes.ins.ChangeToMainmenu();
     }
 }

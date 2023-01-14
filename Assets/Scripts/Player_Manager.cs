@@ -29,6 +29,23 @@ public class Player_Manager : MonoBehaviour
     {
     }
 
+    public void DestroyAllPlayers()
+    {
+        foreach(Player player in playerList)
+        {
+            player.GetComponent<PlayerInput>().user.UnpairDevicesAndRemoveUser();
+            Destroy(player.gameObject);
+        }
+    }
+
+    public void ResetValuesToDefault()
+    {
+        foreach(Player player in playerList)
+        {
+            player.isDead = false;
+        }
+    }
+
 
 
 

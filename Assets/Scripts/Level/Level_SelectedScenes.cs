@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class Level_SelectedScenes : MonoBehaviour
@@ -25,15 +27,19 @@ public class Level_SelectedScenes : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Level selected scenes start");
         SceneManager.activeSceneChanged += SceneChanged;
         SceneManager.sceneLoaded += SceneLoaded;
+        
     }
 
     void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //Debug.Log("OnSceneLoaded: " + scene.name);
-        //Debug.Log(mode);
+        SceneManager.sceneLoaded -= SceneLoaded;
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        Debug.Log(mode);
 
+        
         if(scene == SceneManager.GetSceneByName("Village_Scene"))
         {
             
@@ -54,6 +60,7 @@ public class Level_SelectedScenes : MonoBehaviour
     }
     void SceneChanged(Scene current, Scene next)
     {
+        SceneManager.activeSceneChanged -= SceneChanged;
         string currentName = current.name;
         //Debug.Log("Scene current = " + currentName + " \n next = " + next.name);
 
@@ -83,6 +90,7 @@ public class Level_SelectedScenes : MonoBehaviour
     }
     public void LoadNextFightMap()
     {
+        Debug.Log("Load next fight map");
         currentFightScene++;
         if(currentFightScene == 1)
         {
@@ -92,22 +100,28 @@ public class Level_SelectedScenes : MonoBehaviour
     }
     public void ChangeToMap1()
     {
+        Debug.Log("change to map 1");
         SceneManager.LoadScene("Wolf Legacy copy");
     }
     public void ChangeToMap2()
     {
+        Debug.Log("change to map 2");
         SceneManager.LoadScene("Wolf Legacy copy");
     }
     public void ChangeToMap3()
     {
+        Debug.Log("change to map 3");
+        
         SceneManager.LoadScene("Wolf Legacy copyE");
     }
     public void ChangeToMainmenu()
     {
+        Debug.Log("change to main menu");
         SceneManager.LoadScene("Main_Menu_Scene");
     }
     public void ChangeToTestingScene()
     {
+        Debug.Log("change to testing scene");
         SceneManager.LoadScene("TESTING_SCENE");
     }
 }

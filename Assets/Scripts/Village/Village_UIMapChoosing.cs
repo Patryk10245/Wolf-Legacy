@@ -11,6 +11,11 @@ public class Village_UIMapChoosing : MonoBehaviour
     [SerializeField] GameObject nextMapButton;
     
 
+    public void ShowMapChoosingWindow()
+    {
+        mapWindow.SetActive(!mapWindow.activeSelf);
+    }
+
     public void Choose_RepeatMap()
     {
         Level_SelectedScenes.ins.RepeatFightMap();
@@ -21,7 +26,7 @@ public class Village_UIMapChoosing : MonoBehaviour
     }
     public void Choose_NextMap()
     {
-
+        Level_SelectedScenes.ins.LoadNextFightMap();
     }
 
     public void DisableRepeatButton()
