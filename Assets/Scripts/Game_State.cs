@@ -8,14 +8,25 @@ public class Game_State : MonoBehaviour
 
     public static bool gamePaused;
     public static GameObject pausingWindow;
-    public bool gameLost;
-    public bool gameWon;
+    public static bool gameLost;
+    public static bool gameWon;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        ins = this;
-        //DontDestroyOnLoad(this);
+        if (ins != null && ins != this)
+        {
+            //Debug.Log("Destroying = " + gameObject);
+            //Debug.Log("scene = " + gameObject.scene.name);
+            Destroy(gameObject);
+        }
+        else
+        {
+
+            ins = this;
+            //Debug.Log("scene = " + gameObject.scene.name);
+            DontDestroyOnLoad(this);
+        }
     }
 
     // Update is called once per frame

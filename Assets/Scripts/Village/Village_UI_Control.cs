@@ -73,7 +73,7 @@ public class Village_UI_Control : MonoBehaviour
             mageBuilding.color = opaqueColor;
         }
 
-        if(Game_State.ins.gameLost == true || Game_State.ins.gameWon == true)
+        if(Game_State.gameLost == true || Game_State.gameWon == true)
         {
             mapChoosing.DisableNextButton();
             mapChoosing.DisableRepeatButton();
