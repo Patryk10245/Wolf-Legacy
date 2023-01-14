@@ -9,7 +9,7 @@ public class Player_Manager : MonoBehaviour
     public static Player_Manager ins;
     void Reference()
     {
-        //Debug.Log("Player manager Setting Reference To self");
+        Debug.Log("Player manager Setting Reference To self");
         ins = this;
     }
     void Awake()

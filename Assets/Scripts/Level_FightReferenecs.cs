@@ -9,6 +9,7 @@ public class Level_FightReferenecs : MonoBehaviour
     public static Level_FightReferenecs ins;
     public void Reference()
     {
+        Debug.Log("Level Fight REferences REFERENCES itself");
         ins = this;
     }
 

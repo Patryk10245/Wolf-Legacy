@@ -93,6 +93,7 @@ public class GameSetup : MonoBehaviour
 
     public void SetUpTheGame()
     {
+        Debug.Log("Setting up The Game");
         Game_State.gamePaused = false;
         Time.timeScale = 1;
         playingPlayers[0].isDead = false;
@@ -116,10 +117,10 @@ public class GameSetup : MonoBehaviour
 
         scoreTable.SetReferenceToGoldText();
         Game_State.pausingWindow = levelReferences.pauseWindow;
-        
-        
-        
 
+
+
+        Debug.Log("DEBUG  ||DO I SEE THIS ? = " + playerInputManager);
         Debug.Log("number of players == " + numberOfPlayers);
         if (numberOfPlayers == 1)
         {
@@ -130,6 +131,7 @@ public class GameSetup : MonoBehaviour
             //PlayerInput newPlayer = playerInputManager.JoinPlayer();
 
             PlayerInput newPlayer = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
+            Debug.Log("new player = " + newPlayer);
             playerManager.playerList.Add(newPlayer.GetComponent<Player>());
             newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
             SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);

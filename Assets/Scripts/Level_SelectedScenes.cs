@@ -44,7 +44,7 @@ public class Level_SelectedScenes : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Fight Map Scene");
+            Debug.Log("Scene changed to Testing Scene");
             GameSetup.ins.SetUpTheGame();
         }
     }
