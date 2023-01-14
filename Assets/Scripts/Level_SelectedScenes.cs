@@ -77,14 +77,18 @@ public class Level_SelectedScenes : MonoBehaviour
     }
     public void ChangeToMap2()
     {
-        SceneManager.LoadScene("TESTING_SCENE");
+        SceneManager.LoadScene("Wolf Legacy copy");
     }
     public void ChangeToMap3()
     {
-        SceneManager.LoadScene("TESTING_SCENE");
+        SceneManager.LoadScene("Wolf Legacy copyE");
     }
     public void ChangeToMainmenu()
     {
         SceneManager.LoadScene("Main_Menu_Scene");
+    }
+    public void ChangeToTestingScene()
+    {
+        SceneManager.LoadScene("TESTING_SCENE");
     }
 }
