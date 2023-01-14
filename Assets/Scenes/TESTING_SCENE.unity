@@ -262,7 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collidersBlockingExit: {fileID: 1763084188}
   placeToTeleportPlayersTo: {fileID: 91188528}
-  boss: {fileID: 902244801}
+  boss: {fileID: 676577733}
   bossHealthBar: {fileID: 60188278}
 --- !u!4 &36021229
 Transform:
@@ -502,7 +502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &60188279
 RectTransform:
   m_ObjectHideFlags: 0
@@ -133164,7 +133164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &902244800
 Transform:
   m_ObjectHideFlags: 0
@@ -138667,7 +138667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2059904262836334085, guid: d9a1cad097c86824a9ef83c888f07514, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2059904262836334087, guid: d9a1cad097c86824a9ef83c888f07514, type: 3}
       propertyPath: currentHealth

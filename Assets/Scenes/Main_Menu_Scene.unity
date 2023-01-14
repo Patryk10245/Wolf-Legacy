@@ -2615,7 +2615,7 @@ MonoBehaviour:
     isDead: 0
   - id: 1
     selectedClass: 0
-    controlScheme: My_Scheme
+    controlScheme: GamePad
     isDead: 0
   numberOfPlayers: 2
   gameAlreadySetup: 0
