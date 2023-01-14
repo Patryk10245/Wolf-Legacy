@@ -163,6 +163,7 @@ public class GameSetup : MonoBehaviour
         else if(numberOfPlayers == 2)
         {
             PlayerInput newPlayer1 = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
+            Debug.Log("DEBUG  ||DO I SEE THIS ? = " + playerInputManager);
             playerManager.playerList.Add(newPlayer1.GetComponent<Player>());
             newPlayer1.gameObject.transform.position = playerManager.playerSpawnPosition.position;
             SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
