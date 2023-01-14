@@ -196,7 +196,7 @@ public class GameSetup : MonoBehaviour
                 playerManager.playerList.Add(newPlayer2.gameObject.GetComponent<Player>());
                 newPlayer2.gameObject.transform.position = playerManager.playerSpawnPosition.position;
                 SetReferencesForPlayer2(playerManager.playerList[1], levelReferences);
-
+                Debug.Log("Second Player Created");
             }
             catch(Exception execption)
             {
