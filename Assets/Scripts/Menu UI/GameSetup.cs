@@ -99,7 +99,7 @@ public class GameSetup : MonoBehaviour
 
         //Debug.Log("Setting up the game");
         Level_FightReferenecs levelReferences = Level_FightReferenecs.ins;
-        //Debug.Log("level references = " + levelReferences.gameObject.name);
+        Debug.Log("level references = " + levelReferences.gameObject.name);
 
         playerManager = levelReferences.playerManager;
         cameraFollowing = levelReferences.cameraFollowing;
