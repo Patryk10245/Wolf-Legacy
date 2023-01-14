@@ -18,8 +18,27 @@ public class Level_SelectedScenes : MonoBehaviour
 
     private void Awake()
     {
-        Reference();
-        DontDestroyOnLoad(this);
+        if(ins == null)
+        {
+            SceneManager.activeSceneChanged += SceneChanged;
+            SceneManager.sceneLoaded += SceneLoaded;
+            //SceneManager.sceneLoaded -= SceneLoaded;
+            //SceneManager.activeSceneChanged -= SceneChanged;
+        }
+
+        if(ins != null && ins != this)
+        {
+            Debug.Log("Destroying = " + gameObject);
+            Debug.Log("scene = " + gameObject.scene.name);
+            Destroy(gameObject);
+        }
+        else
+        {
+            
+            Reference();
+            Debug.Log("scene = " + gameObject.scene.name);
+            DontDestroyOnLoad(this);
+        }
     }
 
 
@@ -28,14 +47,14 @@ public class Level_SelectedScenes : MonoBehaviour
     private void Start()
     {
         Debug.Log("Level selected scenes start");
-        SceneManager.activeSceneChanged += SceneChanged;
-        SceneManager.sceneLoaded += SceneLoaded;
+        //SceneManager.activeSceneChanged += SceneChanged;
+        //SceneManager.sceneLoaded += SceneLoaded;
         
     }
 
     void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        SceneManager.sceneLoaded -= SceneLoaded;
+        //SceneManager.sceneLoaded -= SceneLoaded;
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
 
@@ -60,7 +79,7 @@ public class Level_SelectedScenes : MonoBehaviour
     }
     void SceneChanged(Scene current, Scene next)
     {
-        SceneManager.activeSceneChanged -= SceneChanged;
+        //SceneManager.activeSceneChanged -= SceneChanged;
         string currentName = current.name;
         //Debug.Log("Scene current = " + currentName + " \n next = " + next.name);
 
@@ -92,10 +111,6 @@ public class Level_SelectedScenes : MonoBehaviour
     {
         Debug.Log("Load next fight map");
         currentFightScene++;
-        if(currentFightScene == 1)
-        {
-            ChangeToMainmenu();
-        }
         SceneManager.LoadScene(fightScenes[currentFightScene]);
     }
     public void ChangeToMap1()
