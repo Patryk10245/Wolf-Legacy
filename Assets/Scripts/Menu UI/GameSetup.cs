@@ -104,6 +104,8 @@ public class GameSetup : MonoBehaviour
         playerManager = levelReferences.playerManager;
         cameraFollowing = levelReferences.cameraFollowing;
         levelReferences.resurrection.playerManager = playerManager;
+        playerInputManager = levelReferences.playerInputManager;
+        playerInputManager.playerPrefab = playerManager.playerPrefab;
         //Debug.Log("player manager = " + playerManager);
 
         //playerManager = Player_Manager.ins;
