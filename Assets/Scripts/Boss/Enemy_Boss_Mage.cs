@@ -9,6 +9,7 @@ public enum ENUM_MageBossState
 {
     idle,
     projectileWaves,
+    thunders,
     dying
 }
 public class Enemy_Boss_Mage : Enemy_BaseClass
@@ -117,7 +118,9 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
             case ENUM_MageBossState.projectileWaves:
                 Action_ProjectileWaves();
                 break;
-
+            case ENUM_MageBossState.thunders:
+                Action_Thunder();
+                break;
             case ENUM_MageBossState.dying:
                 Action_Dying();
                 break;
@@ -199,7 +202,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
         }
     }
 
-    private void Action_ThunderAOE()
+    private void Action_Thunder()
     {
         switch (currentActionState)
         {

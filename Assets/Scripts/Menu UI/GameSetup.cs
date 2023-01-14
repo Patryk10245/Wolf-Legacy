@@ -37,6 +37,7 @@ public class GameSetup : MonoBehaviour
     Camera_Following cameraFollowing;
     [SerializeField] ScoreTable scoreTable;
     public Village_Upgrades villageUpgrades;
+    public PlayerInputManager playerInputManager;
     
     [SerializeField] public List<PlayerSelectedData> playingPlayers;
     public int numberOfPlayers;
@@ -104,9 +105,6 @@ public class GameSetup : MonoBehaviour
         cameraFollowing = levelReferences.cameraFollowing;
         levelReferences.resurrection.playerManager = playerManager;
         //Debug.Log("player manager = " + playerManager);
-
-        PlayerInputManager playerInputManager = levelReferences.playerInputManager;
-        playerInputManager.playerPrefab = playerManager.playerPrefab;
 
         //playerManager = Player_Manager.ins;
         //cameraFollowing = Camera_Following.ins;

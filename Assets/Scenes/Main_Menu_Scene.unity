@@ -2607,6 +2607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreTable: {fileID: 1751829985}
   villageUpgrades: {fileID: 602948555}
+  playerInputManager: {fileID: 0}
   playingPlayers:
   - id: 0
     selectedClass: 0
