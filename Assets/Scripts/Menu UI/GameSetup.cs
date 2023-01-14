@@ -165,13 +165,12 @@ public class GameSetup : MonoBehaviour
         else if(numberOfPlayers == 2)
         {
             PlayerInput newPlayer1 = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
-            Debug.Log("DEBUG  ||DO I SEE THIS ? = " + playerInputManager);
+            Debug.Log("new player = " + newPlayer1);
             playerManager.playerList.Add(newPlayer1.GetComponent<Player>());
             newPlayer1.gameObject.transform.position = playerManager.playerSpawnPosition.position;
             SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
+            Debug.Log("First Player Created");
 
-            
-            
 
             switch (playingPlayers[0].selectedClass)
             {
@@ -193,6 +192,7 @@ public class GameSetup : MonoBehaviour
             try
             {
                 PlayerInput newPlayer2 = playerInputManager.JoinPlayer(1,0,playingPlayers[1].controlScheme);
+                Debug.Log("new player2 = " + newPlayer2);
                 playerManager.playerList.Add(newPlayer2.gameObject.GetComponent<Player>());
                 newPlayer2.gameObject.transform.position = playerManager.playerSpawnPosition.position;
                 SetReferencesForPlayer2(playerManager.playerList[1], levelReferences);
