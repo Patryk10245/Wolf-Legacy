@@ -28,15 +28,15 @@ public class Level_SelectedScenes : MonoBehaviour
 
         if(ins != null && ins != this)
         {
-            Debug.Log("Destroying = " + gameObject);
-            Debug.Log("scene = " + gameObject.scene.name);
+            //Debug.Log("Destroying = " + gameObject);
+            //Debug.Log("scene = " + gameObject.scene.name);
             Destroy(gameObject);
         }
         else
         {
             
             Reference();
-            Debug.Log("scene = " + gameObject.scene.name);
+            //Debug.Log("scene = " + gameObject.scene.name);
             DontDestroyOnLoad(this);
         }
     }
@@ -46,7 +46,7 @@ public class Level_SelectedScenes : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Level selected scenes start");
+        //Debug.Log("Level selected scenes start");
         //SceneManager.activeSceneChanged += SceneChanged;
         //SceneManager.sceneLoaded += SceneLoaded;
         
@@ -56,7 +56,7 @@ public class Level_SelectedScenes : MonoBehaviour
     {
         //SceneManager.sceneLoaded -= SceneLoaded;
         Debug.Log("OnSceneLoaded: " + scene.name);
-        Debug.Log(mode);
+        //Debug.Log(mode);
 
         
         if(scene == SceneManager.GetSceneByName("Village_Scene"))
@@ -73,7 +73,7 @@ public class Level_SelectedScenes : MonoBehaviour
         }
         else
         {
-            Debug.Log("Scene changed to Fight Scene");
+            //Debug.Log("Scene changed to Fight Scene");
             GameSetup.ins.SetUpTheGame();
         }
     }
@@ -109,34 +109,34 @@ public class Level_SelectedScenes : MonoBehaviour
     }
     public void LoadNextFightMap()
     {
-        Debug.Log("Load next fight map");
+        //Debug.Log("Load next fight map");
         currentFightScene++;
         SceneManager.LoadScene(fightScenes[currentFightScene]);
     }
     public void ChangeToMap1()
     {
-        Debug.Log("change to map 1");
+        //Debug.Log("change to map 1");
         SceneManager.LoadScene("Wolf Legacy copy");
     }
     public void ChangeToMap2()
     {
-        Debug.Log("change to map 2");
+        //Debug.Log("change to map 2");
         SceneManager.LoadScene("Wolf Legacy copy");
     }
     public void ChangeToMap3()
     {
-        Debug.Log("change to map 3");
+        //Debug.Log("change to map 3");
         
         SceneManager.LoadScene("Wolf Legacy copyE");
     }
     public void ChangeToMainmenu()
     {
-        Debug.Log("change to main menu");
+        //Debug.Log("change to main menu");
         SceneManager.LoadScene("Main_Menu_Scene");
     }
     public void ChangeToTestingScene()
     {
-        Debug.Log("change to testing scene");
+        //Debug.Log("change to testing scene");
         SceneManager.LoadScene("TESTING_SCENE");
     }
 }
