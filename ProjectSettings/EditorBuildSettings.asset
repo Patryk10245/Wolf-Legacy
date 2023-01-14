@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TESTING_SCENE.unity
     guid: 249dda71ada85364ab1e0e21d3c7c02f
+  - enabled: 1
+    path: Assets/Wolf Legacy copy.unity
+    guid: 48b8d83dc53e1724a8bef8da49c21f92
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e273b062bbbfe4a479e5182645640ead, type: 2}

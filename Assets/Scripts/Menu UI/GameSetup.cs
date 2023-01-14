@@ -93,14 +93,14 @@ public class GameSetup : MonoBehaviour
 
     public void SetUpTheGame()
     {
-        Debug.Log("Setting up The Game");
+        //Debug.Log("Setting up The Game");
         Game_State.gamePaused = false;
         Time.timeScale = 1;
         playingPlayers[0].isDead = false;
 
         //Debug.Log("Setting up the game");
         Level_FightReferenecs levelReferences = Level_FightReferenecs.ins;
-        Debug.Log("level references = " + levelReferences.gameObject.name);
+        //Debug.Log("level references = " + levelReferences.gameObject.name);
 
         playerManager = levelReferences.playerManager;
         cameraFollowing = levelReferences.cameraFollowing;
@@ -114,14 +114,14 @@ public class GameSetup : MonoBehaviour
         //scoreTable = ScoreTable.ins;
 
 
-
-        scoreTable.SetReferenceToGoldText();
+        scoreTable.TEXT_goldAmount = levelReferences.GoldTextIcon;
+        //scoreTable.SetReferenceToGoldText();
         Game_State.pausingWindow = levelReferences.pauseWindow;
 
 
 
-        Debug.Log("DEBUG  ||DO I SEE THIS ? = " + playerInputManager);
-        Debug.Log("number of players == " + numberOfPlayers);
+        //Debug.Log("DEBUG  ||DO I SEE THIS ? = " + playerInputManager);
+        //Debug.Log("number of players == " + numberOfPlayers);
         if (numberOfPlayers == 1)
         {
             if(playingPlayers.Count > 1)
@@ -131,7 +131,7 @@ public class GameSetup : MonoBehaviour
             //PlayerInput newPlayer = playerInputManager.JoinPlayer();
 
             PlayerInput newPlayer = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
-            Debug.Log("new player = " + newPlayer);
+            //Debug.Log("new player = " + newPlayer);
             playerManager.playerList.Add(newPlayer.GetComponent<Player>());
             newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
             SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
@@ -166,11 +166,11 @@ public class GameSetup : MonoBehaviour
         {
             
             PlayerInput newPlayer1 = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
-            Debug.Log("new player = " + newPlayer1);
+            //Debug.Log("new player = " + newPlayer1);
             playerManager.playerList.Add(newPlayer1.GetComponent<Player>());
             newPlayer1.gameObject.transform.position = playerManager.playerSpawnPosition.position;
             SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
-            Debug.Log("First Player Created");
+            //Debug.Log("First Player Created");
 
 
             switch (playingPlayers[0].selectedClass)
@@ -190,21 +190,26 @@ public class GameSetup : MonoBehaviour
                     break;
             }
 
-            Debug.Log("Player input manager set to = " + playerInputManager);
-            Debug.Log("Playing players 2 control scheme = " + playingPlayers[1].controlScheme);
-            Debug.Log("prefab = " + playerInputManager.playerPrefab.name);
+            //Debug.Log("Player input manager set to = " + playerInputManager);
+            //Debug.Log("Playing players 2 control scheme = " + playingPlayers[1].controlScheme);
+            //Debug.Log("prefab = " + playerInputManager.playerPrefab.name);
             try
             {
                 PlayerInput newPlayer2 = playerInputManager.JoinPlayer(1,0,playingPlayers[1].controlScheme);
-                Debug.Log("new player2 = " + newPlayer2);
+                //Debug.Log("new player2 = " + newPlayer2);
                 playerManager.playerList.Add(newPlayer2.gameObject.GetComponent<Player>());
                 newPlayer2.gameObject.transform.position = playerManager.playerSpawnPosition.position;
                 SetReferencesForPlayer2(playerManager.playerList[1], levelReferences);
-                Debug.Log("Second Player Created");
+                //Debug.Log("Second Player Created");
             }
             catch(Exception execption)
             {
-                Debug.Log(execption);
+                numberOfPlayers = 1;
+                cameraFollowing.singlePlayer = true;
+                cameraFollowing.flat = false;
+                cameraFollowing.smooth = false;
+                return;
+                //Debug.Log(execption);
             }
             //Debug.Log(newPlayer2.name);
             
