@@ -204,6 +204,11 @@ public class GameSetup : MonoBehaviour
             }
             catch(Exception execption)
             {
+                numberOfPlayers = 1;
+                cameraFollowing.singlePlayer = true;
+                cameraFollowing.flat = false;
+                cameraFollowing.smooth = false;
+                return;
                 //Debug.Log(execption);
             }
             //Debug.Log(newPlayer2.name);
