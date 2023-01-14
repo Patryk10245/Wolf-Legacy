@@ -164,6 +164,7 @@ public class GameSetup : MonoBehaviour
         }
         else if(numberOfPlayers == 2)
         {
+            
             PlayerInput newPlayer1 = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
             Debug.Log("new player = " + newPlayer1);
             playerManager.playerList.Add(newPlayer1.GetComponent<Player>());
@@ -189,6 +190,9 @@ public class GameSetup : MonoBehaviour
                     break;
             }
 
+            Debug.Log("Player input manager set to = " + playerInputManager);
+            Debug.Log("Playing players 2 control scheme = " + playingPlayers[1].controlScheme);
+            Debug.Log("prefab = " + playerInputManager.playerPrefab.name);
             try
             {
                 PlayerInput newPlayer2 = playerInputManager.JoinPlayer(1,0,playingPlayers[1].controlScheme);
