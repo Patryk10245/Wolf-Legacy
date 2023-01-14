@@ -44,7 +44,7 @@ public class Level_SelectedScenes : MonoBehaviour
         }
         else
         {
-            Debug.Log("Scene changed to Testing Scene");
+            Debug.Log("Scene changed to Fight Scene");
             GameSetup.ins.SetUpTheGame();
         }
     }
@@ -73,7 +73,7 @@ public class Level_SelectedScenes : MonoBehaviour
     }
     public void ChangeToMap1()
     {
-        SceneManager.LoadScene("TESTING_SCENE");
+        SceneManager.LoadScene("Wolf Legacy copy");
     }
     public void ChangeToMap2()
     {

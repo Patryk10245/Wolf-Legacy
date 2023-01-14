@@ -83,7 +83,7 @@ public class Camera_Following : MonoBehaviour
             middleOfPlayers += player.transform.position;
         }
 
-        Debug.Log("DEBUG cam fol || " + Player_Manager.ins);
+        //Debug.Log("DEBUG cam fol || " + Player_Manager.ins);
         dist = Vector3.Distance(Player_Manager.ins.playerList[0].transform.position, Player_Manager.ins.playerList[1].transform.position);
         middleOfPlayers /= Player_Manager.ins.playerList.Count;
         middleOfPlayers.z = -10;

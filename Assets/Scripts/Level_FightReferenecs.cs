@@ -9,7 +9,7 @@ public class Level_FightReferenecs : MonoBehaviour
     public static Level_FightReferenecs ins;
     public void Reference()
     {
-        Debug.Log("Level Fight REferences REFERENCES itself");
+        //Debug.Log("Level Fight REferences REFERENCES itself");
         ins = this;
     }
 
@@ -43,4 +43,6 @@ public class Level_FightReferenecs : MonoBehaviour
     public Image player1Ability2;
     public Image player2Ability1;
     public Image player2Ability2;
+    [Header("Canvas Referece")]
+    public Text GoldTextIcon;
 }
