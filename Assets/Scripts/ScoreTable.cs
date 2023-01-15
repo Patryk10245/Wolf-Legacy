@@ -9,15 +9,7 @@ public class ScoreTable : MonoBehaviour
     public static ScoreTable ins;
     public void Reference()
     {
-        if(ins == null)
-        {
-            ins = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        ins = this;
     }
 
     
@@ -31,7 +23,17 @@ public class ScoreTable : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Reference(); 
+        if (ins != null && ins != this)
+        {
+
+            Destroy(gameObject);
+        }
+        else
+        {
+            Reference();
+            DontDestroyOnLoad(this);
+        }
+
     }
 
     public void AddGold(int val)

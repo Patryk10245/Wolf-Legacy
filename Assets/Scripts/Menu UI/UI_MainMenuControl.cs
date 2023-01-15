@@ -167,6 +167,10 @@ public class UI_MainMenuControl : MonoBehaviour
     }
 
 
+    public void DeleteCurrentGameProgress()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 
     public void OnePlayer()
     {

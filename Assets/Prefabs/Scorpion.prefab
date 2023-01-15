@@ -150,7 +150,7 @@ MonoBehaviour:
   attack_Distance: 6
   distance_To_Player: 0
   chasePlayerDistance: 9
-  delay_Between_Attacks: 3
+  delay_Between_Attacks: 1.5
   currentEnemyState: 0
   is_Spawned: 0
   is_dying: 0

@@ -11,6 +11,7 @@ public enum ENUM_MageBossState
     projectileWaves,
     thunders,
     areaAttack,
+    spawning,
     dying
 }
 public class Enemy_Boss_Mage : Enemy_BaseClass
@@ -20,6 +21,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
 
     public Boss_Duck_SpecialEffects specialEffects;
     public Image healthBar;
+    public Animator healthBarAnimator;
     public ENUM_MageBossState bossState;
     int last_action;
     public ENUM_current_state currentActionState = ENUM_current_state.ready_to_exit;
@@ -56,6 +58,14 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
     [SerializeField] float areaPatternTime;
     [SerializeField] float areaTimer;
 
+    [Header("Spawning Enemies")]
+    [SerializeField] GameObject enemyToSpawn;
+    [SerializeField] GameObject placeToSpawnEnemy;
+    [SerializeField] int spawningAmount;
+    int spawningDone;
+    [SerializeField] float spawningDelay;
+     float spawningTimer;
+
     void Start()
     {
         if (anim == null) anim = GetComponent<Animator>();
@@ -90,7 +100,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
             int rand;
             do
             {
-                rand = Random.Range(0, 4);
+                rand = Random.Range(0, 5);
 
                 switch (rand)
                 {
@@ -107,7 +117,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                         bossState = ENUM_MageBossState.areaAttack;
                         break;
                     case 4:
-                        //bossState = ENUM_MageBossState.jumping;
+                        bossState = ENUM_MageBossState.spawning;
                         break;
                     default:
                         break;
@@ -133,6 +143,9 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 break;
             case ENUM_MageBossState.areaAttack:
                 Action_AreaAttack();
+                break;
+            case ENUM_MageBossState.spawning:
+                Action_Spawning();
                 break;
             default:
                 Debug.LogError("UNSPECIFIED BOSS STATE");
@@ -300,6 +313,37 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
         }
     }
     
+    private void Action_Spawning()
+    {
+        switch(currentActionState)
+        {
+            case ENUM_current_state.preparation:
+                currentActionState = ENUM_current_state.working;
+                break;
+            case ENUM_current_state.working:
+                spawningTimer += Time.deltaTime;
+                if(spawningTimer >= spawningDelay)
+                {
+                    spawningTimer -= spawningDelay;
+                    GameObject temp = Instantiate(enemyToSpawn, placeToSpawnEnemy.transform.position, transform.rotation);
+                    temp.GetComponent<NavMeshAgent>().SetDestination(move_target.transform.position);
+                    spawningDone++;
+
+                    if(spawningDone >= spawningAmount)
+                    {
+                        currentActionState = ENUM_current_state.finishing;
+                    }
+                }
+                break;
+            case ENUM_current_state.finishing:
+                spawningDone = 0;
+                spawningTimer = 0;
+                currentActionState = ENUM_current_state.ready_to_exit;
+                break;
+            case ENUM_current_state.ready_to_exit:
+                break;
+        }
+    }
 
     public override void TakeDamage(float val, ENUM_AttackType attackType)
     {
@@ -310,6 +354,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
             currentActionState = ENUM_current_state.preparation;
         }
         healthBar.fillAmount = stats.currentHealth / stats.maxHealth;
+        healthBarAnimator.SetTrigger("tilt");
     }
 
     void RotateTowardsWalkDirection()

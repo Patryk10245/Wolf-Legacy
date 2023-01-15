@@ -128,6 +128,7 @@ public class GameSetup : MonoBehaviour
         //scoreTable = ScoreTable.ins;
 
 
+        //Debug.Log("Score table scene = " + scoreTable.gameObject.scene.name);
         scoreTable.TEXT_goldAmount = levelReferences.GoldTextIcon;
         //scoreTable.SetReferenceToGoldText();
 
