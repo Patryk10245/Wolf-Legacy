@@ -200,7 +200,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                     Vector3 lonedir = (move_target.transform.position - gameObject.transform.position).normalized;
                     lone.GetComponent<Enemy_Projectile>().rb.AddForce(lonedir * waveProjectileSpeed);
                     wavesShot++;
-                    waveSpotParent.transform.Rotate(new Vector3(0,0,5));
+                    //waveSpotParent.transform.Rotate(new Vector3(0,0,5));
                 }
                 else
                 {
@@ -303,7 +303,13 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
 
     public override void TakeDamage(float val, ENUM_AttackType attackType)
     {
-        throw new System.NotImplementedException();
+        stats.TakeDamage(val);
+        if (stats.currentHealth <= 0)
+        {
+            bossState = ENUM_MageBossState.dying;
+            currentActionState = ENUM_current_state.preparation;
+        }
+        healthBar.fillAmount = stats.currentHealth / stats.maxHealth;
     }
 
     void RotateTowardsWalkDirection()
