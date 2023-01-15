@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public PlayerStats stats;
     public Camera currentCamera;
     public Player_Ui_Updater ui_updater;
+    public Animator healthBarAnimator;
 
     public Player_AttackScript attackScript;
     public Ability_1 abilityBasic;

@@ -20,6 +20,10 @@ public class ScoreTable : MonoBehaviour
 
     public GameObject GO_goldAmount;
     public Text TEXT_goldAmount;
+
+    [Header("Gold Animation")]
+    bool animateGold;
+    int lastValue;
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,6 +38,21 @@ public class ScoreTable : MonoBehaviour
             DontDestroyOnLoad(this);
         }
 
+    }
+
+    private void Update()
+    {
+        if (animateGold == true)
+        {
+            TEXT_goldAmount.text = lastValue.ToString();
+
+            lastValue++;
+            if (lastValue > currentlyCollectedGold)
+            {
+                animateGold = false;
+                lastValue = 0;
+            }
+        }
     }
 
     public void AddGold(int val)
@@ -75,5 +94,9 @@ public class ScoreTable : MonoBehaviour
                 GO_goldAmount = child.gameObject;
             }
         }
+    }
+    public void BeginAnimatingGold()
+    {
+        animateGold = true;
     }
 }
