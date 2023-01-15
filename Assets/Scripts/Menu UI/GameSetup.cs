@@ -270,6 +270,7 @@ public class GameSetup : MonoBehaviour
         attack.player = player;
 
 
+
         Player_Paladin_DashSkill dash = player.gameObject.AddComponent<Player_Paladin_DashSkill>();
         player.abilityBasic = dash;
         dash.player = player;
@@ -283,6 +284,7 @@ public class GameSetup : MonoBehaviour
         around.trail = specialAttackTrail;
         specialAttackTrail.transform.SetParent(player.controller.weaponCollider.transform);
         specialAttackTrail.transform.localPosition = new Vector3(0.49f, 0.07f, 0);
+        around.baseDamage = player.stats.damage;
 
 
     }
@@ -328,6 +330,7 @@ public class GameSetup : MonoBehaviour
         multiShot.player = player;
         multiShot.arrowPrefab = archerProjectilePrefab;
         multiShot.arrowSpawnPosiiton = player.controller.weaponCollider.gameObject;
+        multiShot.damage = player.stats.damage * multiShot.damageMultiplier;
 
 
     }
@@ -357,11 +360,13 @@ public class GameSetup : MonoBehaviour
         fireTrail.trailObject = fireTrailPrefab;
         fireTrail.player = player;
         player.abilityBasic = fireTrail;
+        fireTrail.trailDamage = player.stats.damage * fireTrail.damageMultiplier;
 
         Player_Mage_FireCircle fireCircle = player.gameObject.AddComponent<Player_Mage_FireCircle>();
         fireCircle.circlePrefab = fireCirclePrefab;
         fireCircle.player = player;
         player.abilitySecondary = fireCircle;
+        fireCircle.circleDamage = player.stats.damage * fireCircle.damageMultiplier;
 
 
 

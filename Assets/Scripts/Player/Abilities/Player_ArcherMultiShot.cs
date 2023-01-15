@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player_ArcherMultiShot : Ability_2
 {
     [Space(10)]
+    public float damageMultiplier = 1.5f;
     public float damage = 4;
     public float arrowSpeed = 8;
     public float timeBetweenArrows = 0.1f;
@@ -62,6 +63,7 @@ public class Player_ArcherMultiShot : Ability_2
                 proj.speed = arrowSpeed;
                 proj.damage = damage;
                 proj.stopTimerAt = 4;
+                proj.rb.AddForce(dir * arrowSpeed);
             }
 
             if (arrowsAlreadyShot >= arrowsToShot)

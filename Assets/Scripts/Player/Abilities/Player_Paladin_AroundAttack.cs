@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player_Paladin_AroundAttack : Ability_2
 {
     [Space(10)]
+    public float damageMultiplier = 1.5f;
+    public float baseDamage;
     public GameObject weaponHolder;
     public GameObject trail;
 
@@ -23,6 +25,7 @@ public class Player_Paladin_AroundAttack : Ability_2
     {
         if (player.stats.currentEnergy >= energyCost && isRecharching == false && isUsed == false)
         {
+            player.stats.damage = damageMultiplier;
             trail.SetActive(true);
             player.stats.ModifyEnergy(-energyCost);
             isUsed = true;
@@ -41,6 +44,7 @@ public class Player_Paladin_AroundAttack : Ability_2
 
             if (timer >= rotationTime)
             {
+                player.stats.damage = baseDamage;
                 timer = 0;
                 isRecharching = true;
                 isUsed = false;

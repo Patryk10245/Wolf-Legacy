@@ -5,8 +5,9 @@ using UnityEngine;
 public class Player_Mage_FireCircle : Ability_2
 {
     [Space(10)]
+    public float damageMultiplier = 1.5f;
     public float durationTime = 3;
-    [SerializeField] float circleDamage = 2;
+    public float circleDamage = 2;
     bool isBurning;
 
     public GameObject circlePrefab;

@@ -10,11 +10,13 @@ public class Enemy_Spawner : MonoBehaviour
     [Header("Dane Wewnetrzne")]
     [SerializeField] float timer;
     [SerializeField] float TimeBetweenEnemySpawning = 5f;
-    [SerializeField] float maxNumberOfEnemies = 5f;
+    [SerializeField] int maxNumberOfEnemies = 5;
     [SerializeField] float currentHealth;
 
     [Space(15)]
     [SerializeField] List<Enemy_BaseClass> listOfCreatedEnemies;
+
+    [SerializeField] List<Enemy_BaseClass> strongerMonsters;
 
 
     // Update is called once per frame
@@ -28,13 +30,27 @@ public class Enemy_Spawner : MonoBehaviour
             // Jesli limit przeciwnikow nie jest przekroczony, spawnujemy nowego przeciwnika
             if (listOfCreatedEnemies.Count < maxNumberOfEnemies)
             {
-                InstantiateEnemy();
+                SpawnEnemies();
             }
         }
 
     }
 
-    void InstantiateEnemy()
+    public void RemoveMe(Enemy_BaseClass enemy)
+    {
+        listOfCreatedEnemies.Remove(enemy);
+    }
+
+    public void TakeDamage(float val, ENUM_AttackType attackType)
+    {
+        currentHealth -= val;
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    Enemy_BaseClass InstantiateEnemy()
     {
         // Referencja do stworzonego przeciwnika
         GameObject temp_GO;
@@ -46,19 +62,49 @@ public class Enemy_Spawner : MonoBehaviour
         listOfCreatedEnemies.Add(enemy);
         enemy.is_Spawned = true;
         enemy.agent.SetDestination(enemy.transform.position + Vector3.one);
+
+        return enemy;
     }
-    public void RemoveMe(Enemy_BaseClass enemy)
+    
+
+    void SpawnMoreEnemies()
     {
-        listOfCreatedEnemies.Remove(enemy);
+        int rand = Random.Range(0, maxNumberOfEnemies);
+        for(int i = 0; i < rand; i++)
+        {
+            InstantiateEnemy();
+        }
+
+    }
+    void SpawnStrongerEnemies()
+    {
+        Enemy_BaseClass enemy = InstantiateEnemy();
+
+        enemy.stats.damage += 3;
+        enemy.stats.maxHealth *= 2;
+        enemy.stats.currentHealth *= 2;
+        enemy.move_Speed += 1;
         
     }
 
-    public void TakeDamage(float val, ENUM_AttackType attackType)
+    void SpawnEnemies()
     {
-        currentHealth -= val;
-        if(currentHealth <= 0)
+        int rand = Random.Range(0, 10);
+
+        if(rand > -1 && rand < 2)
         {
-            Destroy(gameObject);
+            SpawnStrongerEnemies();
         }
+        else if(rand >= 2 && rand < 5)
+        {
+            SpawnMoreEnemies();
+        }
+        else
+        {
+            InstantiateEnemy();
+        }
+
+
+        InstantiateEnemy();
     }
 }

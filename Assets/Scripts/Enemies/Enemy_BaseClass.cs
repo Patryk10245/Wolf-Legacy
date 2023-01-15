@@ -24,7 +24,7 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     //[SerializeField] protected Player chase_target;
 
     [Header("Specifics")]
-    [SerializeField] protected float move_Speed = 5f;
+    [SerializeField] public float move_Speed = 5f;
     [SerializeField] public float attack_Distance = 1f;
     [SerializeField] public float distance_To_Player;
     [Tooltip("Should be higher by at least 1 than detection radius")]
