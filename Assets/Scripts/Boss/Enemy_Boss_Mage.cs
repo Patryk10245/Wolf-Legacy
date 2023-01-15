@@ -326,6 +326,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 {
                     spawningTimer -= spawningDelay;
                     GameObject temp = Instantiate(enemyToSpawn, placeToSpawnEnemy.transform.position, transform.rotation);
+                    temp.GetComponent<Enemy_BaseClass>().is_Spawned = true;
                     temp.GetComponent<NavMeshAgent>().SetDestination(move_target.transform.position);
                     spawningDone++;
 

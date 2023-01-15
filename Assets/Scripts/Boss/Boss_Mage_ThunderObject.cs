@@ -17,6 +17,7 @@ public class Boss_Mage_ThunderObject : MonoBehaviour
         }
     }
 
+    /*
     public void AnimationEvent_EnableDamage() // ENABLE FROM ANIMATION
     {
         dealDamage = true;
@@ -29,4 +30,5 @@ public class Boss_Mage_ThunderObject : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    */
 }
