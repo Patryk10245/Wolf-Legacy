@@ -40,13 +40,25 @@ public class Collectible_Base : MonoBehaviour
     void AddGold()
     {
         ScoreTable.ins.currentlyCollectedGold += (int)amount;
+        Destroy(gameObject);
     }
     void AddHealth(Player player)
     {
+        if(player.stats.currentHealth >= player.stats.maxHealth)
+        {
+            return;
+        }
         player.stats.TakeDamage(-amount);
+        Destroy(gameObject);
     }
     void AddEnergy(Player player)
     {
+        if (player.stats.currentEnergy >= player.stats.maxEnergy)
+        {
+            return;
+        }
         player.stats.ModifyEnergy(amount);
+        Destroy(gameObject);
+
     }
 }

@@ -10,6 +10,7 @@ public enum ENUM_MageBossState
     idle,
     projectileWaves,
     thunders,
+    areaAttack,
     dying
 }
 public class Enemy_Boss_Mage : Enemy_BaseClass
@@ -41,6 +42,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
     [SerializeField] float waveTimeDelay;
     [SerializeField]float waveTimer;
     int wavesShot;
+
     [Header("Thunder AOE")]
     [SerializeField] GameObject thunderPrefab;
     [SerializeField] int thunderDamage;
@@ -48,6 +50,11 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
     [SerializeField] float thunderDelay = 1.5f;
     [SerializeField] float thunderTimer;
     int thunderShot;
+
+    [Header("Area AOE")]
+    [SerializeField] Animator areaPattern;
+    [SerializeField] float areaPatternTime;
+    [SerializeField] float areaTimer;
 
     void Start()
     {
@@ -83,7 +90,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
             int rand;
             do
             {
-                rand = Random.Range(0, 3);
+                rand = Random.Range(0, 4);
 
                 switch (rand)
                 {
@@ -97,7 +104,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                         bossState = ENUM_MageBossState.thunders;
                         break;
                     case 3:
-                        //bossState = ENUM_MageBossState.spawning;
+                        bossState = ENUM_MageBossState.areaAttack;
                         break;
                     case 4:
                         //bossState = ENUM_MageBossState.jumping;
@@ -124,6 +131,9 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
             case ENUM_MageBossState.dying:
                 Action_Dying();
                 break;
+            case ENUM_MageBossState.areaAttack:
+                Action_AreaAttack();
+                break;
             default:
                 Debug.LogError("UNSPECIFIED BOSS STATE");
                 break;
@@ -145,6 +155,23 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 break;
             case ENUM_current_state.finishing:
                 bossArea.DeactivateBlockades();
+                break;
+            case ENUM_current_state.ready_to_exit:
+                break;
+        }
+    }
+
+    private void Action_Idle()
+    {
+        last_action = 0;
+        switch (currentActionState)
+        {
+            case ENUM_current_state.preparation:
+                currentActionState = ENUM_current_state.ready_to_exit;
+                break;
+            case ENUM_current_state.working:
+                break;
+            case ENUM_current_state.finishing:
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;
@@ -245,22 +272,34 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
         }
     }
 
-    private void Action_Idle()
+    private void Action_AreaAttack()
     {
-        last_action = 0;
-        switch(currentActionState)
+        switch (currentActionState)
         {
             case ENUM_current_state.preparation:
+                areaPattern.SetTrigger("areaAttack");
+                currentActionState = ENUM_current_state.working;
+                break;
+
+            case ENUM_current_state.working:
+                areaTimer += Time.deltaTime;
+                if (areaTimer >= areaPatternTime)
+                {
+                    currentActionState = ENUM_current_state.finishing;
+                }
+                break;
+
+            case ENUM_current_state.finishing:
+                last_action = 3;
+                areaTimer = 0;
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
-            case ENUM_current_state.working:
-                break;
-            case ENUM_current_state.finishing:
-                break;
+
             case ENUM_current_state.ready_to_exit:
                 break;
         }
     }
+    
 
     public override void TakeDamage(float val, ENUM_AttackType attackType)
     {
