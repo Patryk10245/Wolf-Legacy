@@ -381,6 +381,11 @@ public class GameSetup : MonoBehaviour
 
         scoreTable.gold = PlayerPrefs.GetInt("Gold", 0);
 
+        villageUpgrades.paladinBuildingBought = Convert.ToBoolean(PlayerPrefs.GetInt("PaladinBought", 0));
+        villageUpgrades.barbarianBuildingBought = Convert.ToBoolean(PlayerPrefs.GetInt("BarbarianBought", 0));
+        villageUpgrades.archerBuildingBought = Convert.ToBoolean(PlayerPrefs.GetInt("ArcherBought", 0));
+        villageUpgrades.mageBuildingBought = Convert.ToBoolean(PlayerPrefs.GetInt("MageBought", 0));
+
         villageUpgrades.paladinUpgrades.damage.currentLevel = PlayerPrefs.GetInt("PaladinDamage", 0);
         villageUpgrades.paladinUpgrades.health.currentLevel = PlayerPrefs.GetInt("PaladinHealth", 0);
         villageUpgrades.paladinUpgrades.energy.currentLevel = PlayerPrefs.GetInt("PaladinEnergy", 0);
@@ -410,6 +415,11 @@ public class GameSetup : MonoBehaviour
         Debug.LogWarning("SAVING CLASS DATA");
 
         PlayerPrefs.SetInt("Gold", scoreTable.gold);
+
+        PlayerPrefs.SetInt("PaladinBought", Convert.ToInt32(villageUpgrades.paladinBuildingBought));
+        PlayerPrefs.SetInt("BarbarianBought", Convert.ToInt32(villageUpgrades.barbarianBuildingBought));
+        PlayerPrefs.SetInt("ArcherBought", Convert.ToInt32(villageUpgrades.archerBuildingBought));
+        PlayerPrefs.SetInt("MageBought", Convert.ToInt32(villageUpgrades.mageBuildingBought));
 
         PlayerPrefs.SetInt("PaladinDamage", villageUpgrades.paladinUpgrades.damage.currentLevel);
         PlayerPrefs.SetInt("PaladinHealth", villageUpgrades.paladinUpgrades.health.currentLevel);

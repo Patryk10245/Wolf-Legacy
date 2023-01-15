@@ -5,10 +5,10 @@ using UnityEngine;
 public class Player_Mage_FireTrail : Ability_1
 {
     [Space(10)]
-    public float damageMultiplier = 1.5f;
+    public float damageMultiplier = 0.01f;
     public float moveSpeedIncrease = 150;
     public float durationTime = 3;
-    public float trailDamage = 2;
+    public float trailDamage = 1;
     bool isWalking;
     float trailTimer;
     public GameObject trailObject;
