@@ -115,6 +115,7 @@ public class Enemy_Ranged : Enemy_BaseClass
         {
             is_dying = true;
             currentEnemyState = ENUM_EnemyState.dying;
+            tag = "Untagged";
             ApplyAnimation();
         }
     }
