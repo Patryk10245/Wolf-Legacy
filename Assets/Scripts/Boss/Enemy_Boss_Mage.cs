@@ -45,7 +45,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
     [SerializeField] GameObject thunderPrefab;
     [SerializeField] int thunderDamage;
     [SerializeField] int thunderCount;
-    [SerializeField] float thunderDelay;
+    [SerializeField] float thunderDelay = 1.5f;
     [SerializeField] float thunderTimer;
     int thunderShot;
 
@@ -83,7 +83,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
             int rand;
             do
             {
-                rand = Random.Range(0, 2);
+                rand = Random.Range(0, 3);
 
                 switch (rand)
                 {
@@ -94,7 +94,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                         bossState = ENUM_MageBossState.projectileWaves;
                         break;
                     case 2:
-                        //bossState = ENUM_MageBossState.shooting;
+                        bossState = ENUM_MageBossState.thunders;
                         break;
                     case 3:
                         //bossState = ENUM_MageBossState.spawning;
@@ -153,11 +153,11 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
 
     private void Action_ProjectileWaves()
     {
-        Debug.Log("action projectile waves");
+        //Debug.Log("action projectile waves");
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                Debug.Log("Preparation");
+                //Debug.Log("Preparation");
                 if(wavesShot < waveCount)
                 {
                     foreach (Transform spot in waveProjectileSpots)
@@ -181,10 +181,10 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 }
                 break;
             case ENUM_current_state.working:
-                Debug.Log("Working");
+                //Debug.Log("Working");
                 waveTimer += Time.deltaTime;
-                Debug.Log("wave timer = " + waveTimer);
-                Debug.Log("delay = " + waveTimeDelay);
+                //Debug.Log("wave timer = " + waveTimer);
+                //Debug.Log("delay = " + waveTimeDelay);
                 if(waveTimer >= waveTimeDelay)
                 {
                     currentActionState = ENUM_current_state.preparation;
@@ -192,9 +192,10 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 }
                 break;
             case ENUM_current_state.finishing:
-                Debug.Log("Finishing");
+                //Debug.Log("Finishing");
                 waveTimer = 0;
                 wavesShot = 0;
+                last_action = 1;
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
             case ENUM_current_state.ready_to_exit:
@@ -222,6 +223,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                     currentActionState = ENUM_current_state.finishing;
                 }    
                 break;
+
             case ENUM_current_state.working:
                 thunderTimer += Time.deltaTime;
                 if (thunderTimer >= thunderDelay)
@@ -230,10 +232,14 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                     currentActionState = ENUM_current_state.preparation;
                 }
                 break;
+
             case ENUM_current_state.finishing:
                 thunderTimer = 0;
                 thunderShot = 0;
+                last_action = 2;
+                currentActionState = ENUM_current_state.ready_to_exit;
                 break;
+
             case ENUM_current_state.ready_to_exit:
                 break;
         }
@@ -241,7 +247,19 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
 
     private void Action_Idle()
     {
-        throw new System.NotImplementedException();
+        last_action = 0;
+        switch(currentActionState)
+        {
+            case ENUM_current_state.preparation:
+                currentActionState = ENUM_current_state.ready_to_exit;
+                break;
+            case ENUM_current_state.working:
+                break;
+            case ENUM_current_state.finishing:
+                break;
+            case ENUM_current_state.ready_to_exit:
+                break;
+        }
     }
 
     public override void TakeDamage(float val, ENUM_AttackType attackType)

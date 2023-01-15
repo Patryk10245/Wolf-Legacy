@@ -7,15 +7,21 @@ public class Boss_Mage_ThunderObject : MonoBehaviour
     public float damage;
     bool dealDamage;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerdStay2D(Collider2D collision)
     {
-        if(dealDamage == false)
-        {
-            return;
-        }
-
+        Debug.Log("Checking for collision = " + collision.gameObject);
         if(collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Player hit");
+            Player player = collision.GetComponent<Player>();
+            player.TakeDamage(damage);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player hit");
             Player player = collision.GetComponent<Player>();
             player.TakeDamage(damage);
         }
@@ -28,5 +34,9 @@ public class Boss_Mage_ThunderObject : MonoBehaviour
     public void AnimationEvent_DisableDamage()// DISABLE FROM ANIMATION
     {
         dealDamage = false;
+    }
+    public void AnimationEvent_EndAnimation()
+    {
+        Destroy(gameObject);
     }
 }
