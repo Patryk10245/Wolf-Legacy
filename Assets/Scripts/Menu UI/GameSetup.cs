@@ -70,6 +70,18 @@ public class GameSetup : MonoBehaviour
             Reference();
             DontDestroyOnLoad(this);
         }
+
+        if (ins != null && ins != this)
+        {
+
+            Destroy(gameObject);
+        }
+        else
+        {
+            Reference();
+            DontDestroyOnLoad(this);
+        }
+
     }
 
     void SetReferencesForPlayer1(Player newPlayer, Level_FightReferenecs references)

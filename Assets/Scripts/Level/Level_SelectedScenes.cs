@@ -132,6 +132,10 @@ public class Level_SelectedScenes : MonoBehaviour
     public void ChangeToMainmenu()
     {
         //Debug.Log("change to main menu");
+        foreach (Player player in Player_Manager.ins.playerList)
+        {
+            player.controller.RemoveListeningOnEvents();
+        }
         SceneManager.LoadScene("Main_Menu_Scene");
     }
     public void ChangeToTestingScene()
