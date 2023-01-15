@@ -20,7 +20,11 @@ public class Village_Upgrades : MonoBehaviour
     }
     private void Awake()
     {
-        if (ins == null)
+        if (ins != null && ins != this)
+        {
+            Destroy(gameObject);
+        }
+        else
         {
             Reference();
             DontDestroyOnLoad(this);

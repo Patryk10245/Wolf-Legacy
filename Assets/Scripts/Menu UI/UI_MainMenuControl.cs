@@ -7,6 +7,12 @@ using UnityEngine.InputSystem;
 
 public class UI_MainMenuControl : MonoBehaviour
 {
+    public static UI_MainMenuControl ins;
+    public void Reference()
+    {
+        ins = this;
+    }
+
     [Header("Windows")]
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject startWindow;
@@ -47,8 +53,14 @@ public class UI_MainMenuControl : MonoBehaviour
     [SerializeField] GameObject player2NoneScheme;
 
 
+    private void Awake()
+    {
+        Reference();
+    }
+
     private void Start()
     {
+        gameSetup = GameSetup.ins;
     }
 
 
