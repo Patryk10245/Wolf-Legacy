@@ -12,7 +12,7 @@ public class Enemy_DetectPlayer : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision = " + collision.gameObject.name);
+        //Debug.Log("Collision = " + collision.gameObject.name);
         if(collision.gameObject.CompareTag("Player"))
         {
             enemy.SetMoveTarget(collision.gameObject.GetComponent<Player>());
