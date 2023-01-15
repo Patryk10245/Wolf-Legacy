@@ -16,8 +16,10 @@ public class Level_GameCompleted : MonoBehaviour
 
     public void ShowFinishScreen()
     {
+        Debug.Log("Showing Finish Screen");
         finishScreen.gameObject.SetActive(true);
         collectedGoldText.text = ScoreTable.ins.currentlyCollectedGold.ToString();
+        Game_State.gameWon = true;
         Game_State.gamePaused = true;
         Time.timeScale = 0;
 
