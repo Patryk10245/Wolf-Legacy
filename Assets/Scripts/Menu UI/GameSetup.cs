@@ -93,13 +93,14 @@ public class GameSetup : MonoBehaviour
 
     public void SetUpTheGame()
     {
-        Game_State.ins.ResetValuesToDefault();
 
         Debug.Log("Setting up The Game");
         playingPlayers[0].isDead = false;
 
         //Debug.Log("Setting up the game");
         Level_FightReferenecs levelReferences = Level_FightReferenecs.ins;
+        Game_State.ins.pausingWindow = levelReferences.pauseWindow;
+        Game_State.ins.ResetValuesToDefault();
         //Debug.Log("level references = " + levelReferences.gameObject.name);
 
         playerManager = levelReferences.playerManager;
@@ -117,7 +118,6 @@ public class GameSetup : MonoBehaviour
 
         scoreTable.TEXT_goldAmount = levelReferences.GoldTextIcon;
         //scoreTable.SetReferenceToGoldText();
-        Game_State.pausingWindow = levelReferences.pauseWindow;
 
 
 

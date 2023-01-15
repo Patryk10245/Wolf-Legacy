@@ -5463,8 +5463,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   villageUpgrades: {fileID: 0}
-  mapChoosing: {fileID: 0}
-  canvasAnimator: {fileID: 0}
+  mapChoosing: {fileID: 263261326}
+  canvasAnimator: {fileID: 259170376}
   infoField: {fileID: 1487259570}
   villageMenu: {fileID: 362051930}
   opaqueColor: {r: 0, g: 0, b: 0, a: 0}

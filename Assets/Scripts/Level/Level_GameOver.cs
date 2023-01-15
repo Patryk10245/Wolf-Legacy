@@ -24,6 +24,7 @@ public class Level_GameOver : MonoBehaviour
 
     public void UI_ReturnToVillage()
     {
+        Debug.Log("Game lost = " + Game_State.gameLost);
         Level_SelectedScenes.ins.ChangeToVillageScene();
     }
     public void UI_ReturnToMenu()

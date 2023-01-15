@@ -7,7 +7,7 @@ public class Game_State : MonoBehaviour
     public static Game_State ins;
 
     public static bool gamePaused;
-    public static GameObject pausingWindow;
+    public GameObject pausingWindow;
     public static bool gameLost;
     public static bool gameWon;
 
@@ -39,12 +39,12 @@ public class Game_State : MonoBehaviour
 
         if (gamePaused)
         {
-            pausingWindow.SetActive(true);
+            Game_State.ins.pausingWindow.SetActive(true);
             Time.timeScale = 0;
         }
         else
         {
-            pausingWindow.SetActive(false);
+            Game_State.ins.pausingWindow.SetActive(false);
             Time.timeScale = 1;
         }
     }
@@ -54,6 +54,7 @@ public class Game_State : MonoBehaviour
         gameLost = false;
         gamePaused = false;
         Time.timeScale = 1;
+        Game_State.ins.pausingWindow.SetActive(false);
     }
 
     

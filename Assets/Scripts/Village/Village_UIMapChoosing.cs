@@ -35,6 +35,6 @@ public class Village_UIMapChoosing : MonoBehaviour
     }
     public void DisableNextButton()
     {
-        repeatMapButton.SetActive(false);
+        nextMapButton.SetActive(false);
     }
 }
