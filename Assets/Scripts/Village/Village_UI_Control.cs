@@ -56,19 +56,19 @@ public class Village_UI_Control : MonoBehaviour
         villageUpgrades = GameSetup.ins.villageUpgrades;
         villageUpgrades.village_UI_Control = this;
 
-        if(villageUpgrades.paladinBuildingBought == false)
+        if(villageUpgrades.paladinBuildingBought == true)
         {
             paladinBuilding.color = opaqueColor;
         }
-        if (villageUpgrades.barbarianBuildingBought == false)
+        if (villageUpgrades.barbarianBuildingBought == true)
         {
             barbarianBuilding.color = opaqueColor;
         }
-        if (villageUpgrades.archerBuildingBought == false)
+        if (villageUpgrades.archerBuildingBought == true)
         {
             archerBuilding.color = opaqueColor;
         }
-        if (villageUpgrades.mageBuildingBought == false)
+        if (villageUpgrades.mageBuildingBought == true)
         {
             mageBuilding.color = opaqueColor;
         }

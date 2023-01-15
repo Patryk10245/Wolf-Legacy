@@ -12,16 +12,7 @@ public class Level_LevaeArea : MonoBehaviour
         {
             ScoreTable.ins.BeginAnimatingGold();
 
-            if (Level_FightReferenecs.ins.isLastMap)
-            {
-                Level_GameCompleted.ins.ShowFinishScreen();
-                return;
-            }
-            else
-            {
-                Level_FightReferenecs.ins.playerManager.DestroyAllPlayers();
-                Level_SelectedScenes.ins.ChangeToVillageScene();
-            }    
+            Level_GameCompleted.ins.ShowLevelCompletedScreen();
         }
     }
 

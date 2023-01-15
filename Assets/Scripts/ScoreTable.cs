@@ -22,7 +22,7 @@ public class ScoreTable : MonoBehaviour
     public Text TEXT_goldAmount;
 
     [Header("Gold Animation")]
-    bool animateGold;
+    [SerializeField]bool animateGold;
     int lastValue;
     // Start is called before the first frame update
     void Awake()
@@ -44,7 +44,7 @@ public class ScoreTable : MonoBehaviour
     {
         if (animateGold == true)
         {
-            TEXT_goldAmount.text = lastValue.ToString();
+            Level_GameCompleted.ins.collectedGoldText.text = lastValue.ToString();
 
             lastValue++;
             if (lastValue > currentlyCollectedGold)

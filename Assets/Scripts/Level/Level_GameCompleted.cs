@@ -18,11 +18,22 @@ public class Level_GameCompleted : MonoBehaviour
     {
         Debug.Log("Showing Finish Screen");
         finishScreen.gameObject.SetActive(true);
-        collectedGoldText.text = ScoreTable.ins.currentlyCollectedGold.ToString();
+        //collectedGoldText.text = ScoreTable.ins.currentlyCollectedGold.ToString();
         Game_State.gameWon = true;
         Game_State.gamePaused = true;
         Time.timeScale = 0;
+    }
 
+    public void ShowLevelCompletedScreen()
+    {
+        if(Level_FightReferenecs.ins.isLastMap == true)
+        {
+            Game_State.gameWon = true;   
+        }
+
+        Game_State.gamePaused = true;
+        Time.timeScale = 0;
+        finishScreen.gameObject.SetActive(true);
     }
 
     public void UI_ReturnToVillage()
