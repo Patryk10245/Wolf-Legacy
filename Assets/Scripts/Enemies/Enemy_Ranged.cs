@@ -56,39 +56,42 @@ public class Enemy_Ranged : Enemy_BaseClass
         }
 
         agent.SetDestination(move_target.transform.position);
+        RotateTowardsWalkDirection();
         // Helps with OverStepping
-        if (distance_To_Player < attack_Distance)
-        {
-            agent.velocity = Vector3.zero;
-        }
-
         if (distance_To_Player <= attack_Distance)
         {
+            //Debug.Log("Distance to player = " + distance_To_Player);
             Attack();
+            agent.velocity = Vector3.zero;
         }
         else
         {
+            //Debug.Log("Distance too big, ELSE");
             ChangeState(ENUM_EnemyState.chasing);
+            is_Attacking = false;
         }
+        
     }
 
 
     void Attack()
     {
+        if (refresh_Attack_Timer == true)
+        {
+            ChangeState(ENUM_EnemyState.idle);
+        }
+
         if (refresh_Attack_Timer == false && is_Attacking == false)
         {
             ChangeState(ENUM_EnemyState.attacking);
-        }
-        else
-        {
-            ChangeState(ENUM_EnemyState.chasing);
-
+            is_Attacking = true;
         }
     }
 
     // Called from animnation event
     public override void RangedAttack_Action()
     {
+        Debug.Log("Ranged Attack Action");
         GameObject temp = Instantiate(projectile_Prefab);
         Vector3 dir = (move_target.transform.position - projectile_SpawnPoint.position).normalized;
         temp.transform.position = projectile_SpawnPoint.position;
@@ -96,7 +99,14 @@ public class Enemy_Ranged : Enemy_BaseClass
         Enemy_Projectile projectile = temp.GetComponent<Enemy_Projectile>();
         projectile.flyDirection = dir;
         projectile.speed = projectile_Speed;
+        projectile.rb.AddForce(dir * projectile_Speed);
         projectile.damage = stats.damage;
+    }
+    public void AnimEvent_EndAttack()
+    {
+        Debug.Log("anim event end attack");
+        is_Attacking = false;
+        refresh_Attack_Timer = true;
     }
     public override void TakeDamage(float val, ENUM_AttackType attackType)
     {
@@ -106,6 +116,20 @@ public class Enemy_Ranged : Enemy_BaseClass
             is_dying = true;
             currentEnemyState = ENUM_EnemyState.dying;
             ApplyAnimation();
+        }
+    }
+
+    void RotateTowardsWalkDirection()
+    {
+        Vector3 direction = agent.destination - transform.position;
+        if (direction.x > 0)
+        {
+            transform.localScale = Vector3.one * 1;
+        }
+        else if (direction.x < 0)
+        {
+
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
