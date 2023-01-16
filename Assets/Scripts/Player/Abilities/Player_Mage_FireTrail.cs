@@ -73,9 +73,10 @@ public class Player_Mage_FireTrail : Ability_1
             {
                  
                 GameObject temp = Instantiate(trailObject);
+                temp.transform.position = transform.position;
                 Player_FireTrailObject fire = temp.GetComponent<Player_FireTrailObject>();
                 fire.damage = trailDamage;
-                temp.transform.position = transform.position;
+                fire.player = player;
                 trailTimer -= 0.5f;
             }
         }

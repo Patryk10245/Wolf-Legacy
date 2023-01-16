@@ -28,5 +28,6 @@ public class Player_RangerAttack : Player_AttackScript
         projectile.speed = projectileSpeed;
         projectile.damage = player.stats.damage;
         projectile.stopTimerAt = 4;
+        projectile.player = player;
     }
 }

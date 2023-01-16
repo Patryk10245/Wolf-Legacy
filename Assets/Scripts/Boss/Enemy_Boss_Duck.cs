@@ -86,7 +86,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
 
     // ====================================================================== //
 
-    public override void TakeDamage(float val, ENUM_AttackType attackType)
+    public override void TakeDamage(float val, ENUM_AttackType attackType, Player player)
     {
         if(bossState == ENUM_DuckBossState.attack_jumping && attackType == ENUM_AttackType.melee)
         {

@@ -56,7 +56,7 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     {
         move_target = player;
     }
-    public abstract void TakeDamage(float val, ENUM_AttackType attackType);
+    public abstract void TakeDamage(float val, ENUM_AttackType attackType, Player source);
     protected void RefreshAttack()
     {
         if(refresh_Attack_Timer == true)

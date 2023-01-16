@@ -41,6 +41,7 @@ public class Player_Mage_FireCircle : Ability_2
         Player_FireCircleObject firecircle = temp.GetComponent<Player_FireCircleObject>();
         firecircle.expirationTime = durationTime;
         firecircle.damage = circleDamage;
+        firecircle.player = player;
 
     }
     private void Update()

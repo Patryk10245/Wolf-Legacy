@@ -419,7 +419,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
     {
     }
 
-    public override void TakeDamage(float val, ENUM_AttackType attackType)
+    public override void TakeDamage(float val, ENUM_AttackType attackType, Player player)
     {
         if(isInvincible == true)
         {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Projectile : MonoBehaviour
 {
+    public Player player;
     public float speed;
     public Vector3 flyDirection;
     public Rigidbody2D rb;
@@ -44,7 +45,7 @@ public class Player_Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy")|| collision.gameObject.CompareTag("Boss"))
         {
             //Debug.Log("collision = " + collision.gameObject.transform.parent.name);
-            collision.GetComponent<Enemy_BaseClass>().TakeDamage(damage, ENUM_AttackType.ranged);
+            collision.GetComponent<Enemy_BaseClass>().TakeDamage(damage, ENUM_AttackType.ranged, player);
             Destroy(gameObject);
         }
         else if (collision.gameObject.CompareTag("Spawner"))

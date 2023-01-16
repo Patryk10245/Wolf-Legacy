@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_FireCircleObject : MonoBehaviour
 {
+    public Player player;
     public float damage;
     public float expirationTime;
     float timer;
@@ -21,7 +22,7 @@ public class Player_FireCircleObject : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
         {
-            collision.gameObject.GetComponent<Enemy_BaseClass>().TakeDamage(damage, ENUM_AttackType.melee);
+            collision.gameObject.GetComponent<Enemy_BaseClass>().TakeDamage(damage, ENUM_AttackType.melee, player);
         }
     }
 }

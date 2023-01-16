@@ -64,6 +64,7 @@ public class Player_ArcherMultiShot : Ability_2
                 proj.damage = damage;
                 proj.stopTimerAt = 4;
                 proj.rb.AddForce(dir * arrowSpeed);
+                proj.player = player;
             }
 
             if (arrowsAlreadyShot >= arrowsToShot)

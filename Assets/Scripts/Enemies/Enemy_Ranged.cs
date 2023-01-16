@@ -108,9 +108,16 @@ public class Enemy_Ranged : Enemy_BaseClass
         is_Attacking = false;
         refresh_Attack_Timer = true;
     }
-    public override void TakeDamage(float val, ENUM_AttackType attackType)
+    public override void TakeDamage(float val, ENUM_AttackType attackType, Player source)
     {
         stats.TakeDamage(val);
+
+        if (move_target == null)
+        {
+            move_target = source;
+            chasePlayerDistance *= 2;
+        }
+
         if (stats.currentHealth <= 0)
         {
             is_dying = true;

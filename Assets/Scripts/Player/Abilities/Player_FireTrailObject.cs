@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_FireTrailObject : MonoBehaviour
 {
+    public Player player;
     public float expirationTime;
     float timer;
 
@@ -22,7 +23,7 @@ public class Player_FireTrailObject : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
         {
-            collision.gameObject.GetComponent<Enemy_BaseClass>().TakeDamage(damage, ENUM_AttackType.melee);
+            collision.gameObject.GetComponent<Enemy_BaseClass>().TakeDamage(damage, ENUM_AttackType.melee, player);
         }
     }
 }
