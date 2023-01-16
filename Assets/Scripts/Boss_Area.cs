@@ -6,7 +6,7 @@ public class Boss_Area : MonoBehaviour
     [SerializeField] GameObject collidersBlockingExit;
     [SerializeField] GameObject placeToTeleportPlayersTo;
     [SerializeField] Enemy_BaseClass boss;
-    
+    [SerializeField] Collider2D areaCollider;
 
     [SerializeField] GameObject bossHealthBar;
 
@@ -41,5 +41,6 @@ public class Boss_Area : MonoBehaviour
     public void DeactivateBlockades()
     {
         collidersBlockingExit.SetActive(false);
+        areaCollider.enabled = false;
     }
 }

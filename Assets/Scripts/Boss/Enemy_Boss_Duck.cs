@@ -55,7 +55,8 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
     [SerializeField] float maxIdleTime = 3;
     float idle_timer;
     float idle_time;
-    [SerializeField] Vector4 arenaBounds;
+    [Header("Move Action")]
+    [SerializeField] Transform[] arenaCorners;
 
     [Header("Jump Action")]
     [SerializeField] Vector3 playerPos;
@@ -322,7 +323,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
         {
             case ENUM_current_state.preparation:
                 //Debug.Log("BEGIN Moving State");
-                Vector3 random_spot = new Vector3(Random.Range(arenaBounds.x, arenaBounds.y), Random.Range(arenaBounds.z, arenaBounds.w),transform.position.z);
+                Vector3 random_spot = new Vector3(Random.Range(arenaCorners[0].position.x, arenaCorners[1].position.x), Random.Range(arenaCorners[0].position.y, arenaCorners[1].position.y), transform.position.z);
                 //Debug.Log("random spot = " + random_spot);
                 //Debug.Log("position = " + gameObject.transform.position);
                 agent.SetDestination(random_spot);

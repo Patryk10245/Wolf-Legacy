@@ -2986,6 +2986,7 @@ MonoBehaviour:
   currentFightScene: 0
   selectedScenes:
   - Wolf Legacy copy
+  - BossScene_Duckster
   - Wolf Legacy copy
   - TESTING_SCENE
 --- !u!4 &612307986

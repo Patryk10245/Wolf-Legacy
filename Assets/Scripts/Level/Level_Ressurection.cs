@@ -21,16 +21,6 @@ public class Level_Ressurection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("p"))
-        {
-            PlayerDeath(playerManager.playerList[1]);
-        }
-        if (Input.GetKeyDown("o"))
-        {
-            PlayerRevive();
-        }
-
-
         if (following == true)
         {
             playerManager.playerList[idDeadPlayer].transform.position = playerManager.playerList[idAlivePlayer].transform.position;
