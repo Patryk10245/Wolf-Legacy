@@ -63,6 +63,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
     [SerializeField] float fallAreaRadius;
     [SerializeField] float knockBackForce;
     [SerializeField] float jumpDamage;
+    [SerializeField] float flyingSpeed = 10;
 
     [Header("Rush Aciton")]
     [SerializeField] float speedModifier;
@@ -136,9 +137,6 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
         // Decide randomly, which action should duck choose
         if(currentActionState == ENUM_current_state.ready_to_exit)
         {
-            
-
-
             action_firstLoop = true;
             int rand;
             do
@@ -393,6 +391,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                     playerPos = move_target.gameObject.transform.position + new Vector3(0.5f, 0.5f, 0);
                     anim.SetTrigger("isJumping");
                     action_firstLoop = false;
+                    agent.speed = flyingSpeed;
                 }
                 break;
 
@@ -408,6 +407,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                     {
                         anim.SetTrigger("isLanding");
                         action_firstLoop = true;
+                        agent.speed = move_Speed;
                     }
                 }
                 break;

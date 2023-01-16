@@ -33,7 +33,7 @@ public class Village_Upgrades : MonoBehaviour
     private void Start()
     {
         //Debug.Log("Setting village control refernec from start");
-        village_UI_Control = Village_UI_Control.ins;
+        //village_UI_Control = Village_UI_Control.ins;
     }
 
     public ScoreTable scoreTable;
@@ -54,6 +54,8 @@ public class Village_Upgrades : MonoBehaviour
     bool Upgrade(ClassUpgrades characterclass, int type)
     {
         UpgradeLevel stat;
+        
+        
         switch (type)
         {
             case 0:

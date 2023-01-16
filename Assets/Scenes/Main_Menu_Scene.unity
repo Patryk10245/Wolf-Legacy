@@ -2648,11 +2648,9 @@ MonoBehaviour:
   - id: 0
     selectedClass: 0
     controlScheme: KeyBoard
-    isDead: 0
   - id: 1
     selectedClass: 0
     controlScheme: GamePad
-    isDead: 0
   numberOfPlayers: 2
   gameAlreadySetup: 0
   classesData:
@@ -2988,7 +2986,9 @@ MonoBehaviour:
   - Wolf Legacy copy
   - BossScene_Duckster
   - Wolf Legacy copy
-  - TESTING_SCENE
+  - BossScene_Blobster
+  - Wolf Legacy copy
+  - BossScene_Buckster
 --- !u!4 &612307986
 Transform:
   m_ObjectHideFlags: 0

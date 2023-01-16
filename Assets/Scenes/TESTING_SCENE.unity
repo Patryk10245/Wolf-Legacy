@@ -263,6 +263,7 @@ MonoBehaviour:
   collidersBlockingExit: {fileID: 1763084188}
   placeToTeleportPlayersTo: {fileID: 91188528}
   boss: {fileID: 902244801}
+  areaCollider: {fileID: 0}
   bossHealthBar: {fileID: 60188278}
 --- !u!4 &36021229
 Transform:
@@ -15009,7 +15010,7 @@ MonoBehaviour:
   isLastMap: 1
   playerManager: {fileID: 1382362613}
   cameraFollowing: {fileID: 1083471306}
-  playerInputManager: {fileID: 0}
+  playerInputManager: {fileID: 1382362615}
   gameOver: {fileID: 380718443}
   player1UI: {fileID: 1184062308}
   player2UI: {fileID: 1437063378}

@@ -22,7 +22,7 @@ public class PlayerSelectedData
     public ENUM_PlayerClass selectedClass;
     public InputDevice device;
     public string controlScheme = "KeyBoard";
-    public bool isDead;
+    bool isDead;
 }
 
 public class GameSetup : MonoBehaviour
@@ -107,7 +107,7 @@ public class GameSetup : MonoBehaviour
     {
 
         Debug.Log("Setting up The Game");
-        playingPlayers[0].isDead = false;
+        //playingPlayers[0].isDead = false;
 
         //Debug.Log("Setting up the game");
         Level_FightReferenecs levelReferences = Level_FightReferenecs.ins;
@@ -146,7 +146,6 @@ public class GameSetup : MonoBehaviour
             //PlayerInput newPlayer = playerInputManager.JoinPlayer();
 
             PlayerInput newPlayer = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
-            newPlayer.gameObject.name = "player " + Time.realtimeSinceStartup;
             //Debug.Log("new player = " + newPlayer);
             playerManager.playerList.Add(newPlayer.GetComponent<Player>());
             newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;

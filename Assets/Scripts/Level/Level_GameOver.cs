@@ -11,7 +11,7 @@ public class Level_GameOver : MonoBehaviour
        
         foreach(PlayerSelectedData player in GameSetup.ins.playingPlayers)
         {
-            player.isDead = true;
+            //player.isDead = true;
         }
         Game_State.gamePaused = true;
         Time.timeScale = 0;

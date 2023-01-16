@@ -19,7 +19,6 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
     [Space(20)]
     [SerializeField] Boss_Area bossArea;
 
-    public Boss_Duck_SpecialEffects specialEffects;
     public Image healthBar;
     public Animator healthBarAnimator;
     public ENUM_MageBossState bossState;
