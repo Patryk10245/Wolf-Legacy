@@ -48,6 +48,8 @@ public class Village_UI_Control : MonoBehaviour
     public Village_UI_ClassInfo rangerInfo;
     public Village_UI_ClassInfo mageInfo;
 
+    public Text TextGoldAmount;
+
 
     public void SetReference()
     {
@@ -78,6 +80,8 @@ public class Village_UI_Control : MonoBehaviour
             mapChoosing.DisableNextButton();
             mapChoosing.DisableRepeatButton();
         }
+
+        ScoreTable.ins.TEXT_goldAmount = TextGoldAmount;
 
     }
 
@@ -131,6 +135,7 @@ public class Village_UI_Control : MonoBehaviour
     {
         if(ScoreTable.ins.gold >= 150)
         {
+            ScoreTable.ins.AddGold(-150);
             switch (building)
             {
                 case 0:
