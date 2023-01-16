@@ -19,7 +19,7 @@ public class ScoreTable : MonoBehaviour
     public Text TEXT_goldAmount;
 
     [Header("Gold Animation")]
-    public float changeSpeed = 0.15f;
+    public float changeSpeed = 0.02f;
     bool animateGold;
     int lastValue;
     // Start is called before the first frame update
