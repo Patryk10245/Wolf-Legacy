@@ -14,8 +14,14 @@ public class Player_Projectile : MonoBehaviour
     
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {     
+        Vector2 dir = transform.position + flyDirection; 
+        Vector2 pos = transform.position;
+
+        Vector2 offset = (dir - pos).normalized;
+        float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     // Update is called once per frame

@@ -100,21 +100,15 @@ public class ScoreTable : MonoBehaviour
         animateGold = true;
         lastValue = 0;
 
-        StartCoroutine(AnimateText("Pretty cool text"));
+        StartCoroutine(AnimateText());
     }
 
-    IEnumerator AnimateText(string strComplete)
+    IEnumerator AnimateText()
     {
         while(lastValue <= currentlyCollectedGold)
         {
             Level_GameCompleted.ins.collectedGoldText.text = lastValue.ToString();
-
             lastValue++;
-            if (lastValue > currentlyCollectedGold)
-            {
-                animateGold = false;
-                lastValue = 0;
-            }
 
             yield return new WaitForSeconds(changeSpeed);
         }
