@@ -817,7 +817,7 @@ GameObject:
   - component: {fileID: 94478377}
   - component: {fileID: 94478376}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1028,7 +1028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &97988902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2366,7 +2366,7 @@ GameObject:
   - component: {fileID: 252003675}
   - component: {fileID: 252003674}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Health Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3254,7 +3254,7 @@ GameObject:
   - component: {fileID: 298767952}
   - component: {fileID: 298767951}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Health Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4659,7 +4659,7 @@ GameObject:
   - component: {fileID: 449852967}
   - component: {fileID: 449852966}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Health Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5810,10 +5810,10 @@ MonoBehaviour:
   infoField: {fileID: 1487259570}
   villageMenu: {fileID: 362051930}
   opaqueColor: {r: 0, g: 0, b: 0, a: 0}
-  paladinBuilding: {fileID: 1474408882}
-  barbarianBuilding: {fileID: 1755897353}
-  archerBuilding: {fileID: 2133920939}
-  mageBuilding: {fileID: 2138566657}
+  paladinDestroyedBuilding: {fileID: 1474408882}
+  barbarianDestroyedBuilding: {fileID: 1755897353}
+  archerDestroyedBuilding: {fileID: 2133920939}
+  mageDestroyedBuilding: {fileID: 2138566657}
   paladinWindow: {fileID: 849734319}
   barbarianWindow: {fileID: 2066516046}
   rangerWindow: {fileID: 358913266}
@@ -5826,6 +5826,30 @@ MonoBehaviour:
   barbarianInfo: {fileID: 2066516048}
   rangerInfo: {fileID: 358913268}
   mageInfo: {fileID: 1683891740}
+  paladinUpgradeMark:
+  - {fileID: 885277539}
+  - {fileID: 449852964}
+  - {fileID: 94478374}
+  - {fileID: 1309594250}
+  - {fileID: 1746453585}
+  barbarianUpgradeMark:
+  - {fileID: 2108741786}
+  - {fileID: 1112357823}
+  - {fileID: 738891035}
+  - {fileID: 1288624610}
+  - {fileID: 1904385193}
+  archerUpgradeMark:
+  - {fileID: 1489851237}
+  - {fileID: 252003672}
+  - {fileID: 1438970495}
+  - {fileID: 987238267}
+  - {fileID: 1288770733}
+  mageUpgradeMark:
+  - {fileID: 918347876}
+  - {fileID: 298767949}
+  - {fileID: 1006359972}
+  - {fileID: 984822494}
+  - {fileID: 1655030484}
   TextGoldAmount: {fileID: 444076803}
 --- !u!1 &604021004
 GameObject:
@@ -7535,7 +7559,7 @@ GameObject:
   - component: {fileID: 738891038}
   - component: {fileID: 738891037}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9132,7 +9156,7 @@ GameObject:
   - component: {fileID: 885277542}
   - component: {fileID: 885277541}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Damage Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9424,7 +9448,7 @@ GameObject:
   - component: {fileID: 918347879}
   - component: {fileID: 918347878}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Damage Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9845,7 +9869,7 @@ GameObject:
   - component: {fileID: 984822497}
   - component: {fileID: 984822496}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Regeneration Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9978,7 +10002,7 @@ GameObject:
   - component: {fileID: 987238270}
   - component: {fileID: 987238269}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Regeneration Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10343,7 +10367,7 @@ GameObject:
   - component: {fileID: 1006359975}
   - component: {fileID: 1006359974}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10784,7 +10808,7 @@ GameObject:
   - component: {fileID: 1112357826}
   - component: {fileID: 1112357825}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Health Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12026,7 +12050,7 @@ GameObject:
   - component: {fileID: 1288624613}
   - component: {fileID: 1288624612}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Regeneration Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12159,7 +12183,7 @@ GameObject:
   - component: {fileID: 1288770736}
   - component: {fileID: 1288770735}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Speed Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12520,7 +12544,7 @@ GameObject:
   - component: {fileID: 1309594253}
   - component: {fileID: 1309594252}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Regeneration Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13315,7 +13339,7 @@ GameObject:
   - component: {fileID: 1438970498}
   - component: {fileID: 1438970497}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13605,7 +13629,7 @@ GameObject:
   - component: {fileID: 1474408881}
   - component: {fileID: 1474408885}
   m_Layer: 5
-  m_Name: Paladin Building
+  m_Name: Paladin Destroyed Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14060,7 +14084,7 @@ GameObject:
   - component: {fileID: 1489851240}
   - component: {fileID: 1489851239}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Damage Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15848,7 +15872,7 @@ GameObject:
   - component: {fileID: 1655030487}
   - component: {fileID: 1655030486}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Speed Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16618,7 +16642,7 @@ GameObject:
   - component: {fileID: 1746453588}
   - component: {fileID: 1746453587}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Speed Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16752,7 +16776,7 @@ GameObject:
   - component: {fileID: 1755897352}
   - component: {fileID: 1755897356}
   m_Layer: 5
-  m_Name: Barbarian Building
+  m_Name: Barbarian Destroyed Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18232,7 +18256,7 @@ GameObject:
   - component: {fileID: 1904385196}
   - component: {fileID: 1904385195}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Speed Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20082,7 +20106,7 @@ GameObject:
   - component: {fileID: 2108741789}
   - component: {fileID: 2108741788}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Damage Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20380,7 +20404,7 @@ GameObject:
   - component: {fileID: 2133920938}
   - component: {fileID: 2133920942}
   m_Layer: 5
-  m_Name: Ranger Building
+  m_Name: Ranger Destroyed Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20603,7 +20627,7 @@ GameObject:
   - component: {fileID: 2138566656}
   - component: {fileID: 2138566660}
   m_Layer: 5
-  m_Name: Mage Building
+  m_Name: Mage Destroyed Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

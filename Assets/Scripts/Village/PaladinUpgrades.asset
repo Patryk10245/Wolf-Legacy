@@ -21,7 +21,7 @@ MonoBehaviour:
     - 14
     - 20
     cost: 64000000c80000002c01000090010000f4010000f4010000
-    currentLevel: 4
+    currentLevel: 0
   health:
     valueOnLevel:
     - 0
@@ -31,7 +31,7 @@ MonoBehaviour:
     - 100
     - 150
     cost: 64000000c80000002c01000090010000f4010000f4010000
-    currentLevel: 4
+    currentLevel: 0
   energy:
     valueOnLevel:
     - 0
@@ -41,7 +41,7 @@ MonoBehaviour:
     - 50
     - 80
     cost: 64000000c80000002c01000090010000f4010000f4010000
-    currentLevel: 3
+    currentLevel: 0
   energyRegeneration:
     valueOnLevel:
     - 0
@@ -51,7 +51,7 @@ MonoBehaviour:
     - 2
     - 4
     cost: 64000000c80000002c01000090010000f4010000f4010000
-    currentLevel: 3
+    currentLevel: 0
   speed:
     valueOnLevel:
     - 0
@@ -61,4 +61,4 @@ MonoBehaviour:
     - 80
     - 120
     cost: 64000000c80000002c01000090010000f4010000f4010000
-    currentLevel: 4
+    currentLevel: 0
