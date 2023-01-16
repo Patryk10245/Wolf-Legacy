@@ -26,7 +26,7 @@ public class Village_UIMapChoosing : MonoBehaviour
     }
     public void Choose_NextMap()
     {
-        Level_SelectedScenes.ins.LoadNextFightMap();
+        Level_SelectedScenes.ins.LoadNextScene();
     }
 
     public void DisableRepeatButton()

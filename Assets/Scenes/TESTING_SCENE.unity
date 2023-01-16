@@ -280,6 +280,7 @@ Transform:
   - {fileID: 676577732}
   - {fileID: 902244800}
   - {fileID: 1763084190}
+  - {fileID: 1054414065}
   - {fileID: 91188529}
   - {fileID: 882560603}
   - {fileID: 1320556732}
@@ -408,7 +409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &60188279
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14610,7 +14611,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 36021229}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &96206824
 PrefabInstance:
@@ -14954,7 +14955,7 @@ Transform:
   - {fileID: 589200303}
   - {fileID: 157467353}
   m_Father: {fileID: 36021229}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &182580983
 Animator:
@@ -16394,7 +16395,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 36021229}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &535668830
 GameObject:
@@ -133104,7 +133105,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 36021229}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &882560604
 BoxCollider2D:
@@ -133505,6 +133506,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004051341}
   m_CullTransparentMesh: 1
+--- !u!1 &1054414063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1054414065}
+  - component: {fileID: 1054414064}
+  m_Layer: 0
+  m_Name: Place To spawn Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1054414064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054414063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5851e48e61d373544a2659296c26cd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 0}
+  enemySpawningPoint: {fileID: 0}
+  timer: 0
+  TimeBetweenEnemySpawning: 500
+  maxNumberOfEnemies: 0
+  currentHealth: 10
+  listOfCreatedEnemies: []
+  strongerMonsters: []
+--- !u!4 &1054414065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054414063}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.0600014, y: 8.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 36021229}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1083471305
 GameObject:
   m_ObjectHideFlags: 0
@@ -134827,7 +134880,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 36021229}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324851620
 GameObject:
@@ -135657,7 +135710,7 @@ Transform:
   - {fileID: 1343988887}
   - {fileID: 1324851621}
   m_Father: {fileID: 36021229}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1475932123
 GameObject:
@@ -137525,7 +137578,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 36021229}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1868016488
 GameObject:
@@ -139093,6 +139146,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 182580983}
     - target: {fileID: 2367892769948525171, guid: b94c6c8fe845a3c429de96bb957ab0c1, type: 3}
+      propertyPath: spawningAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367892769948525171, guid: b94c6c8fe845a3c429de96bb957ab0c1, type: 3}
       propertyPath: specialEffects
       value: 
       objectReference: {fileID: 0}
@@ -139100,6 +139157,10 @@ PrefabInstance:
       propertyPath: healthBarAnimator
       value: 
       objectReference: {fileID: 60188280}
+    - target: {fileID: 2367892769948525171, guid: b94c6c8fe845a3c429de96bb957ab0c1, type: 3}
+      propertyPath: placeToSpawnEnemy
+      value: 
+      objectReference: {fileID: 1054414063}
     - target: {fileID: 2367892769979870757, guid: b94c6c8fe845a3c429de96bb957ab0c1, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.95

@@ -349,9 +349,7 @@ public class UI_MainMenuControl : MonoBehaviour
     {
         gameSetup.LoadClassData();
         Level_SelectedScenes.ins.currentFightScene = -1;
-        Level_SelectedScenes.ins.LoadNextFightMap();
-        //gameSetup.lastFightMap = 1;
-        //Level_SelectedScenes.ins.ChangeToMap1();
+        Level_SelectedScenes.ins.LoadNextScene();
     }
 
     public void ChangeToTestingScene()

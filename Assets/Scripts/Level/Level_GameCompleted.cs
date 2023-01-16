@@ -39,11 +39,13 @@ public class Level_GameCompleted : MonoBehaviour
     public void UI_ReturnToVillage()
     {
         Level_FightReferenecs.ins.playerManager.DestroyAllPlayers();
+        GameSetup.ins.SaveClassData();
         Level_SelectedScenes.ins.ChangeToVillageScene();
     }
     public void UI_ReturnToMenu()
     {
         Level_FightReferenecs.ins.playerManager.DestroyAllPlayers();
+        GameSetup.ins.SaveClassData();
         Level_SelectedScenes.ins.ChangeToMainmenu();
     }
 }

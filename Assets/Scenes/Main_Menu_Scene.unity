@@ -2984,7 +2984,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentFightScene: 0
-  fightScenes:
+  selectedScenes:
+  - Wolf Legacy copy
   - Wolf Legacy copy
   - TESTING_SCENE
 --- !u!4 &612307986
@@ -10329,6 +10330,7 @@ MonoBehaviour:
   currentlyCollectedGold: 0
   GO_goldAmount: {fileID: 0}
   TEXT_goldAmount: {fileID: 0}
+  animateGold: 0
 --- !u!4 &1751829986
 Transform:
   m_ObjectHideFlags: 0

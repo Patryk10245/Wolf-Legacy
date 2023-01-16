@@ -14,7 +14,7 @@ public class Enemy_Spawner : MonoBehaviour
     [SerializeField] float currentHealth;
 
     [Space(15)]
-    [SerializeField] List<Enemy_BaseClass> listOfCreatedEnemies;
+    public List<Enemy_BaseClass> listOfCreatedEnemies;
 
     [SerializeField] List<Enemy_BaseClass> strongerMonsters;
 

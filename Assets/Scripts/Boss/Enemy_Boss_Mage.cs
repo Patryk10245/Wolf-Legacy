@@ -325,9 +325,16 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 if(spawningTimer >= spawningDelay)
                 {
                     spawningTimer -= spawningDelay;
+
                     GameObject temp = Instantiate(enemyToSpawn, placeToSpawnEnemy.transform.position, transform.rotation);
-                    temp.GetComponent<Enemy_BaseClass>().is_Spawned = true;
+                    temp.transform.SetParent(placeToSpawnEnemy.transform);
+
+                    Enemy_BaseClass enemy = temp.GetComponent<Enemy_BaseClass>();
+                    enemy.is_Spawned = true;
+                    placeToSpawnEnemy.GetComponent<Enemy_Spawner>().listOfCreatedEnemies.Add(enemy);
+
                     temp.GetComponent<NavMeshAgent>().SetDestination(move_target.transform.position);
+                    
                     spawningDone++;
 
                     if(spawningDone >= spawningAmount)

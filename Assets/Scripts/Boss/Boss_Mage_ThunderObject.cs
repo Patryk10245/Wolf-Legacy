@@ -26,9 +26,10 @@ public class Boss_Mage_ThunderObject : MonoBehaviour
     {
         dealDamage = false;
     }
+    */
     public void AnimationEvent_EndAnimation()
     {
         Destroy(gameObject);
     }
-    */
+    
 }

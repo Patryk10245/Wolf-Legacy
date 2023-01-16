@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        /*
         if(dotobject != null)
         {
             //dot = Vector3.Dot(gameObject.transform.forward, dir);
@@ -90,7 +91,7 @@ public class Player : MonoBehaviour
         {
             dotobject.GetComponent<Rigidbody2D>().AddForce(dotdir * 50);
         }
-
+        */
         
     }
     private void OnDrawGizmos()

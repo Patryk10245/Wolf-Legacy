@@ -495,7 +495,6 @@ Transform:
   - {fileID: 2530901068139248114}
   - {fileID: 7430154198381010278}
   - {fileID: 2367892770246055698}
-  - {fileID: 973099086764859847}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -623,6 +622,7 @@ MonoBehaviour:
   bossArea: {fileID: 0}
   specialEffects: {fileID: 0}
   healthBar: {fileID: 0}
+  healthBarAnimator: {fileID: 0}
   bossState: 0
   currentActionState: 3
   changeTargetTime: 15
@@ -657,7 +657,7 @@ MonoBehaviour:
   areaPatternTime: 3.6
   areaTimer: 0
   enemyToSpawn: {fileID: 923329539989383326, guid: e583c07c74f6f3a468808754d1a6098e, type: 3}
-  placeToSpawnEnemy: {fileID: 7629182598308861906}
+  placeToSpawnEnemy: {fileID: 0}
   spawningAmount: 5
   spawningDelay: 0.5
 --- !u!61 &8384816019968798544
@@ -969,37 +969,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!1 &7629182598308861906
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 973099086764859847}
-  m_Layer: 0
-  m_Name: Place To spawn Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &973099086764859847
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7629182598308861906}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2367892769948525170}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8503515042928939247
 GameObject:
   m_ObjectHideFlags: 0
