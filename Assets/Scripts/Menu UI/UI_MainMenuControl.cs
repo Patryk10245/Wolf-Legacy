@@ -164,6 +164,7 @@ public class UI_MainMenuControl : MonoBehaviour
     public void ExitGame_No()
     {
         exitWindow.SetActive(false);
+        mainMenu.SetActive(true);
     }
 
 

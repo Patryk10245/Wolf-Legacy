@@ -141,7 +141,7 @@ public class GameSetup : MonoBehaviour
         {
             if(playingPlayers.Count > 1)
             {
-                playingPlayers.RemoveAt(1);
+                //playingPlayers.RemoveAt(1);
             }
             //PlayerInput newPlayer = playerInputManager.JoinPlayer();
 
@@ -223,6 +223,7 @@ public class GameSetup : MonoBehaviour
                 cameraFollowing.singlePlayer = true;
                 cameraFollowing.flat = false;
                 cameraFollowing.smooth = false;
+                levelReferences.player2UI.SetActive(false);
                 return;
                 //Debug.Log(execption);
             }
