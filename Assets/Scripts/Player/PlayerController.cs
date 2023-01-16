@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] AudioSource audioSource;
     Player player;
     [HideInInspector] public Rigidbody2D rb;
     Animator animBody;

@@ -237,7 +237,7 @@ RectTransform:
   - {fileID: 314161780}
   - {fileID: 1904385194}
   m_Father: {fileID: 2066516047}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -817,7 +817,7 @@ GameObject:
   - component: {fileID: 94478377}
   - component: {fileID: 94478376}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1028,7 +1028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &97988902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1042,6 +1042,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2104445303}
+  - {fileID: 633085808}
+  - {fileID: 1651613456}
   m_Father: {fileID: 849734320}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1319,7 +1321,7 @@ RectTransform:
   m_Children:
   - {fileID: 884293847}
   m_Father: {fileID: 358913267}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1618,7 +1620,7 @@ RectTransform:
   - {fileID: 1976460509}
   - {fileID: 984822495}
   m_Father: {fileID: 1683891739}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2364,7 +2366,7 @@ GameObject:
   - component: {fileID: 252003675}
   - component: {fileID: 252003674}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Health Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2517,7 +2519,7 @@ RectTransform:
   m_Children:
   - {fileID: 1879434741}
   m_Father: {fileID: 1683891739}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2717,6 +2719,7 @@ RectTransform:
   - {fileID: 659605679}
   - {fileID: 926745282}
   - {fileID: 653499814}
+  - {fileID: 1150280972}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2992,8 +2995,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 522381468}
+  - {fileID: 1894580020}
+  - {fileID: 1887435459}
   m_Father: {fileID: 2066516047}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3249,7 +3254,7 @@ GameObject:
   - component: {fileID: 298767952}
   - component: {fileID: 298767951}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Health Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3550,6 +3555,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1237242161}
+  - {fileID: 488151990}
+  - {fileID: 1188267624}
   m_Father: {fileID: 1683891739}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3596,7 +3603,7 @@ RectTransform:
   - {fileID: 678855879}
   - {fileID: 2108741787}
   m_Father: {fileID: 2066516047}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3673,12 +3680,12 @@ RectTransform:
   m_Children:
   - {fileID: 1435007179}
   - {fileID: 1929630309}
+  - {fileID: 146729262}
   - {fileID: 912340021}
   - {fileID: 407230935}
   - {fileID: 1392537786}
   - {fileID: 1952489388}
   - {fileID: 604021005}
-  - {fileID: 146729262}
   - {fileID: 1263415205}
   m_Father: {fileID: 753515498}
   m_RootOrder: 2
@@ -3891,7 +3898,7 @@ RectTransform:
   - {fileID: 731988850}
   - {fileID: 738891036}
   m_Father: {fileID: 2066516047}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4202,7 +4209,7 @@ RectTransform:
   - {fileID: 594756797}
   - {fileID: 252003673}
   m_Father: {fileID: 358913267}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4559,6 +4566,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435488442}
   m_CullTransparentMesh: 1
+--- !u!1 &444076801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 444076802}
+  - component: {fileID: 444076804}
+  - component: {fileID: 444076803}
+  m_Layer: 5
+  m_Name: Gold Field
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &444076802
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444076801}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1150280972}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 99.2, y: 0}
+  m_SizeDelta: {x: 150, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &444076803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444076801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &444076804
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444076801}
+  m_CullTransparentMesh: 1
 --- !u!1 &449852964
 GameObject:
   m_ObjectHideFlags: 0
@@ -4572,7 +4659,7 @@ GameObject:
   - component: {fileID: 449852967}
   - component: {fileID: 449852966}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Health Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4946,14 +5033,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488151989}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1338161694}
-  m_Father: {fileID: 1237242161}
-  m_RootOrder: 0
+  m_Father: {fileID: 327456479}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5168,7 +5255,7 @@ RectTransform:
   - {fileID: 1721832210}
   - {fileID: 1746453586}
   m_Father: {fileID: 849734320}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5242,9 +5329,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1894580020}
-  - {fileID: 1887435459}
+  m_Children: []
   m_Father: {fileID: 277133400}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5725,10 +5810,10 @@ MonoBehaviour:
   infoField: {fileID: 1487259570}
   villageMenu: {fileID: 362051930}
   opaqueColor: {r: 0, g: 0, b: 0, a: 0}
-  paladinBuilding: {fileID: 1474408882}
-  barbarianBuilding: {fileID: 1755897353}
-  archerBuilding: {fileID: 2133920939}
-  mageBuilding: {fileID: 2138566657}
+  paladinDestroyedBuilding: {fileID: 1474408882}
+  barbarianDestroyedBuilding: {fileID: 1755897353}
+  archerDestroyedBuilding: {fileID: 2133920939}
+  mageDestroyedBuilding: {fileID: 2138566657}
   paladinWindow: {fileID: 849734319}
   barbarianWindow: {fileID: 2066516046}
   rangerWindow: {fileID: 358913266}
@@ -5741,6 +5826,31 @@ MonoBehaviour:
   barbarianInfo: {fileID: 2066516048}
   rangerInfo: {fileID: 358913268}
   mageInfo: {fileID: 1683891740}
+  paladinUpgradeMark:
+  - {fileID: 885277539}
+  - {fileID: 449852964}
+  - {fileID: 94478374}
+  - {fileID: 1309594250}
+  - {fileID: 1746453585}
+  barbarianUpgradeMark:
+  - {fileID: 2108741786}
+  - {fileID: 1112357823}
+  - {fileID: 738891035}
+  - {fileID: 1288624610}
+  - {fileID: 1904385193}
+  archerUpgradeMark:
+  - {fileID: 1489851237}
+  - {fileID: 252003672}
+  - {fileID: 1438970495}
+  - {fileID: 987238267}
+  - {fileID: 1288770733}
+  mageUpgradeMark:
+  - {fileID: 918347876}
+  - {fileID: 298767949}
+  - {fileID: 1006359972}
+  - {fileID: 984822494}
+  - {fileID: 1655030484}
+  TextGoldAmount: {fileID: 444076803}
 --- !u!1 &604021004
 GameObject:
   m_ObjectHideFlags: 0
@@ -5779,7 +5889,7 @@ RectTransform:
   - {fileID: 606617721}
   - {fileID: 1288770734}
   m_Father: {fileID: 358913267}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6212,14 +6322,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633085807}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 51057908}
-  m_Father: {fileID: 2104445303}
-  m_RootOrder: 0
+  m_Father: {fileID: 97988902}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6349,9 +6459,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 932784721}
-  - {fileID: 802705206}
+  m_Children: []
   m_Father: {fileID: 1263415205}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6928,7 +7036,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1600, y: 900}
+  m_SizeDelta: {x: 1650, y: 950}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &683729006
 MonoBehaviour:
@@ -7082,7 +7190,7 @@ RectTransform:
   - {fileID: 1871887092}
   - {fileID: 1112357824}
   m_Father: {fileID: 2066516047}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7165,7 +7273,7 @@ RectTransform:
   - {fileID: 1495228722}
   - {fileID: 885277540}
   m_Father: {fileID: 849734320}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7451,7 +7559,7 @@ GameObject:
   - component: {fileID: 738891038}
   - component: {fileID: 738891037}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8263,15 +8371,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802705205}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 282082127}
   - {fileID: 1229772002}
-  m_Father: {fileID: 646081959}
-  m_RootOrder: 1
+  m_Father: {fileID: 1263415205}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8354,7 +8462,7 @@ RectTransform:
   - {fileID: 2091454176}
   - {fileID: 1006359973}
   m_Father: {fileID: 1683891739}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8659,12 +8767,12 @@ RectTransform:
   m_Children:
   - {fileID: 1524347305}
   - {fileID: 1803742423}
+  - {fileID: 1176490287}
   - {fileID: 703267272}
   - {fileID: 2071370152}
   - {fileID: 1361640850}
   - {fileID: 1921420694}
   - {fileID: 516540361}
-  - {fileID: 1176490287}
   - {fileID: 97988902}
   m_Father: {fileID: 753515498}
   m_RootOrder: 0
@@ -8838,7 +8946,7 @@ RectTransform:
   - {fileID: 1950347461}
   - {fileID: 1288624611}
   m_Father: {fileID: 2066516047}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9048,7 +9156,7 @@ GameObject:
   - component: {fileID: 885277542}
   - component: {fileID: 885277541}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Damage Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9282,7 +9390,7 @@ RectTransform:
   - {fileID: 1579454255}
   - {fileID: 1489851238}
   m_Father: {fileID: 358913267}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9340,7 +9448,7 @@ GameObject:
   - component: {fileID: 918347879}
   - component: {fileID: 918347878}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Damage Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9640,14 +9748,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932784720}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 417140343}
-  m_Father: {fileID: 646081959}
-  m_RootOrder: 0
+  m_Father: {fileID: 1263415205}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9761,7 +9869,7 @@ GameObject:
   - component: {fileID: 984822497}
   - component: {fileID: 984822496}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Regeneration Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9894,7 +10002,7 @@ GameObject:
   - component: {fileID: 987238270}
   - component: {fileID: 987238269}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Regeneration Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10259,7 +10367,7 @@ GameObject:
   - component: {fileID: 1006359975}
   - component: {fileID: 1006359974}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10700,7 +10808,7 @@ GameObject:
   - component: {fileID: 1112357826}
   - component: {fileID: 1112357825}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Health Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10972,6 +11080,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144156754}
   m_CullTransparentMesh: 1
+--- !u!1 &1150280971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1150280972}
+  - component: {fileID: 1150280974}
+  - component: {fileID: 1150280973}
+  m_Layer: 5
+  m_Name: Gold Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1150280972
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150280971}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1461741566}
+  - {fileID: 444076802}
+  m_Father: {fileID: 259170375}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 590, y: 400}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1150280973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150280971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 450f893e044000245bfd57fc620023b1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1150280974
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150280971}
+  m_CullTransparentMesh: 1
 --- !u!1 &1168461965
 GameObject:
   m_ObjectHideFlags: 0
@@ -11085,7 +11271,7 @@ RectTransform:
   m_Children:
   - {fileID: 719646319}
   m_Father: {fileID: 849734320}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11291,15 +11477,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188267623}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 586072974}
   - {fileID: 789557473}
-  m_Father: {fileID: 1237242161}
-  m_RootOrder: 1
+  m_Father: {fileID: 327456479}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11681,13 +11867,11 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237242160}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 488151990}
-  - {fileID: 1188267624}
+  m_Children: []
   m_Father: {fileID: 327456479}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11843,6 +12027,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 646081959}
+  - {fileID: 932784721}
+  - {fileID: 802705206}
   m_Father: {fileID: 358913267}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11864,7 +12050,7 @@ GameObject:
   - component: {fileID: 1288624613}
   - component: {fileID: 1288624612}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Regeneration Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11997,7 +12183,7 @@ GameObject:
   - component: {fileID: 1288770736}
   - component: {fileID: 1288770735}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Speed Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12358,7 +12544,7 @@ GameObject:
   - component: {fileID: 1309594253}
   - component: {fileID: 1309594252}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Regeneration Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12748,7 +12934,7 @@ RectTransform:
   - {fileID: 149344049}
   - {fileID: 94478375}
   m_Father: {fileID: 849734320}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12831,7 +13017,7 @@ RectTransform:
   - {fileID: 1564987597}
   - {fileID: 1438970496}
   m_Father: {fileID: 358913267}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13100,7 +13286,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1600, y: 900}
+  m_SizeDelta: {x: 1650, y: 950}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1435007180
 MonoBehaviour:
@@ -13153,7 +13339,7 @@ GameObject:
   - component: {fileID: 1438970498}
   - component: {fileID: 1438970497}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Energy Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13273,6 +13459,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438970495}
   m_CullTransparentMesh: 1
+--- !u!1 &1461741565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461741566}
+  - component: {fileID: 1461741568}
+  - component: {fileID: 1461741567}
+  m_Layer: 5
+  m_Name: BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1461741566
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461741565}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1150280972}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 99.2, y: 0}
+  m_SizeDelta: {x: 140, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1461741567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461741565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1461741568
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461741565}
+  m_CullTransparentMesh: 1
 --- !u!1 &1472931139
 GameObject:
   m_ObjectHideFlags: 0
@@ -13367,7 +13629,7 @@ GameObject:
   - component: {fileID: 1474408881}
   - component: {fileID: 1474408885}
   m_Layer: 5
-  m_Name: Paladin Building
+  m_Name: Paladin Destroyed Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13822,7 +14084,7 @@ GameObject:
   - component: {fileID: 1489851240}
   - component: {fileID: 1489851239}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Damage Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14054,7 +14316,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1600, y: 900}
+  m_SizeDelta: {x: 1650, y: 950}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1511499558
 MonoBehaviour:
@@ -14343,7 +14605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1524347305
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14362,7 +14624,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1600, y: 900}
+  m_SizeDelta: {x: 1650, y: 950}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1524347306
 MonoBehaviour:
@@ -14900,7 +15162,7 @@ RectTransform:
   - {fileID: 1116614224}
   - {fileID: 298767950}
   m_Father: {fileID: 1683891739}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14983,7 +15245,7 @@ RectTransform:
   - {fileID: 611636326}
   - {fileID: 1655030485}
   m_Father: {fileID: 1683891739}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15544,15 +15806,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651613455}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1475742374}
   - {fileID: 787833856}
-  m_Father: {fileID: 2104445303}
-  m_RootOrder: 1
+  m_Father: {fileID: 97988902}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15610,7 +15872,7 @@ GameObject:
   - component: {fileID: 1655030487}
   - component: {fileID: 1655030486}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Speed Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15998,12 +16260,12 @@ RectTransform:
   m_Children:
   - {fileID: 1511499557}
   - {fileID: 80288331}
+  - {fileID: 252546393}
   - {fileID: 2085635562}
   - {fileID: 1582391275}
   - {fileID: 803858401}
   - {fileID: 164156161}
   - {fileID: 1583325043}
-  - {fileID: 252546393}
   - {fileID: 327456479}
   m_Father: {fileID: 753515498}
   m_RootOrder: 3
@@ -16380,7 +16642,7 @@ GameObject:
   - component: {fileID: 1746453588}
   - component: {fileID: 1746453587}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Speed Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16514,7 +16776,7 @@ GameObject:
   - component: {fileID: 1755897352}
   - component: {fileID: 1755897356}
   m_Layer: 5
-  m_Name: Barbarian Building
+  m_Name: Barbarian Destroyed Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17220,7 +17482,7 @@ RectTransform:
   m_Children:
   - {fileID: 1524851685}
   m_Father: {fileID: 2066516047}
-  m_RootOrder: 8
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17794,15 +18056,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887435458}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1168461966}
   - {fileID: 999306758}
-  m_Father: {fileID: 522381468}
-  m_RootOrder: 1
+  m_Father: {fileID: 277133400}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17873,14 +18135,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894580019}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1249302631}
-  m_Father: {fileID: 522381468}
-  m_RootOrder: 0
+  m_Father: {fileID: 277133400}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17994,7 +18256,7 @@ GameObject:
   - component: {fileID: 1904385196}
   - component: {fileID: 1904385195}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Speed Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18228,7 +18490,7 @@ RectTransform:
   - {fileID: 1881081894}
   - {fileID: 1309594251}
   m_Father: {fileID: 849734320}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18463,7 +18725,7 @@ RectTransform:
   - {fileID: 789754186}
   - {fileID: 987238268}
   m_Father: {fileID: 358913267}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19006,13 +19268,13 @@ RectTransform:
   m_Children:
   - {fileID: 683729005}
   - {fileID: 549841076}
+  - {fileID: 1856551688}
   - {fileID: 328929267}
   - {fileID: 703190062}
   - {fileID: 364538809}
   - {fileID: 860724474}
   - {fileID: 21240046}
   - {fileID: 277133400}
-  - {fileID: 1856551688}
   m_Father: {fileID: 753515498}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19109,7 +19371,7 @@ RectTransform:
   - {fileID: 614141477}
   - {fileID: 449852965}
   m_Father: {fileID: 849734320}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19272,7 +19534,7 @@ RectTransform:
   - {fileID: 272424027}
   - {fileID: 918347877}
   m_Father: {fileID: 1683891739}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19784,9 +20046,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 633085808}
-  - {fileID: 1651613456}
+  m_Children: []
   m_Father: {fileID: 97988902}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19846,7 +20106,7 @@ GameObject:
   - component: {fileID: 2108741789}
   - component: {fileID: 2108741788}
   m_Layer: 5
-  m_Name: Upgrade Button
+  m_Name: Damage Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20144,7 +20404,7 @@ GameObject:
   - component: {fileID: 2133920938}
   - component: {fileID: 2133920942}
   m_Layer: 5
-  m_Name: Ranger Building
+  m_Name: Ranger Destroyed Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20367,7 +20627,7 @@ GameObject:
   - component: {fileID: 2138566656}
   - component: {fileID: 2138566660}
   m_Layer: 5
-  m_Name: Mage Building
+  m_Name: Mage Destroyed Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

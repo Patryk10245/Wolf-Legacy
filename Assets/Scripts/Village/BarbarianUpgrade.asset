@@ -13,17 +13,52 @@ MonoBehaviour:
   m_Name: BarbarianUpgrade
   m_EditorClassIdentifier: 
   damage:
-    valueOnLevel: []
+    valueOnLevel:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    cost: 000000000000000000000000000000000000000000000000
     currentLevel: 0
   health:
-    valueOnLevel: []
+    valueOnLevel:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    cost: 000000000000000000000000000000000000000000000000
     currentLevel: 0
   energy:
-    valueOnLevel: []
+    valueOnLevel:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    cost: 000000000000000000000000000000000000000000000000
     currentLevel: 0
   energyRegeneration:
-    valueOnLevel: []
+    valueOnLevel:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    cost: 000000000000000000000000000000000000000000000000
     currentLevel: 0
   speed:
-    valueOnLevel: []
+    valueOnLevel:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    cost: 000000000000000000000000000000000000000000000000
     currentLevel: 0

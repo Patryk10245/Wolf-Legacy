@@ -27,10 +27,10 @@ public class Village_UI_Control : MonoBehaviour
     [SerializeField] Color opaqueColor;
     [Space(10)]
     [Header("Buildngs")]
-    [SerializeField] Image paladinBuilding;
-    [SerializeField] Image barbarianBuilding;
-    [SerializeField] Image archerBuilding;
-    [SerializeField] Image mageBuilding;
+    [SerializeField] Image paladinDestroyedBuilding;
+    [SerializeField] Image barbarianDestroyedBuilding;
+    [SerializeField] Image archerDestroyedBuilding;
+    [SerializeField] Image mageDestroyedBuilding;
 
     [SerializeField] GameObject paladinWindow;
     [SerializeField] GameObject barbarianWindow;
@@ -48,6 +48,13 @@ public class Village_UI_Control : MonoBehaviour
     public Village_UI_ClassInfo rangerInfo;
     public Village_UI_ClassInfo mageInfo;
 
+    public GameObject[] paladinUpgradeMark;
+    public GameObject[] barbarianUpgradeMark;
+    public GameObject[] archerUpgradeMark;
+    public GameObject[] mageUpgradeMark;
+
+    public Text TextGoldAmount;
+
 
     public void SetReference()
     {
@@ -58,19 +65,19 @@ public class Village_UI_Control : MonoBehaviour
 
         if(villageUpgrades.paladinBuildingBought == true)
         {
-            paladinBuilding.color = opaqueColor;
+            ChangeBuildingToFixed(paladinBuyingBuilding, paladinDestroyedBuilding);
         }
         if (villageUpgrades.barbarianBuildingBought == true)
         {
-            barbarianBuilding.color = opaqueColor;
+            ChangeBuildingToFixed(barbarianBuyingBuilding, barbarianDestroyedBuilding);
         }
         if (villageUpgrades.archerBuildingBought == true)
         {
-            archerBuilding.color = opaqueColor;
+            ChangeBuildingToFixed(archerBuyingBuilding, archerDestroyedBuilding);
         }
         if (villageUpgrades.mageBuildingBought == true)
         {
-            mageBuilding.color = opaqueColor;
+            ChangeBuildingToFixed(mageBuyingBuilding, mageDestroyedBuilding);
         }
 
         if(Game_State.gameLost == true || Game_State.gameWon == true)
@@ -78,6 +85,8 @@ public class Village_UI_Control : MonoBehaviour
             mapChoosing.DisableNextButton();
             mapChoosing.DisableRepeatButton();
         }
+
+        ScoreTable.ins.TEXT_goldAmount = TextGoldAmount;
 
     }
 
@@ -131,6 +140,7 @@ public class Village_UI_Control : MonoBehaviour
     {
         if(ScoreTable.ins.gold >= 150)
         {
+            ScoreTable.ins.gold -= 150;
             switch (building)
             {
                 case 0:
@@ -156,19 +166,19 @@ public class Village_UI_Control : MonoBehaviour
 
     public void FixPaladinBuilding()
     {
-        ChangeBuildingToFixed(paladinBuyingBuilding, paladinBuilding);
+        ChangeBuildingToFixed(paladinBuyingBuilding, paladinDestroyedBuilding);
     }
     public void FixBarbarianBuilding()
     {
-        ChangeBuildingToFixed(barbarianBuyingBuilding, barbarianBuilding);
+        ChangeBuildingToFixed(barbarianBuyingBuilding, barbarianDestroyedBuilding);
     }
     public void FixArcherBuilding()
     {
-        ChangeBuildingToFixed(archerBuyingBuilding, archerBuilding);
+        ChangeBuildingToFixed(archerBuyingBuilding, archerDestroyedBuilding);
     }
     public void FixMageBuilding()
     {
-        ChangeBuildingToFixed(mageBuyingBuilding, mageBuilding);
+        ChangeBuildingToFixed(mageBuyingBuilding, mageDestroyedBuilding);
     }
     public void ChangeBuildingToFixed(GameObject building, Image image)
     {
@@ -204,21 +214,157 @@ public class Village_UI_Control : MonoBehaviour
     {
         //FixReference();
         villageUpgrades.UpgradePaladin(type);
+        switch (type)
+        {
+            case 0:
+                if(villageUpgrades.paladinUpgrades.damage.currentLevel >= 5)
+                {
+                    paladinUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 1:
+                if (villageUpgrades.paladinUpgrades.health.currentLevel >= 5)
+                {
+                    paladinUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 2:
+                if (villageUpgrades.paladinUpgrades.energy.currentLevel >= 5)
+                {
+                    paladinUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 3:
+                if (villageUpgrades.paladinUpgrades.energyRegeneration.currentLevel >= 5)
+                {
+                    paladinUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 4:
+                if (villageUpgrades.paladinUpgrades.speed.currentLevel >= 5)
+                {
+                    paladinUpgradeMark[type].SetActive(false);
+                }
+                break;
+        }
+
+        
     }
     public void UpgradeBarbarian(int type)
     {
         //FixReference();
-        villageUpgrades.UpgradeBarbarian(type);
+        villageUpgrades.UpgradeBarbarian(type);;
+        switch (type)
+        {
+            case 0:
+                if (villageUpgrades.barbarianUpgrades.damage.currentLevel >= 5)
+                {
+                    barbarianUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 1:
+                if (villageUpgrades.barbarianUpgrades.health.currentLevel >= 5)
+                {
+                    barbarianUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 2:
+                if (villageUpgrades.barbarianUpgrades.energy.currentLevel >= 5)
+                {
+                    barbarianUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 3:
+                if (villageUpgrades.barbarianUpgrades.energyRegeneration.currentLevel >= 5)
+                {
+                    barbarianUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 4:
+                if (villageUpgrades.barbarianUpgrades.speed.currentLevel >= 5)
+                {
+                    barbarianUpgradeMark[type].SetActive(false);
+                }
+                break;
+        }
     }
     public void UpgradeRanger(int type)
     {
         //FixReference();
         villageUpgrades.UpgradeRanger(type);
+
+        switch (type)
+        {
+            case 0:
+                if (villageUpgrades.rangerUpgrades.damage.currentLevel >= 5)
+                {
+                    archerUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 1:
+                if (villageUpgrades.rangerUpgrades.health.currentLevel >= 5)
+                {
+                    archerUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 2:
+                if (villageUpgrades.rangerUpgrades.energy.currentLevel >= 5)
+                {
+                    archerUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 3:
+                if (villageUpgrades.rangerUpgrades.energyRegeneration.currentLevel >= 5)
+                {
+                    archerUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 4:
+                if (villageUpgrades.rangerUpgrades.speed.currentLevel >= 5)
+                {
+                    archerUpgradeMark[type].SetActive(false);
+                }
+                break;
+        }
     }
     public void UpgradeMage(int type)
     {
         //FixReference();
         villageUpgrades.UpgradeMage(type);
+
+        switch (type)
+        {
+            case 0:
+                if (villageUpgrades.mageUpgrades.damage.currentLevel >= 5)
+                {
+                    mageUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 1:
+                if (villageUpgrades.mageUpgrades.health.currentLevel >= 5)
+                {
+                    mageUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 2:
+                if (villageUpgrades.mageUpgrades.energy.currentLevel >= 5)
+                {
+                    mageUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 3:
+                if (villageUpgrades.mageUpgrades.energyRegeneration.currentLevel >= 5)
+                {
+                    mageUpgradeMark[type].SetActive(false);
+                }
+                break;
+            case 4:
+                if (villageUpgrades.mageUpgrades.speed.currentLevel >= 5)
+                {
+                    mageUpgradeMark[type].SetActive(false);
+                }
+                break;
+        }
     }
 
 }

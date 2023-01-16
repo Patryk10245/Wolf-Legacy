@@ -15,25 +15,50 @@ MonoBehaviour:
   damage:
     valueOnLevel:
     - 0
-    cost: 00000000
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    cost: 000000000000000000000000000000000000000000000000
     currentLevel: 0
   health:
     valueOnLevel:
     - 0
-    cost: 00000000
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    cost: 000000000000000000000000000000000000000000000000
     currentLevel: 0
   energy:
     valueOnLevel:
     - 0
-    cost: 00000000
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    cost: 000000000000000000000000000000000000000000000000
     currentLevel: 0
   energyRegeneration:
     valueOnLevel:
     - 0
-    cost: 00000000
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    cost: 000000000000000000000000000000000000000000000000
     currentLevel: 0
   speed:
     valueOnLevel:
     - 0
-    cost: 00000000
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    cost: 000000000000000000000000000000000000000000000000
     currentLevel: 0
