@@ -39,13 +39,13 @@ public class Game_State : MonoBehaviour
 
         if (gamePaused)
         {
-            Game_State.ins.pausingWindow.SetActive(true);
             Time.timeScale = 0;
+            Level_FightReferenecs.ins.canvasAnimator.PauseGame();
         }
         else
         {
-            Game_State.ins.pausingWindow.SetActive(false);
             Time.timeScale = 1;
+            Level_FightReferenecs.ins.canvasAnimator.UnpauseGame();
         }
     }
     public void ResetValuesToDefault()

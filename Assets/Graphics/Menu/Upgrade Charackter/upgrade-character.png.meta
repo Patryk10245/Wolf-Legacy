@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,7 +103,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: upgrade-character_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 325
+        width: 216
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b3674784a1b26498c10f9ecdd7f277
+      internalID: -824117510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character_1
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 313
+        width: 216
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c57015b6a1caa484eac61cb4e86b42be
+      internalID: 699161822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character_2
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 280
+        width: 216
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04dcf560490e0fa4c82f10ac7ec121ab
+      internalID: -1232604849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character_3
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 248
+        width: 216
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e8b4cbb6c08d046b2fd1104bb9b18f
+      internalID: 1419673725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 11
+        width: 216
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144b637bdc125b549bec42710ddd44ac
+      internalID: 1416257589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character_5
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 211
+        width: 132
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef542dca724611439ceeba3141ac78d
+      internalID: 1342142122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character_16
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 189
+        width: 68
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616c0d973aff44849be04faf4a127d64
+      internalID: 1304938372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character_22
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 144
+        width: 160
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8773911ac9c2f794eb7f3a8e030cd521
+      internalID: 1504603570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character_35
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 117
+        width: 104
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292e6eeeb7f250745a00e7cf1764591f
+      internalID: -1169032215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character_44
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 93
+        width: 82
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee320f109b18514895c1b5addfd5b0f
+      internalID: -1772408142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character_51
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 60
+        width: 71
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca064ec2342f204d82673cbdd3b3e6b
+      internalID: -1312427411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character_57
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 40
+        width: 61
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6455bfccc7d6f934b8dc4b51a42942a4
+      internalID: 1439203079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character_63
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 16
+        width: 68
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0001ea8d720cc549ae7e0454a6538a5
+      internalID: -1559705565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +387,76 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      upgrade-character_19: 490200869
+      upgrade-character_37: 1119391055
+      upgrade-character_17: 1259468222
+      upgrade-character_68: 998179986
+      upgrade-character_52: 999662163
+      upgrade-character_28: -2140938511
+      upgrade-character_15: 871767070
+      upgrade-character_66: 220754033
+      upgrade-character_33: -1008911274
+      upgrade-character_16: 1304938372
+      upgrade-character_30: -790054790
+      upgrade-character_54: 1154813430
+      upgrade-character_39: -51358932
+      upgrade-character_14: 1676519386
+      upgrade-character_1: 699161822
+      upgrade-character_45: -2000032509
+      upgrade-character_63: -1559705565
+      upgrade-character_26: 839938520
+      upgrade-character_35: -1169032215
+      upgrade-character_31: 1317346716
+      upgrade-character_7: 509723212
+      upgrade-character_8: 681372386
+      upgrade-character_4: 1416257589
+      upgrade-character_42: -1210099101
+      upgrade-character_11: 151947554
+      upgrade-character_48: -769556399
+      upgrade-character_0: -824117510
+      upgrade-character_13: 382843223
+      upgrade-character_38: -1546769098
+      upgrade-character_49: -2120192375
+      upgrade-character_55: 998588276
+      upgrade-character_18: -482822986
+      upgrade-character_50: -1635665410
+      upgrade-character_53: 967102395
+      upgrade-character_67: 1659673510
+      upgrade-character_57: 1439203079
+      upgrade-character_56: 526048973
+      upgrade-character_59: -1855709840
+      upgrade-character_36: 912704284
+      upgrade-character_10: 812301545
+      upgrade-character_43: 1245596737
+      upgrade-character_3: 1419673725
+      upgrade-character_23: -86119420
+      upgrade-character_46: 582800352
+      upgrade-character_21: -563409656
+      upgrade-character_9: -1654500535
+      upgrade-character_60: -762780146
+      upgrade-character_62: -1255663248
+      upgrade-character_25: -606638644
+      upgrade-character_64: -109131374
+      upgrade-character_6: 506679112
+      upgrade-character_29: -1157459028
+      upgrade-character_20: 423863946
+      upgrade-character_32: 1118521300
+      upgrade-character_34: 192336942
+      upgrade-character_61: 507086091
+      upgrade-character_2: -1232604849
+      upgrade-character_5: 1342142122
+      upgrade-character_41: -741273023
+      upgrade-character_47: 905891822
+      upgrade-character_65: -1387760947
+      upgrade-character_27: -2079680395
+      upgrade-character_40: 579923961
+      upgrade-character_12: -576451481
+      upgrade-character_24: -57787758
+      upgrade-character_22: 1504603570
+      upgrade-character_44: -1772408142
+      upgrade-character_58: -1415967025
+      upgrade-character_51: -1312427411
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

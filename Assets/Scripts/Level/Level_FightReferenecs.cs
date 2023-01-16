@@ -45,4 +45,5 @@ public class Level_FightReferenecs : MonoBehaviour
     public Image player2Ability2;
     [Header("Canvas Referece")]
     public Text GoldTextIcon;
+    public Game_CanvasController canvasAnimator;
 }
