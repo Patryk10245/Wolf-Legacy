@@ -11,9 +11,6 @@ public class ScoreTable : MonoBehaviour
     {
         ins = this;
     }
-
-    
-
     public int gold;
     public int kills;
     public int currentlyCollectedGold;
@@ -22,7 +19,8 @@ public class ScoreTable : MonoBehaviour
     public Text TEXT_goldAmount;
 
     [Header("Gold Animation")]
-    [SerializeField]bool animateGold;
+    public float changeSpeed = 0.15f;
+    bool animateGold;
     int lastValue;
     // Start is called before the first frame update
     void Awake()
@@ -42,6 +40,7 @@ public class ScoreTable : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (animateGold == true)
         {
             Level_GameCompleted.ins.collectedGoldText.text = lastValue.ToString();
@@ -53,6 +52,7 @@ public class ScoreTable : MonoBehaviour
                 lastValue = 0;
             }
         }
+        */
     }
 
     public void AddGold(int val)
@@ -68,7 +68,7 @@ public class ScoreTable : MonoBehaviour
     public void UpdateGold()
     {
         int val = gold + currentlyCollectedGold;
-        TEXT_goldAmount.text = val.ToString();
+        TEXT_goldAmount.text = currentlyCollectedGold.ToString();
     }
 
     public void ApplyCollectedGold()
@@ -98,5 +98,27 @@ public class ScoreTable : MonoBehaviour
     public void BeginAnimatingGold()
     {
         animateGold = true;
+        lastValue = 0;
+
+        StartCoroutine(AnimateText("Pretty cool text"));
     }
+
+    IEnumerator AnimateText(string strComplete)
+    {
+        while(lastValue <= currentlyCollectedGold)
+        {
+            Level_GameCompleted.ins.collectedGoldText.text = lastValue.ToString();
+
+            lastValue++;
+            if (lastValue > currentlyCollectedGold)
+            {
+                animateGold = false;
+                lastValue = 0;
+            }
+
+            yield return new WaitForSeconds(changeSpeed);
+        }
+    }
+
+
 }
