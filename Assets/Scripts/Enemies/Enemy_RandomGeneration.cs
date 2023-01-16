@@ -19,7 +19,7 @@ public class Enemy_RandomGeneration : MonoBehaviour
 
     void SpawnEnemies()
     {
-        int random = Random.Range(0, maxNumberOfSpawnedEnemies);
+        int random = Random.Range(20, maxNumberOfSpawnedEnemies);
         GameObject temp;
         Debug.Log("Enemies spawned = " + random);
 

@@ -58,11 +58,6 @@ public class GameSetup : MonoBehaviour
     [SerializeField] Sprite archersHandImage;
 
 
-
-    private void Start()
-    {
-
-    }
     private void Awake()
     {
         if(ins == null)
@@ -123,35 +118,18 @@ public class GameSetup : MonoBehaviour
         playerInputManager.playerPrefab = playerManager.playerPrefab;
         //Debug.Log("player manager = " + playerManager);
 
-        //playerManager = Player_Manager.ins;
-        //cameraFollowing = Camera_Following.ins;
-        //scoreTable = ScoreTable.ins;
-
-
         //Debug.Log("Score table scene = " + scoreTable.gameObject.scene.name);
         scoreTable.TEXT_goldAmount = levelReferences.GoldTextIcon;
-        //scoreTable.SetReferenceToGoldText();
 
-
-
-        //Debug.Log("DEBUG  ||DO I SEE THIS ? = " + playerInputManager);
-        //Debug.Log("number of players == " + numberOfPlayers);
-        
         if (numberOfPlayers == 1)
         {
-            if(playingPlayers.Count > 1)
-            {
-                //playingPlayers.RemoveAt(1);
-            }
-            //PlayerInput newPlayer = playerInputManager.JoinPlayer();
 
             PlayerInput newPlayer = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
             //Debug.Log("new player = " + newPlayer);
             playerManager.playerList.Add(newPlayer.GetComponent<Player>());
             newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
             SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
-
-            
+     
 
             cameraFollowing.singlePlayer = true;
             cameraFollowing.flat = false;
@@ -205,9 +183,6 @@ public class GameSetup : MonoBehaviour
                     break;
             }
 
-            //Debug.Log("Player input manager set to = " + playerInputManager);
-            //Debug.Log("Playing players 2 control scheme = " + playingPlayers[1].controlScheme);
-            //Debug.Log("prefab = " + playerInputManager.playerPrefab.name);
             try
             {
                 PlayerInput newPlayer2 = playerInputManager.JoinPlayer(1,0,playingPlayers[1].controlScheme);
@@ -228,8 +203,6 @@ public class GameSetup : MonoBehaviour
                 //Debug.Log(execption);
             }
             //Debug.Log(newPlayer2.name);
-            
-
 
             switch (playingPlayers[1].selectedClass)
             {
@@ -309,9 +282,9 @@ public class GameSetup : MonoBehaviour
     {
         ClassUpgrades upgrades = Village_Upgrades.ins.rangerUpgrades;
         ClassData rangerData = classesData[2];
-        Debug.Log("upgrades = " + upgrades);
-        Debug.Log("data = " + rangerData);
-        Debug.Log("player = " + player);
+        //Debug.Log("upgrades = " + upgrades);
+        //Debug.Log("data = " + rangerData);
+        //Debug.Log("player = " + player);
         player.stats.currentHealth = rangerData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
         player.stats.maxHealth = rangerData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
         player.stats.currentEnergy = rangerData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];

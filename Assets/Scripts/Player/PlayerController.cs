@@ -117,13 +117,6 @@ public class PlayerController : MonoBehaviour
             screenPoint = Vector3.zero;
         }
         dScreenPoint = screenPoint;
-        /* ROTATION TOWARDS WALK DIRECTION
-        if (mousePos == Vector2.zero)
-        {
-            mousePos.x += moveInput.x;
-            mousePos.y += moveInput.y;
-        }
-        */
 
         if (mousePos == Vector2.zero)
         {

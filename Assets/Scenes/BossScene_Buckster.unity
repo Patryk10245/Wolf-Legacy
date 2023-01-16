@@ -124442,6 +124442,7 @@ MonoBehaviour:
   player2Ability1: {fileID: 394551006}
   player2Ability2: {fileID: 1827951963}
   GoldTextIcon: {fileID: 1382053069}
+  canvasAnimator: {fileID: 0}
 --- !u!4 &834144769
 Transform:
   m_ObjectHideFlags: 0
@@ -125724,7 +125725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171306832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.02, y: 29.32, z: 0}
+  m_LocalPosition: {x: 34.3, y: 29.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

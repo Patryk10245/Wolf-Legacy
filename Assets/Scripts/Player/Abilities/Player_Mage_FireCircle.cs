@@ -32,7 +32,7 @@ public class Player_Mage_FireCircle : Ability_2
     }
     void CastCircle()
     {
-        player.isInvulnerable = true;
+        //player.isInvulnerable = true;
         isBurning = true;
         GameObject temp = Instantiate(circlePrefab);
         Debug.Log(temp.name);
@@ -65,7 +65,7 @@ public class Player_Mage_FireCircle : Ability_2
                 timer = 0;
                 isBurning = false;
                 isRecharching = true;
-                player.isInvulnerable = false;
+                //player.isInvulnerable = false;
                 player.ui_updater.Ability2Used();
             }
         }

@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class Enemy_Spawner : MonoBehaviour
 {
-    [Header("Referencje Do Zewnetrznych")]
+    [Header("Refference")]
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] Transform enemySpawningPoint;
 
-    [Header("Dane Wewnetrzne")]
+    [Header("Inside refference")]
     [SerializeField] float timer;
     [SerializeField] float TimeBetweenEnemySpawning = 5f;
     [SerializeField] int maxNumberOfEnemies = 5;

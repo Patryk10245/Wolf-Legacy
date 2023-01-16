@@ -201,11 +201,9 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 Action_Dying();
                 break;
             default:
-                Debug.LogError("ERROR. UKNOWN BOSS STATE");
+                Debug.LogError("ERROR. UNKNOWN BOSS STATE");
                 break;
         }
-
-
 
         RotateTowardsWalkDirection();
 
@@ -375,7 +373,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
             case ENUM_current_state.ready_to_exit:
                 break;
             default:
-                Debug.LogError("ERROR. UNKOWN ACTION STATE");
+                Debug.LogError("ERROR. UNKNOWN ACTION STATE");
                 break;
         }
     }

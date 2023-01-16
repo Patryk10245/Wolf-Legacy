@@ -44,7 +44,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         //Debug.Log("start for Player = " + gameObject.name);
-        //controller = GetComponent<PlayerController>();
         stats = GetComponent<PlayerStats>();
         controller = GetComponent<PlayerController>();
         ui_updater = GetComponent<Player_Ui_Updater>();
@@ -70,33 +69,5 @@ public class Player : MonoBehaviour
         //controller.rb.AddForce(force);
         controller.rb.AddForce(force);
     }
-    private void Update()
-    {
-        /*
-        if(dotobject != null)
-        {
-            //dot = Vector3.Dot(gameObject.transform.forward, dir);
-            Vector2 projectilesPosition = new Vector2(dotobject.transform.position.x, dotobject.transform.position.y);
-            Vector2 playersPosition = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
-            dotdir = (playersPosition - projectilesPosition).normalized;
-            Vector2 shieldsPosition = new Vector2(shield.transform.position.x, shield.transform.position.y);
-            playerdir = shieldsPosition - playersPosition;
-            playerdir.Normalize();
-            dot = Vector2.Dot(dotdir, playerdir);
 
-            
-        }
-
-        if (Input.GetKeyDown("k"))
-        {
-            dotobject.GetComponent<Rigidbody2D>().AddForce(dotdir * 50);
-        }
-        */
-        
-    }
-    private void OnDrawGizmos()
-    {
-        //Gizmos.DrawRay(dotobject.transform.position, dotdir);
-        //Gizmos.DrawRay(gameObject.transform.position, playerdir);
-    }
 }

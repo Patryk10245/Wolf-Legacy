@@ -21,7 +21,7 @@ public class PlayerStats : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            Debug.LogWarning("Teraz powinna odbyc sie smierc gracza");
+            //Debug.LogWarning("Teraz powinna odbyc sie smierc gracza");
             Level_FightReferenecs.ins.resurrection.PlayerDeath(player);
         }
     }

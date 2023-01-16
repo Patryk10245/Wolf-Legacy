@@ -2983,12 +2983,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFightScene: 0
   selectedScenes:
+  - BossScene_Buckster
   - Wolf Legacy copy
   - BossScene_Duckster
   - Wolf Legacy copy
   - BossScene_Blobster
   - Wolf Legacy copy
-  - BossScene_Buckster
 --- !u!4 &612307986
 Transform:
   m_ObjectHideFlags: 0

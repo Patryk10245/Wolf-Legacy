@@ -13,7 +13,6 @@ public class Player_Projectile : MonoBehaviour
     public float stopTimerAt;
     float deathTimer;
     
-    // Start is called before the first frame update
     void Start()
     {     
         Vector2 dir = transform.position + flyDirection; 
@@ -25,11 +24,8 @@ public class Player_Projectile : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //rb.AddForce(flyDirection * speed);
-
         deathTimer += Time.deltaTime;
         if (deathTimer >= stopTimerAt)
         {
@@ -51,6 +47,7 @@ public class Player_Projectile : MonoBehaviour
         else if (collision.gameObject.CompareTag("Spawner"))
         {
             collision.gameObject.GetComponent<Enemy_Spawner>().TakeDamage(damage, ENUM_AttackType.melee);
+            Destroy(gameObject);
         }
         else if(collision.gameObject.CompareTag("ProjectileStopper"))
         {

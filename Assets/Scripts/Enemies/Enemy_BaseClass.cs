@@ -24,11 +24,11 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     //[SerializeField] protected Player chase_target;
 
     [Header("Specifics")]
-    [SerializeField] public float move_Speed = 5f;
-    [SerializeField] public float attack_Distance = 1f;
-    [SerializeField] public float distance_To_Player;
+    public float move_Speed = 5f;
+    public float attack_Distance = 1f;
+    public float distance_To_Player;
     [Tooltip("Should be higher by at least 1 than detection radius")]
-    [SerializeField] public float chasePlayerDistance = 8;
+    public float chasePlayerDistance = 8;
 
     [SerializeField] protected float delay_Between_Attacks = 3f;
     protected float attack_Timer;
@@ -115,32 +115,16 @@ public abstract class Enemy_BaseClass : MonoBehaviour
         {
             case ENUM_EnemyState.idle:
                 anim.SetTrigger("isIdle");
-                //anim.SetBool("isIdle", true);
-                //anim.SetBool("isChasing",false);
-                //anim.SetBool("isAttacking",false);
-                //anim.SetBool("isDying",false);
                 break;
             case ENUM_EnemyState.chasing:
                 anim.SetTrigger("isChasing");
-                //anim.SetBool("isIdle", false);
-                //anim.SetBool("isChasing", true);
-                //anim.SetBool("isAttacking", false);
-                //anim.SetBool("isDying", false);
                 break;
             case ENUM_EnemyState.attacking:
                 anim.SetTrigger("isAttacking");
                 is_Attacking = true;
-                //anim.SetBool("isIdle", false);
-                //anim.SetBool("isChasing", false);
-                //anim.SetBool("isAttacking", true);
-                //anim.SetBool("isDying", false);
                 break;
             case ENUM_EnemyState.dying:
                 anim.SetTrigger("isDying");
-                //anim.SetBool("isIdle", false);
-                //anim.SetBool("isChasing", false);
-                //anim.SetBool("isAttacking", false);
-                //anim.SetBool("isDying", true);
                 break;
         }
 
@@ -166,12 +150,9 @@ public abstract class Enemy_BaseClass : MonoBehaviour
 
         Destroy(gameObject);
 
-
-
     }
     protected void ChangeState(ENUM_EnemyState new_state)
-    {
-        
+    { 
         if (currentEnemyState != new_state)
         {
             Debug.Log("Changing state. current = " + currentEnemyState + "\n new = " + new_state);
