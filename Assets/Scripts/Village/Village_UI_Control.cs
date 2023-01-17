@@ -25,6 +25,7 @@ public class Village_UI_Control : MonoBehaviour
     [SerializeField] GameObject infoField;
     [SerializeField] GameObject villageMenu;
     [SerializeField] Color opaqueColor;
+    [SerializeField] Color boughtUpgradeColor;
     [Space(10)]
     [Header("Buildings")]
     [SerializeField] Image paladinDestroyedBuilding;
@@ -102,39 +103,74 @@ public class Village_UI_Control : MonoBehaviour
 
     public void ShowPaladinWindow()
     {
+        Debug.Log("Activating Paladin Window");
         paladinWindow.SetActive(true);
-        //villageMenu.SetActive(false);
-        if(villageUpgrades.paladinBuildingBought == true)
+        Debug.Log("Blocker state = " + paladinBuyingBuilding.activeSelf);
+        if (villageUpgrades.paladinBuildingBought == false)
         {
-            paladinBuyingBuilding.SetActive(false);
+            Debug.Log("If");
+            paladinBuyingBuilding.SetActive(true);
+            Debug.Log("Blocker state = " + paladinBuyingBuilding.activeSelf);
+            return;
         }
+        else
+        {
+            Debug.Log("Else");
+            paladinBuyingBuilding.SetActive(false);
+            Debug.Log("Blocker state = " + paladinBuyingBuilding.activeSelf);
+        }
+        Debug.Log("Running Animator");
+        canvasAnimator.SetTrigger("openPaladin");
+        //villageMenu.SetActive(false);
+        
     }
     public void ShowBarbarianWindow()
     {
         barbarianWindow.SetActive(true);
-        //villageMenu.SetActive(false);
-        if (villageUpgrades.barbarianBuildingBought == true)
+        if (villageUpgrades.barbarianBuildingBought == false)
+        {
+            barbarianBuyingBuilding.SetActive(true);
+            return;
+        }
+        else
         {
             barbarianBuyingBuilding.SetActive(false);
         }
+        canvasAnimator.SetTrigger("openBarbarian");
+        //villageMenu.SetActive(false);
+        
     }
     public void ShowRangerWindow()
     {
         rangerWindow.SetActive(true);
-        //villageMenu.SetActive(false);
-        if (villageUpgrades.archerBuildingBought == true)
+        if (villageUpgrades.archerBuildingBought == false)
+        {
+            archerBuyingBuilding.SetActive(true);
+            return;
+        }
+        else
         {
             archerBuyingBuilding.SetActive(false);
         }
+        canvasAnimator.SetTrigger("openArcher");
+        //villageMenu.SetActive(false);
+        
     }
     public void ShowMageWindow()
     {
         mageWindow.SetActive(true);
-        //villageMenu.SetActive(false);
-        if (villageUpgrades.mageBuildingBought == true)
+        if (villageUpgrades.mageBuildingBought == false)
+        {
+            mageBuyingBuilding.SetActive(true);
+            return;
+        }
+        else
         {
             mageBuyingBuilding.SetActive(false);
         }
+        canvasAnimator.SetTrigger("openMage");
+        //villageMenu.SetActive(false);
+        
     }
     public void BuyBuilding(int building)
     {
@@ -186,13 +222,17 @@ public class Village_UI_Control : MonoBehaviour
         image.color = opaqueColor;
     }
 
-    public void CloseWindows()
+    public void CloseUpgradeWindows()
     {
-        paladinWindow.SetActive(false);
-        barbarianWindow.SetActive(false);
-        rangerWindow.SetActive(false);
-        mageWindow.SetActive(false);
-        villageMenu.SetActive(true);
+        Debug.Log("Closing WIndows");
+        canvasAnimator.SetTrigger("closeWindows");
+    }
+    public void CloseBuyingWindows()
+    {
+        paladinBuyingBuilding.SetActive(false);
+        barbarianBuyingBuilding.SetActive(false);
+        archerBuyingBuilding.SetActive(false);
+        mageBuyingBuilding.SetActive(false);
     }
 
 
