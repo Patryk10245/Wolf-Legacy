@@ -8,27 +8,23 @@ public class Level_GameOver : MonoBehaviour
 
     public void InitiateGameOver()
     {
-       
-        foreach(PlayerSelectedData player in GameSetup.ins.playingPlayers)
-        {
-            //player.isDead = true;
-        }
         Game_State.gamePaused = true;
         Time.timeScale = 0;
-
+        Game_CanvasController.ins.DeathScreen();
         ScoreTable.ins.ReduceCollectedGoldByDeath();
-        ScoreTable.ins.ApplyCollectedGold();
-        deathScreen.SetActive(true);
+        //ScoreTable.ins.ApplyCollectedGold();
         GameSetup.ins.SaveClassData();
+
     }
 
     public void UI_ReturnToVillage()
     {
-        Debug.Log("Game lost = " + Game_State.gameLost);
+        ScoreTable.ins.ApplyCollectedGold();
         Level_SelectedScenes.ins.ChangeToVillageScene();
     }
     public void UI_ReturnToMenu()
     {
+        ScoreTable.ins.ApplyCollectedGold();
         Level_SelectedScenes.ins.ChangeToMainmenu();
     }
 }

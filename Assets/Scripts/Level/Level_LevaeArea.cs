@@ -10,7 +10,7 @@ public class Level_LevaeArea : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            ScoreTable.ins.BeginAnimatingGold();
+            //ScoreTable.ins.BeginAnimatingGold();
 
             Level_GameCompleted.ins.ShowLevelCompletedScreen();
         }

@@ -61,6 +61,10 @@ public class UI_MainMenuControl : MonoBehaviour
     private void Start()
     {
         gameSetup = GameSetup.ins;
+        HideAllClassesForPlayer1();
+        HideAllClassesForPlayer2();
+        ShowActiveClass(0);
+        ShowActiveClass(1);
     }
 
 
@@ -248,6 +252,39 @@ public class UI_MainMenuControl : MonoBehaviour
             case 1:
                 p2Barbarian.SetActive(false);
                 p2Archer.SetActive(true);
+                break;
+        }
+    }
+
+    void HideAllClassesForPlayer1()
+    {
+        p1Paladin.SetActive(false);
+        p1Barbarian.SetActive(false);
+        p1Archer.SetActive(false);
+        p1Mage.SetActive(false);
+    }
+    void HideAllClassesForPlayer2()
+    {
+        p2Paladin.SetActive(false);
+        p2Barbarian.SetActive(false);
+        p2Archer.SetActive(false);
+        p2Mage.SetActive(false);
+    }
+    public void ShowActiveClass(int id)
+    {
+        switch(gameSetup.playingPlayers[id].selectedClass)
+        {
+            case ENUM_PlayerClass.Paladin:
+                ShowPaladin(id);
+                break;
+            case ENUM_PlayerClass.Barbarian:
+                ShowBarbarian(id);
+                break;
+            case ENUM_PlayerClass.Ranger:
+                ShowArcher(id);
+                break;
+            case ENUM_PlayerClass.Mage:
+                ShowMage(id);
                 break;
         }
     }

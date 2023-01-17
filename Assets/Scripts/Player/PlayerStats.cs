@@ -23,6 +23,7 @@ public class PlayerStats : MonoBehaviour
         {
             //Debug.LogWarning("Teraz powinna odbyc sie smierc gracza");
             Level_FightReferenecs.ins.resurrection.PlayerDeath(player);
+            player.isInvulnerable = true;
         }
     }
     public void ModifyEnergy(float val)

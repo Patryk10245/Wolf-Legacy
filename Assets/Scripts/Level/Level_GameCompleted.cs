@@ -20,6 +20,7 @@ public class Level_GameCompleted : MonoBehaviour
             Game_State.gameWon = true;   
         }
         finishScreen.gameObject.SetActive(true);
+        Game_CanvasController.ins.LevelCompleted();
     }
 
     public void UI_ReturnToVillage()

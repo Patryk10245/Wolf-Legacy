@@ -51,7 +51,7 @@ public class Game_State : MonoBehaviour
     public void ResetValuesToDefault()
     {
         gameLost = false;
-        gameLost = false;
+        gameWon = false;
         gamePaused = false;
         Time.timeScale = 1;
         Game_State.ins.pausingWindow.SetActive(false);
