@@ -100,15 +100,10 @@ public class GameSetup : MonoBehaviour
 
     public void SetUpTheGame()
     {
-
-        Debug.Log("Setting up The Game");
-        //playingPlayers[0].isDead = false;
-
-        //Debug.Log("Setting up the game");
         Level_FightReferenecs levelReferences = Level_FightReferenecs.ins;
         Game_State.ins.pausingWindow = levelReferences.pauseWindow;
         Game_State.ins.ResetValuesToDefault();
-        //Debug.Log("level references = " + levelReferences.gameObject.name);
+
 
         playerManager = levelReferences.playerManager;
         playerManager.ResetValuesToDefault();
@@ -116,32 +111,19 @@ public class GameSetup : MonoBehaviour
         levelReferences.resurrection.playerManager = playerManager;
         playerInputManager = levelReferences.playerInputManager;
         playerInputManager.playerPrefab = playerManager.playerPrefab;
-        //Debug.Log("player manager = " + playerManager);
-
-        //Debug.Log("Score table scene = " + scoreTable.gameObject.scene.name);
         scoreTable.TEXT_goldAmount = levelReferences.GoldTextIcon;
 
         if (numberOfPlayers == 1)
         {
-
             PlayerInput newPlayer = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
-            //Debug.Log("new player = " + newPlayer);
             playerManager.playerList.Add(newPlayer.GetComponent<Player>());
-            //Debug.Log("player pos = " + newPlayer.gameObject.transform.position);
-            //Debug.Log("spawn pos = " + playerManager.playerSpawnPosition.transform.position);
             newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
-            
-            //Debug.Log("player pos = " + newPlayer.gameObject.transform.position);
             SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
      
-
             cameraFollowing.singlePlayer = true;
             cameraFollowing.flat = false;
             cameraFollowing.smooth = false;
-
             levelReferences.player2UI.SetActive(false);
-            //Destroy(playerManager.playerList[1].gameObject);
-            //playerManager.playerList.RemoveAt(1);
 
             switch(playingPlayers[0].selectedClass)
             {
@@ -158,23 +140,19 @@ public class GameSetup : MonoBehaviour
                     MageSetup(playerManager.playerList[0]);
                     break;
             }
+            newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+
         }
         else if(numberOfPlayers == 2)
         {
-            
             PlayerInput newPlayer1 = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
-            //Debug.Log("new player = " + newPlayer1);
-            playerManager.playerList.Add(newPlayer1.GetComponent<Player>());
-            newPlayer1.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+            playerManager.playerList.Add(newPlayer1.GetComponent<Player>());   
             SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
-            //Debug.Log("First Player Created");
-
 
             switch (playingPlayers[0].selectedClass)
             {
                 case ENUM_PlayerClass.Paladin:
                     PaladinSetup(playerManager.playerList[0]);
-
                     break;
                 case ENUM_PlayerClass.Barbarian:
                     BarbarianSetup(playerManager.playerList[0]);
@@ -187,14 +165,31 @@ public class GameSetup : MonoBehaviour
                     break;
             }
 
+            newPlayer1.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+
             try
             {
                 PlayerInput newPlayer2 = playerInputManager.JoinPlayer(1,0,playingPlayers[1].controlScheme);
-                //Debug.Log("new player2 = " + newPlayer2);
-                playerManager.playerList.Add(newPlayer2.gameObject.GetComponent<Player>());
-                newPlayer2.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+                playerManager.playerList.Add(newPlayer2.gameObject.GetComponent<Player>());               
                 SetReferencesForPlayer2(playerManager.playerList[1], levelReferences);
-                //Debug.Log("Second Player Created");
+
+                switch (playingPlayers[1].selectedClass)
+                {
+                    case ENUM_PlayerClass.Paladin:
+                        PaladinSetup(playerManager.playerList[1]);
+                        break;
+                    case ENUM_PlayerClass.Barbarian:
+                        BarbarianSetup(playerManager.playerList[1]);
+                        break;
+                    case ENUM_PlayerClass.Ranger:
+                        RangerSetup(playerManager.playerList[1]);
+                        break;
+                    case ENUM_PlayerClass.Mage:
+                        MageSetup(playerManager.playerList[1]);
+                        break;
+                }
+
+                newPlayer2.gameObject.transform.position = playerManager.playerSpawnPosition.position;
             }
             catch(Exception execption)
             {
@@ -205,33 +200,12 @@ public class GameSetup : MonoBehaviour
                 levelReferences.player2UI.SetActive(false);
                 return;
                 //Debug.Log(execption);
-            }
-            //Debug.Log(newPlayer2.name);
-
-            switch (playingPlayers[1].selectedClass)
-            {
-                case ENUM_PlayerClass.Paladin:
-                    PaladinSetup(playerManager.playerList[1]);
-                    break;
-                case ENUM_PlayerClass.Barbarian:
-                    BarbarianSetup(playerManager.playerList[1]);
-                    break;
-                case ENUM_PlayerClass.Ranger:
-                    RangerSetup(playerManager.playerList[1]);
-                    break;
-                case ENUM_PlayerClass.Mage:
-                    MageSetup(playerManager.playerList[1]);
-                    break;
-            }
+            }         
 
             cameraFollowing.singlePlayer = false;
             cameraFollowing.flat = true;
             cameraFollowing.smooth = false;
         }
-
-
-        
-
     }
 
     void PaladinSetup(Player player)
