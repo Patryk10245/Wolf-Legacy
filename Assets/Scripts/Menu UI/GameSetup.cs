@@ -304,7 +304,7 @@ public class GameSetup : MonoBehaviour
         Player_RangerAttack attack = player.gameObject.AddComponent<Player_RangerAttack>();
         player.attackScript = attack;
         attack.player = player;
-        attack.projectilePrefab = mageProjectilePrefab;
+        attack.projectilePrefab = archerProjectilePrefab;
         attack.spawnProjectilePosition = player.controller.weaponCollider.transform;
         SpriteRenderer archersHand = player.controller.weaponAnimator.gameObject.GetComponent<SpriteRenderer>();
         archersHand.sortingLayerName = "Player";

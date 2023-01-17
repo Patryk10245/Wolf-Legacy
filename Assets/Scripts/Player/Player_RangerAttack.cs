@@ -6,7 +6,7 @@ public class Player_RangerAttack : Player_AttackScript
 {
     public GameObject projectilePrefab;
     public Transform spawnProjectilePosition;
-    [SerializeField] float projectileSpeed = 10;
+    [SerializeField] float projectileSpeed = 800;
 
     public override void Attack()
     {
@@ -18,13 +18,19 @@ public class Player_RangerAttack : Player_AttackScript
     {
         GameObject temp = Instantiate(projectilePrefab);
         temp.transform.position = spawnProjectilePosition.position;
+
         Vector3 mousepos = player.controller.mousePos;
+        mousepos.z = Camera.main.nearClipPlane;
         mousepos = Camera.main.ScreenToWorldPoint(mousepos);
-        Vector3 dir = (mousepos - spawnProjectilePosition.transform.position).normalized;
-        //Debug.Log("Dir = " + dir);
+
+        Vector3 dir = (mousepos - spawnProjectilePosition.transform.position);
+        dir.z = 0;
+
+        Vector3 directionNormalized = Vector3.Normalize(dir);
 
         Player_Projectile projectile = temp.GetComponent<Player_Projectile>();
-        projectile.flyDirection = dir;
+        projectile.rb.AddForce(directionNormalized * projectileSpeed);
+        projectile.flyDirection = directionNormalized;
         projectile.speed = projectileSpeed;
         projectile.damage = player.stats.damage;
         projectile.stopTimerAt = 4;
