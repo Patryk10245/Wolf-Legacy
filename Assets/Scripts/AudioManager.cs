@@ -23,12 +23,20 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public AudioClip backgroundMusic;
-    public AudioClip villageMusic;
-    public AudioClip menuMusic;
-    public AudioClip swordSlash;
-    public AudioSource source;
+    [Header("References")]
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioSource playerHurtSource;
     public float masterVolume;
+
+    [Header("Clips")]
+    [SerializeField] AudioClip backgroundMusic;
+    [SerializeField] AudioClip villageMusic;
+    [SerializeField] AudioClip menuMusic;
+    [SerializeField] AudioClip swordSlash;
+    [SerializeField] AudioClip playerHurt;
+    [SerializeField] AudioClip enemyHurt;
+
+    
 
 
     private void Update()
@@ -40,24 +48,35 @@ public class AudioManager : MonoBehaviour
         source.volume = volume;
     }
 
-    public void PlayMenuMusic()
+    public void Play_MenuMusic()
     {
         source.clip = menuMusic;
         source.Play();
     }
-    public void PlayVillageMusic()
+    public void Play_VillageMusic()
     {
         source.clip = villageMusic;
         source.Play();
     }
-    public void PlayGameMusic()
+    public void Play_GameMusic()
     {
         source.clip = backgroundMusic;
         source.Play();
     }
 
-    public void PlaySwordSlash()
+    public void Play_SwordSlash()
     {
         source.PlayOneShot(swordSlash);
+    }
+    public void Play_PlayerHurt()
+    {
+        if(!playerHurtSource.isPlaying)
+        {
+            playerHurtSource.Play();
+        }
+    }
+    public void Play_EnemyHurt()
+    {
+        source.PlayOneShot(enemyHurt);
     }
 }

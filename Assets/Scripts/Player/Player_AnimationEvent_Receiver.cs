@@ -8,7 +8,7 @@ public class Player_AnimationEvent_Receiver : MonoBehaviour
     
     public void animPlaySwordSound()
     {
-        AudioManager.ins.PlaySwordSlash();
+        AudioManager.ins.Play_SwordSlash();
     }
 
     public void animEndAttack()
