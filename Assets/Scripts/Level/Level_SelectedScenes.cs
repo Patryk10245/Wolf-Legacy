@@ -55,7 +55,7 @@ public class Level_SelectedScenes : MonoBehaviour
         
         if(scene == SceneManager.GetSceneByName("Village_Scene"))
         {
-            
+            AudioManager.ins.PlayVillageMusic();
             Village_UI_Control.ins.SetReference();
             Village_Upgrades.ins.UpdateClassesUIUpgrades();
             ScoreTable.ins.ApplyCollectedGold();
@@ -64,9 +64,11 @@ public class Level_SelectedScenes : MonoBehaviour
         else if(scene == SceneManager.GetSceneByName("Main_Menu_Scene"))
         {
             //Debug.Log("Menu Scene");
+            AudioManager.ins.PlayMenuMusic();
         }
         else
         {
+            AudioManager.ins.PlayGameMusic();
             //Debug.Log("Scene changed to Fight Scene");
             GameSetup.ins.SetUpTheGame();
         }

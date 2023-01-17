@@ -52,6 +52,9 @@ public class UI_MainMenuControl : MonoBehaviour
     [SerializeField] GameObject player1NoneScheme;
     [SerializeField] GameObject player2NoneScheme;
 
+    [SerializeField] Slider musicSlider;
+    [SerializeField] Slider soundsSlider;
+
 
     private void Awake()
     {
@@ -388,6 +391,11 @@ public class UI_MainMenuControl : MonoBehaviour
         gameSetup.LoadClassData();
         Level_SelectedScenes.ins.currentFightScene = -1;
         Level_SelectedScenes.ins.LoadNextScene();
+    }
+
+    public void ChangeMasterVolume()
+    {
+        AudioManager.ins.ChangeVolume(musicSlider.value);
     }
 
     public void ChangeToTestingScene()
