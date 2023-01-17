@@ -14,28 +14,28 @@ public class Village_UI_ClassInfo : MonoBehaviour
     {
         for (int i = 0; i < x; i++)
         {
-            damageLevels[i].color = Color.green;
+            damageLevels[i].color = Village_UI_Control.ins.boughtUpgradeColor;
         }
     }
     public void UI_IncreaseHealthLevel(int x)
     {
         for (int i = 0; i < x; i++)
         {
-            healthLevels[i].color = Color.green;
+            healthLevels[i].color = Village_UI_Control.ins.boughtUpgradeColor;
         }
     }
     public void UI_IncreaseEnergyLevel(int x)
     {
         for (int i = 0; i < x; i++)
         {
-            energyLevels[i].color = Color.green;
+            energyLevels[i].color = Village_UI_Control.ins.boughtUpgradeColor;
         }
     }
     public void UI_IncreaseEnergyRegenLevel(int x)
     {
         for (int i = 0; i < x; i++)
         {
-            energyRegenLevels[i].color = Color.green;
+            energyRegenLevels[i].color = Village_UI_Control.ins.boughtUpgradeColor;
 
         }
     }
@@ -43,7 +43,7 @@ public class Village_UI_ClassInfo : MonoBehaviour
     {
         for (int i = 0; i < x; i++)
         {
-            speedLevels[i].color = Color.green;
+            speedLevels[i].color = Village_UI_Control.ins.boughtUpgradeColor;
         }
     }
 }
