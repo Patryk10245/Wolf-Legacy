@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: e38c00ca72adba94f93ccb7b725590b9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: upgrade-character2_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 325
+        width: 216
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff1a323182771204fa770a7d72540b04
+      internalID: -160788777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_1
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 313
+        width: 216
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd357c7111d79744c8f4ab9e662f904b
+      internalID: -1295787500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_2
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 280
+        width: 216
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa9bd8165c873645bb4427d09da3df1
+      internalID: -662727031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_3
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 248
+        width: 216
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c9f59a28bb5e345a7370b381e120e3
+      internalID: -1805508493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 11
+        width: 216
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7a40faa06117141bf6bab5c3a0eb49
+      internalID: -1964365783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_5
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 211
+        width: 132
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1eb52a7704f5d344b0d1901650ee6e0
+      internalID: 92071334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_16
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 189
+        width: 68
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3fac7d7640fad4fba8d93d437df974
+      internalID: 689446071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_22
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 144
+        width: 160
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122244bd002815e42b2afab5d3195c3e
+      internalID: -261779070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_35
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 117
+        width: 104
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f44ff9b9595544584d6f9ed0a33260
+      internalID: -853866588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_44
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 93
+        width: 82
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67118fbccf5be7e44949838e8bc139c8
+      internalID: 43966862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_51
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 60
+        width: 71
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f60f111a0c21db408ba56cd17a77997
+      internalID: -45019245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_57
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 40
+        width: 61
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ad22fc2faa93c488978568884eb7c0
+      internalID: 321372232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_63
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 48
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 640ca1d3e47f4a14681993691924cc60
+      internalID: -1539886305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgrade-character2_64
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 16
+        width: 68
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d85d1c727a7bd458143b2b8d16ddf4
+      internalID: 1390258091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      upgrade-character2_0: -160788777
+      upgrade-character2_6: -1026014609
+      upgrade-character2_7: 419061016
+      upgrade-character2_53: 1511921712
+      upgrade-character2_59: -147491524
+      upgrade-character2_36: -569687040
+      upgrade-character2_21: -1671804498
+      upgrade-character2_11: -791644951
+      upgrade-character2_63: -1539886305
+      upgrade-character2_4: -1964365783
+      upgrade-character2_40: 205610849
+      upgrade-character2_62: 560215014
+      upgrade-character2_69: 155313905
+      upgrade-character2_58: 1270071040
+      upgrade-character2_29: -1148685632
+      upgrade-character2_60: 1958705150
+      upgrade-character2_52: 1397480880
+      upgrade-character2_33: 597627706
+      upgrade-character2_20: -1723651761
+      upgrade-character2_14: -1135238535
+      upgrade-character2_34: -1599704562
+      upgrade-character2_55: -454809245
+      upgrade-character2_39: -583636965
+      upgrade-character2_37: 599165475
+      upgrade-character2_46: 93242310
+      upgrade-character2_64: 1390258091
+      upgrade-character2_12: 1062411747
+      upgrade-character2_2: -662727031
+      upgrade-character2_30: 572064062
+      upgrade-character2_32: 698022032
+      upgrade-character2_9: -1008810492
+      upgrade-character2_44: 43966862
+      upgrade-character2_10: 2260699
+      upgrade-character2_5: 92071334
+      upgrade-character2_19: 2079711085
+      upgrade-character2_66: -1339087676
+      upgrade-character2_35: -853866588
+      upgrade-character2_51: -45019245
+      upgrade-character2_45: -8356013
+      upgrade-character2_18: -660271378
+      upgrade-character2_57: 321372232
+      upgrade-character2_17: -675600256
+      upgrade-character2_25: -2003399280
+      upgrade-character2_47: -1218157407
+      upgrade-character2_8: 135967329
+      upgrade-character2_67: -367481135
+      upgrade-character2_56: -1574391659
+      upgrade-character2_65: -1518735427
+      upgrade-character2_15: -1583100833
+      upgrade-character2_24: -816101015
+      upgrade-character2_43: -508034136
+      upgrade-character2_28: 1439115605
+      upgrade-character2_50: 1874028468
+      upgrade-character2_61: 906765461
+      upgrade-character2_42: 1711362565
+      upgrade-character2_54: 2104674685
+      upgrade-character2_26: 1381383219
+      upgrade-character2_23: -804832261
+      upgrade-character2_16: 689446071
+      upgrade-character2_27: 1934946706
+      upgrade-character2_3: -1805508493
+      upgrade-character2_41: -243948166
+      upgrade-character2_13: -1193346953
+      upgrade-character2_48: -1807669537
+      upgrade-character2_68: 2025367954
+      upgrade-character2_31: 1730999859
+      upgrade-character2_22: -261779070
+      upgrade-character2_1: -1295787500
+      upgrade-character2_49: -473033576
+      upgrade-character2_38: 942742868
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
