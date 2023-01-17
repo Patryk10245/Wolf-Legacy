@@ -53,6 +53,11 @@ public class Player_Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (collision.gameObject.CompareTag("Destroyable"))
+        {
+            collision.gameObject.GetComponent<Destroyable_Object>().DestroyMe();
+            Destroy(gameObject);
+        }
 
     }
 }

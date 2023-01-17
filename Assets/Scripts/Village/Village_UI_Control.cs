@@ -25,7 +25,7 @@ public class Village_UI_Control : MonoBehaviour
     [SerializeField] GameObject infoField;
     [SerializeField] GameObject villageMenu;
     [SerializeField] Color opaqueColor;
-    [SerializeField] Color boughtUpgradeColor;
+    public Color boughtUpgradeColor;
     [Space(10)]
     [Header("Buildings")]
     [SerializeField] Image paladinDestroyedBuilding;
