@@ -15324,7 +15324,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 564608513}
         m_TargetAssemblyTypeName: Level_GameOver, Assembly-CSharp
         m_MethodName: UI_ReturnToVillage
         m_Mode: 1
@@ -23490,7 +23490,7 @@ PrefabInstance:
     - target: {fileID: 3244527964310266400, guid: 62b2384aac7d8654385d48f7adc2696d, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1885208429}
     - target: {fileID: 3244527964310266400, guid: 62b2384aac7d8654385d48f7adc2696d, type: 3}
       propertyPath: arenaCorners.Array.size
       value: 2
@@ -26646,7 +26646,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 564608513}
         m_TargetAssemblyTypeName: Level_GameOver, Assembly-CSharp
         m_MethodName: UI_ReturnToMenu
         m_Mode: 1

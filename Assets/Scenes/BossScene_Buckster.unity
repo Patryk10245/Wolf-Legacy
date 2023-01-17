@@ -715,7 +715,7 @@ PrefabInstance:
     - target: {fileID: 2367892769948525171, guid: b94c6c8fe845a3c429de96bb957ab0c1, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1296129907}
     - target: {fileID: 2367892769948525171, guid: b94c6c8fe845a3c429de96bb957ab0c1, type: 3}
       propertyPath: areaPattern
       value: 
@@ -731,7 +731,7 @@ PrefabInstance:
     - target: {fileID: 2367892769948525171, guid: b94c6c8fe845a3c429de96bb957ab0c1, type: 3}
       propertyPath: healthBarAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1536381289}
     - target: {fileID: 2367892769948525171, guid: b94c6c8fe845a3c429de96bb957ab0c1, type: 3}
       propertyPath: placeToSpawnEnemy
       value: 
@@ -127468,6 +127468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1536381288}
+  - component: {fileID: 1536381289}
   m_Layer: 5
   m_Name: Boss_UI
   m_TagString: Untagged
@@ -127497,6 +127498,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1536381289
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536381287}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6d30a0738dbe28e46890868af3aa41de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1562119897
 GameObject:
   m_ObjectHideFlags: 0

@@ -22958,7 +22958,7 @@ PrefabInstance:
     - target: {fileID: 2059904262836334205, guid: d9a1cad097c86824a9ef83c888f07514, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2048188248}
     - target: {fileID: 2059904262836334205, guid: d9a1cad097c86824a9ef83c888f07514, type: 3}
       propertyPath: middleOfArena
       value: 

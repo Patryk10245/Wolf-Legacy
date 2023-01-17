@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Boss_Duck_RocksObject : MonoBehaviour
+{
+    public float damage;
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            collision.GetComponent<Player>().TakeDamage(damage);
+        }
+    }
+    public void AnimationEvent_EndAnimation()
+    {
+        Destroy(gameObject);
+    }
+}

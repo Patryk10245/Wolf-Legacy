@@ -195,6 +195,7 @@ MonoBehaviour:
   rb: {fileID: 3244527964310266413}
   agent: {fileID: 3244527964310266415}
   stats: {fileID: 3244527964310266401}
+  bossArea: {fileID: 0}
   specialEffects: {fileID: 2075728327385830615}
   healthBar: {fileID: 0}
   bossState: 0
@@ -205,13 +206,18 @@ MonoBehaviour:
   dash_WaitingForRecharge: 0
   minIdleTime: 1
   maxIdleTime: 3
-  arenaBounds: {x: 43, y: 73, z: 43, w: 27}
+  arenaCorners: []
   playerPos: {x: 0, y: 0, z: 0}
   fallAreaRadius: 3
   knockBackForce: 2500
   jumpDamage: 6
+  flyingSpeed: 10
   speedModifier: 3
   rushDamage: 10
+  rocksFallRange: 4
+  rocksDamage: 10
+  rocksNumber: 2
+  rockPrefab: {fileID: 3357530329592424813, guid: 3e79a59d8c1ab4344af25d2db606d8f5, type: 3}
 --- !u!58 &1958520269597539360
 CircleCollider2D:
   m_ObjectHideFlags: 0
