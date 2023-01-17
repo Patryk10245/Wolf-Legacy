@@ -5632,7 +5632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9c3b3f7c62f6b4d923dcead8544b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  villageUpgrades: {fileID: 1514784277}
+  villageUpgrades: {fileID: 0}
   mapChoosing: {fileID: 263261326}
   canvasAnimator: {fileID: 259170376}
   infoField: {fileID: 1487259570}
@@ -13457,60 +13457,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514535234}
   m_CullTransparentMesh: 1
---- !u!1 &1514784276
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1514784278}
-  - component: {fileID: 1514784277}
-  m_Layer: 0
-  m_Name: villag eupgrade
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1514784277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514784276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a23af79a20781934ca0bef19ef80fb85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreTable: {fileID: 0}
-  paladinUpgrades: {fileID: 11400000, guid: 35bd96cea5d10424ebc49b3f347cad0a, type: 2}
-  barbarianUpgrades: {fileID: 11400000, guid: 99f1ccea05e058e4983301bf44198c70, type: 2}
-  rangerUpgrades: {fileID: 11400000, guid: dab2406f9f51913419f45eb3c02c747e, type: 2}
-  mageUpgrades: {fileID: 11400000, guid: 7b51852c570410e4c87c6ce910984e54, type: 2}
-  paladinBuildingBought: 0
-  barbarianBuildingBought: 0
-  archerBuildingBought: 0
-  mageBuildingBought: 0
-  village_UI_Control: {fileID: 601695554}
---- !u!4 &1514784278
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514784276}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 851.65607, y: 424.8595, z: 9.576593}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1517775136
 GameObject:
   m_ObjectHideFlags: 0
