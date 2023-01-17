@@ -53,13 +53,15 @@ public class PlayerController : MonoBehaviour
         playerMap.FindAction("Pause").started += PauseGame;
         playerMap.Enable();
 
-        
+
+        transform.position = Level_FightReferenecs.ins.playerManager.playerSpawnPosition.transform.position;
 
         //Debug.Log("name = " + gameObject.name + " | device = " + playerMap.devices.Value[0].name);
     }
 
     private void Update()
     {
+        //Debug.Log("Player pos = " + gameObject.transform.position);
         if (Game_State.gamePaused)
             return;
         if(player.isDead)

@@ -127,7 +127,11 @@ public class GameSetup : MonoBehaviour
             PlayerInput newPlayer = playerInputManager.JoinPlayer(0, 0, playingPlayers[0].controlScheme);
             //Debug.Log("new player = " + newPlayer);
             playerManager.playerList.Add(newPlayer.GetComponent<Player>());
+            //Debug.Log("player pos = " + newPlayer.gameObject.transform.position);
+            //Debug.Log("spawn pos = " + playerManager.playerSpawnPosition.transform.position);
             newPlayer.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+            
+            //Debug.Log("player pos = " + newPlayer.gameObject.transform.position);
             SetReferencesForPlayer1(playerManager.playerList[0], levelReferences);
      
 
@@ -302,7 +306,7 @@ public class GameSetup : MonoBehaviour
         attack.player = player;
         attack.projectilePrefab = mageProjectilePrefab;
         attack.spawnProjectilePosition = player.controller.weaponCollider.transform;
-        SpriteRenderer archersHand = player.controller.weaponAnimator.gameObject.AddComponent<SpriteRenderer>();
+        SpriteRenderer archersHand = player.controller.weaponAnimator.gameObject.GetComponent<SpriteRenderer>();
         archersHand.sortingLayerName = "Player";
         archersHand.sortingOrder = 3;
         archersHand.sprite = archersHandImage;
