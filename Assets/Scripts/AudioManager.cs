@@ -26,9 +26,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip backgroundMusic;
     public AudioClip villageMusic;
     public AudioClip menuMusic;
+    public AudioClip swordSlash;
     public AudioSource source;
     public float masterVolume;
 
+
+    private void Update()
+    {
+    }
 
     public void ChangeVolume(float volume)
     {
@@ -49,5 +54,10 @@ public class AudioManager : MonoBehaviour
     {
         source.clip = backgroundMusic;
         source.Play();
+    }
+
+    public void PlaySwordSlash()
+    {
+        source.PlayOneShot(swordSlash);
     }
 }

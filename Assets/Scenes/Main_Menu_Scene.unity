@@ -11637,7 +11637,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -11734,6 +11734,7 @@ MonoBehaviour:
   backgroundMusic: {fileID: 8300000, guid: 7881bd0846fa36e48be124af0d0a7e1e, type: 3}
   villageMusic: {fileID: 8300000, guid: 1724b2961c74aa8458778ecc251def2a, type: 3}
   menuMusic: {fileID: 8300000, guid: d120a845738da49408c77b6470f6f3d1, type: 3}
+  swordSlash: {fileID: 8300000, guid: 9c22eea25e7875348832fdeeff708cd1, type: 3}
   source: {fileID: 1881090597}
   masterVolume: 0
 --- !u!4 &1881090599

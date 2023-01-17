@@ -6,6 +6,11 @@ public class Player_AnimationEvent_Receiver : MonoBehaviour
 {
     public Player player;
     
+    public void animPlaySwordSound()
+    {
+        AudioManager.ins.PlaySwordSlash();
+    }
+
     public void animEndAttack()
     {
         player.inAttack = false;
