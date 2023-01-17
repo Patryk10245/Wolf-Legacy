@@ -14393,8 +14393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3e94ec36f250b46828041de73b35e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finishScreen: {fileID: 0}
-  collectedGoldText: {fileID: 0}
+  finishScreen: {fileID: 471302911}
+  collectedGoldText: {fileID: 1698169691}
 --- !u!4 &104754416
 Transform:
   m_ObjectHideFlags: 0
@@ -16131,7 +16131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2128a14320aba4fb88b06c970fdb82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathScreen: {fileID: 0}
+  deathScreen: {fileID: 1932768273}
 --- !u!4 &564608514
 Transform:
   m_ObjectHideFlags: 0
