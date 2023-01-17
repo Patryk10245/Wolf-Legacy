@@ -21,5 +21,9 @@ public class Player_Sword_Collider : MonoBehaviour
         {
             collision.gameObject.GetComponentInParent<Enemy_BaseClass>().TakeDamage(player.stats.damage, ENUM_AttackType.melee, player);
         }
+        else if(collision.gameObject.CompareTag("Destroyable"))
+        {
+            collision.gameObject.GetComponent<Destroyable_Object>().DestroyMe();
+        }
     }
 }
