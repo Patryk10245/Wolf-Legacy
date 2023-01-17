@@ -16207,7 +16207,7 @@ MonoBehaviour:
   placeToTeleportPlayersTo: {fileID: 11039199}
   boss: {fileID: 853746351}
   areaCollider: {fileID: 579373560}
-  bossHealthBar: {fileID: 0}
+  bossHealthBar: {fileID: 382954973}
 --- !u!4 &579373562
 Transform:
   m_ObjectHideFlags: 0
