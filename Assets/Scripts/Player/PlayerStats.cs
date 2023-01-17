@@ -18,6 +18,7 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(float val)
     {
         currentHealth -= val;
+        AudioManager.ins.Play_PlayerHurt();
 
         if(currentHealth <= 0)
         {

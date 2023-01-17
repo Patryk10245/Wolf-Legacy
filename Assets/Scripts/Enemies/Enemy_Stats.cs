@@ -13,6 +13,7 @@ public class Enemy_Stats : MonoBehaviour
 
     public void TakeDamage(float val)
     {
+        AudioManager.ins.Play_EnemyHurt();
         currentHealth -= val;
         Instantiate(hitEffect, transform.position, transform.rotation);
     }

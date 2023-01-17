@@ -38,6 +38,7 @@ public class GameSetup : MonoBehaviour
     [SerializeField] ScoreTable scoreTable;
     public Village_Upgrades villageUpgrades;
     public PlayerInputManager playerInputManager;
+    public AudioManager audioManager;
     
     [SerializeField] public List<PlayerSelectedData> playingPlayers;
     public int numberOfPlayers;
