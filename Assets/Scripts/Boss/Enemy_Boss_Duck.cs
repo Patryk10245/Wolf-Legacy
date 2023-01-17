@@ -13,6 +13,7 @@ public enum ENUM_DuckBossState
     attack_rushing,
     attack_jumping,
     dash,
+    attack_rocks,
     dying
 }
 [System.Serializable]
@@ -69,7 +70,12 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
     [SerializeField] float speedModifier;
     [SerializeField] float rushDamage;
     bool is_rushing;
-    
+
+    [Header("Falling Rocks Action")]
+    [SerializeField] float rocksFallRange;
+    [SerializeField] float rocksDamage;
+    [SerializeField] int rocksNumber;
+    [SerializeField] GameObject rockPrefab;
 
     void Start()
     {
@@ -141,12 +147,12 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
             int rand;
             do
             {
-                rand = Random.Range(0, 4);
+                rand = Random.Range(0, 5);
                 //Debug.Log("last = " + last_action + "| current = " + rand);
 
-                if (last_action == 4) // If dashed, then move
+                if (last_action == 5) // If dashed, then move
                 {
-                    rand = 3;
+                    rand = 1;
                 }
 
                 switch (rand)
@@ -156,15 +162,19 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                         currentActionState = ENUM_current_state.preparation;
                         break;
                     case 1:
-                        bossState = ENUM_DuckBossState.attack_rushing;
+                        bossState = ENUM_DuckBossState.moving;
                         currentActionState = ENUM_current_state.preparation;
-                        break;
+                        break;                  
                     case 2:
                         bossState = ENUM_DuckBossState.attack_jumping;
                         currentActionState = ENUM_current_state.preparation;
                         break;
                     case 3:
-                        bossState = ENUM_DuckBossState.moving;
+                        bossState = ENUM_DuckBossState.attack_rushing;
+                        currentActionState = ENUM_current_state.preparation;
+                        break;
+                    case 4:
+                        bossState = ENUM_DuckBossState.attack_rocks;
                         currentActionState = ENUM_current_state.preparation;
                         break;
                     default:
@@ -196,6 +206,9 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 break;
             case ENUM_DuckBossState.attack_rushing:
                 Action_Rushing();
+                break;
+            case ENUM_DuckBossState.attack_rocks:
+                Action_FallingRocks();
                 break;
             case ENUM_DuckBossState.dying:
                 Action_Dying();
@@ -340,7 +353,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 agent.SetDestination(transform.position);
                 currentActionState = ENUM_current_state.ready_to_exit;
                 //Debug.Log("END Moving State");
-                last_action = 3;
+                last_action = 1;
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;
@@ -367,7 +380,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 agent.SetDestination(transform.position);
                 //agent.velocity = Vector3.zero;
                 //Debug.Log("END Dash State");
-                last_action = 4;
+                last_action = 5;
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
             case ENUM_current_state.ready_to_exit:
@@ -472,13 +485,43 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                     agent.velocity = Vector3.zero;
                     currentActionState = ENUM_current_state.ready_to_exit;
                     //Debug.Log("END Rush State");
-                    last_action = 1;
+                    last_action = 3;
                 }
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;
 
         }
+    }
+
+    void Action_FallingRocks()
+    {
+        switch (currentActionState)
+        {
+            case ENUM_current_state.preparation:
+                anim.SetTrigger("rockFalling");
+                currentActionState = ENUM_current_state.working;
+                break;
+            case ENUM_current_state.working:
+
+                for(int i = 0; i < rocksNumber; i++)
+                {
+                    Vector3 point = Random.insideUnitCircle * rocksFallRange;
+                    point += move_target.transform.position;
+                    GameObject rock = Instantiate(rockPrefab, point, transform.rotation);
+                    rock.GetComponent<Boss_Duck_RocksObject>().damage = rocksDamage;
+                }
+                currentActionState = ENUM_current_state.finishing;
+                
+                break;
+            case ENUM_current_state.finishing:
+                last_action = 4;
+                currentActionState = ENUM_current_state.ready_to_exit;
+                break;
+            case ENUM_current_state.ready_to_exit:
+                break;
+        }
+        
     }
     void Action_Dying()
     {

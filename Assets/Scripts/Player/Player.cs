@@ -34,13 +34,6 @@ public class Player : MonoBehaviour
     public bool isInvulnerable;
     public bool isDead;
 
-    [Header("Debug")]
-    public GameObject dotobject;
-    public GameObject shield;
-    public float dot;
-    public Vector2 dotdir;
-    public Vector2 playerdir;
-
     private void Start()
     {
         //Debug.Log("start for Player = " + gameObject.name);
