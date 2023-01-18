@@ -166,7 +166,7 @@ public class GameSetup : MonoBehaviour
                     break;
             }
 
-            newPlayer1.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+            newPlayer1.gameObject.transform.position = playerManager.playerSpawnPosition.position + new Vector3(-0.5f,0,0);
 
             try
             {
@@ -190,7 +190,7 @@ public class GameSetup : MonoBehaviour
                         break;
                 }
 
-                newPlayer2.gameObject.transform.position = playerManager.playerSpawnPosition.position;
+                newPlayer2.gameObject.transform.position = playerManager.playerSpawnPosition.position + new Vector3(0.5f, 0, 0);
             }
             catch(Exception execption)
             {
