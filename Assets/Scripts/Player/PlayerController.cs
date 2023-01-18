@@ -173,6 +173,6 @@ public class PlayerController : MonoBehaviour
     public void PauseGame(InputAction.CallbackContext context)
     {
         Game_State.PauseGame();
-        Debug.Log("current state = " + Game_State.gamePaused);
+        //Debug.Log("current state = " + Game_State.gamePaused);
     }
 }

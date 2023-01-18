@@ -103,6 +103,8 @@ public class UI_MainMenuControl : MonoBehaviour
     {
         settingsAudio.SetActive(true);
         settingsWindow.SetActive(false);
+        musicSlider.value = AudioManager.ins.GetMusicVolume();
+        soundsSlider.value = AudioManager.ins.GetSoundVolume();
     }
     public void Show_Start_1Player()
     {

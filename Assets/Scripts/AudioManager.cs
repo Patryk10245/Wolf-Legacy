@@ -28,21 +28,29 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource soundSource;
     [SerializeField] AudioSource playerHurtSource;
 
-    [Header("Clips")]
+    [Header("Music")]
     [SerializeField] AudioClip backgroundMusic;
     [SerializeField] AudioClip villageMusic;
     [SerializeField] AudioClip menuMusic;
+
+    [Header("Player")]
     [SerializeField] AudioClip[] swordSlash;
-    [SerializeField] AudioClip playerHurt;
+    //[SerializeField] AudioClip playerHurt;
+    [SerializeField] AudioClip mageAttack;
+
+    [Header("Enemies")]
     [SerializeField] AudioClip enemyHurt;
 
     
 
-
-    private void Update()
+    public float GetMusicVolume()
     {
+        return musicSource.volume;
     }
-
+    public float GetSoundVolume()
+    {
+        return soundSource.volume;
+    }
     public void ChangeMusicVolume(float volume)
     {
         musicSource.volume = volume;
@@ -79,6 +87,10 @@ public class AudioManager : MonoBehaviour
         {
             playerHurtSource.Play();
         }
+    }
+    public void Play_MageFireball()
+    {
+        soundSource.PlayOneShot(mageAttack);
     }
     public void Play_EnemyHurt()
     {

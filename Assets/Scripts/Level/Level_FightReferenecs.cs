@@ -28,6 +28,7 @@ public class Level_FightReferenecs : MonoBehaviour
     public Level_GameOver gameOver;
     public GameObject player1UI;
     public GameObject player2UI;
+    public Level_UI_Settings ui_settings;
 
     [Space(10)]
     public Image player1HealthBar;
