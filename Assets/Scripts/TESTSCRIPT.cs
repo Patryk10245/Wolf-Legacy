@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class TESTSCRIPT : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public Vector3 force;
-    // Start is called before the first frame update
-    void Start()
+    public Animator anim;
+
+    private void OnBecameVisible()
     {
-        
+        //Debug.Log("I AM ALIVE = " + gameObject.name);
+        anim.enabled = true;
+    }
+    private void OnBecameInvisible()
+    {
+        //Debug.Log("I AM DEAD = " + gameObject.name);
+        anim.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown("k"))
-        {
-            rb.AddForce(force);
-        }
-    }
 }

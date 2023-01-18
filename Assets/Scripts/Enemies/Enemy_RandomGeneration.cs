@@ -7,6 +7,7 @@ public class Enemy_RandomGeneration : MonoBehaviour
 {
     public Transform[] corners;
     public GameObject enemyToSpawn;
+    public int minNumerOfSpawnedEnemies = 10;
     public int maxNumberOfSpawnedEnemies = 50;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,7 +20,7 @@ public class Enemy_RandomGeneration : MonoBehaviour
 
     void SpawnEnemies()
     {
-        int random = Random.Range(20, maxNumberOfSpawnedEnemies);
+        int random = Random.Range(minNumerOfSpawnedEnemies, maxNumberOfSpawnedEnemies);
         GameObject temp;
         Debug.Log("Enemies spawned = " + random);
 
