@@ -10476,7 +10476,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 774318140}
+        m_TargetAssemblyTypeName: UI_MainMenuControl, Assembly-CSharp
+        m_MethodName: ChangeSoundVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1751829984
 GameObject:
   m_ObjectHideFlags: 0
@@ -11859,7 +11871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13213e14e5482ec4ab1d84d8be5ca295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 1881090597}
+  musicSource: {fileID: 0}
   playerHurtSource: {fileID: 1679516845}
   masterVolume: 0
   backgroundMusic: {fileID: 8300000, guid: 7881bd0846fa36e48be124af0d0a7e1e, type: 3}

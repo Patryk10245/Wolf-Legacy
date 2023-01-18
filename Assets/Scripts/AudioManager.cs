@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
     }
 
     [Header("References")]
-    [SerializeField] AudioSource source;
+    [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource playerHurtSource;
     public float masterVolume;
 
@@ -43,30 +43,34 @@ public class AudioManager : MonoBehaviour
     {
     }
 
-    public void ChangeVolume(float volume)
+    public void ChangeMusicVolume(float volume)
     {
-        source.volume = volume;
+        musicSource.volume = volume;
+    }
+    public void ChangeSoundVolume(float volume)
+    {
+        musicSource.volume = volume;
     }
 
     public void Play_MenuMusic()
     {
-        source.clip = menuMusic;
-        source.Play();
+        musicSource.clip = menuMusic;
+        musicSource.Play();
     }
     public void Play_VillageMusic()
     {
-        source.clip = villageMusic;
-        source.Play();
+        musicSource.clip = villageMusic;
+        musicSource.Play();
     }
     public void Play_GameMusic()
     {
-        source.clip = backgroundMusic;
-        source.Play();
+        musicSource.clip = backgroundMusic;
+        musicSource.Play();
     }
 
     public void Play_SwordSlash()
     {
-        source.PlayOneShot(swordSlash);
+        musicSource.PlayOneShot(swordSlash);
     }
     public void Play_PlayerHurt()
     {
@@ -77,6 +81,6 @@ public class AudioManager : MonoBehaviour
     }
     public void Play_EnemyHurt()
     {
-        source.PlayOneShot(enemyHurt);
+        musicSource.PlayOneShot(enemyHurt);
     }
 }

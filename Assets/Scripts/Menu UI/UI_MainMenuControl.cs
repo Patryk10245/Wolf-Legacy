@@ -395,7 +395,11 @@ public class UI_MainMenuControl : MonoBehaviour
 
     public void ChangeMasterVolume()
     {
-        AudioManager.ins.ChangeVolume(musicSlider.value);
+        AudioManager.ins.ChangeMusicVolume(musicSlider.value);
+    }
+    public void ChangeSoundVolume()
+    {
+        AudioManager.ins.ChangeSoundVolume(soundsSlider.value);
     }
 
     public void ChangeToTestingScene()
