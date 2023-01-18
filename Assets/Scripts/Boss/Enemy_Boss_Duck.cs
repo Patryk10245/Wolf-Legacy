@@ -503,18 +503,17 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 currentActionState = ENUM_current_state.working;
                 break;
             case ENUM_current_state.working:
+                currentActionState = ENUM_current_state.finishing;
+                break;
+            case ENUM_current_state.finishing:
 
-                for(int i = 0; i < rocksNumber; i++)
+                for (int i = 0; i < rocksNumber; i++)
                 {
                     Vector3 point = Random.insideUnitCircle * rocksFallRange;
                     point += move_target.transform.position;
                     GameObject rock = Instantiate(rockPrefab, point, transform.rotation);
                     rock.GetComponent<Boss_Duck_RocksObject>().damage = rocksDamage;
                 }
-                currentActionState = ENUM_current_state.finishing;
-                
-                break;
-            case ENUM_current_state.finishing:
                 last_action = 4;
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;

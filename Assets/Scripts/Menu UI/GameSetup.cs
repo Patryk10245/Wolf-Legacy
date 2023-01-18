@@ -226,7 +226,17 @@ public class GameSetup : MonoBehaviour
         player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = paladinData.weaponSprite;
         player.controller.weaponAnimator.runtimeAnimatorController = weaponControllers[0];
         player.GetComponent<Animator>().runtimeAnimatorController = controllers[0];
-        
+
+        foreach(Transform child in player.controller.weaponAnimator.transform)
+        {
+            if(child.name == "Arm")
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        //Destroy(player.controller.weaponAnimator.gameObject.GetComponent<SpriteRenderer>());
+
 
 
         // Add Abilities
@@ -276,6 +286,15 @@ public class GameSetup : MonoBehaviour
         player.controller.weaponAnimator.runtimeAnimatorController = weaponControllers[2];
         player.GetComponent<Animator>().runtimeAnimatorController = controllers[2];
 
+        foreach (Transform child in player.controller.weaponAnimator.transform)
+        {
+            if (child.name == "Arm")
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+
         Player_RangerAttack attack = player.gameObject.AddComponent<Player_RangerAttack>();
         player.attackScript = attack;
         attack.player = player;
@@ -314,6 +333,14 @@ public class GameSetup : MonoBehaviour
         player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = mageData.weaponSprite;
         player.controller.weaponAnimator.runtimeAnimatorController = weaponControllers[3];
         player.GetComponent<Animator>().runtimeAnimatorController = controllers[3];
+
+        foreach (Transform child in player.controller.weaponAnimator.transform)
+        {
+            if (child.name == "Arm")
+            {
+                Destroy(child.gameObject);
+            }
+        }
 
         Player_MageAttack attack = player.gameObject.AddComponent<Player_MageAttack>();
         player.attackScript = attack;
