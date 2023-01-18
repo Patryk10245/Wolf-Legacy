@@ -51,11 +51,11 @@ TagManager:
   - name: Wall
     uniqueID: 1067708701
     locked: 0
-  - name: 'On Floor '
-    uniqueID: 50583853
-    locked: 0
   - name: Floor
     uniqueID: 3156470113
+    locked: 0
+  - name: 'On Floor '
+    uniqueID: 50583853
     locked: 0
   - name: Enemy
     uniqueID: 1841128997

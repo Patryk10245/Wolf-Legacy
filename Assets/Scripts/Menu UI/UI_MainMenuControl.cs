@@ -103,6 +103,8 @@ public class UI_MainMenuControl : MonoBehaviour
     {
         settingsAudio.SetActive(true);
         settingsWindow.SetActive(false);
+        musicSlider.value = AudioManager.ins.GetMusicVolume();
+        soundsSlider.value = AudioManager.ins.GetSoundVolume();
     }
     public void Show_Start_1Player()
     {
@@ -395,7 +397,11 @@ public class UI_MainMenuControl : MonoBehaviour
 
     public void ChangeMasterVolume()
     {
-        AudioManager.ins.ChangeVolume(musicSlider.value);
+        AudioManager.ins.ChangeMusicVolume(musicSlider.value);
+    }
+    public void ChangeSoundVolume()
+    {
+        AudioManager.ins.ChangeSoundVolume(soundsSlider.value);
     }
 
     public void ChangeToTestingScene()

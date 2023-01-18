@@ -24,49 +24,62 @@ public class AudioManager : MonoBehaviour
     }
 
     [Header("References")]
-    [SerializeField] AudioSource source;
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioSource soundSource;
     [SerializeField] AudioSource playerHurtSource;
-    public float masterVolume;
 
-    [Header("Clips")]
+    [Header("Music")]
     [SerializeField] AudioClip backgroundMusic;
     [SerializeField] AudioClip villageMusic;
     [SerializeField] AudioClip menuMusic;
-    [SerializeField] AudioClip swordSlash;
-    [SerializeField] AudioClip playerHurt;
+
+    [Header("Player")]
+    [SerializeField] AudioClip[] swordSlash;
+    //[SerializeField] AudioClip playerHurt;
+    [SerializeField] AudioClip mageAttack;
+
+    [Header("Enemies")]
     [SerializeField] AudioClip enemyHurt;
 
     
 
-
-    private void Update()
+    public float GetMusicVolume()
     {
+        return musicSource.volume;
     }
-
-    public void ChangeVolume(float volume)
+    public float GetSoundVolume()
     {
-        source.volume = volume;
+        return soundSource.volume;
+    }
+    public void ChangeMusicVolume(float volume)
+    {
+        musicSource.volume = volume;
+    }
+    public void ChangeSoundVolume(float volume)
+    {
+        soundSource.volume = volume;
     }
 
     public void Play_MenuMusic()
     {
-        source.clip = menuMusic;
-        source.Play();
+        musicSource.clip = menuMusic;
+        musicSource.Play();
     }
     public void Play_VillageMusic()
     {
-        source.clip = villageMusic;
-        source.Play();
+        musicSource.clip = villageMusic;
+        musicSource.Play();
     }
     public void Play_GameMusic()
     {
-        source.clip = backgroundMusic;
-        source.Play();
+        musicSource.clip = backgroundMusic;
+        musicSource.Play();
     }
 
     public void Play_SwordSlash()
     {
-        source.PlayOneShot(swordSlash);
+        int rand = Random.Range(0, 3);
+        soundSource.PlayOneShot(swordSlash[rand]);
     }
     public void Play_PlayerHurt()
     {
@@ -75,8 +88,12 @@ public class AudioManager : MonoBehaviour
             playerHurtSource.Play();
         }
     }
+    public void Play_MageFireball()
+    {
+        soundSource.PlayOneShot(mageAttack);
+    }
     public void Play_EnemyHurt()
     {
-        source.PlayOneShot(enemyHurt);
+        soundSource.PlayOneShot(enemyHurt);
     }
 }

@@ -41,11 +41,13 @@ public class Game_State : MonoBehaviour
         {
             Time.timeScale = 0;
             Level_FightReferenecs.ins.canvasAnimator.PauseGame();
+            Level_FightReferenecs.ins.ui_settings.soundWindow.SetActive(false);
         }
         else
         {
             Time.timeScale = 1;
             Level_FightReferenecs.ins.canvasAnimator.UnpauseGame();
+            Level_FightReferenecs.ins.ui_settings.soundWindow.SetActive(false);
         }
     }
     public void ResetValuesToDefault()

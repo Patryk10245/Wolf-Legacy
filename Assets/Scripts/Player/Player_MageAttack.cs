@@ -36,6 +36,7 @@ public class Player_MageAttack : Player_AttackScript
         projectile.damage = player.stats.damage;
         projectile.stopTimerAt = 4;
         projectile.player = player;
+        AudioManager.ins.Play_MageFireball();
     }
 
 }
