@@ -25,14 +25,14 @@ public class AudioManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioSource soundSource;
     [SerializeField] AudioSource playerHurtSource;
-    public float masterVolume;
 
     [Header("Clips")]
     [SerializeField] AudioClip backgroundMusic;
     [SerializeField] AudioClip villageMusic;
     [SerializeField] AudioClip menuMusic;
-    [SerializeField] AudioClip swordSlash;
+    [SerializeField] AudioClip[] swordSlash;
     [SerializeField] AudioClip playerHurt;
     [SerializeField] AudioClip enemyHurt;
 
@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
     }
     public void ChangeSoundVolume(float volume)
     {
-        musicSource.volume = volume;
+        soundSource.volume = volume;
     }
 
     public void Play_MenuMusic()
@@ -70,7 +70,8 @@ public class AudioManager : MonoBehaviour
 
     public void Play_SwordSlash()
     {
-        musicSource.PlayOneShot(swordSlash);
+        int rand = Random.Range(0, 3);
+        soundSource.PlayOneShot(swordSlash[rand]);
     }
     public void Play_PlayerHurt()
     {
@@ -81,6 +82,6 @@ public class AudioManager : MonoBehaviour
     }
     public void Play_EnemyHurt()
     {
-        musicSource.PlayOneShot(enemyHurt);
+        soundSource.PlayOneShot(enemyHurt);
     }
 }
