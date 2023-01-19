@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Enemy_Melee : Enemy_BaseClass
 {
     [SerializeField] float obstacle_avoidance_radius = 0.3f;
+    
 
     private void Update()
     {
@@ -90,6 +91,7 @@ public class Enemy_Melee : Enemy_BaseClass
             is_dying = true;
             currentEnemyState = ENUM_EnemyState.dying;
             tag = "Untagged";
+            
             ApplyAnimation();
         }
 

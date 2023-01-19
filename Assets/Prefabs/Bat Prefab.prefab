@@ -240,6 +240,7 @@ MonoBehaviour:
   agent: {fileID: 923329539989383322}
   stats: {fileID: 923329539989383320}
   obstacle_avoidance_radius: 0.3
+  deathParticleEffect: {fileID: 8248367361089773354, guid: 8ec604ae414f3194094e6b1841121025, type: 3}
 --- !u!114 &923329539989383297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,4 +352,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 923329539989383301}
-  sprite: {fileID: 923329541489867726}
