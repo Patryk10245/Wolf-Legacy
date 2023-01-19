@@ -24,6 +24,7 @@ public class UI_MainMenuControl : MonoBehaviour
     [SerializeField] GameObject settingsControls;
     [SerializeField] GameObject settingsRebindingP1;
     [SerializeField] GameObject settingsRebindingP2;
+    [SerializeField] GameObject deleteProgress;
 
     [SerializeField] GameObject onePlayerWindow;
     [SerializeField] GameObject twoPlayersWindow;
@@ -106,6 +107,12 @@ public class UI_MainMenuControl : MonoBehaviour
         musicSlider.value = AudioManager.ins.GetMusicVolume();
         soundsSlider.value = AudioManager.ins.GetSoundVolume();
     }
+    public void Show_DeleteProgress()
+    {
+        deleteProgress.SetActive(true);
+    }
+
+    /*
     public void Show_Start_1Player()
     {
         onePlayerWindow.SetActive(true);
@@ -119,8 +126,8 @@ public class UI_MainMenuControl : MonoBehaviour
         startWindow.SetActive(false);
         TwoPlayers();
     }
-
-
+    */
+    /*
     public void Show_Settings_Rebinding_Player1()
     {
         settingsRebindingP1.SetActive(true);
@@ -129,6 +136,7 @@ public class UI_MainMenuControl : MonoBehaviour
     {
         settingsRebindingP2.SetActive(true);
     }
+    */
 
     public void Exit_StartGame()
     {
@@ -160,6 +168,12 @@ public class UI_MainMenuControl : MonoBehaviour
         startWindow.SetActive(false);
         mainMenu.SetActive(true);
     }
+    public void Exit_DeleteProgress()
+    {
+        deleteProgress.SetActive(false);
+    }
+
+
     public void Exit_SettignsRebinding()
     {
         settingsRebindingP1.SetActive(false);
