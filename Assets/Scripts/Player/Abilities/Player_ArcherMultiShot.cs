@@ -5,7 +5,7 @@ public class Player_ArcherMultiShot : Ability_2
     [Space(10)]
     public float damageMultiplier = 1.5f;
     public float damage = 4;
-    public float arrowSpeed = 8;
+    public float arrowSpeed = 1500;
     public float timeBetweenArrows = 0.1f;
 
     public int arrowsToShot = 6;
@@ -56,14 +56,16 @@ public class Player_ArcherMultiShot : Ability_2
                 Player_Projectile proj = arrow.GetComponent<Player_Projectile>();
 
                 Vector3 mousepos = player.controller.mousePos;
+                mousepos.z = Camera.main.nearClipPlane;
                 mousepos = Camera.main.ScreenToWorldPoint(mousepos);
-                Vector3 dir = (mousepos - arrowSpawnPosiiton.transform.position).normalized;
+                Vector3 dir = (mousepos - arrowSpawnPosiiton.transform.position);
+                Vector3 directionNormalized = Vector3.Normalize(dir);
 
+                proj.rb.AddForce(directionNormalized * arrowSpeed);
                 proj.flyDirection = dir;
                 proj.speed = arrowSpeed;
                 proj.damage = damage;
                 proj.stopTimerAt = 4;
-                proj.rb.AddForce(dir * arrowSpeed);
                 proj.player = player;
             }
 
