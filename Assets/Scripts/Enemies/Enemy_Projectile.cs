@@ -17,6 +17,13 @@ public class Enemy_Projectile : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Vector2 dir = transform.position + flyDirection;
+        Vector2 pos = transform.position;
+
+        Vector2 offset = (dir - pos).normalized;
+        float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     // Update is called once per frame
@@ -29,16 +36,9 @@ public class Enemy_Projectile : MonoBehaviour
         }
         positionAtLastFrame = transform.position;
     }
-    private void FixedUpdate()
-    {
-        //rb.AddForce(flyDirection * speed);
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log("Collision enter = " + collision.gameObject.name);
-        //Debug.Log("last pos = " + positionAtLastFrame);
-        //Debug.Log("pos = " + transform.position);
         if(alreadyHitWall == true)
         {
             Destroy(gameObject);
@@ -47,16 +47,10 @@ public class Enemy_Projectile : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("collsion = " + collision.gameObject.name);
-        //Debug.Log("Last frame = " + positionAtLastFrame);
-        //Debug.Log("pos = " + transform.position);
-
         if (collision.gameObject.CompareTag("Shield"))
         {
-            //Debug.Log("Destroyed at shield");
             Destroy(gameObject);
         }
-
         else if (collision.gameObject.CompareTag("Player"))
         {
             collision.GetComponent<Player>().TakeDamage(damage);
@@ -66,6 +60,5 @@ public class Enemy_Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 }
