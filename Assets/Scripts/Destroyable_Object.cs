@@ -8,7 +8,7 @@ public class Destroyable_Object : MonoBehaviour
     public GameObject particle;
     public void DestroyMe()
     {
-        Debug.LogWarning("Play Particle");
+        //Debug.LogWarning("Play Particle");
         if(objectToSpawnOnDeath != null)
         {
             Instantiate(objectToSpawnOnDeath, gameObject.transform.position, gameObject.transform.rotation);

@@ -6,7 +6,7 @@ public class Player_RangerAttack : Player_AttackScript
 {
     public GameObject projectilePrefab;
     public Transform spawnProjectilePosition;
-    [SerializeField] float projectileSpeed = 800;
+    [SerializeField] float projectileSpeed = 1000;
 
     public override void Attack()
     {

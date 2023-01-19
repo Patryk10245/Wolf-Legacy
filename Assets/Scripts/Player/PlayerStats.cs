@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour
     public float maxEnergy;
     public float currentEnergy;
     public float energyRegenerationAmount = 1;
+
+    public float healthRegenerationAmount = 0.25f;
     [Space(5)]
     public float damage;
     float timer;
@@ -43,8 +45,14 @@ public class PlayerStats : MonoBehaviour
         {
             timer -= 1;
             ModifyEnergy(energyRegenerationAmount);
+            HealthRegeneration();
         }
     }
+    void HealthRegeneration()
+    {
+        player.TakeDamage(-healthRegenerationAmount);
+    }
+
     private void Update()
     {
         EnergyRegeneration();

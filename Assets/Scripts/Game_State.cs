@@ -39,12 +39,14 @@ public class Game_State : MonoBehaviour
 
         if (gamePaused)
         {
-            Time.timeScale = 0;
+            Time.timeScale = 1;
+            gamePaused = true;
             Level_PlayerUI_Control.ins.AnimationPauseGame();
         }
         else
         {
-            Time.timeScale = 1;
+            Time.timeScale = 0;
+            gamePaused = false;
             Level_PlayerUI_Control.ins.AnimationUnpauseGame();
         }
     }
