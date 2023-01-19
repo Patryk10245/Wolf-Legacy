@@ -12,8 +12,8 @@ public class Destroyable_Object : MonoBehaviour
         if(objectToSpawnOnDeath != null)
         {
             Instantiate(objectToSpawnOnDeath, gameObject.transform.position, gameObject.transform.rotation);
-            Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
         }
+        Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
     }
 }
