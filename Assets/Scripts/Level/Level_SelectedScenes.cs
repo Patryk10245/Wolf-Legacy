@@ -114,6 +114,8 @@ public class Level_SelectedScenes : MonoBehaviour
     }
     public void LoadNextScene()
     {
+        
+
         currentFightScene++;
 
         Debug.Log("length = " + selectedScenes.Length);

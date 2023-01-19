@@ -122,6 +122,12 @@ public class Level_PlayerUI_Control : MonoBehaviour
 
     public void UI_LoadNextMap()
     {
+        foreach (Player player in Player_Manager.ins.playerList)
+        {
+            player.controller.RemoveListeningOnEvents();
+        }
+
+
         Level_FightReferenecs.ins.playerManager.DestroyAllPlayers();
         ScoreTable.ins.ApplyCollectedGold();
         GameSetup.ins.SaveClassData();
