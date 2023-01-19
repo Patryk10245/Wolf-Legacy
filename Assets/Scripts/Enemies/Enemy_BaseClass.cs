@@ -52,6 +52,8 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     [HideInInspector] public NavMeshAgent agent;
     [HideInInspector] public Enemy_Stats stats;
 
+    [SerializeField] GameObject deathParticleEffect;
+
     public void SetMoveTarget(Player player)
     {
         move_target = player;
@@ -160,5 +162,9 @@ public abstract class Enemy_BaseClass : MonoBehaviour
             currentEnemyState = new_state;
             ApplyAnimation();
         }
+    }
+    public void CreateParticles()
+    {
+        Instantiate(deathParticleEffect, transform.position, transform.rotation);
     }
 }
