@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawnOnDeath: {fileID: 0}
-  particle: {fileID: 8248367361089773354, guid: 8ec604ae414f3194094e6b1841121025, type: 3}
+  particle: {fileID: 8248367361089773354, guid: 8abf5cfa0562fb64a9e75d595a1aaef1, type: 3}
 --- !u!61 &9189173081022849418
 BoxCollider2D:
   m_ObjectHideFlags: 0

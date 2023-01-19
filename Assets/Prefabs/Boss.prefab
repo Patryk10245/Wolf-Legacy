@@ -194,6 +194,7 @@ MonoBehaviour:
   rb: {fileID: 3244527964310266413}
   agent: {fileID: 3244527964310266415}
   stats: {fileID: 3244527964310266401}
+  deathParticleEffect: {fileID: 0}
   bossArea: {fileID: 0}
   specialEffects: {fileID: 2075728327385830615}
   healthBar: {fileID: 0}
@@ -205,7 +206,9 @@ MonoBehaviour:
   dash_WaitingForRecharge: 0
   minIdleTime: 1
   maxIdleTime: 3
-  arenaCorners: []
+  arenaCorners:
+  - {fileID: 0}
+  - {fileID: 0}
   playerPos: {x: 0, y: 0, z: 0}
   fallAreaRadius: 3
   knockBackForce: 2500

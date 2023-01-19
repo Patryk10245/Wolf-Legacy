@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3421518150508892458}
   - component: {fileID: 294835309978406496}
   - component: {fileID: 9020133227034838945}
+  - component: {fileID: 7672527754674171726}
   m_Layer: 0
   m_Name: Pot Green
   m_TagString: Destroyable
@@ -125,4 +126,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawnOnDeath: {fileID: 0}
-  particle: {fileID: 8248367361089773354, guid: 8ec604ae414f3194094e6b1841121025, type: 3}
+  particle: {fileID: 8248367361089773354, guid: 8abf5cfa0562fb64a9e75d595a1aaef1, type: 3}
+--- !u!61 &7672527754674171726
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893645937302177723}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.6}
+    newSize: {x: 1.4, y: 1.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.6}
+  m_EdgeRadius: 0
