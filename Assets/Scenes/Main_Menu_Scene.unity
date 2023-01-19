@@ -2920,11 +2920,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFightScene: 0
   selectedScenes:
-  - Wolf Legacy copy
+  - Level 1
   - BossScene_Duckster
-  - Wolf Legacy copy
+  - Level 2
   - BossScene_Blobster
-  - Wolf Legacy copy
+  - Level 3
   - BossScene_Buckster
 --- !u!4 &612307986
 Transform:
