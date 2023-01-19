@@ -82,27 +82,27 @@ public class GameSetup : MonoBehaviour
 
     void SetReferencesForPlayer1(Player newPlayer, Level_FightReferenecs references)
     {
-        newPlayer.ui_updater.healthBar = references.player1HealthBar;
-        newPlayer.ui_updater.energyBar = references.player1EnergyBar;
+        newPlayer.ui_updater.healthBar = references.playerUIControl.player1HealthBar;
+        newPlayer.ui_updater.energyBar = references.playerUIControl.player1EnergyBar;
         newPlayer.id = 0;
-        newPlayer.ui_updater.ability1Image = references.player1Ability1;
-        newPlayer.ui_updater.ability2Image = references.player1Ability2;
+        newPlayer.ui_updater.ability1Image = references.playerUIControl.player1Ability1;
+        newPlayer.ui_updater.ability2Image = references.playerUIControl.player1Ability2;
         newPlayer.playerClass = playingPlayers[0].selectedClass;
     }
     void SetReferencesForPlayer2(Player newPlayer, Level_FightReferenecs references)
     {
-        newPlayer.ui_updater.healthBar = references.player2HealthBar;
-        newPlayer.ui_updater.energyBar = references.player2EnergyBar;
+        newPlayer.ui_updater.healthBar = references.playerUIControl.player2HealthBar;
+        newPlayer.ui_updater.energyBar = references.playerUIControl.player2EnergyBar;
         newPlayer.id = 1;
-        newPlayer.ui_updater.ability1Image = references.player2Ability1;
-        newPlayer.ui_updater.ability2Image = references.player2Ability2;
+        newPlayer.ui_updater.ability1Image = references.playerUIControl.player2Ability1;
+        newPlayer.ui_updater.ability2Image = references.playerUIControl.player2Ability2;
         newPlayer.playerClass = playingPlayers[1].selectedClass;
     }
 
     public void SetUpTheGame()
     {
         Level_FightReferenecs levelReferences = Level_FightReferenecs.ins;
-        Game_State.ins.pausingWindow = levelReferences.pauseWindow;
+        Game_State.ins.pausingWindow = levelReferences.playerUIControl.pauseWindow; ;
         Game_State.ins.ResetValuesToDefault();
 
 
@@ -112,7 +112,7 @@ public class GameSetup : MonoBehaviour
         levelReferences.resurrection.playerManager = playerManager;
         playerInputManager = levelReferences.playerInputManager;
         playerInputManager.playerPrefab = playerManager.playerPrefab;
-        scoreTable.TEXT_goldAmount = levelReferences.GoldTextIcon;
+        scoreTable.TEXT_goldAmount = levelReferences.playerUIControl.pauseGameGoldText;
 
         if (numberOfPlayers == 1)
         {
@@ -124,7 +124,7 @@ public class GameSetup : MonoBehaviour
             cameraFollowing.singlePlayer = true;
             cameraFollowing.flat = false;
             cameraFollowing.smooth = false;
-            levelReferences.player2UI.SetActive(false);
+            levelReferences.playerUIControl.player2UI.SetActive(false);
 
             switch(playingPlayers[0].selectedClass)
             {
@@ -198,7 +198,7 @@ public class GameSetup : MonoBehaviour
                 cameraFollowing.singlePlayer = true;
                 cameraFollowing.flat = false;
                 cameraFollowing.smooth = false;
-                levelReferences.player2UI.SetActive(false);
+                levelReferences.playerUIControl.player2UI.SetActive(false);
                 return;
                 //Debug.Log(execption);
             }         
@@ -269,7 +269,7 @@ public class GameSetup : MonoBehaviour
     }
     void RangerSetup(Player player)
     {
-        ClassUpgrades upgrades = Village_Upgrades.ins.rangerUpgrades;
+        ClassUpgrades upgrades = Village_Upgrades.ins.archerUpgrades;
         ClassData rangerData = classesData[2];
         //Debug.Log("upgrades = " + upgrades);
         //Debug.Log("data = " + rangerData);
@@ -390,11 +390,11 @@ public class GameSetup : MonoBehaviour
         villageUpgrades.barbarianUpgrades.energyRegeneration.currentLevel = PlayerPrefs.GetInt("BarbarianRegen", 0);
         villageUpgrades.barbarianUpgrades.speed.currentLevel = PlayerPrefs.GetInt("BarbarianSpeed", 0);
 
-        villageUpgrades.rangerUpgrades.damage.currentLevel = PlayerPrefs.GetInt("RangerDamage", 0);
-        villageUpgrades.rangerUpgrades.health.currentLevel = PlayerPrefs.GetInt("RangerPaladinHealth", 0);
-        villageUpgrades.rangerUpgrades.energy.currentLevel = PlayerPrefs.GetInt("RangerEnergy", 0);
-        villageUpgrades.rangerUpgrades.energyRegeneration.currentLevel = PlayerPrefs.GetInt("RangerRegen", 0);
-        villageUpgrades.rangerUpgrades.speed.currentLevel = PlayerPrefs.GetInt("RangerSpeed", 0);
+        villageUpgrades.archerUpgrades.damage.currentLevel = PlayerPrefs.GetInt("RangerDamage", 0);
+        villageUpgrades.archerUpgrades.health.currentLevel = PlayerPrefs.GetInt("RangerPaladinHealth", 0);
+        villageUpgrades.archerUpgrades.energy.currentLevel = PlayerPrefs.GetInt("RangerEnergy", 0);
+        villageUpgrades.archerUpgrades.energyRegeneration.currentLevel = PlayerPrefs.GetInt("RangerRegen", 0);
+        villageUpgrades.archerUpgrades.speed.currentLevel = PlayerPrefs.GetInt("RangerSpeed", 0);
 
         villageUpgrades.mageUpgrades.damage.currentLevel = PlayerPrefs.GetInt("MageDamage", 0);
         villageUpgrades.mageUpgrades.health.currentLevel = PlayerPrefs.GetInt("MageHealth", 0);
@@ -425,11 +425,11 @@ public class GameSetup : MonoBehaviour
         PlayerPrefs.SetInt("BarbarianRegen", villageUpgrades.barbarianUpgrades.energyRegeneration.currentLevel);
         PlayerPrefs.SetInt("BarbarianSpeed", villageUpgrades.barbarianUpgrades.speed.currentLevel);
 
-        PlayerPrefs.SetInt("RangerDamage", villageUpgrades.rangerUpgrades.damage.currentLevel);
-        PlayerPrefs.SetInt("RangerPaladinHealth", villageUpgrades.rangerUpgrades.health.currentLevel);
-        PlayerPrefs.SetInt("RangerEnergy", villageUpgrades.rangerUpgrades.energy.currentLevel);
-        PlayerPrefs.SetInt("RangerRegen", villageUpgrades.rangerUpgrades.energyRegeneration.currentLevel);
-        PlayerPrefs.SetInt("RangerSpeed", villageUpgrades.rangerUpgrades.speed.currentLevel);
+        PlayerPrefs.SetInt("RangerDamage", villageUpgrades.archerUpgrades.damage.currentLevel);
+        PlayerPrefs.SetInt("RangerPaladinHealth", villageUpgrades.archerUpgrades.health.currentLevel);
+        PlayerPrefs.SetInt("RangerEnergy", villageUpgrades.archerUpgrades.energy.currentLevel);
+        PlayerPrefs.SetInt("RangerRegen", villageUpgrades.archerUpgrades.energyRegeneration.currentLevel);
+        PlayerPrefs.SetInt("RangerSpeed", villageUpgrades.archerUpgrades.speed.currentLevel);
 
         PlayerPrefs.SetInt("MageDamage", villageUpgrades.mageUpgrades.damage.currentLevel);
         PlayerPrefs.SetInt("MageHealth", villageUpgrades.mageUpgrades.health.currentLevel);

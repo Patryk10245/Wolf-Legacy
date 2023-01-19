@@ -80,6 +80,6 @@ public class Level_Ressurection : MonoBehaviour
     {
         Game_State.gameLost = true;
         Debug.LogWarning("GAME OVER SCREEN");
-        Level_FightReferenecs.ins.gameOver.InitiateGameOver();
+        Level_PlayerUI_Control.ins.InitiateGameOver();
     }
 }

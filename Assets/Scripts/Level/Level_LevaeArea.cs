@@ -12,7 +12,7 @@ public class Level_LevaeArea : MonoBehaviour
         {
             //ScoreTable.ins.BeginAnimatingGold();
 
-            Level_GameCompleted.ins.ShowLevelCompletedScreen();
+            Level_PlayerUI_Control.ins.ShowLevelCompletedScreen();
         }
     }
 

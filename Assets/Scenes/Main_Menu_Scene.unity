@@ -2968,7 +2968,7 @@ MonoBehaviour:
   scoreTable: {fileID: 1751829985}
   paladinUpgrades: {fileID: 11400000, guid: 35bd96cea5d10424ebc49b3f347cad0a, type: 2}
   barbarianUpgrades: {fileID: 11400000, guid: 99f1ccea05e058e4983301bf44198c70, type: 2}
-  rangerUpgrades: {fileID: 11400000, guid: dab2406f9f51913419f45eb3c02c747e, type: 2}
+  archerUpgrades: {fileID: 11400000, guid: dab2406f9f51913419f45eb3c02c747e, type: 2}
   mageUpgrades: {fileID: 11400000, guid: 7b51852c570410e4c87c6ce910984e54, type: 2}
   paladinBuildingBought: 0
   barbarianBuildingBought: 0
@@ -7781,7 +7781,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0

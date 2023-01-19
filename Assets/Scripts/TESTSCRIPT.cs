@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TESTSCRIPT : MonoBehaviour
 {
-    public Animator anim;
-
-    private void OnBecameVisible()
+    public GameObject infoField;
+    public Text textField;
+    public Village_Upgrades villageUpgrades;
+    public void PointerEnter(int type)
     {
-        //Debug.Log("I AM ALIVE = " + gameObject.name);
-        anim.enabled = true;
+        Debug.Log("Pointer enter");
     }
-    private void OnBecameInvisible()
+    public void PointerExit()
+
     {
-        //Debug.Log("I AM DEAD = " + gameObject.name);
-        anim.enabled = false;
+
     }
 
 }

@@ -82,44 +82,7 @@ public class ScoreTable : MonoBehaviour
             }
         }
     }
-    public void BeginAnimatingGold()
-    {
-        animateGold = true;
-        lastValue = 0;
 
-        StartCoroutine(AnimateText());
-    }
-    IEnumerator AnimateText()
-    {
-        while (lastValue <= currentlyCollectedGold)
-        {
-            Level_GameCompleted.ins.collectedGoldText.text = lastValue.ToString();
-            lastValue++;
-
-            yield return new WaitForSecondsRealtime(changeSpeed);
-        }
-    }
-
-
-    public void BeginAnimatingGold(Text text)
-    {
-        animateGold = true;
-        lastValue = 0;
-
-        //Level_GameCompleted.ins.collectedGoldText = text;
-
-        StartCoroutine(AnimateText(text));
-    }
-    IEnumerator AnimateText(Text text)
-    {
-        while (lastValue <= currentlyCollectedGold)
-        {
-            text.text = lastValue.ToString();
-            lastValue++;
-
-            yield return new WaitForSecondsRealtime(changeSpeed);
-        }
-    }
 
 
 }

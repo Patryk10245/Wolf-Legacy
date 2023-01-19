@@ -40,14 +40,12 @@ public class Game_State : MonoBehaviour
         if (gamePaused)
         {
             Time.timeScale = 0;
-            Level_FightReferenecs.ins.canvasAnimator.PauseGame();
-            Level_FightReferenecs.ins.ui_settings.soundWindow.SetActive(false);
+            Level_PlayerUI_Control.ins.AnimationPauseGame();
         }
         else
         {
             Time.timeScale = 1;
-            Level_FightReferenecs.ins.canvasAnimator.UnpauseGame();
-            Level_FightReferenecs.ins.ui_settings.soundWindow.SetActive(false);
+            Level_PlayerUI_Control.ins.AnimationUnpauseGame();
         }
     }
     public void ResetValuesToDefault()

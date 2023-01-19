@@ -20,6 +20,7 @@ public class Village_UI_Control : MonoBehaviour
 
     public Village_Upgrades villageUpgrades;
     public Village_UIMapChoosing mapChoosing;
+    public Village_UI_UpgradeInfo upgradeInfo;
     [SerializeField] Animator canvasAnimator;
     [Header("Windows")]
     [SerializeField] GameObject infoField;
@@ -63,6 +64,7 @@ public class Village_UI_Control : MonoBehaviour
         //Debug.Log("upgrades = " + Village_Upgrades.ins.gameObject.name);
         villageUpgrades = GameSetup.ins.villageUpgrades;
         villageUpgrades.village_UI_Control = this;
+        upgradeInfo.villageUpgrades = villageUpgrades;
 
         if(villageUpgrades.paladinBuildingBought == true)
         {
@@ -336,31 +338,31 @@ public class Village_UI_Control : MonoBehaviour
         switch (type)
         {
             case 0:
-                if (villageUpgrades.rangerUpgrades.damage.currentLevel >= 5)
+                if (villageUpgrades.archerUpgrades.damage.currentLevel >= 5)
                 {
                     archerUpgradeMark[type].SetActive(false);
                 }
                 break;
             case 1:
-                if (villageUpgrades.rangerUpgrades.health.currentLevel >= 5)
+                if (villageUpgrades.archerUpgrades.health.currentLevel >= 5)
                 {
                     archerUpgradeMark[type].SetActive(false);
                 }
                 break;
             case 2:
-                if (villageUpgrades.rangerUpgrades.energy.currentLevel >= 5)
+                if (villageUpgrades.archerUpgrades.energy.currentLevel >= 5)
                 {
                     archerUpgradeMark[type].SetActive(false);
                 }
                 break;
             case 3:
-                if (villageUpgrades.rangerUpgrades.energyRegeneration.currentLevel >= 5)
+                if (villageUpgrades.archerUpgrades.energyRegeneration.currentLevel >= 5)
                 {
                     archerUpgradeMark[type].SetActive(false);
                 }
                 break;
             case 4:
-                if (villageUpgrades.rangerUpgrades.speed.currentLevel >= 5)
+                if (villageUpgrades.archerUpgrades.speed.currentLevel >= 5)
                 {
                     archerUpgradeMark[type].SetActive(false);
                 }

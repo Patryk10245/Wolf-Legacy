@@ -41,7 +41,7 @@ public class Village_Upgrades : MonoBehaviour
 
     public ClassUpgrades paladinUpgrades;
     public ClassUpgrades barbarianUpgrades;
-    public ClassUpgrades rangerUpgrades;
+    public ClassUpgrades archerUpgrades;
     public ClassUpgrades mageUpgrades;
 
     public bool paladinBuildingBought;
@@ -110,7 +110,7 @@ public class Village_Upgrades : MonoBehaviour
     }
     public void UpgradeRanger(int type)
     {
-        if (Upgrade(rangerUpgrades, type) == true)
+        if (Upgrade(archerUpgrades, type) == true)
         {
             UpdateRangernUI();
         }
@@ -141,11 +141,11 @@ public class Village_Upgrades : MonoBehaviour
     }
     void UpdateRangernUI()
     {
-        village_UI_Control.rangerInfo.UI_IncreaseDamageLevel(rangerUpgrades.damage.currentLevel);
-        village_UI_Control.rangerInfo.UI_IncreaseHealthLevel(rangerUpgrades.health.currentLevel);
-        village_UI_Control.rangerInfo.UI_IncreaseEnergyLevel(rangerUpgrades.energy.currentLevel);
-        village_UI_Control.rangerInfo.UI_IncreaseEnergyRegenLevel(rangerUpgrades.energyRegeneration.currentLevel);
-        village_UI_Control.rangerInfo.UI_IncreaseSpeedLevel(rangerUpgrades.speed.currentLevel);
+        village_UI_Control.rangerInfo.UI_IncreaseDamageLevel(archerUpgrades.damage.currentLevel);
+        village_UI_Control.rangerInfo.UI_IncreaseHealthLevel(archerUpgrades.health.currentLevel);
+        village_UI_Control.rangerInfo.UI_IncreaseEnergyLevel(archerUpgrades.energy.currentLevel);
+        village_UI_Control.rangerInfo.UI_IncreaseEnergyRegenLevel(archerUpgrades.energyRegeneration.currentLevel);
+        village_UI_Control.rangerInfo.UI_IncreaseSpeedLevel(archerUpgrades.speed.currentLevel);
     }
     void UpdateMageUI()
     {
