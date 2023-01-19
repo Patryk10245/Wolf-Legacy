@@ -174,4 +174,4 @@ MonoBehaviour:
   - {fileID: 9007516584994645504}
   enemyToSpawn: {fileID: 923329539989383326, guid: e583c07c74f6f3a468808754d1a6098e, type: 3}
   minNumerOfSpawnedEnemies: 10
-  maxNumberOfSpawnedEnemies: 10
+  maxNumberOfSpawnedEnemies: 40
