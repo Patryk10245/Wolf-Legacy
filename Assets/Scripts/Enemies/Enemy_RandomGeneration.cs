@@ -10,15 +10,8 @@ public class Enemy_RandomGeneration : MonoBehaviour
     public int minNumerOfSpawnedEnemies = 10;
     public int maxNumberOfSpawnedEnemies = 50;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            SpawnEnemies();
-        }
-    }
 
-    void SpawnEnemies()
+    public void SpawnEnemies()
     {
         int random = Random.Range(minNumerOfSpawnedEnemies, maxNumberOfSpawnedEnemies);
         GameObject temp;
@@ -31,5 +24,23 @@ public class Enemy_RandomGeneration : MonoBehaviour
             temp.GetComponent<NavMeshAgent>().SetDestination(temp.transform.position + Vector3.left);
         }
         Destroy(gameObject);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+
+#if UNITY_EDITOR
+
+
+        Gizmos.color = Color.red;
+        Vector3 corner2 = new Vector3(corners[0].position.x, corners[1].position.y);
+        Vector3 corner3 = new Vector3(corners[1].position.x, corners[0].position.y);
+
+
+        Gizmos.DrawLine(corners[0].position, corner2);
+        Gizmos.DrawLine(corner2, corners[1].position);
+        Gizmos.DrawLine(corners[1].position, corner3);
+        Gizmos.DrawLine(corner3, corners[0].position);
+#endif
     }
 }
