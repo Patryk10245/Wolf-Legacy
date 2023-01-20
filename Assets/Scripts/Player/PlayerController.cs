@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D weaponCollider;
     public GameObject trailObject;
 
-    PlayerInput playerInput;
+    public PlayerInput playerInput;
     InputActionAsset inputAsset;
     InputActionMap playerMap;
     InputAction move;
