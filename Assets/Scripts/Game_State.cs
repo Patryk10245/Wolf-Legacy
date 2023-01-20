@@ -39,16 +39,20 @@ public class Game_State : MonoBehaviour
 
         if (gamePaused)
         {
-            Time.timeScale = 1;
+            Debug.Log("Pausing Game, Time Scale = " + Time.timeScale);
+            Time.timeScale = 0;
             gamePaused = true;
             Level_PlayerUI_Control.ins.AnimationPauseGame();
         }
         else
         {
-            Time.timeScale = 0;
+            Debug.Log("Unpausing Game, Time Scale = " + Time.timeScale);
+            Time.timeScale = 1;
             gamePaused = false;
             Level_PlayerUI_Control.ins.AnimationUnpauseGame();
         }
+
+        Debug.Log("Time.timeScale = " + Time.timeScale);
     }
     public void ResetValuesToDefault()
     {

@@ -60,7 +60,11 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log("Player pos = " + gameObject.transform.position);
         if (Game_State.gamePaused)
+        {
+            Debug.Log("Game is paused");
             return;
+        }
+
         if(player.isDead)
         {
             return;
@@ -72,6 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!player.canMove)
         {
+            Debug.Log("Player cant move");
             return;
         }
         if (player.isDead)
@@ -79,7 +84,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-
+        Debug.Log("Player move");
         Movement();
     }
 

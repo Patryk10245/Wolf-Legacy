@@ -29,6 +29,15 @@ public class PlayerStats : MonoBehaviour
             player.isInvulnerable = true;
         }
     }
+    public void HealPlayer(float val)
+    {
+        currentHealth += val;
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        player.ui_updater.UpdateHealth();
+    }
     public void ModifyEnergy(float val)
     {
         currentEnergy += val;
@@ -45,12 +54,8 @@ public class PlayerStats : MonoBehaviour
         {
             timer -= 1;
             ModifyEnergy(energyRegenerationAmount);
-            HealthRegeneration();
+            HealPlayer(healthRegenerationAmount);
         }
-    }
-    void HealthRegeneration()
-    {
-        player.TakeDamage(-healthRegenerationAmount);
     }
 
     private void Update()

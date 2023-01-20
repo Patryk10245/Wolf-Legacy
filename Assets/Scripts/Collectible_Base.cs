@@ -49,7 +49,7 @@ public class Collectible_Base : MonoBehaviour
         {
             return;
         }
-        player.stats.TakeDamage(-amount);
+        player.stats.HealPlayer(amount);
         Destroy(gameObject);
     }
     void AddEnergy(Player player)

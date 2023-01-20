@@ -83,6 +83,7 @@ public class AudioManager : MonoBehaviour
     }
     public void Play_PlayerHurt()
     {
+        Debug.Log("Play player hurt");
         if(!playerHurtSource.isPlaying)
         {
             playerHurtSource.Play();
