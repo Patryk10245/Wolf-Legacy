@@ -10,55 +10,55 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ab3280ba2cd873408464496305f23f1, type: 3}
-  m_Name: MageUpgrade
+  m_Name: ArcherUpgrade
   m_EditorClassIdentifier: 
   damage:
     valueOnLevel:
     - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    cost: 000000000000000000000000000000000000000000000000
+    - 4
+    - 8
+    - 12
+    - 16
+    - 22
+    cost: 64000000c80000002c01000090010000f4010000f4010000
     currentLevel: 0
   health:
     valueOnLevel:
     - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    cost: 000000000000000000000000000000000000000000000000
+    - 15
+    - 30
+    - 45
+    - 60
+    - 90
+    cost: 64000000c80000002c01000090010000f4010000f4010000
     currentLevel: 0
   energy:
     valueOnLevel:
     - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    cost: 000000000000000000000000000000000000000000000000
+    - 12
+    - 24
+    - 36
+    - 50
+    - 70
+    cost: 64000000c80000002c01000090010000f4010000f4010000
     currentLevel: 0
   energyRegeneration:
     valueOnLevel:
     - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    cost: 000000000000000000000000000000000000000000000000
+    - 0.5
+    - 1
+    - 1.5
+    - 2
+    - 3
+    cost: 64000000c80000002c01000090010000f4010000f4010000
     currentLevel: 0
   speed:
     valueOnLevel:
     - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    cost: 000000000000000000000000000000000000000000000000
+    - 15
+    - 30
+    - 45
+    - 60
+    - 90
+    cost: 64000000c80000002c01000090010000f4010000f4010000
     currentLevel: 0

@@ -16,6 +16,6 @@ MonoBehaviour:
   energyPoints: 60
   energyRegenAmount: 1
   damage: 8
-  speed: 350
+  speed: 360
   playerSprite: {fileID: 1287018694, guid: d71735a5762706e4ca180b548d5e4f3c, type: 3}
   weaponSprite: {fileID: -1779788898, guid: d71735a5762706e4ca180b548d5e4f3c, type: 3}

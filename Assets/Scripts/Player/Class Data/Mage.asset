@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43bc6f4a8d4f484397f3a418cfa9d43, type: 3}
   m_Name: Mage
   m_EditorClassIdentifier: 
-  healtPoints: 20
+  healtPoints: 30
   energyPoints: 60
   energyRegenAmount: 1.5
-  damage: 6
-  speed: 270
+  damage: 10
+  speed: 340
   playerSprite: {fileID: 579795930, guid: 02e4e6377df96cb4d8897c66626656de, type: 3}
   weaponSprite: {fileID: -391588724, guid: 02e4e6377df96cb4d8897c66626656de, type: 3}

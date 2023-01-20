@@ -17,7 +17,7 @@ public class Player_ArcherMultiShot : Ability_2
 
     private void Start()
     {
-        energyCost = 10;
+        energyCost = 15;
         rechargeTime = 6;
     }
 

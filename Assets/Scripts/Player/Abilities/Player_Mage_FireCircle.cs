@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Mage_FireCircle : Ability_2
 {
     [Space(10)]
-    public float damageMultiplier = 0.01f;
+    public float damageMultiplier = 0.02f;
     public float durationTime = 3;
     public float circleDamage = 1;
     bool isBurning;
@@ -14,8 +14,8 @@ public class Player_Mage_FireCircle : Ability_2
 
     private void Start()
     {
-        rechargeTime = 10;
-        energyCost = 10;
+        rechargeTime = 8;
+        energyCost = 15;
     }
 
     public override void Use()

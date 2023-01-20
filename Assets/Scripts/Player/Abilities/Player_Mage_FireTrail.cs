@@ -15,8 +15,8 @@ public class Player_Mage_FireTrail : Ability_1
 
     void Start()
     {
-        rechargeTime = 10;
-        energyCost = 10;
+        rechargeTime = 6;
+        energyCost = 20;
     }
 
     public override void Use()
