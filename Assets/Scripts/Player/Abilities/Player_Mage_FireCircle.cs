@@ -34,7 +34,6 @@ public class Player_Mage_FireCircle : Ability_2
     {
         isBurning = true;
         GameObject temp = Instantiate(circlePrefab);
-        Debug.Log(temp.name);
         temp.transform.position = transform.position;
 
         Player_FireCircleObject firecircle = temp.GetComponent<Player_FireCircleObject>();

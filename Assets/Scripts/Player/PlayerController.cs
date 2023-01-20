@@ -30,10 +30,6 @@ public class PlayerController : MonoBehaviour
     public Vector3 screenPoint;
     public Vector2 mousePos;
 
-    [Header("Debug")]
-    public Vector2 dMousePos;
-    public Vector2 dScreenPoint;
-
     private void Start()
     {
         player = GetComponent<Player>();
@@ -103,13 +99,11 @@ public class PlayerController : MonoBehaviour
 
         mousePos = rotate.ReadValue<Vector2>();
         screenPoint = player.currentCamera.WorldToScreenPoint(transform.localPosition);
-        dMousePos = mousePos;
 
         if(playerInput.currentControlScheme == "GamePad")
         {
             screenPoint = Vector3.zero;
         }
-        dScreenPoint = screenPoint;
 
         if (mousePos == Vector2.zero)
         {
