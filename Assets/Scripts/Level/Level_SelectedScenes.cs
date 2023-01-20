@@ -117,8 +117,6 @@ public class Level_SelectedScenes : MonoBehaviour
         
 
         currentFightScene++;
-
-        Debug.Log("length = " + selectedScenes.Length);
         if(currentFightScene >= selectedScenes.Length)
         {
             ChangeToMainmenu();

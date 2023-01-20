@@ -157,7 +157,7 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     { 
         if (currentEnemyState != new_state)
         {
-            Debug.Log("Changing state. current = " + currentEnemyState + "\n new = " + new_state);
+            //Debug.Log("Changing state. current = " + currentEnemyState + "\n new = " + new_state);
             //Debug.Log("Changing State to " + new_state.ToString()) ;
             currentEnemyState = new_state;
             ApplyAnimation();

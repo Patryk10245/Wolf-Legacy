@@ -15,7 +15,6 @@ public class Enemy_RandomGeneration : MonoBehaviour
     {
         int random = Random.Range(minNumerOfSpawnedEnemies, maxNumberOfSpawnedEnemies);
         GameObject temp;
-        Debug.Log("Enemies spawned = " + random);
 
         for(int i  = 0; i < random; i++)
         {

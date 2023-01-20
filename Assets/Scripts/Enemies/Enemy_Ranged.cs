@@ -91,7 +91,6 @@ public class Enemy_Ranged : Enemy_BaseClass
     // Called from animnation event
     public override void RangedAttack_Action()
     {
-        Debug.Log("Ranged Attack Action");
         GameObject temp = Instantiate(projectile_Prefab);
         Vector3 dir = (move_target.transform.position - projectile_SpawnPoint.position).normalized;
         temp.transform.position = projectile_SpawnPoint.position;
@@ -104,7 +103,6 @@ public class Enemy_Ranged : Enemy_BaseClass
     }
     public void AnimEvent_EndAttack()
     {
-        Debug.Log("anim event end attack");
         is_Attacking = false;
         refresh_Attack_Timer = true;
     }

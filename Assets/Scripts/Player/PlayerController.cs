@@ -76,7 +76,6 @@ public class PlayerController : MonoBehaviour
     {
         if (!player.canMove)
         {
-            Debug.Log("Player cant move");
             return;
         }
         if (player.isDead)
@@ -84,7 +83,6 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        Debug.Log("Player move");
         Movement();
     }
 

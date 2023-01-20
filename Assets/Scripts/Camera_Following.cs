@@ -106,5 +106,6 @@ public class Camera_Following : MonoBehaviour
         pos.z = -10;
         cam.transform.position = pos;
         previous_pos = middleOfPlayers;
+        cam.orthographicSize = 14;
     }
 }
