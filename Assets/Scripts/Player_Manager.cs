@@ -34,6 +34,7 @@ public class Player_Manager : MonoBehaviour
         foreach(Player player in playerList)
         {
             player.GetComponent<PlayerInput>().user.UnpairDevicesAndRemoveUser();
+            //player.controller.RemoveListeningOnEvents();
             Destroy(player.gameObject);
         }
     }

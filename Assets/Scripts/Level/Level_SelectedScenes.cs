@@ -114,8 +114,6 @@ public class Level_SelectedScenes : MonoBehaviour
     }
     public void LoadNextScene()
     {
-        
-
         currentFightScene++;
         if(currentFightScene >= selectedScenes.Length)
         {
