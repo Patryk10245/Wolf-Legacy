@@ -10,8 +10,8 @@ public class Level_Ressurection : MonoBehaviour
     public Player deadPlayer;
     public Player_Manager playerManager;
     [Space(10)]
-    [SerializeField] int revivingCost;
-    public GameObject revivingInfoWindow = 100;
+    [SerializeField] int revivingCost = 100;
+    public GameObject revivingInfoWindow;
     int idAlivePlayer;
     int idDeadPlayer;
     bool following;
