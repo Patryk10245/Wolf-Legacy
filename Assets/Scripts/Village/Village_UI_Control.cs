@@ -237,21 +237,6 @@ public class Village_UI_Control : MonoBehaviour
         mageBuyingBuilding.SetActive(false);
     }
 
-
-    public void SetPos()
-    {
-
-    }
-
-    void FixReference()
-    {
-        if (villageUpgrades == null)
-        {
-            villageUpgrades = Village_Upgrades.ins;
-            villageUpgrades.village_UI_Control = this; ;
-        }
-    }
-
     public void UpgradePaladin(int type)
     {
         //FixReference();

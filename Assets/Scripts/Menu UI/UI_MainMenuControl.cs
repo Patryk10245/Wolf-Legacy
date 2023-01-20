@@ -274,6 +274,21 @@ public class UI_MainMenuControl : MonoBehaviour
                 break;
         }
     }
+    public void ShowMage(int id)
+    {
+        gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Mage;
+        switch (id)
+        {
+            case 0:
+                p1Archer.SetActive(false);
+                p1Mage.SetActive(true);
+                break;
+            case 1:
+                p2Archer.SetActive(false);
+                p2Mage.SetActive(true);
+                break;
+        }
+    }
 
     void HideAllClassesForPlayer1()
     {
@@ -307,21 +322,7 @@ public class UI_MainMenuControl : MonoBehaviour
                 break;
         }
     }
-    public void ShowMage(int id)
-    {
-        gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Mage;
-        switch (id)
-        {
-            case 0:
-                p1Archer.SetActive(false);
-                p1Mage.SetActive(true);
-                break;
-            case 1:
-                p2Archer.SetActive(false);
-                p2Mage.SetActive(true);
-                break;
-        }
-    }
+    
 
     public void ControlSchemeKeyBoard(int id)
     {
