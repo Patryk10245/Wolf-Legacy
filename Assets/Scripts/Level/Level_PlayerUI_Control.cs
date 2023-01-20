@@ -171,6 +171,7 @@ public class Level_PlayerUI_Control : MonoBehaviour
         {
             Game_State.gameWon = true;
         }
+        Time.timeScale = 0;
         completedWindow.gameObject.SetActive(true);
         AnimationLevelCompleted();
     }

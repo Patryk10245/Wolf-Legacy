@@ -485,6 +485,9 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
+                agent.SetDestination(transform.position);
+                agent.velocity = Vector3.zero;
+                anim.SetTrigger("isDying");
                 currentActionState = ENUM_current_state.finishing;
                 break;
             case ENUM_current_state.working:

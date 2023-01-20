@@ -194,7 +194,7 @@ MonoBehaviour:
   rb: {fileID: 3244527964310266413}
   agent: {fileID: 3244527964310266415}
   stats: {fileID: 3244527964310266401}
-  deathParticleEffect: {fileID: 0}
+  deathParticleEffect: {fileID: 8248367361089773354, guid: 7c11cb04bd7c7bd4cb86f4945546249f, type: 3}
   bossArea: {fileID: 0}
   specialEffects: {fileID: 2075728327385830615}
   healthBar: {fileID: 0}
@@ -360,8 +360,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8955767957698038005}
   m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: -1.88, z: -0.46}
-  m_LocalScale: {x: 3.565786, y: 2.295891, z: 1}
+  m_LocalPosition: {x: 0, y: -1.8, z: 0}
+  m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3244527964310266403}

@@ -58,6 +58,7 @@ public class Level_SelectedScenes : MonoBehaviour
 
     void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Time.timeScale = 1;
         if(scene == SceneManager.GetSceneByName("Village_Scene"))
         {
             AudioManager.ins.Play_VillageMusic();
