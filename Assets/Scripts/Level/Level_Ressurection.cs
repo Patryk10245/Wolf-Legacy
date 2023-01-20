@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Level_Ressurection : MonoBehaviour
 {
     public static Level_Ressurection ins;
     public GameObject spawnPosition;
-
     public Player deadPlayer;
     public Player_Manager playerManager;
+    [Space(10)]
+    [SerializeField] int revivingCost;
+    public GameObject revivingInfoWindow = 100;
     int idAlivePlayer;
     int idDeadPlayer;
     bool following;
+
+    bool playerInRessurectionArea;
+
 
     void Awake()
     {
@@ -50,13 +56,19 @@ public class Level_Ressurection : MonoBehaviour
     }
     public void PlayerRevive()
     {
-        playerManager.playerList[idDeadPlayer].transform.position = spawnPosition.transform.position;
-        deadPlayer.isDead = false;
-        deadPlayer.gameObject.SetActive(true);
-        following = false;
-        deadPlayer = null;
-        deadPlayer.stats.currentHealth = deadPlayer.stats.maxHealth;
-        deadPlayer.stats.currentEnergy = deadPlayer.stats.maxEnergy;
+        if(ScoreTable.ins.currentlyCollectedGold >= revivingCost)
+        {
+            playerManager.playerList[idDeadPlayer].transform.position = spawnPosition.transform.position;
+            deadPlayer.isDead = false;
+            deadPlayer.gameObject.SetActive(true);
+            following = false;
+            deadPlayer.stats.currentHealth = deadPlayer.stats.maxHealth;
+            deadPlayer.stats.currentEnergy = deadPlayer.stats.maxEnergy;
+            deadPlayer.isInvulnerable = false;
+            deadPlayer = null;
+            ScoreTable.ins.AddGold(-revivingCost);
+        }
+        
     }
 
     void AssignIds()
@@ -77,5 +89,34 @@ public class Level_Ressurection : MonoBehaviour
     {
         Game_State.gameLost = true;
         Level_PlayerUI_Control.ins.InitiateGameOver();
+    }
+
+    public void PlayerRessurection(InputAction.CallbackContext context)
+    {
+        PlayerRevive();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            if(deadPlayer != null)
+            {
+                playerInRessurectionArea = true;
+                Player player = collision.gameObject.GetComponent<Player>();
+                player.controller.playerInput.currentActionMap.FindAction("Attack").started += PlayerRessurection;
+                revivingInfoWindow.SetActive(true);
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerInRessurectionArea = false;
+            Player player = collision.gameObject.GetComponent<Player>();
+            player.controller.playerInput.currentActionMap.FindAction("Attack").started -= PlayerRessurection;
+            revivingInfoWindow.SetActive(false);
+        }
     }
 }
