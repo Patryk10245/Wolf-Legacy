@@ -11,7 +11,6 @@ public class Boss_Mage_ThunderObject : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //Debug.Log("Player hit");
             Player player = collision.GetComponent<Player>();
             player.TakeDamage(damage);
         }

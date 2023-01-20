@@ -36,8 +36,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        //Debug.Log("Player controller Start = " + gameObject.name);
-
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         animBody = GetComponent<Animator>();
@@ -52,16 +50,12 @@ public class PlayerController : MonoBehaviour
         playerMap.FindAction("Ability1").started += SecondaryAbility;
         playerMap.FindAction("Pause").started += PauseGame;
         playerMap.Enable();
-
-        //Debug.Log("name = " + gameObject.name + " | device = " + playerMap.devices.Value[0].name);
     }
 
     private void Update()
     {
-        //Debug.Log("Player pos = " + gameObject.transform.position);
         if (Game_State.gamePaused)
         {
-            Debug.Log("Game is paused");
             return;
         }
 
@@ -89,7 +83,6 @@ public class PlayerController : MonoBehaviour
     void Movement()
     {
         moveInput = move.ReadValue<Vector2>().normalized;
-        //moveInput = playerMap..Move.ReadValue<Vector2>().normalized;
         if (moveInput.x != 0 || moveInput.y != 0)
         {
             rb.AddForce(moveInput * moveSpeed);
@@ -98,8 +91,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             animBody.SetBool("isMoving", false);
-        }
-        
+        }  
     }
     void Sword_Rotation()
     {
@@ -112,7 +104,6 @@ public class PlayerController : MonoBehaviour
         mousePos = rotate.ReadValue<Vector2>();
         screenPoint = player.currentCamera.WorldToScreenPoint(transform.localPosition);
         dMousePos = mousePos;
-
 
         if(playerInput.currentControlScheme == "GamePad")
         {
@@ -138,8 +129,6 @@ public class PlayerController : MonoBehaviour
             weaponHolder.localScale = Vector3.one;
         }
 
-        //mousePos.Normalize();
-
         Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
@@ -150,14 +139,11 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
-            //Debug.Log("player = " + player.id);
             player.attackScript.Attack();
         }
     }
     void BasicAbility(InputAction.CallbackContext context)
     {
-        //Debug.Log("player = " + player);
-        //Debug.Log("ability = " + player.abilityBasic);
         player.abilityBasic.Use();
     }
     void SecondaryAbility(InputAction.CallbackContext context)
@@ -176,6 +162,5 @@ public class PlayerController : MonoBehaviour
     public void PauseGame(InputAction.CallbackContext context)
     {
         Game_State.PauseGame();
-        //Debug.Log("current state = " + Game_State.gamePaused);
     }
 }

@@ -26,7 +26,6 @@ public class Enemy_Projectile : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    // Update is called once per frame
     void Update()
     {
         deathTimer += Time.deltaTime;

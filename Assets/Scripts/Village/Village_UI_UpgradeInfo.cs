@@ -10,10 +10,6 @@ public class Village_UI_UpgradeInfo : MonoBehaviour
     public Text textField;
     public Village_Upgrades villageUpgrades;
 
-    public void PointerEnter(int type)
-    {
-        Debug.Log("Pointer enter");
-    }
     public void PointerExit()
     {
         infoField.transform.SetParent(originalParent.transform);

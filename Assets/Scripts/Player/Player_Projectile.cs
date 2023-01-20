@@ -20,7 +20,6 @@ public class Player_Projectile : MonoBehaviour
 
         Vector2 offset = (dir - pos).normalized;
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
-
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
@@ -34,13 +33,10 @@ public class Player_Projectile : MonoBehaviour
     }
 
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("Collsion with " + collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Enemy")|| collision.gameObject.CompareTag("Boss"))
         {
-            //Debug.Log("collision = " + collision.gameObject.transform.parent.name);
             collision.GetComponent<Enemy_BaseClass>().TakeDamage(damage, ENUM_AttackType.ranged, player);
             Destroy(gameObject);
         }

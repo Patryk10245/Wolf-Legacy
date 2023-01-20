@@ -39,7 +39,6 @@ public class Collectible_Base : MonoBehaviour
 
     void AddGold()
     {
-        //ScoreTable.ins.currentlyCollectedGold += (int)amount;
         ScoreTable.ins.AddGold((int)amount);
         Destroy(gameObject);
     }
@@ -60,6 +59,5 @@ public class Collectible_Base : MonoBehaviour
         }
         player.stats.ModifyEnergy(amount);
         Destroy(gameObject);
-
     }
 }

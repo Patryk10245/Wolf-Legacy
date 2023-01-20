@@ -123,7 +123,6 @@ public class GameSetup : MonoBehaviour
      
             cameraFollowing.singlePlayer = true;
             cameraFollowing.flat = false;
-            cameraFollowing.smooth = false;
             levelReferences.playerUIControl.player2UI.SetActive(false);
 
             switch(playingPlayers[0].selectedClass)
@@ -189,7 +188,6 @@ public class GameSetup : MonoBehaviour
                         MageSetup(playerManager.playerList[1]);
                         break;
                 }
-
                 newPlayer2.gameObject.transform.position = playerManager.playerSpawnPosition.position + new Vector3(0.5f, 0, 0);
             }
             catch(Exception execption)
@@ -197,22 +195,17 @@ public class GameSetup : MonoBehaviour
                 numberOfPlayers = 1;
                 cameraFollowing.singlePlayer = true;
                 cameraFollowing.flat = false;
-                cameraFollowing.smooth = false;
                 levelReferences.playerUIControl.player2UI.SetActive(false);
                 return;
-                //Debug.Log(execption);
             }         
 
             cameraFollowing.singlePlayer = false;
             cameraFollowing.flat = true;
-            cameraFollowing.smooth = false;
         }
     }
 
     void PaladinSetup(Player player)
     {
-        //Debug.Log("player name = " + player.gameObject.name);
-        //Debug.Log("Paladin Setup");
         ClassUpgrades upgrades = Village_Upgrades.ins.paladinUpgrades;
         ClassData paladinData = classesData[0];
         player.stats.currentHealth = paladinData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
@@ -235,21 +228,13 @@ public class GameSetup : MonoBehaviour
             }
         }
 
-        //Destroy(player.controller.weaponAnimator.gameObject.GetComponent<SpriteRenderer>());
-
-
-
-        // Add Abilities
         Player_PaladinAttack attack = player.gameObject.AddComponent<Player_PaladinAttack>();
         player.attackScript = attack;
         attack.player = player;
 
-
-
         Player_Paladin_DashSkill dash = player.gameObject.AddComponent<Player_Paladin_DashSkill>();
         player.abilityBasic = dash;
         dash.player = player;
-
 
         Player_Paladin_AroundAttack around = player.gameObject.AddComponent<Player_Paladin_AroundAttack>();
         player.abilitySecondary = around;
@@ -260,8 +245,6 @@ public class GameSetup : MonoBehaviour
         specialAttackTrail.transform.SetParent(player.controller.weaponCollider.transform);
         specialAttackTrail.transform.localPosition = new Vector3(0.49f, 0.07f, 0);
         around.baseDamage = player.stats.damage;
-
-
     }
     void BarbarianSetup(Player player)
     {
@@ -271,9 +254,6 @@ public class GameSetup : MonoBehaviour
     {
         ClassUpgrades upgrades = Village_Upgrades.ins.archerUpgrades;
         ClassData rangerData = classesData[2];
-        //Debug.Log("upgrades = " + upgrades);
-        //Debug.Log("data = " + rangerData);
-        //Debug.Log("player = " + player);
         player.stats.currentHealth = rangerData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
         player.stats.maxHealth = rangerData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
         player.stats.currentEnergy = rangerData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];
@@ -359,18 +339,12 @@ public class GameSetup : MonoBehaviour
         fireCircle.player = player;
         player.abilitySecondary = fireCircle;
         fireCircle.circleDamage = player.stats.damage * fireCircle.damageMultiplier;
-
-
-
-
     }
 
 
 
     public void LoadClassData()
     {
-        Debug.LogWarning("LOADING CLASS DATA");
-
         scoreTable.gold = PlayerPrefs.GetInt("Gold", 0);
 
         villageUpgrades.paladinBuildingBought = Convert.ToBoolean(PlayerPrefs.GetInt("PaladinBought", 0));
@@ -404,8 +378,6 @@ public class GameSetup : MonoBehaviour
     }
     public void SaveClassData()
     {
-        Debug.LogWarning("SAVING CLASS DATA");
-
         PlayerPrefs.SetInt("Gold", scoreTable.gold);
 
         PlayerPrefs.SetInt("PaladinBought", Convert.ToInt32(villageUpgrades.paladinBuildingBought));

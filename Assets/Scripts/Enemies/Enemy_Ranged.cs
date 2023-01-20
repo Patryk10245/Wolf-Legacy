@@ -57,16 +57,13 @@ public class Enemy_Ranged : Enemy_BaseClass
 
         agent.SetDestination(move_target.transform.position);
         RotateTowardsWalkDirection();
-        // Helps with OverStepping
         if (distance_To_Player <= attack_Distance)
         {
-            //Debug.Log("Distance to player = " + distance_To_Player);
             Attack();
             agent.velocity = Vector3.zero;
         }
         else
         {
-            //Debug.Log("Distance too big, ELSE");
             ChangeState(ENUM_EnemyState.chasing);
             is_Attacking = false;
         }
@@ -87,8 +84,6 @@ public class Enemy_Ranged : Enemy_BaseClass
             is_Attacking = true;
         }
     }
-
-    // Called from animnation event
     public override void RangedAttack_Action()
     {
         GameObject temp = Instantiate(projectile_Prefab);

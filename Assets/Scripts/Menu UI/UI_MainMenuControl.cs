@@ -111,33 +111,6 @@ public class UI_MainMenuControl : MonoBehaviour
     {
         deleteProgress.SetActive(true);
     }
-
-    /*
-    public void Show_Start_1Player()
-    {
-        onePlayerWindow.SetActive(true);
-        startWindow.SetActive(false);
-        OnePlayer();
-
-    }
-    public void Show_Start_2Players()
-    {
-        twoPlayersWindow.SetActive(true);
-        startWindow.SetActive(false);
-        TwoPlayers();
-    }
-    */
-    /*
-    public void Show_Settings_Rebinding_Player1()
-    {
-        settingsRebindingP1.SetActive(true);
-    }
-    public void Show_Settings_Rebinding_Player2()
-    {
-        settingsRebindingP2.SetActive(true);
-    }
-    */
-
     public void Exit_StartGame()
     {
         startWindow.SetActive(false);
@@ -209,22 +182,18 @@ public class UI_MainMenuControl : MonoBehaviour
     public void ChoosePaladin(int id)
     {
         gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Paladin;
-        //Debug.Log("choose paladin");
     }
     public void ChooseBarbarian(int id)
     {
         gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Barbarian;
-        //Debug.Log("choose barbarian");
     }
     public void ChooseRanger(int id)
     {
         gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Ranger;
-        //Debug.Log("choose ranger");
     }
     public void ChooseMage(int id)
     {
         gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Mage;
-        //Debug.Log("choose mage");
     }
 
 
@@ -245,7 +214,6 @@ public class UI_MainMenuControl : MonoBehaviour
     }
     public void ShowBarbarian(int id)
     {
-        Debug.Log("Showing Barbarian for " + id);
         gameSetup.playingPlayers[id].selectedClass = ENUM_PlayerClass.Barbarian;
         switch(id)
         {
@@ -322,7 +290,6 @@ public class UI_MainMenuControl : MonoBehaviour
                 break;
         }
     }
-    
 
     public void ControlSchemeKeyBoard(int id)
     {
@@ -377,32 +344,6 @@ public class UI_MainMenuControl : MonoBehaviour
         }
     }
 
-    public void KeyRebind(int x)
-    {
-        switch(x)
-        {
-            case 0:
-                
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            case 8:
-                break;
-        }
-    }
-
     public void StartGame()
     {
         gameSetup.LoadClassData();
@@ -417,10 +358,5 @@ public class UI_MainMenuControl : MonoBehaviour
     public void ChangeSoundVolume()
     {
         AudioManager.ins.ChangeSoundVolume(soundsSlider.value);
-    }
-
-    public void ChangeToTestingScene()
-    {
-        Level_SelectedScenes.ins.ChangeToTestingScene();
     }
 }

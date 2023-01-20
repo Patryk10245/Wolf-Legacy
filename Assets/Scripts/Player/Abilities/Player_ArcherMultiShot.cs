@@ -29,7 +29,6 @@ public class Player_ArcherMultiShot : Ability_2
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isRecharching)

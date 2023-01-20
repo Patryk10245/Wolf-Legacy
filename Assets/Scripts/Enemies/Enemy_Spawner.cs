@@ -17,17 +17,12 @@ public class Enemy_Spawner : MonoBehaviour
     public List<Enemy_BaseClass> listOfCreatedEnemies;
 
     [SerializeField] List<Enemy_BaseClass> strongerMonsters;
-
-
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
         if (timer >= TimeBetweenEnemySpawning)
         {
             timer -= TimeBetweenEnemySpawning;
-
-            // Jesli limit przeciwnikow nie jest przekroczony, spawnujemy nowego przeciwnika
             if (listOfCreatedEnemies.Count < maxNumberOfEnemies)
             {
                 SpawnEnemies();
@@ -52,12 +47,10 @@ public class Enemy_Spawner : MonoBehaviour
 
     Enemy_BaseClass InstantiateEnemy()
     {
-        // Referencja do stworzonego przeciwnika
         GameObject temp_GO;
         temp_GO = Instantiate(enemyPrefab, enemySpawningPoint.position , Quaternion.Euler(0,0,0), transform);
         temp_GO.transform.position = enemySpawningPoint.position;
         temp_GO.transform.SetParent(transform);
-        // Dodanie przeciwnika do listy w spawnerze
         Enemy_BaseClass enemy = temp_GO.GetComponent<Enemy_BaseClass>();
         listOfCreatedEnemies.Add(enemy);
         enemy.is_Spawned = true;

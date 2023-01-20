@@ -27,12 +27,6 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
     [SerializeField] float changeTargetTime = 15;
     float change_target_timer;
 
-    [Header("Idle Action")]
-    [SerializeField] float minIdleTime = 1;
-    [SerializeField] float maxIdleTime = 3;
-    float idle_timer;
-    float idle_time;
-
     [Header("Projectile Waves")]
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] GameObject waveSpotParent;
@@ -148,12 +142,10 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 break;
             default:
                 Debug.LogError("UNSPECIFIED BOSS STATE");
+                Action_Idle();
                 break;
         }
-
-
         RotateTowardsWalkDirection();
-
     }
 
     private void Action_Dying()
@@ -182,8 +174,10 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
             case ENUM_current_state.working:
+                currentActionState = ENUM_current_state.ready_to_exit;
                 break;
             case ENUM_current_state.finishing:
+                currentActionState = ENUM_current_state.ready_to_exit;
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;
@@ -192,11 +186,9 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
 
     private void Action_ProjectileWaves()
     {
-        //Debug.Log("action projectile waves");
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                //Debug.Log("Preparation");
                 if(wavesShot < waveCount)
                 {
                     foreach (Transform spot in waveProjectileSpots)
@@ -212,31 +204,29 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                     Vector3 lonedir = (move_target.transform.position - gameObject.transform.position).normalized;
                     lone.GetComponent<Enemy_Projectile>().rb.AddForce(lonedir * waveProjectileSpeed);
                     wavesShot++;
-                    //waveSpotParent.transform.Rotate(new Vector3(0,0,5));
                 }
                 else
                 {
                     currentActionState = ENUM_current_state.finishing;
                 }
                 break;
+
             case ENUM_current_state.working:
-                //Debug.Log("Working");
                 waveTimer += Time.deltaTime;
-                //Debug.Log("wave timer = " + waveTimer);
-                //Debug.Log("delay = " + waveTimeDelay);
                 if(waveTimer >= waveTimeDelay)
                 {
                     currentActionState = ENUM_current_state.preparation;
                     waveTimer = 0;
                 }
                 break;
+
             case ENUM_current_state.finishing:
-                //Debug.Log("Finishing");
                 waveTimer = 0;
                 wavesShot = 0;
                 last_action = 1;
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
+
             case ENUM_current_state.ready_to_exit:
                 break;
         }
@@ -253,7 +243,6 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                     temp.transform.position = move_target.transform.position;
                     Boss_Mage_ThunderObject thunder = temp.GetComponent<Boss_Mage_ThunderObject>();
                     thunder.damage = thunderDamage;
-
                     thunderShot++;
                     currentActionState = ENUM_current_state.working;
                 }

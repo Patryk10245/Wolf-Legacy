@@ -10,7 +10,6 @@ public class Player_RangerAttack : Player_AttackScript
 
     public override void Attack()
     {
-        //Debug.Log("Mage Attack");
         player.controller.weaponAnimator.SetTrigger("Attack");
     }
 

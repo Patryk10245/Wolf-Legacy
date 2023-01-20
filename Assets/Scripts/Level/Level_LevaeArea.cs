@@ -4,18 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Level_LevaeArea : MonoBehaviour
-{
-    
+{ 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            //ScoreTable.ins.BeginAnimatingGold();
-
             Level_PlayerUI_Control.ins.ShowLevelCompletedScreen();
         }
     }
-
-
-    
 }

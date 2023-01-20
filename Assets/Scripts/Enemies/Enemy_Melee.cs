@@ -35,7 +35,6 @@ public class Enemy_Melee : Enemy_BaseClass
         }
 
         agent.SetDestination(move_target.transform.position);
-        // Helps with OverStepping
         if(distance_To_Player < attack_Distance)
         {
             agent.velocity = Vector3.zero;
@@ -98,10 +97,6 @@ public class Enemy_Melee : Enemy_BaseClass
         
     }
     
-
-
-
-
     private void Start()
     {
         if(anim == null) anim = GetComponent<Animator>();

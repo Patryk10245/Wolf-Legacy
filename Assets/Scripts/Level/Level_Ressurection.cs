@@ -12,13 +12,12 @@ public class Level_Ressurection : MonoBehaviour
     int idAlivePlayer;
     int idDeadPlayer;
     bool following;
-    // Start is called before the first frame update
+
     void Awake()
     {
         ins = this;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (following == true)
@@ -28,7 +27,6 @@ public class Level_Ressurection : MonoBehaviour
     }
     public void PlayerDeath(Player player)
     {
-        Debug.Log("Player death " + player);
         if(playerManager.playerList.Count == 1)
         {         
             GameOver();
@@ -52,7 +50,6 @@ public class Level_Ressurection : MonoBehaviour
     }
     public void PlayerRevive()
     {
-        Debug.Log("Player revive ");
         playerManager.playerList[idDeadPlayer].transform.position = spawnPosition.transform.position;
         deadPlayer.isDead = false;
         deadPlayer.gameObject.SetActive(true);
@@ -79,7 +76,6 @@ public class Level_Ressurection : MonoBehaviour
     void GameOver()
     {
         Game_State.gameLost = true;
-        Debug.LogWarning("GAME OVER SCREEN");
         Level_PlayerUI_Control.ins.InitiateGameOver();
     }
 }

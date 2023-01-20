@@ -68,6 +68,4 @@ public class Player_Paladin_AroundAttack : Ability_2
             }
         }
     }
-
-
 }

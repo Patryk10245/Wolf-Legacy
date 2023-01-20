@@ -36,7 +36,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        //Debug.Log("start for Player = " + gameObject.name);
         stats = GetComponent<PlayerStats>();
         controller = GetComponent<PlayerController>();
         ui_updater = GetComponent<Player_Ui_Updater>();
@@ -58,8 +57,6 @@ public class Player : MonoBehaviour
 
     public void KnockBack(Vector3 force)
     {
-        //Debug.Log("Knockback");
-        //controller.rb.AddForce(force);
         controller.rb.AddForce(force);
     }
 

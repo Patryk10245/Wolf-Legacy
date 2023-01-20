@@ -45,7 +45,6 @@ public class Level_PlayerUI_Control : MonoBehaviour
     }
     public void AnimationPauseGame()
     {
-        Debug.Log("Starting animation");
         soundWindow.SetActive(false);
         canvasAnimator.SetTrigger("pauseGame");
     }
@@ -161,7 +160,6 @@ public class Level_PlayerUI_Control : MonoBehaviour
         Game_State.gamePaused = true;
         Time.timeScale = 0;
         AnimationGameOver();
-        //ScoreTable.ins.ApplyCollectedGold();
     }
 
 

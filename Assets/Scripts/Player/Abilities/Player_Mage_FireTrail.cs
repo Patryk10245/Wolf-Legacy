@@ -35,10 +35,6 @@ public class Player_Mage_FireTrail : Ability_1
         }
     }
 
-    // Start is called before the first frame update
-    
-
-    // Update is called once per frame
     void Update()
     {
         if (Game_State.gamePaused)
@@ -70,8 +66,7 @@ public class Player_Mage_FireTrail : Ability_1
             }
 
             if(trailTimer >= 0.5)
-            {
-                 
+            {             
                 GameObject temp = Instantiate(trailObject);
                 temp.transform.position = transform.position;
                 Player_FireTrailObject fire = temp.GetComponent<Player_FireTrailObject>();

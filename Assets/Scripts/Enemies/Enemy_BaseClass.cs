@@ -21,7 +21,6 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     [Header("Scene Reference")]
     [SerializeField] protected Player move_target;
     [SerializeField] protected Vector3 moveDirection;
-    //[SerializeField] protected Player chase_target;
 
     [Header("Specifics")]
     public float move_Speed = 5f;
@@ -75,12 +74,10 @@ public abstract class Enemy_BaseClass : MonoBehaviour
 
     protected void CheckDistanceToPlayers()
     {
-        // Variables to store closest player
         distance_To_Player = Vector2.Distance(move_target.transform.position, transform.position);
 
         float smallest_distance = distance_To_Player;
         Player closest_player = move_target;
-        // Deciding on who is closer
         foreach(Player player in Player_Manager.ins.playerList)
         {
             float distance = Vector2.Distance(player.transform.position, transform.position);
@@ -90,22 +87,13 @@ public abstract class Enemy_BaseClass : MonoBehaviour
                 closest_player = player;
             }
         }
-
-        // If closest player is closer, choose to chase him
         if(distance_To_Player >= smallest_distance -1)
         {
-            //Debug.Log("Closest player");
             move_target = closest_player;
             distance_To_Player = smallest_distance;
-            //Debug.Log("closest player  = " + closest_player);
-            //Debug.Log("smallest distance = " + smallest_distance);
         }
-
-        //Debug.Log("Distance to player = " + distance_To_Player);
-        // Player too far. Abort chase
         if (distance_To_Player > chasePlayerDistance)
         {
-            //Debug.Log("Distance too small");
             move_target = null;
             agent.SetDestination(transform.position);
         }
@@ -136,14 +124,12 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     public abstract void RangedAttack_Action();
     public void Death()
     {
-        //Debug.LogWarning("Smierc przeciwnika nie skonczona");
         ScoreTable.ins.AddKill();
 
         if(is_Spawned == false)
         {
             int random_gold = Random.Range(min_Gold_OnDeath, max_Gold_OnDeath);
-            ScoreTable.ins.AddGold(random_gold);
-            
+            ScoreTable.ins.AddGold(random_gold);  
         }
         else
         {
@@ -157,8 +143,6 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     { 
         if (currentEnemyState != new_state)
         {
-            //Debug.Log("Changing state. current = " + currentEnemyState + "\n new = " + new_state);
-            //Debug.Log("Changing State to " + new_state.ToString()) ;
             currentEnemyState = new_state;
             ApplyAnimation();
         }

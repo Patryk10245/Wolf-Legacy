@@ -10,8 +10,6 @@ public class Player_ArcherDash : Ability_1
         energyCost = 8;
         rechargeTime = 4;
     }
-
-
     public override void Use()
     {
         if (isRecharching == false & player.stats.currentEnergy >= energyCost)

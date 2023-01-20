@@ -46,7 +46,6 @@ public class Player_Paladin_DashSkill : Ability_1
         if(player.stats.currentEnergy >= energyCost && isRecharching == false && isDashing == false)
         {
             player.stats.ModifyEnergy(-energyCost);
-            //Debug.Log("Force = " + force);
             player.KnockBack(player.controller.moveInput * dashForce);
             isDashing = true;
             timer = 0;

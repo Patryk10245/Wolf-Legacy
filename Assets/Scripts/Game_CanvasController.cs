@@ -13,6 +13,4 @@ public class Game_CanvasController : MonoBehaviour
     {
         Level_PlayerUI_Control.ins.AnimationEvent_LevelCompleted_AnimateGold();
     }
-
-
 }

@@ -9,7 +9,6 @@ public class Village_UI_Control : MonoBehaviour
     public static Village_UI_Control ins;
     public void Reference()
     {
-        Debug.Log("Village ui Control INS reference");
         ins = this;
     }
     private void Awake()
@@ -60,8 +59,6 @@ public class Village_UI_Control : MonoBehaviour
 
     public void SetReference()
     {
-        //Debug.Log("Setting Reference for Village UI Control");
-        //Debug.Log("upgrades = " + Village_Upgrades.ins.gameObject.name);
         villageUpgrades = GameSetup.ins.villageUpgrades;
         villageUpgrades.village_UI_Control = this;
         upgradeInfo.villageUpgrades = villageUpgrades;
@@ -93,38 +90,19 @@ public class Village_UI_Control : MonoBehaviour
 
     }
 
-
-    private void Update()
-    {
-    }
-
-    void foo()
-    {
-
-    }
-
     public void ShowPaladinWindow()
     {
-        Debug.Log("Activating Paladin Window");
         paladinWindow.SetActive(true);
-        Debug.Log("Blocker state = " + paladinBuyingBuilding.activeSelf);
         if (villageUpgrades.paladinBuildingBought == false)
         {
-            Debug.Log("If");
             paladinBuyingBuilding.SetActive(true);
-            Debug.Log("Blocker state = " + paladinBuyingBuilding.activeSelf);
             return;
         }
         else
         {
-            Debug.Log("Else");
             paladinBuyingBuilding.SetActive(false);
-            Debug.Log("Blocker state = " + paladinBuyingBuilding.activeSelf);
         }
-        Debug.Log("Running Animator");
-        canvasAnimator.SetTrigger("openPaladin");
-        //villageMenu.SetActive(false);
-        
+        canvasAnimator.SetTrigger("openPaladin");     
     }
     public void ShowBarbarianWindow()
     {
@@ -138,9 +116,7 @@ public class Village_UI_Control : MonoBehaviour
         {
             barbarianBuyingBuilding.SetActive(false);
         }
-        canvasAnimator.SetTrigger("openBarbarian");
-        //villageMenu.SetActive(false);
-        
+        canvasAnimator.SetTrigger("openBarbarian");       
     }
     public void ShowRangerWindow()
     {
@@ -154,9 +130,7 @@ public class Village_UI_Control : MonoBehaviour
         {
             archerBuyingBuilding.SetActive(false);
         }
-        canvasAnimator.SetTrigger("openArcher");
-        //villageMenu.SetActive(false);
-        
+        canvasAnimator.SetTrigger("openArcher");      
     }
     public void ShowMageWindow()
     {
@@ -170,9 +144,7 @@ public class Village_UI_Control : MonoBehaviour
         {
             mageBuyingBuilding.SetActive(false);
         }
-        canvasAnimator.SetTrigger("openMage");
-        //villageMenu.SetActive(false);
-        
+        canvasAnimator.SetTrigger("openMage");      
     }
     public void BuyBuilding(int building)
     {
@@ -226,7 +198,6 @@ public class Village_UI_Control : MonoBehaviour
 
     public void CloseUpgradeWindows()
     {
-        Debug.Log("Closing WIndows");
         canvasAnimator.SetTrigger("closeWindows");
     }
     public void CloseBuyingWindows()
@@ -239,7 +210,6 @@ public class Village_UI_Control : MonoBehaviour
 
     public void UpgradePaladin(int type)
     {
-        //FixReference();
         villageUpgrades.UpgradePaladin(type);
         switch (type)
         {
@@ -274,12 +244,9 @@ public class Village_UI_Control : MonoBehaviour
                 }
                 break;
         }
-
-        
     }
     public void UpgradeBarbarian(int type)
     {
-        //FixReference();
         villageUpgrades.UpgradeBarbarian(type);;
         switch (type)
         {
@@ -317,7 +284,6 @@ public class Village_UI_Control : MonoBehaviour
     }
     public void UpgradeRanger(int type)
     {
-        //FixReference();
         villageUpgrades.UpgradeRanger(type);
 
         switch (type)
@@ -356,7 +322,6 @@ public class Village_UI_Control : MonoBehaviour
     }
     public void UpgradeMage(int type)
     {
-        //FixReference();
         villageUpgrades.UpgradeMage(type);
 
         switch (type)

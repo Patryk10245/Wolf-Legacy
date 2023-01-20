@@ -9,8 +9,6 @@ public class Camera_Following : MonoBehaviour
     {
         ins = this;
     }
-
-    public bool smooth;
     public bool flat;
 
     public bool singlePlayer;
@@ -31,7 +29,6 @@ public class Camera_Following : MonoBehaviour
 
     private void Awake()
     {
-        //Debug.Log("Camera followign Set up reference");
 
         if (Camera_Following.ins == null)
         {
@@ -46,34 +43,10 @@ public class Camera_Following : MonoBehaviour
         {
             Single();
         }
-        if (smooth) Smoothed();
-        if (flat) Flated();
-    }
-
-    void Smoothed()
-    {
-        middleOfPlayers = Vector3.zero;
-        foreach (Player player in Player_Manager.ins.playerList)
+        if (flat)
         {
-            middleOfPlayers += player.transform.position;
+            Flated();
         }
-
-        dist = Vector3.Distance(Player_Manager.ins.playerList[0].transform.position, Player_Manager.ins.playerList[1].transform.position);
-        middleOfPlayers /= Player_Manager.ins.playerList.Count;
-        middleOfPlayers.z = -10;
-
-        if (dist > max_dist)
-        {
-            cam.orthographicSize = (dist / div_val) ;
-        }
-        else
-        {
-            cam.orthographicSize = 10;
-        }
-
-        cam.transform.position = Vector3.SmoothDamp(previous_pos, middleOfPlayers, ref velocity, smoothTime);
-        previous_pos = middleOfPlayers;
-
     }
     void Flated()
     {
@@ -82,8 +55,6 @@ public class Camera_Following : MonoBehaviour
         {
             middleOfPlayers += player.transform.position;
         }
-
-        //Debug.Log("DEBUG cam fol || " + Player_Manager.ins);
         dist = Vector3.Distance(Player_Manager.ins.playerList[0].transform.position, Player_Manager.ins.playerList[1].transform.position);
         middleOfPlayers /= Player_Manager.ins.playerList.Count;
         middleOfPlayers.z = -10;

@@ -9,7 +9,6 @@ public class Player_Manager : MonoBehaviour
     public static Player_Manager ins;
     void Reference()
     {
-        //Debug.Log("Player manager Setting Reference To self");
         ins = this;
     }
     void Awake()
@@ -24,7 +23,6 @@ public class Player_Manager : MonoBehaviour
     public Transform playerSpawnPosition;
 
 
-
     private void Update()
     {
     }
@@ -34,7 +32,6 @@ public class Player_Manager : MonoBehaviour
         foreach(Player player in playerList)
         {
             player.GetComponent<PlayerInput>().user.UnpairDevicesAndRemoveUser();
-            //player.controller.RemoveListeningOnEvents();
             Destroy(player.gameObject);
         }
     }
@@ -46,8 +43,4 @@ public class Player_Manager : MonoBehaviour
             player.isDead = false;
         }
     }
-
-
-
-
 }

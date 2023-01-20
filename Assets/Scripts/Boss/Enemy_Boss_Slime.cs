@@ -29,8 +29,6 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
     [SerializeField] float changeTargetTime = 15;
     float change_target_timer;
 
-
-
     [Header("Idle Action")]
     [SerializeField] float minIdleTime = 1;
     [SerializeField] float maxIdleTime = 3;
@@ -72,9 +70,6 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
     [SerializeField] bool isInvincible;
 
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
         if (anim == null) anim = GetComponent<Animator>();
@@ -88,7 +83,6 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
         rb.gravityScale = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Game_State.gamePaused)
@@ -158,10 +152,9 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                 break;
             default:
                 Debug.LogError("UNSPECIFIED BOSS STATE");
+                Action_Idle();
                 break;
         }
-
-
         RotateTowardsWalkDirection();
     }
 
@@ -171,7 +164,6 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                //Debug.Log("Idle State");
                 idle_time = Random.Range(minIdleTime, maxIdleTime);
                 idle_timer = 0;
                 anim.SetTrigger("isIdle");
@@ -194,9 +186,6 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
 
             case ENUM_current_state.ready_to_exit:
                 break;
-            default:
-                //Debug.LogError("ERROR. UNKOWN ACTION STATE");
-                break;
         }
     }
     void Action_Moving()
@@ -204,33 +193,25 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                //Debug.Log("BEGIN Moving State");
                 Vector3 random_spot = new Vector3(Random.Range(arenaCorners[0].position.x, arenaCorners[1].position.x), Random.Range(arenaCorners[0].position.y, arenaCorners[1].position.y), transform.position.z);
-                //Debug.Log("random spot = " + random_spot);
-                //Debug.Log("position = " + gameObject.transform.position);
                 agent.SetDestination(random_spot);
                 anim.SetTrigger("isMoving");
                 currentActionState = ENUM_current_state.working;
                 break;
             case ENUM_current_state.working:
-                //Debug.Log("agent dest = " + agent.destination);
-                //Debug.Log("position = " + gameObject.transform.position);
                 if (Vector3.Distance(gameObject.transform.position, agent.destination) < 1.5f)
                 {
                     currentActionState = ENUM_current_state.finishing;
                 }
                 break;
             case ENUM_current_state.finishing:
-                //Debug.Log("walking finishing");
                 anim.SetTrigger("exitAnimation");
                 agent.SetDestination(transform.position);
                 currentActionState = ENUM_current_state.ready_to_exit;
-                //Debug.Log("END Moving State");
                 last_action = 1;
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;
-
         }
     }
     void Action_Shooting()
@@ -262,8 +243,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                     proj.damage = projectileDamage;
                     proj.stopTimerAt = projectileDeathTime;
                     shotCount++;
-                    proj.rb.AddForce(direction * projectileSpeed) ;
-                    
+                    proj.rb.AddForce(direction * projectileSpeed) ;  
                 }
 
                 if (shotCount >= stopAfterThisManyShots)
@@ -294,7 +274,6 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                 {
                     spawnTimer -= spawnDelay;
                     GameObject temp = Instantiate(enemyPrefab, placeToSpawn.transform.position, transform.rotation);
-                    //temp.transform.position = placeToSpawn.transform.position;
                     temp.GetComponent<NavMeshAgent>().SetDestination(move_target.transform.position);
                     amountSpawned++;
                 }
@@ -337,14 +316,12 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                     anim.SetTrigger("JumpBounce");
                     currentActionState = ENUM_current_state.working;
                 }
-
                 break;
 
-            case ENUM_current_state.working:
-                
+            case ENUM_current_state.working:  
                 break;
 
-            case ENUM_current_state.finishing: // Set from animation
+            case ENUM_current_state.finishing:
 
                 currentJumpPos++;
 
@@ -365,7 +342,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                 }
                 break;
 
-            case ENUM_current_state.ready_to_exit: // Set From Animation
+            case ENUM_current_state.ready_to_exit:
                 break;
         }
     }
@@ -390,22 +367,18 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
 
     public void EVENT_Preparation()
     {
-        //Debug.Log("Event Preparation");
         currentActionState = ENUM_current_state.preparation;
     }
     public void EVENT_Working()
     {
-        //Debug.Log("Event Working");
         currentActionState = ENUM_current_state.working;
     }
     public void EVENT_Finishing()
     {
-        //Debug.Log("Event Finishing");
         currentActionState = ENUM_current_state.finishing;
     }
     public void EVENT_Exiting()
     {
-        //Debug.Log("Event Exiting");
         currentActionState = ENUM_current_state.ready_to_exit;
     }
 

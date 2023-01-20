@@ -22,7 +22,7 @@ public class ScoreTable : MonoBehaviour
     public float changeSpeed = 0.02f;
     bool animateGold;
     int lastValue;
-    // Start is called before the first frame update
+
     void Awake()
     {
         if (ins != null && ins != this)
@@ -36,10 +36,6 @@ public class ScoreTable : MonoBehaviour
             DontDestroyOnLoad(this);
         }
 
-    }
-
-    private void Update()
-    {
     }
 
     public void AddGold(int val)
@@ -67,22 +63,4 @@ public class ScoreTable : MonoBehaviour
     {
         currentlyCollectedGold /= 3;
     }
-
-    public void SetReferenceToGoldText()
-    {
-
-        GameObject temp = GameObject.Find("Canvas");
-        
-        foreach(Transform child in temp.transform)
-        {
-            if(child.gameObject.name == "Gold Icon")
-            {
-                TEXT_goldAmount = child.gameObject.GetComponentInChildren<Text>();
-                GO_goldAmount = child.gameObject;
-            }
-        }
-    }
-
-
-
 }

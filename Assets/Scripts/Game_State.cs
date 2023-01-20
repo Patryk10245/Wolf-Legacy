@@ -16,20 +16,15 @@ public class Game_State : MonoBehaviour
     {
         if (ins != null && ins != this)
         {
-            //Debug.Log("Destroying = " + gameObject);
-            //Debug.Log("scene = " + gameObject.scene.name);
             Destroy(gameObject);
         }
         else
         {
 
             ins = this;
-            //Debug.Log("scene = " + gameObject.scene.name);
             DontDestroyOnLoad(this);
         }
     }
-
-    // Update is called once per frame
     void Update()
     {
     }
@@ -39,20 +34,16 @@ public class Game_State : MonoBehaviour
 
         if (gamePaused)
         {
-            Debug.Log("Pausing Game, Time Scale = " + Time.timeScale);
             Time.timeScale = 0;
             gamePaused = true;
             Level_PlayerUI_Control.ins.AnimationPauseGame();
         }
         else
         {
-            Debug.Log("Unpausing Game, Time Scale = " + Time.timeScale);
             Time.timeScale = 1;
             gamePaused = false;
             Level_PlayerUI_Control.ins.AnimationUnpauseGame();
         }
-
-        Debug.Log("Time.timeScale = " + Time.timeScale);
     }
     public void ResetValuesToDefault()
     {

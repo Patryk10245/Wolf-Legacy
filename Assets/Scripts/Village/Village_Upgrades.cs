@@ -15,7 +15,6 @@ public class Village_Upgrades : MonoBehaviour
     public static Village_Upgrades ins;
     public void Reference()
     {
-        //Debug.Log("Setting reference for Village Upgraes");
         ins = this;
     }
     private void Awake()
@@ -29,11 +28,6 @@ public class Village_Upgrades : MonoBehaviour
             Reference();
             DontDestroyOnLoad(this);
         }
-    }
-    private void Start()
-    {
-        //Debug.Log("Setting village control refernec from start");
-        //village_UI_Control = Village_UI_Control.ins;
     }
 
     public ScoreTable scoreTable;
@@ -78,10 +72,6 @@ public class Village_Upgrades : MonoBehaviour
                 break;
 
         }
-
-        //Debug.Log(scoreTable.gameObject);
-        //Debug.Log(stat.currentLevel);
-
         if (scoreTable.gold > stat.cost[stat.currentLevel])
         {
             scoreTable.gold -= stat.cost[stat.currentLevel];
@@ -163,16 +153,4 @@ public class Village_Upgrades : MonoBehaviour
         UpdateRangernUI();
         UpdateMageUI();
     }
-
-    public void LoadUpgrades()
-    {
-
-    }
-    public void SaveUpgrades()
-    {
-
-    }
-
-
-
 }
