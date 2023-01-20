@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class Level_Ressurection : MonoBehaviour
@@ -12,6 +13,7 @@ public class Level_Ressurection : MonoBehaviour
     [Space(10)]
     [SerializeField] int revivingCost = 100;
     public GameObject revivingInfoWindow;
+    public Text reviveInfoCostText;
     int idAlivePlayer;
     int idDeadPlayer;
     bool following;
@@ -22,6 +24,10 @@ public class Level_Ressurection : MonoBehaviour
     void Awake()
     {
         ins = this;
+    }
+    private void Start()
+    {
+        reviveInfoCostText.text = revivingCost.ToString();
     }
 
     void Update()
@@ -67,6 +73,7 @@ public class Level_Ressurection : MonoBehaviour
             deadPlayer.isInvulnerable = false;
             deadPlayer = null;
             ScoreTable.ins.AddGold(-revivingCost);
+            revivingInfoWindow.SetActive(false);
         }
         
     }
