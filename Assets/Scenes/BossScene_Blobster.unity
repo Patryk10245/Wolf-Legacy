@@ -130933,7 +130933,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135589858203088894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.1, y: -0.7, z: 0}
+  m_LocalPosition: {x: -6.7, y: 6.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -131851,7 +131851,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 495e5c4eed280774dbe2d2682207ad5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smooth: 0
   flat: 1
   singlePlayer: 0
   middleOfPlayers: {x: 0, y: 0, z: 0}
@@ -134601,7 +134600,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7135778253528857242}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!222 &6667051570032350467
 CanvasRenderer:
@@ -134974,8 +134973,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7235071990760577819}
   - {fileID: 6540606689358458822}
+  - {fileID: 7235071990760577819}
   - {fileID: 1439931877468126958}
   - {fileID: 4051892305162103708}
   - {fileID: 8391422799190937677}
