@@ -34,8 +34,30 @@ public class Level_SelectedScenes : MonoBehaviour
         }
     }
 
+    public void RandomizeMaps()
+    {
+        List<int> temp_list = new List<int>();
+        temp_list.Add(1);
+        temp_list.Add(2);
+        temp_list.Add(3);
+        int map1, map2, map3;
+
+        int rand1 = Random.Range(0, 3);
+        map1 = temp_list[rand1];
+        temp_list.Remove(map1);
+
+        int rand2 = Random.Range(0, 2);
+        map2 = temp_list[rand2];
+        temp_list.Remove(map2);
+
+        map3 = temp_list[0];
+        selectedScenes[0] = "Level " + map1.ToString();
+        selectedScenes[2] = "Level " + map2.ToString();
+        selectedScenes[4] = "Level " + map3.ToString();
+    }
+
     void SceneLoaded(Scene scene, LoadSceneMode mode)
-    {     
+    {
         if(scene == SceneManager.GetSceneByName("Village_Scene"))
         {
             AudioManager.ins.Play_VillageMusic();
