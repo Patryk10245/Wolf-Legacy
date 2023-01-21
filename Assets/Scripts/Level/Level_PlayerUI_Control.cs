@@ -169,7 +169,7 @@ public class Level_PlayerUI_Control : MonoBehaviour
     {
         if (Level_FightReferenecs.ins.isLastMap == true)
         {
-            Game_State.gameWon = true;
+            Game_State.levelWon = true;
         }
         Time.timeScale = 0;
         completedWindow.gameObject.SetActive(true);

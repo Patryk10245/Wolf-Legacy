@@ -8,8 +8,8 @@ public class Game_State : MonoBehaviour
 
     public static bool gamePaused;
     public GameObject pausingWindow;
-    public static bool gameLost;
-    public static bool gameWon;
+    public static bool levelLost;
+    public static bool levelWon;
 
 
     private void Awake()
@@ -47,8 +47,8 @@ public class Game_State : MonoBehaviour
     }
     public void ResetValuesToDefault()
     {
-        gameLost = false;
-        gameWon = false;
+        levelLost = false;
+        levelWon = false;
         gamePaused = false;
         Time.timeScale = 1;
         Game_State.ins.pausingWindow.SetActive(false);
