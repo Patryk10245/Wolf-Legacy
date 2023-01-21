@@ -81,7 +81,7 @@ public class Village_UI_Control : MonoBehaviour
             ChangeBuildingToFixed(mageBuyingBuilding, mageDestroyedBuilding);
         }
 
-        if(Game_State.gameLost == true || Game_State.gameWon == true)
+        if(Game_State.levelLost == true || Game_State.levelWon == true)
         {
             mapChoosing.DisableNextButton();
             mapChoosing.DisableRepeatButton();
@@ -156,9 +156,9 @@ public class Village_UI_Control : MonoBehaviour
     }
     public void BuyBuilding(int building)
     {
-        if(ScoreTable.ins.gold >= 150)
+        if(ScoreTable.ins.gold >= 1000)
         {
-            ScoreTable.ins.gold -= 150;
+            ScoreTable.ins.gold -= 1000;
             switch (building)
             {
                 case 0:
@@ -253,6 +253,7 @@ public class Village_UI_Control : MonoBehaviour
                 }
                 break;
         }
+        UpdateGoldAmount();
     }
     public void UpgradeBarbarian(int type)
     {
@@ -290,6 +291,7 @@ public class Village_UI_Control : MonoBehaviour
                 }
                 break;
         }
+        UpdateGoldAmount();
     }
     public void UpgradeRanger(int type)
     {
@@ -328,6 +330,7 @@ public class Village_UI_Control : MonoBehaviour
                 }
                 break;
         }
+        UpdateGoldAmount();
     }
     public void UpgradeMage(int type)
     {
@@ -366,6 +369,7 @@ public class Village_UI_Control : MonoBehaviour
                 }
                 break;
         }
+        UpdateGoldAmount();
     }
 
 }

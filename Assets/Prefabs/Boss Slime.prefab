@@ -245,8 +245,8 @@ MonoBehaviour:
   anim: {fileID: 2059904262836334202}
   theBody: {fileID: 2059904261801143028}
   rb: {fileID: 2059904262836334203}
-  agent: {fileID: 0}
-  stats: {fileID: 0}
+  agent: {fileID: 2059904262836334201}
+  stats: {fileID: 2059904262836334087}
   deathParticleEffect: {fileID: 8248367361089773354, guid: 7c11cb04bd7c7bd4cb86f4945546249f, type: 3}
   bossArea: {fileID: 0}
   healthBar: {fileID: 0}
@@ -266,7 +266,7 @@ MonoBehaviour:
   projectileDamage: 1
   stopAfterThisManyShots: 50
   aimingCorrection: 1.5
-  enemyPrefab: {fileID: 923329539989383326, guid: e583c07c74f6f3a468808754d1a6098e, type: 3}
+  enemyPrefab: {fileID: 6402168220178791609, guid: c61a8c150929fa447b77f17fb3aa0047, type: 3}
   amountToSpawn: 5
   placeToSpawn: {fileID: 4551476185956485137}
   spawnDelay: 0.4

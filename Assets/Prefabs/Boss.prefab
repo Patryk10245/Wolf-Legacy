@@ -219,7 +219,10 @@ MonoBehaviour:
   rocksFallRange: 4
   rocksDamage: 10
   rocksNumber: 2
-  rockPrefab: {fileID: 3357530329592424813, guid: 3e79a59d8c1ab4344af25d2db606d8f5, type: 3}
+  rockPrefab:
+  - {fileID: 3357530329592424813, guid: 3e79a59d8c1ab4344af25d2db606d8f5, type: 3}
+  - {fileID: 3357530329592424813, guid: d8e2c9b4cc2d7044886594e207e961a6, type: 3}
+  - {fileID: 3357530329592424813, guid: eedc777b5f7c7a04db5c8cd00e11c2a1, type: 3}
 --- !u!58 &1958520269597539360
 CircleCollider2D:
   m_ObjectHideFlags: 0

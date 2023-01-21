@@ -94,7 +94,7 @@ public class Level_Ressurection : MonoBehaviour
 
     void GameOver()
     {
-        Game_State.gameLost = true;
+        Game_State.levelLost = true;
         Level_PlayerUI_Control.ins.InitiateGameOver();
     }
 
