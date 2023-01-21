@@ -58,6 +58,7 @@ public class AudioManager : MonoBehaviour
     public void ChangeSoundVolume(float volume)
     {
         soundSource.volume = volume;
+        playerHurtSource.volume = volume;
     }
 
     public void Play_MenuMusic()

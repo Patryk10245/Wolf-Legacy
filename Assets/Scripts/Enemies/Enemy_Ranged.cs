@@ -86,6 +86,10 @@ public class Enemy_Ranged : Enemy_BaseClass
     }
     public override void RangedAttack_Action()
     {
+        if (move_target == null)
+        {
+            return;
+        }
         GameObject temp = Instantiate(projectile_Prefab);
         Vector3 dir = (move_target.transform.position - projectile_SpawnPoint.position).normalized;
         temp.transform.position = projectile_SpawnPoint.position;
