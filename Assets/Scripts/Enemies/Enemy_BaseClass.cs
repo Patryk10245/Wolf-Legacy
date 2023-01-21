@@ -48,8 +48,8 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     [SerializeField] protected Animator anim;
     [SerializeField] protected SpriteRenderer theBody;
     [SerializeField] protected Rigidbody2D rb;
-    [HideInInspector] public NavMeshAgent agent;
-    [HideInInspector] public Enemy_Stats stats;
+    public NavMeshAgent agent;
+    public Enemy_Stats stats;
 
     [SerializeField] GameObject deathParticleEffect;
 

@@ -159,8 +159,8 @@ MonoBehaviour:
   anim: {fileID: 6772430363843755297}
   theBody: {fileID: 6772430365041455488}
   rb: {fileID: 6772430363843755326}
-  agent: {fileID: 0}
-  stats: {fileID: 0}
+  agent: {fileID: 6772430363843755296}
+  stats: {fileID: 6772430363843755298}
   deathParticleEffect: {fileID: 8248367361089773354, guid: 8ec604ae414f3194094e6b1841121025, type: 3}
   projectile_Prefab: {fileID: 7850752219110390196, guid: bd7478a8eb82ef240b28430ecc710db6, type: 3}
   projectile_SpawnPoint: {fileID: 6772430365041455491}

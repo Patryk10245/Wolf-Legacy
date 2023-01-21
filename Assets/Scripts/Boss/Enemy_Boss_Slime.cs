@@ -275,6 +275,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                     spawnTimer -= spawnDelay;
                     GameObject temp = Instantiate(enemyPrefab, placeToSpawn.transform.position, transform.rotation);
                     temp.GetComponent<NavMeshAgent>().SetDestination(move_target.transform.position);
+                    temp.GetComponent<Enemy_BaseClass>().is_Spawned = true;
                     amountSpawned++;
                 }
 

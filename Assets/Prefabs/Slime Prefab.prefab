@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1841128997
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1603573149, guid: b3eb1cb0299dafd4db077a5b745f1009, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -243,8 +243,8 @@ MonoBehaviour:
   anim: {fileID: 6402168220178791602}
   theBody: {fileID: 6402168219520002858}
   rb: {fileID: 6402168220178791603}
-  agent: {fileID: 0}
-  stats: {fileID: 0}
+  agent: {fileID: 6402168220178791613}
+  stats: {fileID: 6402168220178791615}
   deathParticleEffect: {fileID: 8248367361089773354, guid: 8ec604ae414f3194094e6b1841121025, type: 3}
   projectile_Prefab: {fileID: 5186912823403538100, guid: 4dd78d1f9148fce47becc177ce6ca280, type: 3}
   projectile_SpawnPoint: {fileID: 6402168219520002859}
