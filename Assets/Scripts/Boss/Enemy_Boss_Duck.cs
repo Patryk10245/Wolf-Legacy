@@ -74,7 +74,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
     [SerializeField] float rocksFallRange;
     [SerializeField] float rocksDamage;
     [SerializeField] int rocksNumber;
-    [SerializeField] GameObject rockPrefab;
+    [SerializeField] GameObject[] rockPrefab;
 
     void Start()
     {
@@ -469,7 +469,8 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 {
                     Vector3 point = Random.insideUnitCircle * rocksFallRange;
                     point += move_target.transform.position;
-                    GameObject rock = Instantiate(rockPrefab, point, transform.rotation);
+                    int rand = Random.Range(0, rockPrefab.Length);
+                    GameObject rock = Instantiate(rockPrefab[rand], point, transform.rotation);
                     rock.GetComponent<Boss_Duck_RocksObject>().damage = rocksDamage;
                 }
                 last_action = 4;
