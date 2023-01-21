@@ -253,6 +253,7 @@ public class Village_UI_Control : MonoBehaviour
                 }
                 break;
         }
+        UpdateGoldAmount();
     }
     public void UpgradeBarbarian(int type)
     {
@@ -290,6 +291,7 @@ public class Village_UI_Control : MonoBehaviour
                 }
                 break;
         }
+        UpdateGoldAmount();
     }
     public void UpgradeRanger(int type)
     {
@@ -328,6 +330,7 @@ public class Village_UI_Control : MonoBehaviour
                 }
                 break;
         }
+        UpdateGoldAmount();
     }
     public void UpgradeMage(int type)
     {
@@ -366,6 +369,7 @@ public class Village_UI_Control : MonoBehaviour
                 }
                 break;
         }
+        UpdateGoldAmount();
     }
 
 }
