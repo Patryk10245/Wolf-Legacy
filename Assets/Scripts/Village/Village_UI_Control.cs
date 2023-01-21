@@ -62,6 +62,7 @@ public class Village_UI_Control : MonoBehaviour
         villageUpgrades = GameSetup.ins.villageUpgrades;
         villageUpgrades.village_UI_Control = this;
         upgradeInfo.villageUpgrades = villageUpgrades;
+        
 
         if(villageUpgrades.paladinBuildingBought == true)
         {
@@ -88,6 +89,13 @@ public class Village_UI_Control : MonoBehaviour
 
         ScoreTable.ins.TEXT_goldAmount = TextGoldAmount;
 
+        UpdateGoldAmount();
+
+    }
+
+    void UpdateGoldAmount()
+    {
+        TextGoldAmount.text = ScoreTable.ins.gold.ToString(); ;
     }
 
     public void ShowPaladinWindow()
@@ -170,6 +178,7 @@ public class Village_UI_Control : MonoBehaviour
                     canvasAnimator.SetTrigger("BuyMage");
                     break;
             }
+            UpdateGoldAmount();
             
         }
     }
