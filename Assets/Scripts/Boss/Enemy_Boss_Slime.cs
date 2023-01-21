@@ -352,6 +352,9 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
+                anim.SetTrigger("isDying");
+                agent.SetDestination(transform.position);
+                agent.velocity = Vector3.zero;
                 currentActionState = ENUM_current_state.finishing;
                 break;
             case ENUM_current_state.working:
