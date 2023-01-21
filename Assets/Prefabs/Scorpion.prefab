@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_target: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
-  move_Speed: 3
+  move_Speed: 4
   attack_Distance: 6
   distance_To_Player: 0
   chasePlayerDistance: 9
