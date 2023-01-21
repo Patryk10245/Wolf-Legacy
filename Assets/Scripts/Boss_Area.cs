@@ -10,28 +10,66 @@ public class Boss_Area : MonoBehaviour
 
     [SerializeField] GameObject bossHealthBar;
 
+    int numberOfPlayersInArea;
+    public GameObject windowAskingForPlayers;
+    public Animator anim;
+    public Transform initalBossMovePosition;
+
 
 
     void InitializeFightWithBoss()
     {
-        foreach (Player player in Player_Manager.ins.playerList)
+        if(numberOfPlayersInArea < GameSetup.ins.numberOfPlayers)
         {
-            player.transform.position = placeToTeleportPlayersTo.transform.position;
+            return;
         }
+        CloseWindow();
+        anim.SetTrigger("CloseTheGates");
+
         collidersBlockingExit.SetActive(true);
+        boss.agent.SetDestination(initalBossMovePosition.position);
+    }
+    public void BeginFightWithBoss()
+    {
         boss.SetMoveTarget(Player_Manager.ins.playerList[0]);
         bossHealthBar.SetActive(true);
+    }
+
+    void ShowWindow()
+    {
+        windowAskingForPlayers.SetActive(true);
+    }
+    void CloseWindow()
+    {
+        windowAskingForPlayers.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            ShowWindow();
+            numberOfPlayersInArea++;
+
+            if(GameSetup.ins.numberOfPlayers == 2 && Level_Ressurection.ins.deadPlayer != null)
+            {
+                numberOfPlayersInArea++;
+            }
+
             InitializeFightWithBoss();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            numberOfPlayersInArea--;
+            CloseWindow();
         }
     }
     public void DeactivateBlockades()
     {
+        anim.SetTrigger("OpenTheGates");
         collidersBlockingExit.SetActive(false);
         areaCollider.enabled = false;
     }
