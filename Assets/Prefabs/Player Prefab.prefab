@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Intensity: 0.52
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 61e923bc2dd90303
+  m_ApplyToSortingLayers: 61e923bc2dd903032566bd6d1df1a33f
   m_LightCookieSprite: {fileID: 21300000, guid: d4c250fd84621454da1d97ebe34dc024, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -645,7 +645,7 @@ MonoBehaviour:
   - {x: 0.2816925, y: -0.87521553, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 376414
+  m_InstanceId: 399028
 --- !u!1 &8909031238170990673
 GameObject:
   m_ObjectHideFlags: 0
