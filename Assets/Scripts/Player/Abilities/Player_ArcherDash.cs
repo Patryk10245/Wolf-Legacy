@@ -7,7 +7,7 @@ public class Player_ArcherDash : Ability_1
 
     private void Start()
     {
-        energyCost = 10;
+        energyCost = 15;
         rechargeTime = 3;
     }
     public override void Use()

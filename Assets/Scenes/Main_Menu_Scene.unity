@@ -11559,7 +11559,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 811d36b4845c63a42a32f3e13ab3a5d9, type: 3}
   - {fileID: 8300000, guid: 3f4f95c5f4d4e514a90cbad0064f3a71, type: 3}
   mageAttack: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
-  enemyHurt: {fileID: 0}
+  enemyHurt: {fileID: 8300000, guid: 566d2ea6240b489479a6e9fd608c2621, type: 3}
 --- !u!4 &1881090599
 Transform:
   m_ObjectHideFlags: 0

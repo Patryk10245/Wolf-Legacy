@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Paladin_AroundAttack : Ability_2
 {
     [Space(10)]
-    public float damageMultiplier = 3f;
+    public float damageMultiplier = 4f;
     public float baseDamage;
     public GameObject weaponHolder;
     public GameObject trail;

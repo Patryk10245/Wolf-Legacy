@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Paladin
   m_EditorClassIdentifier: 
   healtPoints: 80
-  energyPoints: 30
-  energyRegenAmount: 0.5
+  energyPoints: 40
+  energyRegenAmount: 1
   damage: 5
   speed: 320
   playerSprite: {fileID: -1420845206, guid: 34d59b25812fb3a4b983e0c6f53f85d2, type: 3}
