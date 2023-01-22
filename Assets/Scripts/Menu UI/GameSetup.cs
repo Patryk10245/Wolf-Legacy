@@ -335,7 +335,6 @@ public class GameSetup : MonoBehaviour
         fireTrail.trailDamage = player.stats.damage * fireTrail.damageMultiplier;
 
         Player_Mage_FireCircle fireCircle = player.gameObject.AddComponent<Player_Mage_FireCircle>();
-        fireCircle.circlePrefab = fireCirclePrefab;
         fireCircle.player = player;
         player.abilitySecondary = fireCircle;
         fireCircle.circleDamage = player.stats.damage * fireCircle.damageMultiplier;
