@@ -6,9 +6,9 @@ public class Player_Mage_FireCircle : Ability_2
 {
     [Space(10)]
     public float damageMultiplier = 0.02f;
-    public float durationTime = 3;
     public float circleDamage = 1;
-    bool isBurning;
+
+    public float explosiveCircleRange = 2.5f;
 
     public GameObject circlePrefab;
 
@@ -20,26 +20,35 @@ public class Player_Mage_FireCircle : Ability_2
 
     public override void Use()
     {
-        FireCircle();
-    }
-
-    void FireCircle()
-    {
-        if(isBurning == false && isRecharching == false && player.stats.currentEnergy >= energyCost)
-        {
-            CastCircle();
-        }
+        CastCircle();
     }
     void CastCircle()
     {
-        isBurning = true;
-        GameObject temp = Instantiate(circlePrefab);
-        temp.transform.position = transform.position;
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, explosiveCircleRange, new Vector2(0.5f, 0.5f));
+        if (hits != null)
+        {
+            foreach (RaycastHit2D raycast in hits)
+            {
+                if (raycast.collider.gameObject.CompareTag("Enemy"))
+                {
+                    Enemy_BaseClass enemy = raycast.collider.gameObject.GetComponent<Enemy_BaseClass>();
+                    enemy.TakeDamage(circleDamage, ENUM_AttackType.ranged, player);
+                }
+                if (raycast.collider.gameObject.CompareTag("Boss"))
+                {
+                    Enemy_BaseClass enemy = raycast.collider.gameObject.GetComponent<Enemy_BaseClass>();
+                    enemy.TakeDamage(circleDamage, ENUM_AttackType.ranged, player);
+                }
+                if (raycast.collider.gameObject.CompareTag("Spawner"))
+                {
+                    Enemy_BaseClass enemy = raycast.collider.gameObject.GetComponent<Enemy_BaseClass>();
+                    enemy.TakeDamage(circleDamage, ENUM_AttackType.ranged, player);
+                }
+            }
+        }
 
-        Player_FireCircleObject firecircle = temp.GetComponent<Player_FireCircleObject>();
-        firecircle.expirationTime = durationTime;
-        firecircle.damage = circleDamage;
-        firecircle.player = player;
+
+
     }
     private void Update()
     {
