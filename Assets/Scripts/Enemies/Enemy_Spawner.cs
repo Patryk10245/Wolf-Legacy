@@ -42,7 +42,10 @@ public class Enemy_Spawner : MonoBehaviour
         currentHealth -= val;
         if (currentHealth <= 0)
         {
-            destroyedSprite.SetActive(true);
+            if(destroyedSprite != null)
+            {
+                destroyedSprite.SetActive(true);
+            }
             Destroy(this);
         }
     }
