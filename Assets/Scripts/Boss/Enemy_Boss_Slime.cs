@@ -275,7 +275,9 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                     spawnTimer -= spawnDelay;
                     GameObject temp = Instantiate(enemyPrefab, placeToSpawn.transform.position, transform.rotation);
                     temp.GetComponent<NavMeshAgent>().SetDestination(move_target.transform.position);
-                    temp.GetComponent<Enemy_BaseClass>().is_Spawned = true;
+                    Enemy_BaseClass enemy = temp.GetComponent<Enemy_BaseClass>();
+                    enemy.min_Gold_OnDeath = 0;
+                    enemy.max_Gold_OnDeath = 0;
                     amountSpawned++;
                 }
 
@@ -306,24 +308,29 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
                 }
                 if (currentJumpPos == 1 || currentJumpPos == 3 || currentJumpPos == 5 || currentJumpPos == 7)
                 {
-                    jumpPositions[currentJumpPos].position = move_target.transform.position;
+                    jumpPositions[currentJumpPos] = move_target.transform;
                 }
                 isInvincible = true;
 
+                agent.SetDestination(jumpPositions[currentJumpPos].position);
+                currentActionState = ENUM_current_state.working;
+                
+                break;
+
+            case ENUM_current_state.working:
                 agent.SetDestination(jumpPositions[currentJumpPos].position);
                 distanceToJumpPos = agent.remainingDistance;
                 if (agent.remainingDistance <= 1)
                 {
                     anim.SetTrigger("JumpBounce");
-                    currentActionState = ENUM_current_state.working;
+                    agent.velocity = Vector3.zero;
+                    currentActionState = ENUM_current_state.waiting;
                 }
-                break;
 
-            case ENUM_current_state.working:  
+
                 break;
 
             case ENUM_current_state.finishing:
-
                 currentJumpPos++;
 
                 if (currentJumpPos >= 8)
