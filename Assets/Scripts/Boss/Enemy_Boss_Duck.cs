@@ -22,7 +22,8 @@ public enum ENUM_current_state
     preparation,
     working,
     finishing,
-    ready_to_exit
+    ready_to_exit,
+    waiting
 }
 
 
