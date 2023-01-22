@@ -5,12 +5,10 @@ using UnityEngine;
 public class Player_Mage_FireCircle : Ability_2
 {
     [Space(10)]
-    public float damageMultiplier = 0.02f;
+    public float damageMultiplier = 3f;
     public float circleDamage = 1;
 
     public float explosiveCircleRange = 2.5f;
-
-    public GameObject circlePrefab;
 
     private void Start()
     {
@@ -41,12 +39,12 @@ public class Player_Mage_FireCircle : Ability_2
                 }
                 if (raycast.collider.gameObject.CompareTag("Spawner"))
                 {
-                    Enemy_BaseClass enemy = raycast.collider.gameObject.GetComponent<Enemy_BaseClass>();
-                    enemy.TakeDamage(circleDamage, ENUM_AttackType.ranged, player);
+                    Enemy_Spawner enemy = raycast.collider.gameObject.GetComponent<Enemy_Spawner>();
+                    enemy.TakeDamage(circleDamage, ENUM_AttackType.ranged);
                 }
             }
         }
-
+        isRecharching = true;
 
 
     }
@@ -62,18 +60,5 @@ public class Player_Mage_FireCircle : Ability_2
                 player.ui_updater.Ability2Recharged();
             }
         }
-
-        if(isBurning)
-        {
-            timer += Time.deltaTime;
-            if (timer >= durationTime)
-            {
-                timer = 0;
-                isBurning = false;
-                isRecharching = true;
-                player.ui_updater.Ability2Used();
-            }
-        }
-        
     }
 }
