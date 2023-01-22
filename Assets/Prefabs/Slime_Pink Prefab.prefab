@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1841128997
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1603573149, guid: b3eb1cb0299dafd4db077a5b745f1009, type: 3}
+  m_Sprite: {fileID: 1900375643, guid: b3eb1cb0299dafd4db077a5b745f1009, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 8394872031385587416}
   - component: {fileID: 493031900741671469}
   m_Layer: 0
-  m_Name: Slime Prefab
+  m_Name: Slime_Pink Prefab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ Animator:
   m_GameObject: {fileID: 6402168220178791609}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 374d436fe1ea132459d8a75a9b5a97a9, type: 2}
+  m_Controller: {fileID: 9100000, guid: fed5173f7e510744e8f4783fa4d8fe27, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   agent: {fileID: 6402168220178791613}
   stats: {fileID: 6402168220178791615}
   deathParticleEffect: {fileID: 8248367361089773354, guid: 8ec604ae414f3194094e6b1841121025, type: 3}
-  projectile_Prefab: {fileID: 5186912823403538100, guid: 4dd78d1f9148fce47becc177ce6ca280, type: 3}
+  projectile_Prefab: {fileID: 5186912823403538100, guid: 432fc384df030a14a92e701c1a67847c, type: 3}
   projectile_SpawnPoint: {fileID: 6402168219520002859}
   projectile_Speed: 350
 --- !u!61 &493031900741671469
