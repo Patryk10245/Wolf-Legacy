@@ -267,7 +267,7 @@ MonoBehaviour:
   stopAfterThisManyShots: 50
   aimingCorrection: 1.5
   enemyPrefab: {fileID: 6402168220178791609, guid: c61a8c150929fa447b77f17fb3aa0047, type: 3}
-  amountToSpawn: 5
+  amountToSpawn: 10
   placeToSpawn: {fileID: 4551476185956485137}
   spawnDelay: 0.4
   jumpPositions: []
