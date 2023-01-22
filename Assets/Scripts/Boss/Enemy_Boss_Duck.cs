@@ -71,7 +71,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
     bool is_rushing;
 
     [Header("Falling Rocks Action")]
-    [SerializeField] float rocksFallRange;
+    [SerializeField] float rocksFallRange = 3;
     [SerializeField] float rocksDamage;
     [SerializeField] int rocksNumber;
     [SerializeField] GameObject[] rockPrefab;
@@ -468,7 +468,9 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 for (int i = 0; i < rocksNumber; i++)
                 {
                     Vector3 point = Random.insideUnitCircle * rocksFallRange;
+                    Debug.Log("point = " + point);
                     point += move_target.transform.position;
+                    Debug.Log("point + transform = " + point);
                     int rand = Random.Range(0, rockPrefab.Length);
                     GameObject rock = Instantiate(rockPrefab[rand], point, transform.rotation);
                     rock.GetComponent<Boss_Duck_RocksObject>().damage = rocksDamage;
