@@ -392,4 +392,9 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
     {
         throw new System.NotImplementedException();
     }
+
+    public void PlayDeathSound()
+    {
+        AudioManager.ins.Play_BossDeath();
+    }
 }

@@ -40,6 +40,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Enemies")]
     [SerializeField] AudioClip enemyHurt;
+    [SerializeField] AudioClip bossDeathSound;
 
     
 
@@ -96,5 +97,9 @@ public class AudioManager : MonoBehaviour
     public void Play_EnemyHurt()
     {
         soundSource.PlayOneShot(enemyHurt);
+    }
+    public void Play_BossDeath()
+    {
+        soundSource.PlayOneShot(bossDeathSound);
     }
 }

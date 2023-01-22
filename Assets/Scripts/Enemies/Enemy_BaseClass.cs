@@ -125,8 +125,9 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     public void Death()
     {
         ScoreTable.ins.AddKill();
+        AudioManager.ins.Play_EnemyHurt();
 
-        if(is_Spawned == false)
+        if (is_Spawned == false)
         {
             int random_gold = Random.Range(min_Gold_OnDeath, max_Gold_OnDeath);
             ScoreTable.ins.AddGold(random_gold);  
