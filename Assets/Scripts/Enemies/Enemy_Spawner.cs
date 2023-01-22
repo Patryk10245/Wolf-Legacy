@@ -6,6 +6,7 @@ public class Enemy_Spawner : MonoBehaviour
     [Header("Refference")]
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] Transform enemySpawningPoint;
+    [SerializeField] GameObject destroyedSprite;
 
     [Header("Inside refference")]
     [SerializeField] float timer;
@@ -41,7 +42,8 @@ public class Enemy_Spawner : MonoBehaviour
         currentHealth -= val;
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            destroyedSprite.SetActive(true);
+            Destroy(this);
         }
     }
 
