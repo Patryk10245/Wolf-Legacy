@@ -369,7 +369,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
 
                 if(action_firstLoop == true)
                 {
-                    playerPos = move_target.gameObject.transform.position + new Vector3(0.5f, 0.5f, 0);
+                    playerPos = move_target.gameObject.transform.position;
                     anim.SetTrigger("isJumping");
                     action_firstLoop = false;
                     agent.speed = flyingSpeed;
@@ -377,8 +377,8 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 break;
 
             case ENUM_current_state.working:
-                agent.SetDestination(playerPos);             
-                if(Vector3.Distance(transform.position, playerPos) <= 1)
+                agent.SetDestination(playerPos);
+                if (Vector3.Distance(transform.position, playerPos) <= 1)
                 {
                     if(action_firstLoop == false)
                     {
