@@ -14,6 +14,7 @@ public class Player_ArcherDash : Ability_1
     {
         if (isRecharching == false & player.stats.currentEnergy >= energyCost)
         {
+            player.stats.ModifyEnergy(-energyCost);
             Dash();
         }
     }

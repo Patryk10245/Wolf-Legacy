@@ -25,6 +25,7 @@ public class Player_ArcherMultiShot : Ability_2
     {
         if (isRecharching == false && player.stats.currentEnergy >= energyCost)
         {
+            player.stats.ModifyEnergy(-energyCost);
             MultiShot();
         }
     }

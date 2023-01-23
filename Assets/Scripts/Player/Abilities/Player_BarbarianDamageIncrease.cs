@@ -12,6 +12,7 @@ public class Player_BarbarianDamageIncrease : Ability_2
     {
         if(player.stats.currentEnergy >= energyCost && isRecharching == false)
         {
+            player.stats.ModifyEnergy(-energyCost);
             IncreaseDamage();
         }
     }
