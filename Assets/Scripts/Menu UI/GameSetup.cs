@@ -373,6 +373,7 @@ public class GameSetup : MonoBehaviour
         fireCircle.player = player;
         player.abilitySecondary = fireCircle;
         fireCircle.circleDamage = player.stats.damage * fireCircle.damageMultiplier;
+        fireCircle.prefabObject = fireCirclePrefab;
     }
 
 

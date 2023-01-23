@@ -103,6 +103,7 @@ public class Village_UI_Control : MonoBehaviour
         paladinWindow.SetActive(true);
         if (villageUpgrades.paladinBuildingBought == false)
         {
+            canvasAnimator.SetTrigger("NotBoughtPaladin");
             paladinBuyingBuilding.SetActive(true);
             return;
         }
@@ -117,6 +118,7 @@ public class Village_UI_Control : MonoBehaviour
         barbarianWindow.SetActive(true);
         if (villageUpgrades.barbarianBuildingBought == false)
         {
+            canvasAnimator.SetTrigger("NotBoughtBarbarian");
             barbarianBuyingBuilding.SetActive(true);
             return;
         }
@@ -131,6 +133,7 @@ public class Village_UI_Control : MonoBehaviour
         rangerWindow.SetActive(true);
         if (villageUpgrades.archerBuildingBought == false)
         {
+            canvasAnimator.SetTrigger("NotBoughtArcher");
             archerBuyingBuilding.SetActive(true);
             return;
         }
@@ -145,6 +148,7 @@ public class Village_UI_Control : MonoBehaviour
         mageWindow.SetActive(true);
         if (villageUpgrades.mageBuildingBought == false)
         {
+            canvasAnimator.SetTrigger("NotBoughtMage");
             mageBuyingBuilding.SetActive(true);
             return;
         }
@@ -211,6 +215,7 @@ public class Village_UI_Control : MonoBehaviour
     }
     public void CloseBuyingWindows()
     {
+        canvasAnimator.SetTrigger("CloseNotBought");
         paladinBuyingBuilding.SetActive(false);
         barbarianBuyingBuilding.SetActive(false);
         archerBuyingBuilding.SetActive(false);

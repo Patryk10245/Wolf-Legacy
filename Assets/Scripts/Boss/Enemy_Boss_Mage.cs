@@ -153,6 +153,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
+                gameObject.tag = "Untagged";
                 currentActionState = ENUM_current_state.finishing;
                 break;
             case ENUM_current_state.working:

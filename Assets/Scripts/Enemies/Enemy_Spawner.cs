@@ -46,6 +46,7 @@ public class Enemy_Spawner : MonoBehaviour
             {
                 destroyedSprite.SetActive(true);
             }
+            gameObject.tag = "Untagged";
             Destroy(this);
         }
     }

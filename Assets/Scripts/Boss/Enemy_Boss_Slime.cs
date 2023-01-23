@@ -360,6 +360,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
+                gameObject.tag = "Untagged";
                 anim.SetTrigger("isDying");
                 agent.SetDestination(transform.position);
                 agent.velocity = Vector3.zero;

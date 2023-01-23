@@ -9,6 +9,7 @@ public class Player_Mage_FireCircle : Ability_2
     public float circleDamage = 1;
 
     public float explosiveCircleRange = 2.5f;
+    public GameObject prefabObject;
 
     private void Start()
     {
@@ -45,7 +46,10 @@ public class Player_Mage_FireCircle : Ability_2
             }
         }
         isRecharching = true;
-
+        GameObject temp = Instantiate(prefabObject);
+        temp.transform.position = gameObject.transform.position;
+        Player_FireCircleObject circle = temp.GetComponent<Player_FireCircleObject>();
+        circle.expirationTime = 1f;
 
     }
     private void Update()
