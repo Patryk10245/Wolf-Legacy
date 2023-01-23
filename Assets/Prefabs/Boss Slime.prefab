@@ -214,8 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077358595f5afd84180339fce54d3b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 350
-  currentHealth: 350
+  maxHealth: 4000
+  currentHealth: 4000
   damage: 5
   hitEffect: {fileID: 4637466581041088000, guid: a0470b49c95b64a40b4a51f2b5a159e0, type: 3}
 --- !u!114 &2059904262836334205
@@ -238,7 +238,6 @@ MonoBehaviour:
   chasePlayerDistance: 8
   delay_Between_Attacks: 3
   currentEnemyState: 0
-  is_Spawned: 0
   is_dying: 0
   min_Gold_OnDeath: 1
   max_Gold_OnDeath: 1
@@ -274,7 +273,7 @@ MonoBehaviour:
   currentJumpPos: 0
   bounceDamage: 8
   alreadyInAir: 0
-  speedDuringJumping: 20
+  speedDuringJumping: 25
   distanceToJumpPos: 0
   isInvincible: 0
 --- !u!58 &8567795873111683152

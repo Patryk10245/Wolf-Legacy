@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4471707058276748364}
   m_Layer: 0
   m_Name: Bat Spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 923329539989383326, guid: e583c07c74f6f3a468808754d1a6098e, type: 3}
   enemySpawningPoint: {fileID: 1481042399362185487}
+  destroyedSprite: {fileID: 0}
   timer: 0
   TimeBetweenEnemySpawning: 5
   maxNumberOfEnemies: 8

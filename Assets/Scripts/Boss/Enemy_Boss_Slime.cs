@@ -65,7 +65,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
     [SerializeField] int currentJumpPos;
     public int bounceDamage;
     public bool alreadyInAir;
-    [SerializeField] float speedDuringJumping = 15;
+    [SerializeField] float speedDuringJumping = 25;
     [SerializeField] float distanceToJumpPos;
     [SerializeField] bool isInvincible;
 
@@ -320,7 +320,7 @@ public class Enemy_Boss_Slime : Enemy_BaseClass
             case ENUM_current_state.working:
                 agent.SetDestination(jumpPositions[currentJumpPos].position);
                 distanceToJumpPos = agent.remainingDistance;
-                if (agent.remainingDistance <= 1)
+                if (agent.remainingDistance <= 1.5f)
                 {
                     anim.SetTrigger("JumpBounce");
                     agent.velocity = Vector3.zero;
