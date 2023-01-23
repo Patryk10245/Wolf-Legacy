@@ -248,9 +248,44 @@ public class GameSetup : MonoBehaviour
     }
     void BarbarianSetup(Player player)
     {
+        ClassUpgrades upgrades = Village_Upgrades.ins.barbarianUpgrades;
+        ClassData barbarianData = classesData[1];
+        player.stats.currentHealth = barbarianData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
+        player.stats.maxHealth = barbarianData.healtPoints + upgrades.health.valueOnLevel[upgrades.health.currentLevel];
+        player.stats.currentEnergy = barbarianData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];
+        player.stats.maxEnergy = barbarianData.energyPoints + upgrades.energy.valueOnLevel[upgrades.energy.currentLevel];
+        player.stats.damage = barbarianData.damage + upgrades.damage.valueOnLevel[upgrades.damage.currentLevel];
+        player.stats.energyRegenerationAmount = barbarianData.energyRegenAmount + upgrades.energyRegeneration.valueOnLevel[upgrades.energyRegeneration.currentLevel];
 
+        player.controller.moveSpeed = classesData[0].speed + upgrades.speed.valueOnLevel[upgrades.speed.currentLevel];
+        player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = barbarianData.weaponSprite;
+        player.controller.weaponAnimator.runtimeAnimatorController = weaponControllers[1];
+        player.GetComponent<Animator>().runtimeAnimatorController = controllers[1];
+
+        foreach (Transform child in player.controller.weaponAnimator.transform)
+        {
+            if (child.name == "Arm")
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        Player_BarbarianAttack attack = player.gameObject.AddComponent<Player_BarbarianAttack>();
+        attack.player = player;
+        player.attackScript = attack;
+
+        Player_Barbarian_Leap leap = player.gameObject.AddComponent<Player_Barbarian_Leap>();
+        player.abilityBasic = leap;
+        leap.player = player;
+        leap.leapDamage = player.stats.damage * leap.damageMultiplier;
+
+        Player_BarbarianDamageIncrease increase = player.gameObject.AddComponent<Player_BarbarianDamageIncrease>();
+        increase.player = player;
+        player.abilitySecondary = increase;
+        increase.basePlayerDamage = player.stats.damage;
     }
-    void RangerSetup(Player player)
+
+        void RangerSetup(Player player)
     {
         ClassUpgrades upgrades = Village_Upgrades.ins.archerUpgrades;
         ClassData rangerData = classesData[2];

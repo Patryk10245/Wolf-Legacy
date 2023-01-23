@@ -38,6 +38,7 @@ public class Player_Barbarian_Leap : Ability_1
     {
         if(isRecharching == false && player.stats.currentEnergy >= energyCost)
         {
+            leapDamage = player.stats.damage * damageMultiplier;
             Leap();
         }
     }
