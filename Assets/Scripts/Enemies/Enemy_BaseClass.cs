@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
-using System.Collections;
-using System.Collections.Generic;
 
 public enum ENUM_EnemyState
 {
@@ -37,7 +35,6 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     public ENUM_EnemyState currentEnemyState;
     protected bool is_Attacking;
     protected bool is_Moving;
-    [HideInInspector] public bool is_Spawned;
     [HideInInspector] public bool is_dying;
 
     [Space(10)]
@@ -60,11 +57,11 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     public abstract void TakeDamage(float val, ENUM_AttackType attackType, Player source);
     protected void RefreshAttack()
     {
-        if(refresh_Attack_Timer == true)
+        if (refresh_Attack_Timer == true)
         {
             attack_Timer += Time.deltaTime;
-            if(attack_Timer >= delay_Between_Attacks)
-                {
+            if (attack_Timer >= delay_Between_Attacks)
+            {
                 attack_Timer = 0;
                 refresh_Attack_Timer = false;
             }
@@ -78,16 +75,16 @@ public abstract class Enemy_BaseClass : MonoBehaviour
 
         float smallest_distance = distance_To_Player;
         Player closest_player = move_target;
-        foreach(Player player in Player_Manager.ins.playerList)
+        foreach (Player player in Player_Manager.ins.playerList)
         {
             float distance = Vector2.Distance(player.transform.position, transform.position);
-            if(distance < smallest_distance)
+            if (distance < smallest_distance)
             {
                 smallest_distance = distance;
                 closest_player = player;
             }
         }
-        if(distance_To_Player >= smallest_distance -1)
+        if (distance_To_Player >= smallest_distance - 1)
         {
             move_target = closest_player;
             distance_To_Player = smallest_distance;
@@ -126,22 +123,14 @@ public abstract class Enemy_BaseClass : MonoBehaviour
     {
         ScoreTable.ins.AddKill();
         AudioManager.ins.Play_EnemyHurt();
-
-        if (is_Spawned == false)
-        {
-            int random_gold = Random.Range(min_Gold_OnDeath, max_Gold_OnDeath);
-            ScoreTable.ins.AddGold(random_gold);  
-        }
-        else
-        {
-            GetComponentInParent<Enemy_Spawner>().RemoveMe(this);
-        }
+        int random_gold = Random.Range(min_Gold_OnDeath, max_Gold_OnDeath);
+        ScoreTable.ins.AddGold(random_gold);
 
         Destroy(gameObject);
 
     }
     protected void ChangeState(ENUM_EnemyState new_state)
-    { 
+    {
         if (currentEnemyState != new_state)
         {
             currentEnemyState = new_state;

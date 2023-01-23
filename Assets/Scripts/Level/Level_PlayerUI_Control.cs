@@ -15,7 +15,7 @@ public class Level_PlayerUI_Control : MonoBehaviour
     [SerializeField] GameObject completedWindow;
     [SerializeField] GameObject soundWindow;
     [Header("GoldFields")]
-    [SerializeField] float updateSpeed = 0.05f;
+    [SerializeField] float updateSpeed = 0.02f;
     [SerializeField] int lastGoldValue;
     [SerializeField] Text levelCompletedGoldText;
     [SerializeField] Text gameOverGoldText;

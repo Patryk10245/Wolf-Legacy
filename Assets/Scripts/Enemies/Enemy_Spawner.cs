@@ -59,7 +59,6 @@ public class Enemy_Spawner : MonoBehaviour
         temp_GO.transform.SetParent(transform);
         Enemy_BaseClass enemy = temp_GO.GetComponent<Enemy_BaseClass>();
         listOfCreatedEnemies.Add(enemy);
-        enemy.is_Spawned = true;
         enemy.agent.SetDestination(enemy.transform.position + Vector3.one);
 
         return enemy;
@@ -83,6 +82,8 @@ public class Enemy_Spawner : MonoBehaviour
         enemy.stats.maxHealth *= 2;
         enemy.stats.currentHealth *= 2;
         enemy.move_Speed += 1;
+        enemy.max_Gold_OnDeath = 0;
+        enemy.min_Gold_OnDeath = 0;
         
     }
 

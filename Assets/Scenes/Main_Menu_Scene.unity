@@ -10111,7 +10111,7 @@ MonoBehaviour:
   currentlyCollectedGold: 0
   GO_goldAmount: {fileID: 0}
   TEXT_goldAmount: {fileID: 0}
-  changeSpeed: 0.02
+  changeSpeed: 0.06
 --- !u!4 &1751829986
 Transform:
   m_ObjectHideFlags: 0

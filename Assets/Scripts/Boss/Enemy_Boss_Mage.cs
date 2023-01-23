@@ -319,7 +319,8 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                     temp.transform.SetParent(placeToSpawnEnemy.transform);
 
                     Enemy_BaseClass enemy = temp.GetComponent<Enemy_BaseClass>();
-                    enemy.is_Spawned = true;
+                    enemy.max_Gold_OnDeath = 0;
+                    enemy.min_Gold_OnDeath = 0;
                     placeToSpawnEnemy.GetComponent<Enemy_Spawner>().listOfCreatedEnemies.Add(enemy);
 
                     temp.GetComponent<NavMeshAgent>().SetDestination(move_target.transform.position);
