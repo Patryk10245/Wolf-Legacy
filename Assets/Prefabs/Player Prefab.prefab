@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &838652817506854224
 Transform:
   m_ObjectHideFlags: 0
@@ -374,6 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   rb: {fileID: 0}
+  animBody: {fileID: 0}
   weaponHolder: {fileID: 8909031239802199170}
   weaponAnimator: {fileID: 8909031239541040009}
   weaponCollider: {fileID: 8909031239055229890}
@@ -645,7 +646,7 @@ MonoBehaviour:
   - {x: 0.2816925, y: -0.87521553, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 143682
+  m_InstanceId: 83314
 --- !u!1 &8909031238170990673
 GameObject:
   m_ObjectHideFlags: 0
