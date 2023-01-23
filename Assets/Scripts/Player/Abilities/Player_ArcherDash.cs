@@ -33,10 +33,13 @@ public class Player_ArcherDash : Ability_1
     void Dash()
     {
         Vector3 mousepos = player.controller.mousePos;
+        mousepos.z = Camera.main.nearClipPlane;
         mousepos = Camera.main.ScreenToWorldPoint(mousepos);
-        Vector3 dir = (transform.position - mousepos).normalized;
+        mousepos.z = transform.position.z;
+        Vector3 direction = (transform.position - mousepos).normalized;
 
-        player.controller.rb.AddForce(dir * dashForce);
+
+        player.controller.rb.AddForce(direction * dashForce);
         isRecharching = true;
         player.ui_updater.Ability1Used();
     }

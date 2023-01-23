@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Player_Barbarian_Leap : Ability_1
 {
-    public float leapForce = 9000;
+    public float leapForce = 1000;
+    public float leapTime;
     public bool isLeaping;
+    public float leapDamage;
+    public float damageMultiplier = 3f;
+
+
+    public Vector3 direction;
 
     private void Start()
     {
@@ -14,6 +20,20 @@ public class Player_Barbarian_Leap : Ability_1
 
     }
 
+    private void Update()
+    {
+        if(isLeaping)
+        {
+            player.controller.rb.AddForce(-direction * leapForce);
+
+            timer += Time.deltaTime;
+            if (timer >= leapTime)
+            {
+                isLeaping = false;
+                timer = 0;
+            }
+        }
+    }
     public override void Use()
     {
         if(isRecharching == false && player.stats.currentEnergy >= energyCost)
@@ -24,9 +44,13 @@ public class Player_Barbarian_Leap : Ability_1
 
     void Leap()
     {
-        Vector3 force = player.controller.mousePos.normalized * leapForce;
         isLeaping = true;
-
+        Vector3 mousepos = player.controller.mousePos;
+        mousepos.z = Camera.main.nearClipPlane;
+        mousepos = Camera.main.ScreenToWorldPoint(mousepos);
+        mousepos.z = transform.position.z;
+        direction = (transform.position - mousepos).normalized;
+        player.controller.animBody.SetTrigger("barbarianLeap");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
