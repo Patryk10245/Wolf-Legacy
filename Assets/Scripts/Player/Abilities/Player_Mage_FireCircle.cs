@@ -19,8 +19,11 @@ public class Player_Mage_FireCircle : Ability_2
 
     public override void Use()
     {
-        player.stats.ModifyEnergy(-energyCost);
-        CastCircle();
+        if(player.stats.currentEnergy >= energyCost && isRecharching == false)
+        {
+            player.stats.ModifyEnergy(-energyCost);
+            CastCircle();
+        }
     }
     void CastCircle()
     {

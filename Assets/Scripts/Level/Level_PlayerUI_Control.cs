@@ -91,6 +91,7 @@ public class Level_PlayerUI_Control : MonoBehaviour
     public void UI_ReturnToVillageAfterDeath()
     {
         Level_FightReferenecs.ins.playerManager.DestroyAllPlayers();
+        Game_State.levelLost = true;
         ScoreTable.ins.ReduceCollectedGoldByDeath();
         ScoreTable.ins.ApplyCollectedGold();
         GameSetup.ins.SaveClassData();
