@@ -586,8 +586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077358595f5afd84180339fce54d3b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
-  currentHealth: 500
+  maxHealth: 3000
+  currentHealth: 3000
   damage: 0
   hitEffect: {fileID: 4637466581041088000, guid: a0470b49c95b64a40b4a51f2b5a159e0, type: 3}
 --- !u!114 &2367892769948525171
@@ -610,7 +610,6 @@ MonoBehaviour:
   chasePlayerDistance: 8
   delay_Between_Attacks: 3
   currentEnemyState: 0
-  is_Spawned: 0
   is_dying: 0
   min_Gold_OnDeath: 1
   max_Gold_OnDeath: 1
@@ -619,15 +618,13 @@ MonoBehaviour:
   rb: {fileID: 2367892769948525168}
   agent: {fileID: 0}
   stats: {fileID: 0}
+  deathParticleEffect: {fileID: 0}
   bossArea: {fileID: 0}
-  specialEffects: {fileID: 0}
   healthBar: {fileID: 0}
   healthBarAnimator: {fileID: 0}
   bossState: 0
   currentActionState: 3
   changeTargetTime: 15
-  minIdleTime: 1
-  maxIdleTime: 3
   projectilePrefab: {fileID: 2708155797877906534, guid: 95219b7a43d21ca4589300f8b0ecf4db, type: 3}
   waveSpotParent: {fileID: 2367892770246055725}
   waveProjectileSpots:
