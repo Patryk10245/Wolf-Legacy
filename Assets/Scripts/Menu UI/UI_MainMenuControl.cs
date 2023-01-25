@@ -348,7 +348,7 @@ public class UI_MainMenuControl : MonoBehaviour
     public void StartGame()
     {
         gameSetup.LoadClassData();
-        //Level_SelectedScenes.ins.RandomizeMaps();
+        Level_SelectedScenes.ins.RandomizeMaps();
         Level_SelectedScenes.ins.currentFightScene = -1;
         Level_SelectedScenes.ins.LoadNextScene();
     }
