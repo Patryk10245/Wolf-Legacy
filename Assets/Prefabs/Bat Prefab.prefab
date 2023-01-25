@@ -208,7 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 5
-  damage: 1
+  damage: 2
   hitEffect: {fileID: 4637466581041088000, guid: a0470b49c95b64a40b4a51f2b5a159e0, type: 3}
 --- !u!114 &923329539989383321
 MonoBehaviour:
@@ -228,9 +228,8 @@ MonoBehaviour:
   attack_Distance: 1
   distance_To_Player: 0
   chasePlayerDistance: 8
-  delay_Between_Attacks: 2
+  delay_Between_Attacks: 1.5
   currentEnemyState: 0
-  is_Spawned: 0
   is_dying: 0
   min_Gold_OnDeath: 1
   max_Gold_OnDeath: 1
@@ -239,8 +238,8 @@ MonoBehaviour:
   rb: {fileID: 923329539989383300}
   agent: {fileID: 923329539989383322}
   stats: {fileID: 923329539989383320}
-  obstacle_avoidance_radius: 0.3
   deathParticleEffect: {fileID: 8248367361089773354, guid: 8ec604ae414f3194094e6b1841121025, type: 3}
+  obstacle_avoidance_radius: 0.3
 --- !u!114 &923329539989383297
 MonoBehaviour:
   m_ObjectHideFlags: 0
