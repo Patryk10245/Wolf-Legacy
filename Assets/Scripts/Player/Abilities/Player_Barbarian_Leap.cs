@@ -46,6 +46,23 @@ public class Player_Barbarian_Leap : Ability_1
             }
         }
     }
+
+    private void FixedUpdate()
+    {
+        if (isLeaping)
+        {
+            player.controller.rb.AddForce(-direction * leapForce);
+
+            timer += Time.deltaTime;
+            if (timer >= leapTime)
+            {
+                isLeaping = false;
+                timer = 0;
+                isRecharching = true;
+                player.ui_updater.Ability1Used();
+            }
+        }
+    }
     public override void Use()
     {
         if(isRecharching == false && player.stats.currentEnergy >= energyCost)
