@@ -59,7 +59,10 @@ public class Player_Barbarian_Leap : Ability_1
     {
         if(isLeaping == true)
         {
-
+            if(collision.gameObject.CompareTag("Enemy")|| collision.gameObject.CompareTag("Boss"))
+            {
+                collision.gameObject.GetComponent<Enemy_BaseClass>().TakeDamage(leapDamage, ENUM_AttackType.melee, player);
+            }
         }
     }
 
