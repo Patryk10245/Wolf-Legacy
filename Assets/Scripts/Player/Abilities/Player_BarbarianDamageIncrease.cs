@@ -14,6 +14,7 @@ public class Player_BarbarianDamageIncrease : Ability_2
         {
             player.stats.ModifyEnergy(-energyCost);
             IncreaseDamage();
+            player.ui_updater.Ability2Used();
         }
     }
 
@@ -49,6 +50,7 @@ public class Player_BarbarianDamageIncrease : Ability_2
             {
                 timer = 0;
                 isRecharching = false;
+                player.ui_updater.Ability2Recharged();
             }
         }
     }

@@ -31,6 +31,18 @@ public class Player_Barbarian_Leap : Ability_1
             {
                 isLeaping = false;
                 timer = 0;
+                isRecharching = true;
+                player.ui_updater.Ability1Used();
+            }
+        }
+        if (isRecharching)
+        {
+            timer += Time.deltaTime;
+            if (timer >= rechargeTime)
+            {
+                isRecharching = false;
+                timer = 0;
+                player.ui_updater.Ability1Recharged();
             }
         }
     }
@@ -59,6 +71,7 @@ public class Player_Barbarian_Leap : Ability_1
     {
         if(isLeaping == true)
         {
+            Debug.Log("is leaping");
             if(collision.gameObject.CompareTag("Enemy")|| collision.gameObject.CompareTag("Boss"))
             {
                 collision.gameObject.GetComponent<Enemy_BaseClass>().TakeDamage(leapDamage, ENUM_AttackType.melee, player);

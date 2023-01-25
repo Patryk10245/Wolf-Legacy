@@ -23,6 +23,7 @@ public class Player_Mage_FireCircle : Ability_2
         {
             player.stats.ModifyEnergy(-energyCost);
             CastCircle();
+            player.ui_updater.Ability1Used();
         }
     }
     void CastCircle()

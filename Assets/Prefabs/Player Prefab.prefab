@@ -646,7 +646,7 @@ MonoBehaviour:
   - {x: 0.2816925, y: -0.87521553, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 102784
+  m_InstanceId: 93776
 --- !u!1 &8909031238170990673
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +918,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8909031239055229894}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
