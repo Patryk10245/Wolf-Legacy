@@ -2594,12 +2594,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d4f524d4cf628e9428a46649cb10d754, type: 2}
   controllers:
   - {fileID: 9100000, guid: 6a8449df3491e914ba12357744c1574d, type: 2}
-  - {fileID: 9100000, guid: 6a8449df3491e914ba12357744c1574d, type: 2}
+  - {fileID: 9100000, guid: b537b2839ef981249910a4d73291c092, type: 2}
   - {fileID: 9100000, guid: 031f40dce0c01e44c970236a40d33868, type: 2}
   - {fileID: 9100000, guid: 6a8f846c70e163f4c9ec706a68a50c57, type: 2}
   weaponControllers:
   - {fileID: 9100000, guid: e67d47ea1c90b484491bb2513d09e9d7, type: 2}
-  - {fileID: 0}
+  - {fileID: 9100000, guid: 24d1131a8a9304648a8b0a6d60b547d6, type: 2}
   - {fileID: 9100000, guid: c547df6f25a289247bced2b394bcc225, type: 2}
   - {fileID: 9100000, guid: 028094b24a4fe2447958083130acca40, type: 2}
   paladinAbilityTrail: {fileID: 3094030056584418351, guid: 1627e470b4659a34988b0cb862a51725, type: 3}

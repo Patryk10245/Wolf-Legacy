@@ -50,6 +50,8 @@ public class GameSetup : MonoBehaviour
     [SerializeField] RuntimeAnimatorController[] weaponControllers;
     [Header("Paladin")]
     [SerializeField] GameObject paladinAbilityTrail;
+    [Header("Barbarian")]
+    [SerializeField] BoxCollider2D weaponCollider;
     [Header("Mage")]
     [SerializeField] GameObject mageProjectilePrefab;
     [SerializeField] GameObject fireTrailPrefab;
@@ -261,6 +263,10 @@ public class GameSetup : MonoBehaviour
         player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = barbarianData.weaponSprite;
         player.controller.weaponAnimator.runtimeAnimatorController = weaponControllers[1];
         player.GetComponent<Animator>().runtimeAnimatorController = controllers[1];
+
+        BoxCollider2D weaponCollider = player.controller.weaponCollider.GetComponent<BoxCollider2D>();
+        weaponCollider.size = new Vector2(1.2f, 1.80f);
+        weaponCollider.offset = new Vector2(0, 0);
 
         foreach (Transform child in player.controller.weaponAnimator.transform)
         {

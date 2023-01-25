@@ -17,5 +17,5 @@ MonoBehaviour:
   energyRegenAmount: 1
   damage: 7
   speed: 360
-  playerSprite: {fileID: 0}
-  weaponSprite: {fileID: 0}
+  playerSprite: {fileID: 705948649, guid: 9331e03e52e41e049b6cecbbc253e1d0, type: 3}
+  weaponSprite: {fileID: -2073439350, guid: 9331e03e52e41e049b6cecbbc253e1d0, type: 3}

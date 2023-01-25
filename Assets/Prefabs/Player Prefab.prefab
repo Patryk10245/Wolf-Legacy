@@ -416,7 +416,7 @@ Animator:
   m_GameObject: {fileID: 8909031238140290563}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c547df6f25a289247bced2b394bcc225, type: 2}
+  m_Controller: {fileID: 9100000, guid: b537b2839ef981249910a4d73291c092, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   - {x: 0.2816925, y: -0.87521553, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 83314
+  m_InstanceId: 102784
 --- !u!1 &8909031238170990673
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,7 +722,7 @@ SpriteRenderer:
   m_SortingLayerID: -1009486025
   m_SortingLayer: 5
   m_SortingOrder: 3
-  m_Sprite: {fileID: 1287018694, guid: d71735a5762706e4ca180b548d5e4f3c, type: 3}
+  m_Sprite: {fileID: 705948649, guid: 9331e03e52e41e049b6cecbbc253e1d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -900,7 +900,7 @@ SpriteRenderer:
   m_SortingLayerID: -1009486025
   m_SortingLayer: 5
   m_SortingOrder: 4
-  m_Sprite: {fileID: -1779788898, guid: d71735a5762706e4ca180b548d5e4f3c, type: 3}
+  m_Sprite: {fileID: -2073439350, guid: 9331e03e52e41e049b6cecbbc253e1d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -918,7 +918,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8909031239055229894}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -928,7 +928,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7, y: 2.1}
+    oldSize: {x: 1.2, y: 1.8}
     newSize: {x: 1.8, y: 0.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1136,7 +1136,7 @@ Animator:
   m_GameObject: {fileID: 8909031239541040011}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c547df6f25a289247bced2b394bcc225, type: 2}
+  m_Controller: {fileID: 9100000, guid: 24d1131a8a9304648a8b0a6d60b547d6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

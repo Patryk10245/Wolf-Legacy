@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Barbarian_Leap : Ability_1
 {
     public float leapForce = 1000;
-    public float leapTime;
+    public float leapTime = 0.5f;
     public bool isLeaping;
     public float leapDamage;
     public float damageMultiplier = 3f;
