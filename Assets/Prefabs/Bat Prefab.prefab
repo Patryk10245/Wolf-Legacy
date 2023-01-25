@@ -60,7 +60,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 9
 --- !u!1 &923329539989383326
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   move_Speed: 5
   attack_Distance: 1
   distance_To_Player: 0
-  chasePlayerDistance: 8
+  chasePlayerDistance: 11
   delay_Between_Attacks: 1.5
   currentEnemyState: 0
   is_dying: 0

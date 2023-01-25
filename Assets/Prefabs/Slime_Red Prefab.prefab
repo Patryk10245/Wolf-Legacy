@@ -233,10 +233,9 @@ MonoBehaviour:
   move_Speed: 3
   attack_Distance: 8
   distance_To_Player: 0
-  chasePlayerDistance: 10
+  chasePlayerDistance: 12
   delay_Between_Attacks: 1.5
   currentEnemyState: 0
-  is_Spawned: 0
   is_dying: 0
   min_Gold_OnDeath: 1
   max_Gold_OnDeath: 1
@@ -323,7 +322,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 10
 --- !u!114 &18663915609484573
 MonoBehaviour:
   m_ObjectHideFlags: 0
