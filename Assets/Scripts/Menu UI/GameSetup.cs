@@ -221,6 +221,7 @@ public class GameSetup : MonoBehaviour
         player.controller.weaponCollider.GetComponent<SpriteRenderer>().sprite = paladinData.weaponSprite;
         player.controller.weaponAnimator.runtimeAnimatorController = weaponControllers[0];
         player.GetComponent<Animator>().runtimeAnimatorController = controllers[0];
+        player.controller.shield.enabled = true;
 
         foreach(Transform child in player.controller.weaponAnimator.transform)
         {

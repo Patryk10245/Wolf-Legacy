@@ -10,11 +10,14 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     public Animator animBody;
     
+    [Header("Objects")]
     public Transform weaponHolder;
     public Animator weaponAnimator;
     public BoxCollider2D weaponCollider;
     public GameObject trailObject;
+    public Collider2D shield;
 
+    [Header("Scripts")]
     public PlayerInput playerInput;
     InputActionAsset inputAsset;
     InputActionMap playerMap;
