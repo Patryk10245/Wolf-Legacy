@@ -81,10 +81,13 @@ public class Village_UI_Control : MonoBehaviour
             ChangeBuildingToFixed(mageBuyingBuilding, mageDestroyedBuilding);
         }
 
-        if(Game_State.levelLost == true || Game_State.levelWon == true)
+        if(Game_State.levelLost == true)
         {
             mapChoosing.DisableNextButton();
-            mapChoosing.DisableRepeatButton();
+        }
+        if (Game_State.levelWon == true)
+        {
+            mapChoosing.DisableNextButton();
         }
 
         ScoreTable.ins.TEXT_goldAmount = TextGoldAmount;
