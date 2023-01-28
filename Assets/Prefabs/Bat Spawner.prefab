@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2116631348153231258}
   - component: {fileID: 8143367978159014529}
   - component: {fileID: 4471707058276748364}
+  - component: {fileID: 1851000696369502622}
   m_Layer: 0
   m_Name: Bat Spawner
   m_TagString: Spawner
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1841128997
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0a3cbe2b0943b54887cb247cca51a8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,18 +101,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.1, y: -0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.1, y: 2.6}
   m_EdgeRadius: 0
 --- !u!114 &4471707058276748364
 MonoBehaviour:
@@ -127,13 +128,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 923329539989383326, guid: e583c07c74f6f3a468808754d1a6098e, type: 3}
   enemySpawningPoint: {fileID: 1481042399362185487}
-  destroyedSprite: {fileID: 0}
   timer: 0
   TimeBetweenEnemySpawning: 5
   maxNumberOfEnemies: 8
   currentHealth: 50
   listOfCreatedEnemies: []
   strongerMonsters: []
+--- !u!95 &1851000696369502622
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4516079379791471866}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ede452f1dca2fb84d9e0fd7b302a5fb3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &7713547222500931118
 GameObject:
   m_ObjectHideFlags: 0
