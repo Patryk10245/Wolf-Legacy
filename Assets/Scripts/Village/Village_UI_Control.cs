@@ -24,6 +24,7 @@ public class Village_UI_Control : MonoBehaviour
     [Header("Windows")]
     [SerializeField] GameObject infoField;
     [SerializeField] GameObject villageMenu;
+    [SerializeField] GameObject gameCompletedScreen;
     [SerializeField] Color opaqueColor;
     public Color boughtUpgradeColor;
     [Space(10)]
@@ -187,6 +188,10 @@ public class Village_UI_Control : MonoBehaviour
             }
             UpdateGoldAmount();
             
+        }
+        if(Game_State.ins.CheckIfGameCompleted() == true)
+        {
+            ShowEndingScreen();
         }
     }
 
@@ -378,6 +383,11 @@ public class Village_UI_Control : MonoBehaviour
                 break;
         }
         UpdateGoldAmount();
+    }
+
+    public void ShowEndingScreen()
+    {
+        gameCompletedScreen.SetActive(true);
     }
 
 }

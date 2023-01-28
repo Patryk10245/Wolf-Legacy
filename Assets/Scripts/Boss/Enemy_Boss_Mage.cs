@@ -160,6 +160,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 break;
             case ENUM_current_state.finishing:
                 bossArea.DeactivateBlockades();
+                Game_State.lastBossDefeated = true;
                 break;
             case ENUM_current_state.ready_to_exit:
                 break;

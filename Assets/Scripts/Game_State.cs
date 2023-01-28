@@ -10,6 +10,7 @@ public class Game_State : MonoBehaviour
     public GameObject pausingWindow;
     public static bool levelLost;
     public static bool levelWon;
+    public static bool lastBossDefeated;
 
 
     private void Awake()
@@ -52,7 +53,20 @@ public class Game_State : MonoBehaviour
         gamePaused = false;
         Time.timeScale = 1;
         Game_State.ins.pausingWindow.SetActive(false);
+        lastBossDefeated = false;
     }
 
-    
+    public bool CheckIfGameCompleted()
+    {
+        if(Village_Upgrades.ins.paladinBuildingBought == true && Village_Upgrades.ins.barbarianBuildingBought == true 
+            && Village_Upgrades.ins.archerBuildingBought == true && Village_Upgrades.ins.mageBuildingBought == true
+            && Game_State.lastBossDefeated == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

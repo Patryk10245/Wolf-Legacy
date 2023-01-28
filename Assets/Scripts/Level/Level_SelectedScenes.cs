@@ -65,6 +65,12 @@ public class Level_SelectedScenes : MonoBehaviour
             Village_UI_Control.ins.SetReference();
             Village_Upgrades.ins.UpdateClassesUIUpgrades();
             ScoreTable.ins.ApplyCollectedGold();
+
+            if(Game_State.ins.CheckIfGameCompleted() == true)
+            {
+                Village_UI_Control.ins.ShowEndingScreen();
+            }
+
         }
         else if(scene == SceneManager.GetSceneByName("Main_Menu_Scene"))
         {

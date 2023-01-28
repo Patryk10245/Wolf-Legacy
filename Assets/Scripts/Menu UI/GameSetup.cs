@@ -108,6 +108,7 @@ public class GameSetup : MonoBehaviour
         Game_State.ins.ResetValuesToDefault();
 
 
+
         playerManager = levelReferences.playerManager;
         playerManager.ResetValuesToDefault();
         cameraFollowing = levelReferences.cameraFollowing;
