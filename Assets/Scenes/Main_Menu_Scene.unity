@@ -2603,6 +2603,7 @@ MonoBehaviour:
   - {fileID: 9100000, guid: c547df6f25a289247bced2b394bcc225, type: 2}
   - {fileID: 9100000, guid: 028094b24a4fe2447958083130acca40, type: 2}
   paladinAbilityTrail: {fileID: 3094030056584418351, guid: 1627e470b4659a34988b0cb862a51725, type: 3}
+  weaponCollider: {fileID: 0}
   mageProjectilePrefab: {fileID: 5721576511170400244, guid: 9d5fe5478f17a4c43a2e9cb24754dfb4, type: 3}
   fireTrailPrefab: {fileID: 8958461196540796076, guid: 07be42c786d16704cbb50dba8f127d3b, type: 3}
   fireCirclePrefab: {fileID: 4465106608925508517, guid: 9ba41e9fb01496a48abe5b8afc67c46c, type: 3}
@@ -10111,7 +10112,7 @@ MonoBehaviour:
   currentlyCollectedGold: 0
   GO_goldAmount: {fileID: 0}
   TEXT_goldAmount: {fileID: 0}
-  changeSpeed: 0.06
+  changeSpeed: 0.02
 --- !u!4 &1751829986
 Transform:
   m_ObjectHideFlags: 0
