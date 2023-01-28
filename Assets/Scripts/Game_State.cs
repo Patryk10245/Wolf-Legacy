@@ -11,6 +11,7 @@ public class Game_State : MonoBehaviour
     public static bool levelLost;
     public static bool levelWon;
     public static bool lastBossDefeated;
+    public static bool firstRun;
 
 
     private void Awake()

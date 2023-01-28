@@ -116,4 +116,9 @@ public class Level_SelectedScenes : MonoBehaviour
         SceneManager.LoadScene(selectedScenes[currentFightScene]);
     }
 
+    public void LoadStoryScene()
+    {
+        SceneManager.LoadScene("StoryScene");
+    }
+
 }

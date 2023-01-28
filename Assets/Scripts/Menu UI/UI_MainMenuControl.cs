@@ -350,6 +350,13 @@ public class UI_MainMenuControl : MonoBehaviour
         gameSetup.LoadClassData();
         Level_SelectedScenes.ins.RandomizeMaps();
         Level_SelectedScenes.ins.currentFightScene = -1;
+
+        if (Game_State.firstRun == true)
+        {
+            Level_SelectedScenes.ins.LoadStoryScene();
+            return;
+        }
+
         Level_SelectedScenes.ins.LoadNextScene();
         Game_State.lastBossDefeated = false;
     }
