@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Story_UI_Control : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class Story_UI_Control : MonoBehaviour
     }
     public void EndShowingStory()
     {
-
+        foreach(GameObject item in storyList)
+        {
+            item.SetActive(false);
+        }
+        SceneManager.LoadScene("Main_Menu_Scene");
     }
 }
