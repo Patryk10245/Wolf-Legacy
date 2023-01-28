@@ -5487,7 +5487,7 @@ MonoBehaviour:
   canvasAnimator: {fileID: 259170376}
   infoField: {fileID: 1487259570}
   villageMenu: {fileID: 362051930}
-  gameCompletedScreen: {fileID: 0}
+  gameCompletedScreen: {fileID: 1369061263}
   opaqueColor: {r: 0, g: 0, b: 0, a: 0}
   boughtUpgradeColor: {r: 0.16008958, g: 0.3962264, b: 0.14017443, a: 1}
   paladinDestroyedBuilding: {fileID: 1474408882}
@@ -12020,7 +12020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1369061264
 RectTransform:
   m_ObjectHideFlags: 0
