@@ -199,12 +199,13 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                         temp.transform.position = spot.position;
                         Vector3 dir = (temp.transform.position - gameObject.transform.position).normalized;
                         temp.GetComponent<Enemy_Projectile>().rb.AddForce(dir * waveProjectileSpeed);
-                        currentActionState = ENUM_current_state.working;
                     }
                     GameObject lone = Instantiate(projectilePrefab);
                     lone.transform.position = transform.position;
                     Vector3 lonedir = (move_target.transform.position - gameObject.transform.position).normalized;
                     lone.GetComponent<Enemy_Projectile>().rb.AddForce(lonedir * waveProjectileSpeed);
+                    currentActionState = ENUM_current_state.working;
+                    anim.SetTrigger("projectileWaves");
                     wavesShot++;
                 }
                 else
@@ -226,6 +227,8 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 waveTimer = 0;
                 wavesShot = 0;
                 last_action = 1;
+                anim.ResetTrigger("projectileWaves");
+                anim.SetTrigger("exitAnimation");
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
 
@@ -247,6 +250,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                     thunder.damage = thunderDamage;
                     thunderShot++;
                     currentActionState = ENUM_current_state.working;
+                    anim.SetTrigger("thunders");
                 }
                 else
                 {
@@ -267,6 +271,8 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 thunderTimer = 0;
                 thunderShot = 0;
                 last_action = 2;
+                anim.ResetTrigger("thunders");
+                anim.SetTrigger("exitAnimation");
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
 
@@ -280,8 +286,11 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
         switch (currentActionState)
         {
             case ENUM_current_state.preparation:
-                areaPattern.SetTrigger("areaAttack");
-                currentActionState = ENUM_current_state.working;
+                anim.SetTrigger("areaAttack");
+                currentActionState = ENUM_current_state.waiting;
+                break;
+
+            case ENUM_current_state.waiting:
                 break;
 
             case ENUM_current_state.working:
@@ -295,6 +304,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
             case ENUM_current_state.finishing:
                 last_action = 3;
                 areaTimer = 0;
+                anim.SetTrigger("exitAnimation");
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
 
@@ -302,12 +312,17 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 break;
         }
     }
+    public void InitiateAreaPatternAttack()
+    {
+        areaPattern.SetTrigger("areaAttack");
+    }
     
     private void Action_Spawning()
     {
         switch(currentActionState)
         {
             case ENUM_current_state.preparation:
+                anim.SetTrigger("spawning");
                 currentActionState = ENUM_current_state.working;
                 break;
             case ENUM_current_state.working:
@@ -337,6 +352,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
             case ENUM_current_state.finishing:
                 spawningDone = 0;
                 spawningTimer = 0;
+                anim.SetTrigger("exitAnimation");
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
             case ENUM_current_state.ready_to_exit:
