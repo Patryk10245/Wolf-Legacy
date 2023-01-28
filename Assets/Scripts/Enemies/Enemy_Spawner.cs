@@ -16,7 +16,7 @@ public class Enemy_Spawner : MonoBehaviour
     [Space(15)]
     public List<Enemy_BaseClass> listOfCreatedEnemies;
 
-    [SerializeField] List<Enemy_BaseClass> strongerMonsters;
+    List<Enemy_BaseClass> strongerMonsters;
     void Update()
     {
         timer += Time.deltaTime;
