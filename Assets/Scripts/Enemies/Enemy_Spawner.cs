@@ -6,7 +6,6 @@ public class Enemy_Spawner : MonoBehaviour
     [Header("Refference")]
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] Transform enemySpawningPoint;
-    [SerializeField] GameObject destroyedSprite;
 
     [Header("Inside refference")]
     [SerializeField] float timer;
@@ -17,7 +16,7 @@ public class Enemy_Spawner : MonoBehaviour
     [Space(15)]
     public List<Enemy_BaseClass> listOfCreatedEnemies;
 
-    [SerializeField] List<Enemy_BaseClass> strongerMonsters;
+    List<Enemy_BaseClass> strongerMonsters;
     void Update()
     {
         timer += Time.deltaTime;
@@ -42,12 +41,7 @@ public class Enemy_Spawner : MonoBehaviour
         currentHealth -= val;
         if (currentHealth <= 0)
         {
-            if(destroyedSprite != null)
-            {
-                destroyedSprite.SetActive(true);
-            }
-            gameObject.tag = "Untagged";
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 
