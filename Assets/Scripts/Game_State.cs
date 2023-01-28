@@ -53,7 +53,6 @@ public class Game_State : MonoBehaviour
         gamePaused = false;
         Time.timeScale = 1;
         Game_State.ins.pausingWindow.SetActive(false);
-        lastBossDefeated = false;
     }
 
     public bool CheckIfGameCompleted()
