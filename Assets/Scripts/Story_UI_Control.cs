@@ -8,8 +8,15 @@ public class Story_UI_Control : MonoBehaviour
     public List<GameObject> storyList;
     public int currentIndex;
 
+
+    private void Start()
+    {
+        ShowStory();
+    }
+
     public void ShowStory()
     {
+        Game_State.firstRun = false;
         currentIndex = 0;
         storyList[currentIndex].SetActive(true);
     }
@@ -26,6 +33,7 @@ public class Story_UI_Control : MonoBehaviour
         {
             item.SetActive(false);
         }
-        SceneManager.LoadScene("Main_Menu_Scene");
+
+        Level_SelectedScenes.ins.LoadNextScene();
     }
 }

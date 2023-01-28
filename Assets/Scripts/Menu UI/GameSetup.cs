@@ -389,6 +389,7 @@ public class GameSetup : MonoBehaviour
     public void LoadClassData()
     {
         scoreTable.gold = PlayerPrefs.GetInt("Gold", 0);
+        Game_State.firstRun = Convert.ToBoolean(PlayerPrefs.GetInt("FirstRun", 1));
 
         villageUpgrades.paladinBuildingBought = Convert.ToBoolean(PlayerPrefs.GetInt("PaladinBought", 0));
         villageUpgrades.barbarianBuildingBought = Convert.ToBoolean(PlayerPrefs.GetInt("BarbarianBought", 0));
@@ -422,6 +423,7 @@ public class GameSetup : MonoBehaviour
     public void SaveClassData()
     {
         PlayerPrefs.SetInt("Gold", scoreTable.gold);
+        PlayerPrefs.SetInt("FirstRun", Convert.ToInt32(Game_State.firstRun));
 
         PlayerPrefs.SetInt("PaladinBought", Convert.ToInt32(villageUpgrades.paladinBuildingBought));
         PlayerPrefs.SetInt("BarbarianBought", Convert.ToInt32(villageUpgrades.barbarianBuildingBought));
