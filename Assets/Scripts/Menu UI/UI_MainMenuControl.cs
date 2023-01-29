@@ -357,7 +357,6 @@ public class UI_MainMenuControl : MonoBehaviour
             Level_SelectedScenes.ins.LoadStoryScene();
             return;
         }
-
         Level_SelectedScenes.ins.LoadNextScene();
         Game_State.lastBossDefeated = false;
     }

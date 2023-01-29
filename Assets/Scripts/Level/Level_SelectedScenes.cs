@@ -76,6 +76,10 @@ public class Level_SelectedScenes : MonoBehaviour
         {
             AudioManager.ins.Play_MenuMusic();
         }
+        else if(scene == SceneManager.GetSceneByName("StoryScene"))
+        {
+
+        }
         else
         {
             AudioManager.ins.Play_GameMusic();
