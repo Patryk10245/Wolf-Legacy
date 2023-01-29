@@ -104,7 +104,7 @@ public class GameSetup : MonoBehaviour
     public void SetUpTheGame()
     {
         Level_FightReferenecs levelReferences = Level_FightReferenecs.ins;
-        Game_State.ins.pausingWindow = levelReferences.playerUIControl.pauseWindow; ;
+        Game_State.ins.pausingWindow = levelReferences.playerUIControl.pauseWindow;
         Game_State.ins.ResetValuesToDefault();
 
 
