@@ -2918,6 +2918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFightScene: 0
   selectedScenes:
+  - StoryScene
   - BossScene_Buckster
   - Level 1
   - BossScene_Duckster

@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossScene_Blobster.unity
     guid: acde9b72ca679214293a5525ca4363f3
+  - enabled: 1
+    path: Assets/Scenes/StoryScene.unity
+    guid: d5795ce1cb9116049810df5ea0836eb2
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e273b062bbbfe4a479e5182645640ead, type: 2}
