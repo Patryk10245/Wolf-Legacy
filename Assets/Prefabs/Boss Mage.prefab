@@ -618,7 +618,7 @@ MonoBehaviour:
   rb: {fileID: 2367892769948525168}
   agent: {fileID: 0}
   stats: {fileID: 0}
-  deathParticleEffect: {fileID: 0}
+  deathParticleEffect: {fileID: 8248367361089773354, guid: 7c11cb04bd7c7bd4cb86f4945546249f, type: 3}
   bossArea: {fileID: 0}
   healthBar: {fileID: 0}
   healthBarAnimator: {fileID: 0}

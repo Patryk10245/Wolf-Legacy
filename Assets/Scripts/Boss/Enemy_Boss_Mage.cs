@@ -154,7 +154,9 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
         {
             case ENUM_current_state.preparation:
                 gameObject.tag = "Untagged";
+                anim.Play("Mage Death Animation");
                 anim.SetTrigger("isDying");
+                anim.SetTrigger("exitAnimation");
                 currentActionState = ENUM_current_state.finishing;
                 break;
             case ENUM_current_state.working:
