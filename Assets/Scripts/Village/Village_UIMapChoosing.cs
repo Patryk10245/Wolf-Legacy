@@ -37,4 +37,23 @@ public class Village_UIMapChoosing : MonoBehaviour
     {
         nextMapButton.SetActive(false);
     }
+
+    public void GoToMenuAfterCompletedGame()
+    {
+        PlayerPrefs.DeleteAll();
+        Village_Upgrades upgrades = Village_Upgrades.ins;
+        upgrades.paladinBuildingBought = false;
+        upgrades.barbarianBuildingBought = false;
+        upgrades.archerBuildingBought = false;
+        upgrades.mageBuildingBought = false;
+
+        upgrades.paladinUpgrades.ClearData();
+        upgrades.barbarianUpgrades.ClearData();
+        upgrades.archerUpgrades.ClearData();
+        upgrades.mageUpgrades.ClearData();
+
+        Game_State.firstRun = true;
+        Game_State.lastBossDefeated = false;
+        ScoreTable.ins.gold = 0;
+    }
 }
