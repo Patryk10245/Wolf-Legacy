@@ -255,6 +255,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
                 }
                 else
                 {
+                    Debug.Log("Finishing");
                     currentActionState = ENUM_current_state.finishing;
                 }    
                 break;
@@ -305,6 +306,7 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
             case ENUM_current_state.finishing:
                 last_action = 3;
                 areaTimer = 0;
+                anim.ResetTrigger("areaAttack");
                 anim.SetTrigger("exitAnimation");
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;

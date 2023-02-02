@@ -168,7 +168,7 @@ public class UI_MainMenuControl : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         Game_State.firstRun = true;
-        Exit_Settings();
+        Exit_DeleteProgress();
     }
 
     public void OnePlayer()
