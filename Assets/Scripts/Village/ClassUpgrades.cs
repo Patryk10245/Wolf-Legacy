@@ -19,4 +19,13 @@ public class ClassUpgrades : ScriptableObject
     public UpgradeLevel energy;
     public UpgradeLevel energyRegeneration;
     public UpgradeLevel speed;
+
+    public void ClearData()
+    {
+        damage.currentLevel = 0;
+        health.currentLevel = 0;
+        energy.currentLevel = 0;
+        energyRegeneration.currentLevel = 0;
+        speed.currentLevel = 0;
+    }
 }
