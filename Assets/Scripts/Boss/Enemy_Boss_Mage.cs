@@ -361,6 +361,24 @@ public class Enemy_Boss_Mage : Enemy_BaseClass
         }
     }
 
+
+    public void EVENT_Preparation()
+    {
+        currentActionState = ENUM_current_state.preparation;
+    }
+    public void EVENT_Working()
+    {
+        currentActionState = ENUM_current_state.working;
+    }
+    public void EVENT_Finishing()
+    {
+        currentActionState = ENUM_current_state.finishing;
+    }
+    public void EVENT_Exiting()
+    {
+        currentActionState = ENUM_current_state.ready_to_exit;
+    }
+
     public override void TakeDamage(float val, ENUM_AttackType attackType, Player player)
     {
         stats.TakeDamage(val);
