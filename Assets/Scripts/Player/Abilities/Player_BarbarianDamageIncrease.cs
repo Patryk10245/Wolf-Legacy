@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_BarbarianDamageIncrease : Ability_2
 {
-    public float damageMultiplier = 4;
+    public float damageMultiplier = 2;
     public float basePlayerDamage;
     public float durationTime = 5;
     public bool isIncreased;
