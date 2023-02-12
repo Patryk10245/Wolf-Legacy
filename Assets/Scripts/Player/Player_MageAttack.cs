@@ -31,9 +31,14 @@ public class Player_MageAttack : Player_AttackScript
 
         dir = (Vector3)player.controller.mousePos - player.controller.screenPoint;
         dir.z = 0;
-        if (player.controller.mousePos == Vector2.zero)
-        { 
+        if(player.controller.mousePos == Vector2.zero)
+        {
+            Debug.Log("it is 0");
             dir.x = transform.localPosition.x;
+        }
+        else
+        {
+            Debug.Log(player.controller.mousePos);
         }
 
         directionNormalized = Vector3.Normalize(dir);
