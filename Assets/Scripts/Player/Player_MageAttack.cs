@@ -39,6 +39,7 @@ public class Player_MageAttack : Player_AttackScript
         else
         {
             Debug.Log(player.controller.mousePos);
+            Debug.Log("Scale = " + transform.localScale);
         }
 
         directionNormalized = Vector3.Normalize(dir);
