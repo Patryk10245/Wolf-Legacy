@@ -28,6 +28,8 @@ public class Player_MageAttack : Player_AttackScript
         mousepos = player.currentCamera.WorldToScreenPoint(transform.localPosition);
 
         dir = (mousepos - spawnProjectilePosition.transform.position);
+
+        dir = (Vector3)player.controller.mousePos - player.controller.screenPoint;
         dir.z = 0;
 
         directionNormalized = Vector3.Normalize(dir);
