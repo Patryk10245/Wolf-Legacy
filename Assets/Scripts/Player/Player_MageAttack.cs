@@ -35,6 +35,7 @@ public class Player_MageAttack : Player_AttackScript
         {
             Debug.Log("it is 0");
             Debug.Log("Scale = " + transform.localScale);
+            dir = Vector3.zero;
             dir.x = transform.localPosition.x;
         }
         else
