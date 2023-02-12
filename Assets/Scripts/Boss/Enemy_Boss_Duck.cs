@@ -240,7 +240,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
     void RotateTowardsWalkDirection()
     {
         direction = agent.destination - transform.position;
-        Debug.Log("Current scale = " + transform.localScale);
+    
         if(direction.x > 0)
         {
             
@@ -250,7 +250,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
         {
             transform.localScale = Vector3.one;
         }
-        Debug.Log("New scale = " + transform.localScale);
+
     }
 
     public void EVENT_Preparation()
@@ -312,7 +312,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 currentActionState = ENUM_current_state.ready_to_exit;
                 last_action = 0;
                 anim.ResetTrigger("isIdle");
-                anim.SetTrigger("exitAnimation");
+                //anim.SetTrigger("exitAnimation");
                 break;
 
             case ENUM_current_state.ready_to_exit:
