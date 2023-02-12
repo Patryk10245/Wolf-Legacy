@@ -33,15 +33,8 @@ public class Player_MageAttack : Player_AttackScript
         dir.z = 0;
         if(player.controller.mousePos == Vector2.zero)
         {
-            Debug.Log("it is 0");
-            Debug.Log("Scale = " + transform.localScale);
             dir = Vector3.zero;
             dir.x = transform.localScale.x;
-        }
-        else
-        {
-            Debug.Log(player.controller.mousePos);
-            Debug.Log("Scale = " + transform.localScale);
         }
 
         directionNormalized = Vector3.Normalize(dir);
