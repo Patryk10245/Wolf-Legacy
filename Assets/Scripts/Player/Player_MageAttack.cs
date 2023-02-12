@@ -34,6 +34,7 @@ public class Player_MageAttack : Player_AttackScript
         if(player.controller.mousePos == Vector2.zero)
         {
             Debug.Log("it is 0");
+            Debug.Log("Scale = " + transform.localScale);
             dir.x = transform.localPosition.x;
         }
         else
