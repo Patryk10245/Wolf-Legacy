@@ -24,7 +24,7 @@ public class Player_Barbarian_Leap : Ability_1
     {
         if(isLeaping)
         {
-            player.controller.rb.AddForce(-direction * leapForce);
+            player.controller.rb.AddForce(direction * leapForce);
 
             timer += Time.deltaTime;
             if (timer >= leapTime)
@@ -89,7 +89,7 @@ public class Player_Barbarian_Leap : Ability_1
             direction = Vector3.zero;
             direction.x = transform.localScale.x;
         }
-
+        direction = direction.normalized;
         player.controller.animBody.SetTrigger("barbarianLeap");
     }
 
