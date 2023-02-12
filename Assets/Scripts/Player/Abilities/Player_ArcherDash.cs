@@ -39,6 +39,14 @@ public class Player_ArcherDash : Ability_1
         mousepos.z = transform.position.z;
         Vector3 direction = (transform.position - mousepos).normalized;
 
+        direction = (Vector3)player.controller.mousePos - player.controller.screenPoint;
+        direction.z = 0;
+        if (player.controller.mousePos == Vector2.zero)
+        {
+            direction = Vector3.zero;
+            direction.x = transform.localScale.x;
+        }
+
 
         player.controller.rb.AddForce(direction * dashForce);
         isRecharching = true;

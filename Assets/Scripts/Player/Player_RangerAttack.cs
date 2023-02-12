@@ -25,6 +25,14 @@ public class Player_RangerAttack : Player_AttackScript
         Vector3 dir = (mousepos - spawnProjectilePosition.transform.position);
         dir.z = 0;
 
+        dir = (Vector3)player.controller.mousePos - player.controller.screenPoint;
+        dir.z = 0;
+        if (player.controller.mousePos == Vector2.zero)
+        {
+            dir = Vector3.zero;
+            dir.x = transform.localScale.x;
+        }
+
         Vector3 directionNormalized = Vector3.Normalize(dir);
 
         Player_Projectile projectile = temp.GetComponent<Player_Projectile>();

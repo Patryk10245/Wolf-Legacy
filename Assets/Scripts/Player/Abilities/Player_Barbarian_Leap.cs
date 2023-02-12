@@ -81,6 +81,15 @@ public class Player_Barbarian_Leap : Ability_1
         mousepos = Camera.main.ScreenToWorldPoint(mousepos);
         mousepos.z = transform.position.z;
         direction = (transform.position - mousepos).normalized;
+
+        direction = (Vector3)player.controller.mousePos - player.controller.screenPoint;
+        direction.z = 0;
+        if (player.controller.mousePos == Vector2.zero)
+        {
+            direction = Vector3.zero;
+            direction.x = transform.localScale.x;
+        }
+
         player.controller.animBody.SetTrigger("barbarianLeap");
     }
 
