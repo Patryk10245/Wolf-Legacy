@@ -59,6 +59,15 @@ public class Player_ArcherMultiShot : Ability_2
                 mousepos.z = Camera.main.nearClipPlane;
                 mousepos = Camera.main.ScreenToWorldPoint(mousepos);
                 Vector3 dir = (mousepos - arrowSpawnPosiiton.transform.position);
+
+                dir = (Vector3)player.controller.mousePos - player.controller.screenPoint;
+                dir.z = 0;
+                if (player.controller.mousePos == Vector2.zero)
+                {
+                    dir = Vector3.zero;
+                    dir.x = transform.localScale.x;
+                }
+
                 Vector3 directionNormalized = Vector3.Normalize(dir);
 
                 proj.rb.AddForce(directionNormalized * arrowSpeed);
