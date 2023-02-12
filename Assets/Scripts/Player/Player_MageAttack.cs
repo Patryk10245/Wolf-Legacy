@@ -7,6 +7,10 @@ public class Player_MageAttack : Player_AttackScript
     public GameObject projectilePrefab;
     public Transform spawnProjectilePosition;
 
+    public Vector3 mousepos;
+    public Vector3 dir;
+    public Vector3 directionNormalized;
+
     [SerializeField] float projectileSpeed = 800;
         
     public override void Attack()
@@ -19,14 +23,14 @@ public class Player_MageAttack : Player_AttackScript
         GameObject temp = Instantiate(projectilePrefab);
         temp.transform.position = spawnProjectilePosition.position;
 
-        Vector3 mousepos = player.controller.mousePos;
+        mousepos = player.controller.mousePos;
         mousepos.z = Camera.main.nearClipPlane;
-        mousepos = Camera.main.ScreenToWorldPoint(mousepos);
-        
-        Vector3 dir = (mousepos - spawnProjectilePosition.transform.position);
+        mousepos = player.currentCamera.WorldToScreenPoint(transform.localPosition);
+
+        dir = (mousepos - spawnProjectilePosition.transform.position);
         dir.z = 0;
 
-        Vector3 directionNormalized = Vector3.Normalize(dir);
+        directionNormalized = Vector3.Normalize(dir);
 
         Player_Projectile projectile = temp.GetComponent<Player_Projectile>();
         projectile.rb.AddForce(directionNormalized * projectileSpeed);
