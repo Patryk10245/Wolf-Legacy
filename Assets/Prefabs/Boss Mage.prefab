@@ -646,7 +646,7 @@ MonoBehaviour:
   waveTimeDelay: 1
   waveTimer: 0
   thunderPrefab: {fileID: 3727588806388942514, guid: 70041ea45ba6cce4c885fdb63f207122, type: 3}
-  thunderDamage: 20
+  thunderDamage: 15
   thunderCount: 5
   thunderDelay: 1.5
   thunderTimer: 0
