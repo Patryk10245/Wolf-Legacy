@@ -43,7 +43,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
 
     [SerializeField] float changeTargetTime = 15;
     float change_target_timer;
-    Vector3 direction;
+    public Vector3 direction;
 
     [Header("Dash Action")]
     [SerializeField] float dashForce;
@@ -240,14 +240,17 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
     void RotateTowardsWalkDirection()
     {
         direction = agent.destination - transform.position;
+        Debug.Log("Current scale = " + transform.localScale);
         if(direction.x > 0)
         {
+            
             transform.localScale = new Vector3(-1, 1, 1);
         }
         else if(direction.x < 0)
         {
             transform.localScale = Vector3.one;
         }
+        Debug.Log("New scale = " + transform.localScale);
     }
 
     public void EVENT_Preparation()
@@ -308,6 +311,8 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
             case ENUM_current_state.finishing:
                 currentActionState = ENUM_current_state.ready_to_exit;
                 last_action = 0;
+                anim.ResetTrigger("isIdle");
+                anim.SetTrigger("exitAnimation");
                 break;
 
             case ENUM_current_state.ready_to_exit:
@@ -333,6 +338,7 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 break;
             case ENUM_current_state.finishing:
                 anim.SetTrigger("exitAnimation");
+                anim.ResetTrigger("isMoving");
                 agent.SetDestination(transform.position);
                 currentActionState = ENUM_current_state.ready_to_exit;
                 last_action = 1;
@@ -408,6 +414,9 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 }
                 action_firstLoop = true;
                 last_action = 2;
+
+                anim.SetTrigger("exitAnimation");
+                anim.ResetTrigger("isJumping");
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
 
@@ -445,6 +454,8 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                     agent.velocity = Vector3.zero;
                     currentActionState = ENUM_current_state.ready_to_exit;
                     last_action = 3;
+                    anim.SetTrigger("exitAnimation");
+                    anim.ResetTrigger("isRushing");
                 }
                 break;
             case ENUM_current_state.ready_to_exit:
@@ -462,7 +473,6 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                 currentActionState = ENUM_current_state.working;
                 break;
             case ENUM_current_state.working:
-                currentActionState = ENUM_current_state.finishing;
                 break;
             case ENUM_current_state.finishing:
 
@@ -477,6 +487,8 @@ public class Enemy_Boss_Duck : Enemy_BaseClass
                     rock.GetComponent<Boss_Duck_RocksObject>().damage = rocksDamage;
                 }
                 last_action = 4;
+                anim.SetTrigger("exitAnimation");
+                anim.ResetTrigger("rockFalling");
                 currentActionState = ENUM_current_state.ready_to_exit;
                 break;
             case ENUM_current_state.ready_to_exit:
