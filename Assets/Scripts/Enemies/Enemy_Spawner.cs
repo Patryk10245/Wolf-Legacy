@@ -50,7 +50,7 @@ public class Enemy_Spawner : MonoBehaviour
         GameObject temp_GO;
         temp_GO = Instantiate(enemyPrefab, enemySpawningPoint.position , Quaternion.Euler(0,0,0), transform);
         temp_GO.transform.position = enemySpawningPoint.position;
-        temp_GO.transform.SetParent(transform);
+        //temp_GO.transform.SetParent(transform);
         Enemy_BaseClass enemy = temp_GO.GetComponent<Enemy_BaseClass>();
         listOfCreatedEnemies.Add(enemy);
         enemy.agent.SetDestination(enemy.transform.position + Vector3.one);

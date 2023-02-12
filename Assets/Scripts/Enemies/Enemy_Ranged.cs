@@ -117,7 +117,7 @@ public class Enemy_Ranged : Enemy_BaseClass
 
         if (stats.currentHealth <= 0)
         {
-            agent.SetDestination(transform.position);
+            //agent.SetDestination(transform.position);
             is_dying = true;
             currentEnemyState = ENUM_EnemyState.dying;
             tag = "Untagged";
