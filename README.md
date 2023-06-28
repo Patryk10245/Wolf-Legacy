@@ -4,3 +4,6 @@ Wolf Legacy is a reference to the times, where the player passed levels while de
 
 Four types of heroes, a couple of types of enemies and bosses were prepared for the project. A village was created, where the player can upgrade himself, as well as levels where he fights his battles.
 
+Screenshoots!
+
+(https://github.com/Patryk10245/Wolf-Legacy/blob/main/Assets/Graphics/Village/Village.png)
